@@ -14,7 +14,16 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Suivant</button>
+
+            {% if step == 2 %}
+                <!-- Boutons spécifiques pour l'étape 2 -->
+                <div class="step2-buttons">
+                    <button type="submit" name="add_trip" class="btn-secondary">Ajouter une autre étape</button>
+                    <button type="submit" name="finish_trips" class="btn-primary">Passer à l'étape suivante</button>
+                </div>
+            {% else %}
+                <button type="submit" class="btn-primary">Suivant</button>
+            {% endif %}
         </form>
     {% elif step == 3 %}
         <h3>Choisissez une ou plusieurs catégories :</h3>
@@ -29,13 +38,14 @@
             </div>
             <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
             <input type="hidden" name="categories" id="selected-categories" value="">
-            <button type="submit">Valider</button>
+            <button type="submit" class="btn-primary">Valider</button>
         </form>
     {% endif %}
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Étape 3 : Gestion des catégories
         const categoryCards = document.querySelectorAll(".category-card");
         const selectedCategoriesInput = document.getElementById("selected-categories");
         let selectedCategories = [];
@@ -61,6 +71,38 @@
 </script>
 
 <style>
+    /* Styles communs */
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
     #category-container {
         display: flex;
         flex-wrap: wrap;
@@ -84,5 +126,11 @@
         background-color: #007bff;
         color: white;
         border-color: #0056b3;
+    }
+
+    .step2-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
     }
 </style>

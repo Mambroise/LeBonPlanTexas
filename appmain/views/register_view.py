@@ -16,6 +16,7 @@ from ..forms.trip_form import TripForm
 from ..models import Category
 from ..services.customer_service import CustumerService
 from ..services.trip_service import TripService
+from ..services.interest_service import InterestService
 
 def multi_step_form(request):
     step = request.session.get('step', 1) 
@@ -29,43 +30,66 @@ def multi_step_form(request):
 
     elif step == 2:
         form = TripForm(request.POST or None)
+
         if form.is_valid():
-            cleaned_data = form.cleaned_data
-            # Converting dates 
-            for key, value in cleaned_data.items():
-                if isinstance(value, date):
-                    cleaned_data[key] = value.isoformat() 
-            request.session['trip_data'] = form.cleaned_data
-            request.session['step'] = 3
-            return redirect('multi_step_form')
+            cleaned_data = {
+                key: (value.isoformat() if isinstance(value, date) else value)
+                for key, value in form.cleaned_data.items()
+            }
+
+            # Ajouter les données de cette étape de voyage à la liste
+            trip_data = request.session.get('trip_data', [])
+            trip_data.append(cleaned_data)
+            request.session['trip_data'] = trip_data
+
+            # Vérifier quel bouton a été utilisé
+            if "add_trip" in request.POST:
+                messages.success(request, _("L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."))
+                return redirect('multi_step_form')  # Retourne à l'étape 2 pour une nouvelle entrée
+            elif "finish_trips" in request.POST:
+                request.session['step'] = 3
+                return redirect('multi_step_form')
 
     elif step == 3:
         categories = Category.objects.all()
         if request.method == "POST":
-            # Creating customer part (return the id and a boolean)
-            custumer_data = request.session.get('customer_data')
-            customer_id, success = CustumerService.create_custumer(custumer_data)
-            if success:
-                messages.success(request, _('Vos données personnelles ont bien été enregistrées'))
-            else:
-                messages.error(request, _("Une erreur s'est produite merci de recommencer"))
+            # Étape 3.1 : Création du client
+            customer_data = request.session.get('customer_data')
+            customer_id, success = CustumerService.create_custumer(customer_data)
+            if not success:
+                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
                 request.session.flush()
                 return redirect('multi_step_form')
-            
-            # Creating Trip part
-            trip_data = request.session.get('trip_data')
-            success = TripService.create_trip(trip_data,customer_id)
-            if success:
-                messages.success(request, _('Le voyage a bien été enregistré'))
-            else:
-                messages.error(request, _("Une erreur s'est produite merci de recommencer"))
+
+            # Étape 3.2 : Création des voyages
+            trip_data = request.session.get('trip_data', [])
+            for trip in trip_data:
+                success = TripService.create_trip(trip, customer_id)
+                if not success:
+                    messages.error(request, _("Une erreur s'est produite lors de l'enregistrement d'un voyage."))
+                    request.session.flush()
+                    return redirect('multi_step_form')
+
+            # Étape 3.3 : Création des intérêts
+            raw_categories = request.POST.getlist('categories')
+            if len(raw_categories) == 1 and ',' in raw_categories[0]:
+                raw_categories = raw_categories[0].split(',')
+
+            try:
+                selected_categories = [int(cat_id) for cat_id in raw_categories if cat_id.isdigit()]
+            except ValueError:
+                messages.error(request, _("Les catégories sélectionnées sont invalides."))
+                return redirect('multi_step_form')
+
+            success = InterestService.create_customer_interests(selected_categories, customer_id)
+            if not success:
+                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement des catégories."))
+                CustumerService.delete_customer(customer_id)
                 request.session.flush()
                 return redirect('multi_step_form')
-        
-            # Creating Categories part
-            selected_categories = request.POST.getlist('categories')  # Liste des IDs sélectionnés
-            print("Catégories sélectionnées :", selected_categories)
-            request.session['selected_categories'] = selected_categories
+
+            # Final success
+            messages.success(request, _('Enregistrement terminé avec succès.'))
             request.session.flush()
             return redirect('success')
 
