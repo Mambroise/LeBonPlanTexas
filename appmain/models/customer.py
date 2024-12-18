@@ -20,6 +20,11 @@ class Customer(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
     is_done = models.BooleanField(default=False)
 
+    def selected_categories(self):
+        return ", ".join(interest.category.name for interest in self.interests.select_related('category'))
+
+    selected_categories.short_description = _('Catégories sélectionnées')
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
         

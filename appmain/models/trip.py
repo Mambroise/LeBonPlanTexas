@@ -26,13 +26,8 @@ class Trip(models.Model):
         return f"Trip for {self.customer} from {self.start_date} to {self.end_date}"
     
     def clean(self):
-        cleaned_data = super().clean()
-        start_date = cleaned_data.get("start_date")
-        end_date = cleaned_data.get("end_date")
-
-        if start_date and end_date and end_date < start_date:
+        super().clean()  # Appelle la méthode clean parente
+        if self.start_date and self.end_date and self.end_date < self.start_date:
             raise ValidationError({
-                'Dates': _('Une erreur dans les dates est survenue.')
+                'end_date': _('La date de fin doit être postérieure ou égale à la date de début.')
             })
-        
-        return cleaned_data
