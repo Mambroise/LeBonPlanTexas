@@ -13,10 +13,10 @@ from django.core.exceptions import ValidationError
 # Create your models here.
 class Customer(models.Model):
 
-    first_name = models.CharField(_('Prénom:'), max_length=100)
-    last_name = models.CharField(_('Nom:'), max_length=150)
-    email = models.CharField(_('Email:'), max_length=150)
-    phone = models.CharField(_('Portable:'),max_length=12, blank=True, null=True)
+    first_name = models.CharField(_('Prénom'), max_length=100)
+    last_name = models.CharField(_('Nom'), max_length=150)
+    email = models.CharField(_('Email'), max_length=150)
+    phone = models.CharField(_('Portable'),max_length=12, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now=True)
     is_done = models.BooleanField(default=False)
 

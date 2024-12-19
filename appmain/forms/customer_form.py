@@ -14,3 +14,21 @@ class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = ['first_name','last_name','email','phone']
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'required': True,
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'required': True,
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'required': True,
+            }),
+            'phone': forms.TextInput(attrs={
+                'class': 'form-control',
+                'required': True,
+            }),
+        }

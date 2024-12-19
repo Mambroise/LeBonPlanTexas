@@ -16,7 +16,7 @@ class Trip(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='trips')
     start_date = models.DateField(_('Date de début:'))
     end_date = models.DateField(_('Date de fin:'))
-    cities = models.CharField(_('Villes:'),max_length=255,null=True)
+    cities = models.CharField(_('Villes'),max_length=255,null=True)
     comment = models.TextField(_('Commentaire:'),max_length=500,null=True)
     vehiculed = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=True)

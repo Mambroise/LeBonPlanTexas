@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from decouple import config
 
@@ -37,8 +37,8 @@ DEBUG =  config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = []
 
 # Durée de la session (30 minutes en secondes)
-SESSION_COOKIE_AGE = config('SESSION_COOKIE_AGE')  # 30 minutes
-SESSION_EXPIRE_AT_BROWSER_CLOSE = config('SESSION_EXPIRE_AT_BROWSER_CLOSE')  
+SESSION_COOKIE_AGE = 1800  # 30 minutes
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 # Application definition
@@ -130,6 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

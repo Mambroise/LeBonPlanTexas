@@ -6,131 +6,95 @@
 # --------------------------------------------------------------------------- -->
 
 
+{% extends 'base.html' %}
 
-<div class="form-container">
-    <h2>Étape {{ step }}</h2>
+{% load static %}
+{% load i18n %}
 
-    {% if step == 1 or step == 2 %}
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
+{% block content %}
+<div class="form-banner">
+    <div class="form-blurry-container">
+        <div class="cadre">
+            <div>
 
-            {% if step == 2 %}
-                <!-- Boutons spécifiques pour l'étape 2 -->
-                <div class="step2-buttons">
-                    <button type="submit" name="add_trip" class="btn-secondary">Ajouter une autre étape</button>
-                    <button type="submit" name="finish_trips" class="btn-primary">Passer à l'étape suivante</button>
-                </div>
-            {% else %}
-                <button type="submit" class="btn-primary">Suivant</button>
-            {% endif %}
-        </form>
-    {% elif step == 3 %}
-        <h3>Choisissez une ou plusieurs catégories :</h3>
-        <form id="category-form" method="post">
-            {% csrf_token %}
-            <div id="category-container">
-                {% for category in categories %}
-                    <div class="category-card" data-category-id="{{ category.id }}">
-                        {{ category.name }}
+                <h2>{% translate 'Étape' %} {{ step }}/3</h2>
+            
+                <form method="post">
+                    {% csrf_token %}
+                    {% if step == 1 %}
+                    <div class="flex-center">
+                        <div>
+                            <div class="inputBox">
+                                <input type="text" name="first_name" id="id_first_name" class="form-control" required>
+                                <strong for="id_first_name">{{ form.first_name.label }}</strong>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="last_name" id="id_last_name" class="form-control" required>
+                                <strong for="id_last_name">{{ form.last_name.label }}</strong>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inputBox">
+                                <input type="text" name="email" id="id_email" class="form-control" required>
+                                <strong for="id_email">{{ form.email.label }}</strong>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="phone" id="id_phone" class="form-control" required>
+                                <strong for="id_phone">{{ form.phone.label }}</strong>
+                            </div>
+                        </div>
                     </div>
-                {% endfor %}
+                    <button type="submit" class="btn-primary">{% translate 'Suivant' %}</button>
+    
+                    {% elif step == 2 %}
+                    <div class="step2-buttons">
+                        <div>
+                            <p>{{ form.start_date.label }}</p>
+                            {{ form.start_date }}
+                        </div>
+                        <div>
+                            <p>{{ form.end_date.label }}</p>
+                            {{ form.end_date }}
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="cities" id="id_cities" class="form-control" required>
+                        <strong for="id_cities">{{ form.cities.label }}</strong>
+                    </div>
+                    <div class="">
+                        <strong for="">{{ form.comment.label }}</strong>
+                        {{ form.comment }}
+                    </div>
+                    <div class="">
+                        <strong>{{ form.vehiculed.label }}</strong>
+                        {{ form.vehiculed }}
+                    </div>
+                    <!-- Boutons spécifiques pour l'étape 2 -->
+                    <div class="step2-buttons">
+                        <button type="submit" name="add_trip" class="btn-secondary">Ajouter une autre étape</button>
+                        <button type="submit" name="finish_trips" class="btn-primary">Passer à l'étape suivante</button>
+                    </div>
+                </form>
+                {% elif step == 3 %}
+                    <h3>Choisissez une ou plusieurs catégories :</h3>
+                    <form id="category-form" method="post">
+                        {% csrf_token %}
+                        <div id="category-container">
+                            {% for category in categories %}
+                                <div class="category-card" data-category-id="{{ category.id }}">
+                                    {{ category.name }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
+                        <input type="hidden" name="categories" id="selected-categories" value="">
+                        <button type="submit" class="btn-primary">Valider</button>
+                    </form>
+                {% endif %}
             </div>
-            <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
-            <input type="hidden" name="categories" id="selected-categories" value="">
-            <button type="submit" class="btn-primary">Valider</button>
-        </form>
-    {% endif %}
+        </div>
+    </div>
 </div>
+{% endblock %}
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Étape 3 : Gestion des catégories
-        const categoryCards = document.querySelectorAll(".category-card");
-        const selectedCategoriesInput = document.getElementById("selected-categories");
-        let selectedCategories = [];
 
-        categoryCards.forEach(card => {
-            card.addEventListener("click", function () {
-                const categoryId = this.getAttribute("data-category-id");
-                
-                // Ajouter ou supprimer la catégorie de la sélection
-                if (selectedCategories.includes(categoryId)) {
-                    selectedCategories = selectedCategories.filter(id => id !== categoryId);
-                    this.classList.remove("selected");
-                } else {
-                    selectedCategories.push(categoryId);
-                    this.classList.add("selected");
-                }
-
-                // Mettre à jour l'input caché
-                selectedCategoriesInput.value = selectedCategories.join(",");
-            });
-        });
-    });
-</script>
-
-<style>
-    /* Styles communs */
-    .btn-primary, .btn-secondary {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
-
-    .btn-secondary {
-        background-color: #6c757d;
-        color: white;
-    }
-
-    .btn-secondary:hover {
-        background-color: #5a6268;
-    }
-
-    .form-container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    #category-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .category-card {
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: background-color 0.3s, border-color 0.3s;
-        text-align: center;
-    }
-
-    .category-card:hover {
-        border-color: #007bff;
-    }
-
-    .category-card.selected {
-        background-color: #007bff;
-        color: white;
-        border-color: #0056b3;
-    }
-
-    .step2-buttons {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
-</style>
