@@ -37,7 +37,7 @@ DEBUG =  config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = []
 
 # Durée de la session (30 minutes en secondes)
-SESSION_COOKIE_AGE = 1800  # 30 minutes
+SESSION_COOKIE_AGE = 3600  # 60 minutes
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
