@@ -80,6 +80,7 @@ h2{
 .nav-box {
     width: 50%;
     height: 100%;
+    transition:  0.2s ease-in-out;
 }
 
 .navbar {
@@ -101,14 +102,14 @@ a {
     border: 1px solid var(--white-texas);
     border-radius: 10px;
     padding: 5px 10px;
-    transition:  0.3s ease-in-out;
+    transition:  0.4s ease-in-out;
 }
 #who {
     font-size: 20px;
     border: 1px solid var(--white-texas);
     border-radius: 10px;
     padding: 5px 10px;
-    transition:  0.3s ease-in-out;
+    transition:  0.4s ease-in-out;
 }
 
 .logo-image {

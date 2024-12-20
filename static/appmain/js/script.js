@@ -49,6 +49,7 @@ function addStyles(selector) {
 
         #who.small, #register.small {
             font-size: 12px;
+            transition:  0.3s ease-in-out;
         }
 
         .nav-register-box.small, .nav-who-box.small {
@@ -56,6 +57,7 @@ function addStyles(selector) {
         }
         .nav-box.small {
             width: 40%;
+            transition:  0.5 ease-in-out;
         }
     `;
     const styleTag = document.createElement('style');
