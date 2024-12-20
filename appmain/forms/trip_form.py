@@ -7,6 +7,7 @@
 
 
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from appmain.models import Trip
 
@@ -16,6 +17,22 @@ class TripForm(forms.ModelForm):
         fields = ['start_date','end_date','cities','comment','vehiculed']
     
         widgets = {
-            "start_date" : forms.DateInput(attrs={"type" : "date"}),
-            "end_date" : forms.DateInput(attrs={"type" : "date"})
+            "start_date": forms.DateInput(attrs={
+                "type": "date", 
+                "style": "font-size: 17px;",
+            }),
+            "end_date": forms.DateInput(attrs={
+                "type": "date", 
+                "style": "font-size: 17px;",
+            }),
+            "comment": forms.Textarea(attrs={
+                "style": ("font-size: 25px;"
+                          "width : 100%;"  
+                          ),
+                "placeholder": _("Ajoutez ici toute information utile..."),
+            }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['comment'].required = False

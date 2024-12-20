@@ -14,10 +14,9 @@
 {% block content %}
 <div class="form-banner">
     <div class="form-blurry-container">
-        <div class="cadre">
+        <div class="frame">
             <div>
-
-                <h2>{% translate 'Étape' %} {{ step }}/3</h2>
+                <h2 class="text-center">{% translate 'Étape' %} {{ step }}/3</h2>
             
                 <form method="post">
                     {% csrf_token %}
@@ -44,39 +43,47 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary">{% translate 'Suivant' %}</button>
+                    <div class="flex-center">
+                        <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
+                    </div>
     
                     {% elif step == 2 %}
-                    <div class="step2-buttons">
+                    <div class="flex-center">
                         <div>
-                            <p>{{ form.start_date.label }}</p>
-                            {{ form.start_date }}
+                            <!-- start and end dates box -->
+                            <div class="flex-around">
+                                <div>
+                                    <p class="label-text">{{ form.start_date.label }}</p>
+                                    {{ form.start_date }}
+                                </div>
+                                <div>
+                                    <p class="label-text">{{ form.end_date.label }}</p>
+                                    {{ form.end_date }}
+                                </div>
+                            </div>
+                            <div class="inputBox my-40">
+                                <input type="text" name="cities" id="id_cities" class="form-control" required>
+                                <strong for="id_cities">{{ form.cities.label }}</strong>
+                            </div>
+                            <div class="">
+                                <strong class="label-text">{{ form.vehiculed.label }}</strong>
+                                {{ form.vehiculed }}
+                            </div>
                         </div>
-                        <div>
-                            <p>{{ form.end_date.label }}</p>
-                            {{ form.end_date }}
+                        <div class="w-50">
+                            <p class="label-text">{{ form.comment.label }}</p>
+                            {{ form.comment }}
                         </div>
                     </div>
-                    <div class="inputBox">
-                        <input type="text" name="cities" id="id_cities" class="form-control" required>
-                        <strong for="id_cities">{{ form.cities.label }}</strong>
-                    </div>
-                    <div class="">
-                        <strong for="">{{ form.comment.label }}</strong>
-                        {{ form.comment }}
-                    </div>
-                    <div class="">
-                        <strong>{{ form.vehiculed.label }}</strong>
-                        {{ form.vehiculed }}
-                    </div>
-                    <!-- Boutons spécifiques pour l'étape 2 -->
+                    
+                    <!-- step2 special buttons box -->
                     <div class="step2-buttons">
                         <button type="submit" name="add_trip" class="btn-secondary">Ajouter une autre étape</button>
                         <button type="submit" name="finish_trips" class="btn-primary">Passer à l'étape suivante</button>
                     </div>
                 </form>
                 {% elif step == 3 %}
-                    <h3>Choisissez une ou plusieurs catégories :</h3>
+                    <p class="label-text">Choisissez une ou plusieurs catégories :</p>
                     <form id="category-form" method="post">
                         {% csrf_token %}
                         <div id="category-container">

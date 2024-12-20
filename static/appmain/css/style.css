@@ -5,7 +5,7 @@
 # Author : Morice
 # --------------------------------------------------------------------------- */
 
-/* Commun Css */
+/* COMMUN CSS */
 :root {
     /* Variables globales pour les couleurs */
     --blue-texas: rgb(0, 33, 165);
@@ -23,49 +23,124 @@ body{
     margin: 0;
 }
 
+/* MARGIN AND PADDING */
+.no-mt {
+    margin-top: 0;
+}
+
+.my-40 {
+    margin: 40px 0px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
 .flex-center{
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-center {
+    text-align: center;
+}
+
 h2{
     font-size:30px;
     margin: 30px 0px;
 }
-.custom-shadow{
-    box-shadow: 0 0 4px 3px rgba(255, 255, 250, 0.9) !important;
-}
 
-/* buttons */
-.btn-primary, .btn-secondary {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-primary {
+/* NAVBAR CSS */
+.navbar {
+    width: 100%;
     background-color: var(--blue-texas);
-    color: white;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center; 
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.nav-box {
+    width: 50%;
+    height: 100%;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
+.navbar {
+    overflow: hidden;
 }
 
-.btn-secondary:hover {
-    background-color: #5a6268;
+.nav-register-box, .nav-who-box {
+   margin-top: 120px;
+   transition:  0.3s ease-in-out;
 }
 
+a {
+    text-decoration: none;
+    color: var(--white-texas);
+}
 
-/* Forms Styles */
+#register {
+    font-size: 20px;
+    border: 1px solid var(--white-texas);
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition:  0.3s ease-in-out;
+}
+#who {
+    font-size: 20px;
+    border: 1px solid var(--white-texas);
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition:  0.3s ease-in-out;
+}
+
+.logo-image {
+    width: 40%;
+    height: auto;
+    max-height: 400px;
+    position: relative;
+    right:15px;
+    background-image: url(../../images/etoile_texas.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.flag-div {
+    width: 100%;
+    display: flex;
+}
+
+.red-flag-div {
+    width: 50%;
+    border: 2px solid var(--red-texas);
+}
+
+.white-flag-div {
+    width: 50%;
+    border: 2px solid var(--white-texas);
+}
+
+/* FORM STYLE*/
 .form-banner{
     width: 100%;
     padding-top: 10%;
@@ -74,6 +149,7 @@ h2{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* position: fixed; */
 }
 
 .form-blurry-container {
@@ -82,11 +158,11 @@ h2{
     width: 100%;
     margin: 0;
     backdrop-filter: blur(5px); /* blurry effect in the back */
-    -webkit-backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(5px);
 }
-.cadre{
+.frame{
     width: 800px;
-    padding: 50px 0px;
+    padding: 30px 0px;
     border-radius: 3px;
     z-index: 2;
     background-color: rgb(240, 255, 255,0.5);
@@ -122,15 +198,7 @@ form{
     border-color: var(--blue-texas);
 }
 
-.step2-buttons {
-    margin: 30px 0px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-/* test */
-
+/* forms inputs */
 .inputBox{
   position: relative;
   height: 80px;
@@ -140,7 +208,7 @@ form{
   width: 100%;
   font-size: 25px;
   color: var(--black-color);
-  font-weight: bold;
+  /* font-weight: bold; */
   background: transparent;
   border: none;
   border-bottom: 2px solid black;
@@ -166,4 +234,44 @@ form{
   left: 0;
   font-style: italic;
   font-weight: 200;
+}
+
+.label-text {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+/* form buttons */
+.btn-primary, .btn-secondary {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--blue-texas);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.step2-buttons {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
 }

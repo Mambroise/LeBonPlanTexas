@@ -29,5 +29,5 @@ class Trip(models.Model):
         super().clean()  # Appelle la méthode clean parente
         if self.start_date and self.end_date and self.end_date < self.start_date:
             raise ValidationError({
-                'end_date': _('La date de fin doit être postérieure ou égale à la date de début.')
+                'end_date': _('La date de fin doit être postérieure à la date de début.')
             })

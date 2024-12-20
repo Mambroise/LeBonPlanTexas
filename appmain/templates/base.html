@@ -15,9 +15,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'appmain/css/style.css' %}">
     <script src="{% static 'appmain/js/script.js' %}" defer></script>
-    <title>Voyage au texas, trip to texas</title>
+    <title>Voyage au texas</title>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="flex-center w-100 h-100">
+            <div class="flex-around nav-box">
+                <div class="nav-register-box">
+                    <a id="register" href="">DEMANDER UN DEVIS</a>
+                </div>
+                <div class="logo-image" href="#">
+                </div>
+                <div class="nav-who-box">
+                    <a id="who" href="">QUI SOMMES NOUS</a>
+                </div>
+            </div>
+        </div>
+        <div class="flag-div">
+            <div class="red-flag-div"></div>
+            <div class="white-flag-div"></div>
+        </div>
+    </nav>
     {% block content %}
     {% endblock %}
 </body>
