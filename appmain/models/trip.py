@@ -18,7 +18,7 @@ class Trip(models.Model):
     end_date = models.DateField(_('Date de fin:'))
     cities = models.CharField(_('Villes'),max_length=255,null=True)
     comment = models.TextField(_('Commentaire:'),max_length=500,null=True)
-    vehiculed = models.BooleanField(default=False)
+    vehiculed = models.BooleanField(_('Véhiculé'),default=False)
     timestamp = models.DateTimeField(auto_now=True)
     is_done = models.BooleanField(default=False)
 

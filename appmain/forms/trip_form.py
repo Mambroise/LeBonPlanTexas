@@ -26,7 +26,7 @@ class TripForm(forms.ModelForm):
                 "style": "font-size: 17px;",
             }),
             "comment": forms.Textarea(attrs={
-                "style": ("font-size: 25px;"
+                "style": ("font-size: 20px;"
                           "width : 100%;"  
                           ),
                 "placeholder": _("Ajoutez ici toute information utile..."),
