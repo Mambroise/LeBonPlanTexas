@@ -57,7 +57,20 @@ function addStyles(selector) {
         }
         .nav-box.small {
             width: 40%;
-            transition:  0.5 ease-in-out;
+            transition:  0.5s ease-in-out;
+        }
+        .title.small {
+            margin-top: 15px;
+            font-size: 25px;
+            transition:  0.3s ease-in-out;
+        }
+        .title span.small {
+            font-size: 35px;
+            transition:  0.3s ease-in-out;
+        }
+        .title-box.small, .contact-box.small {
+            width: 25%;
+            transition:  0.3s ease-in-out;
         }
     `;
     const styleTag = document.createElement('style');
@@ -72,6 +85,10 @@ const register = document.querySelector('#register');
 const navRegisterBox = document.querySelector('.nav-register-box');
 const navWhoBox = document.querySelector('.nav-who-box');
 const navBox = document.querySelector('.nav-box')
+const title = document.querySelector('.title')
+const titleSpan = document.querySelector('.title span')
+const titleBox = document.querySelector('.title-box')
+const contactBox = document.querySelector('.contact-box')
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
@@ -81,6 +98,10 @@ window.addEventListener('scroll', () => {
         navRegisterBox.classList.add('small');
         navWhoBox.classList.add('small');
         navBox.classList.add('small');
+        title.classList.add('small');
+        titleSpan.classList.add('small');
+        titleBox.classList.add('small');
+        contactBox.classList.add('small');
     } else {
         navbar.classList.remove('small');
         who.classList.remove('small');
@@ -88,5 +109,9 @@ window.addEventListener('scroll', () => {
         navRegisterBox.classList.remove('small');
         navWhoBox.classList.remove('small');
         navBox.classList.remove('small');
+        title.classList.remove('small');
+        titleSpan.classList.remove('small');
+        titleBox.classList.remove('small');
+        contactBox.classList.remove('small');
     }
 });

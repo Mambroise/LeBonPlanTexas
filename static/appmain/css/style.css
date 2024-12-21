@@ -32,6 +32,10 @@ body{
     margin: 40px 0px;
 }
 
+.w-20 {
+    width: 20%;
+}
+
 .w-50 {
     width: 50%;
 }
@@ -68,7 +72,7 @@ h2{
 .navbar {
     width: 100%;
     background-color: var(--blue-texas);
-    height: 280px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -87,8 +91,42 @@ h2{
     overflow: hidden;
 }
 
+.title-box {
+    width: 20%;
+    height: 100%;
+}
+
+.contact-box {
+    width: 20%;
+    height: 100%;
+}
+
+.title {
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--red-texas);
+    transition:  0.3s ease-in-out;
+}
+
+.title p {
+    margin: 0;
+}
+
+.title span {
+    font-size: 65px;
+    margin: 0;
+    text-shadow: 
+    1px 1px 0px var(--white-texas),
+    -1px -1px 0px var(--white-texas),
+    -1px 1px 0px var(--white-texas),
+    1px -1px 0px var(--white-texas);
+    transition:  0.3s ease-in-out;
+}
+
 .nav-register-box, .nav-who-box {
-   margin-top: 120px;
+   margin-top: 80px;
    transition:  0.3s ease-in-out;
 }
 
@@ -115,7 +153,7 @@ a {
 .logo-image {
     width: 40%;
     height: auto;
-    max-height: 400px;
+    max-height: 300px;
     position: relative;
     right:15px;
     background-image: url(../../images/etoile_texas.webp);
