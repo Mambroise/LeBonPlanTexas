@@ -19,7 +19,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="flex-center w-100 h-100">
+        <div class="flex-center-g0 w-100 h-100">
             <div class="title-box">
                 <div class="title">
                     <p>{% translate 'LeBonPlan' %}</p>
@@ -28,7 +28,7 @@
             </div>
             <div class="flex-around nav-box">
                 <div class="nav-register-box">
-                    <a id="register" href="">{% translate 'DEMANDER UN DEVIS' %}</a>
+                    <a id="register" href="{% url 'multi_step_form' %}">{% translate 'DEMANDER UN DEVIS' %}</a>
                 </div>
                 <div class="logo-image" href="#">
                 </div>
@@ -37,8 +37,7 @@
                 </div>
             </div>
             <div class="contact-box">
-                <p>+33684197707</p>
-                <p>maurice.ambroise79@gmail.com</p>
+                <p><a href="">{% translate 'Nous contacter' %}</a></p>
             </div>
         </div>
         <div class="flag-div">
