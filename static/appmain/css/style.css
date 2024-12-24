@@ -46,7 +46,13 @@ body{
 .flex-center{
     display: flex;
     justify-content: center;
-    /* gap: 20px; */
+    gap: 20px;
+}
+
+.flex-center-g0{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .flex-around {
@@ -91,25 +97,10 @@ h2{
     height: 100%;
 }
 
-.contact-box {
-    margin-top: 50px;
-    width: 20%;
-    height: 100%;
-    color: var(--white-texas);
-}
-
-.contact-box  p {
-    text-align: end;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
 .title {
-    margin-top: 50%;
-    margin-bottom: 0;
+    margin-top: 18%;
     margin-left: 10px;
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 600;
     color: var(--white-texas);
     transition:  0.3s ease-in-out;
@@ -117,10 +108,11 @@ h2{
 
 .title p {
     margin: 0;
+    margin-bottom: 1%;
 }
 
 .title span {
-    font-size: 65px;
+    font-size: 71px;
     margin: 0;
     color: var(--white-texas);
     text-shadow: 
@@ -132,7 +124,7 @@ h2{
 }
 
 .nav-register-box, .nav-who-box {
-   margin-top: 20%;
+   margin-top: 15%;
    transition:  0.3s ease-in-out;
 }
 
@@ -143,16 +135,17 @@ a {
 
 #register {
     float: left;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 5px 10px;
     transition:  0.4s ease-in-out;
 }
+
 #who {
     float: right;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     border: 3px solid var(--white-texas);
     border-radius: 10px;
@@ -166,12 +159,27 @@ a {
     max-height: 300px;
     position: relative;
     right: 15px;
-    background-image: url(../../images/etoile_texas.webp);
+    background-image: url(../../images/logo_star.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     transition: height 0.3s ease, opacity 0.3s ease;
     opacity: 1;
+}
+
+.contact-box {
+    margin-top: 9%;
+    width: 20%;
+    height: 100%;
+    color: var(--white-texas);
+}
+
+.contact-box  p {
+    text-align: end;
+    margin: 0px 10px;
+    font-size: 30px;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 .flag-div {
@@ -181,20 +189,20 @@ a {
 
 .red-flag-div {
     width: 50%;
-    border: 2px solid var(--red-texas);
+    
 }
 
 .white-flag-div {
     width: 50%;
-    border: 2px solid var(--white-texas);
+    
 }
 
 /* INDEX STYLE */
 .landing-banner{
     width: 100%;
-    padding-top: 30%;
-    padding-bottom: 10%;
-    background-image: url('../../images/longhorn_large.jpg');
+    padding-top: 20%;
+    padding-bottom: 25%;
+    background-image: url('../../images/longhorn_index.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

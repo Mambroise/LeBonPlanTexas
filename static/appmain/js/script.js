@@ -46,7 +46,7 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.5s ease-in-out;
-            background: linear-gradient(135deg, rgb(25, 60, 201), rgb(30, 33, 165), rgb(25, 60, 201));
+            background: linear-gradient(135deg, rgb(47, 80, 212), rgb(30, 33, 165), rgb(35, 72, 219));
         }
 
         #who.small, #register.small {
@@ -75,13 +75,19 @@ function addStyles(selector) {
             transition:  0.3s ease-in-out;
         }
         .contact-box.small {
-            margin-top: 20px;
+            margin-top: 3%;
             width: 30%;
             transition:  0.3s ease-in-out;
         }
-        .contact-box p.small {
-            font-size: 15px;
+        .contact-box.small p {
+            font-size: 20px;
             transition:  0.3s ease-in-out;
+        }
+        .white-flag-div.small {
+            border: 2px solid var(--white-texas);
+        }
+        .red-flag-div.small {
+            border: 2px solid var(--red-texas);
         }
     `;
     const styleTag = document.createElement('style');
@@ -100,6 +106,9 @@ const title = document.querySelector('.title')
 const titleSpan = document.querySelector('.title span')
 const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
+const redFlag = document.querySelector('.red-flag-div')
+const whiteFlag = document.querySelector('.white-flag-div')
+
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
@@ -113,6 +122,8 @@ window.addEventListener('scroll', () => {
         titleSpan.classList.add('small');
         titleBox.classList.add('small');
         contactBox.classList.add('small');
+        redFlag.classList.add('small');
+        whiteFlag.classList.add('small');
     } else {
         navbar.classList.remove('small');
         who.classList.remove('small');
@@ -124,5 +135,7 @@ window.addEventListener('scroll', () => {
         titleSpan.classList.remove('small');
         titleBox.classList.remove('small');
         contactBox.classList.remove('small');
+        redFlag.classList.remove('small');
+        whiteFlag.classList.remove('small');
     }
 });
