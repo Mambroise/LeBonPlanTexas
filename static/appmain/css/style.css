@@ -12,11 +12,6 @@
     --white-texas: rgb(255, 255, 255);
     --red-texas: rgb(190, 0, 33);
     --black-color: rgb(0, 0, 0);
-  
-    /* Autres variables possibles */
-    --primary-font: 'Arial, sans-serif';
-    --secondary-font: 'Georgia, serif';
-    --spacing: 16px;
   }
 
 body{
@@ -51,7 +46,7 @@ body{
 .flex-center{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .flex-around {
@@ -71,18 +66,18 @@ h2{
 /* NAVBAR CSS */
 .navbar {
     width: 100%;
-    background-color: var(--blue-texas);
-    height: 220px;
+    background: transparent;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     align-items: center; 
 }
 
 .nav-box {
-    width: 50%;
+    width: 60%;
     height: 100%;
     transition:  0.2s ease-in-out;
 }
@@ -97,16 +92,26 @@ h2{
 }
 
 .contact-box {
+    margin-top: 50px;
     width: 20%;
     height: 100%;
+    color: var(--white-texas);
+}
+
+.contact-box  p {
+    text-align: end;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .title {
-    margin-top: 50px;
+    margin-top: 50%;
     margin-bottom: 0;
-    font-size: 40px;
+    margin-left: 10px;
+    font-size: 45px;
     font-weight: 600;
-    color: var(--red-texas);
+    color: var(--white-texas);
     transition:  0.3s ease-in-out;
 }
 
@@ -117,16 +122,17 @@ h2{
 .title span {
     font-size: 65px;
     margin: 0;
+    color: var(--white-texas);
     text-shadow: 
-    1px 1px 0px var(--white-texas),
-    -1px -1px 0px var(--white-texas),
-    -1px 1px 0px var(--white-texas),
-    1px -1px 0px var(--white-texas);
+    2px 2px 0px var(--red-texas),
+    -2px -2px 0px var(--red-texas),
+    -2px 2px 0px var(--red-texas),
+    2px -2px 0px var(--red-texas);
     transition:  0.3s ease-in-out;
 }
 
 .nav-register-box, .nav-who-box {
-   margin-top: 80px;
+   margin-top: 20%;
    transition:  0.3s ease-in-out;
 }
 
@@ -136,15 +142,19 @@ a {
 }
 
 #register {
+    float: left;
     font-size: 20px;
-    border: 1px solid var(--white-texas);
+    font-weight: 600;
+    border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 5px 10px;
     transition:  0.4s ease-in-out;
 }
 #who {
+    float: right;
     font-size: 20px;
-    border: 1px solid var(--white-texas);
+    font-weight: 600;
+    border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 5px 10px;
     transition:  0.4s ease-in-out;
@@ -155,7 +165,7 @@ a {
     height: auto;
     max-height: 300px;
     position: relative;
-    right:15px;
+    right: 15px;
     background-image: url(../../images/etoile_texas.webp);
     background-size: contain;
     background-position: center;
@@ -179,10 +189,23 @@ a {
     border: 2px solid var(--white-texas);
 }
 
+/* INDEX STYLE */
+.landing-banner{
+    width: 100%;
+    padding-top: 30%;
+    padding-bottom: 10%;
+    background-image: url('../../images/longhorn_large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: fixed; */
+}
+
+
 /* FORM STYLE*/
 .form-banner{
     width: 100%;
-    padding-top: 10%;
+    padding-top: 30%;
     padding-bottom: 10%;
     background-image: url('../../images/austin_buildings_large.jpg');
     background-size: cover;

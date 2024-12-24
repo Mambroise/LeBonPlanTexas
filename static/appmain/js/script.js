@@ -45,6 +45,8 @@ function addStyles(selector) {
 
         ${selector}.small {
             height: 100px;
+            transition: height 0.5s ease-in-out;
+            background: linear-gradient(135deg, rgb(25, 60, 201), rgb(30, 33, 165), rgb(25, 60, 201));
         }
 
         #who.small, #register.small {
@@ -68,8 +70,17 @@ function addStyles(selector) {
             font-size: 35px;
             transition:  0.3s ease-in-out;
         }
-        .title-box.small, .contact-box.small {
-            width: 25%;
+        .title-box.small {
+            width: 30%;
+            transition:  0.3s ease-in-out;
+        }
+        .contact-box.small {
+            margin-top: 20px;
+            width: 30%;
+            transition:  0.3s ease-in-out;
+        }
+        .contact-box p.small {
+            font-size: 15px;
             transition:  0.3s ease-in-out;
         }
     `;
