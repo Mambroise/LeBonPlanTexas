@@ -6,7 +6,6 @@
 // # ---------------------------------------------------------------------------
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
 // Étape 3 : Gestion des catégories
 const categoryCards = document.querySelectorAll(".category-card");
@@ -46,7 +45,8 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.5s ease-in-out;
-            background: linear-gradient(135deg, rgb(47, 80, 212), rgb(30, 33, 165), rgb(35, 72, 219));
+            // background: linear-gradient(135deg, rgb(47, 80, 212), rgb(30, 33, 165), rgb(35, 72, 219));
+            background: linear-gradient(135deg,rgb(67, 111, 58),rgb(55, 89, 48),rgb(67, 111, 58));
         }
 
         #who.small, #register.small {
@@ -84,10 +84,10 @@ function addStyles(selector) {
             transition:  0.3s ease-in-out;
         }
         .white-flag-div.small {
-            border: 2px solid var(--white-texas);
+            border: 1px solid var(--blue-texas);
         }
         .red-flag-div.small {
-            border: 2px solid var(--red-texas);
+            border: 1px solid var(--red-texas);
         }
     `;
     const styleTag = document.createElement('style');
@@ -110,6 +110,7 @@ const redFlag = document.querySelector('.red-flag-div')
 const whiteFlag = document.querySelector('.white-flag-div')
 
 
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
@@ -124,6 +125,7 @@ window.addEventListener('scroll', () => {
         contactBox.classList.add('small');
         redFlag.classList.add('small');
         whiteFlag.classList.add('small');
+        
     } else {
         navbar.classList.remove('small');
         who.classList.remove('small');
