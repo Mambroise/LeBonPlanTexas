@@ -69,6 +69,7 @@ body{
 h2{
     font-size:30px;
     margin: 30px 0px;
+    color: var(--black-color);
 }
 
 /* NAVBAR CSS */
@@ -88,10 +89,6 @@ h2{
     width: 60%;
     height: 100%;
     transition:  0.2s ease-in-out;
-}
-
-.navbar {
-    overflow: hidden;
 }
 
 .title-box {
@@ -184,20 +181,6 @@ a {
     text-decoration: underline;
 }
 
-.flag-div {
-    width: 100%;
-    display: flex;
-}
-
-.red-flag-div {
-    width: 50%;
-    
-}
-
-.white-flag-div {
-    width: 50%;
-    
-}
 
 /* NAVBAR NO ANIMATION  */
 .navbar-fixed {
@@ -209,7 +192,8 @@ a {
     top: 0;
     z-index: 100;
     align-items: center; 
-    background: linear-gradient(135deg, rgb(47, 80, 212), rgb(30, 33, 165), rgb(35, 72, 219));
+    background: linear-gradient(135deg,rgb(67, 111, 58),rgb(55, 89, 48),rgb(67, 111, 58));
+    border-bottom: 1px solid var(--black-color);
 }
 
 #who-fixed {
@@ -270,7 +254,7 @@ a {
 }
 
 .contact-box-fixed {
-    margin-top: 3%;
+    margin-top: 2%;
     width: 30%;
     height: 100%;
     color: var(--white-texas);
@@ -284,14 +268,6 @@ a {
     text-decoration: underline;
 }
 
-.white-flag-div-fixed {
-    width: 50%;
-    border: 2px solid var(--white-texas);
-}
-.red-flag-div-fixed {
-    width: 50%;
-    border: 2px solid var(--red-texas);
-}
 
 /* INDEX STYLE */
 
@@ -305,6 +281,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    border-bottom: 1px solid var(--black-color);
 }
 
 .round-banner {
@@ -334,13 +311,22 @@ a {
     justify-content: space-between;
     gap: 20px;
     height: 60vh;
-    margin-top: 10px;
+    margin-top: 1px;
+}
+
+.mobile-picture {
+    margin-top: 8%;
+    width: 20%;
+    background-image: url('../../images/mobile.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bdd-accroche {
     width: 30%;
-    padding: 10%;
-    font-size: 1.7rem;
+    padding: 5%;
+    font-size: 2rem;
     color: var(--black-color);
 }
 
@@ -365,7 +351,7 @@ a {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 300%;
-    height: 100%; /* Ajusté selon le nombre d'images */
+    height: 100%; 
 }
 
 .carousel-item {
@@ -384,13 +370,14 @@ a {
 
 .carousel-caption {
     position: absolute;
-    bottom: 10%;
+    bottom: 2%;
     left: 50%;
+    width: 80%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 1.2rem;
     text-align: center;
 }
@@ -418,7 +405,7 @@ a {
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(55, 89, 48,0.8);
 }
 
 /* FORM STYLE*/
@@ -451,6 +438,7 @@ a {
 form{
     min-width: 400px;
     margin: 60px 0px;
+    color: var(--black-color);
 }
 
 #category-container {
@@ -553,4 +541,37 @@ form{
     display: flex;
     justify-content: space-around;
     gap: 10px;
+}
+
+/* FOOTER STYLE */
+footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 400px;
+    background-color: var(--black-color);
+}
+
+.social-box {
+    padding-top: 15px;
+    padding-left: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--white-texas);
+}
+
+.info-box {
+    width: 100%;
+    height: 220px;
+}
+
+.right-reserved-box {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid var(--white-texas);
+}
+
+.right-reserved-box p, .right-reserved-box a {
+    text-align: center;
 }

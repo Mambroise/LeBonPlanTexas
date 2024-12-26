@@ -12,9 +12,6 @@ let currentIndex = 0;
 function moveCarousel(direction) {
     const items = document.querySelectorAll('.carousel-item');
     const totalItems = items.length;
-    console.log("intem length"+totalItems);
-    
-    console.log("click");
     
     currentIndex += direction;
 
@@ -25,5 +22,13 @@ function moveCarousel(direction) {
     }
 
     const carouselImages = document.querySelector('.carousel-images');
-    carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    carouselImages.style.transform = `translateX(-${currentIndex * 33.33}%)`;
 }
+
+// Fonction pour changer automatiquement les images
+function autoMoveCarousel() {
+    moveCarousel(1); // Passe à l'image suivante
+}
+
+// Ajouter un intervalle de 6 secondes
+setInterval(autoMoveCarousel, 6000);

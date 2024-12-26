@@ -40,15 +40,22 @@
                 </div>
             </div>
             <div class="contact-box">
-                <p><a href="">{% translate 'Nous contacter' %}</a></p>
+                <div>
+                    <a href="#">
+
+                    </a>
+                    <a href="#">
+                        
+                    </a>
+                </div>
+
+                <p><a href="">{% translate 'nous contacter' %}</a></p>
             </div>
-        </div>
-        <div class="flag-div">
-            <div class="red-flag-div"></div>
-            <div class="white-flag-div"></div>
         </div>
     </nav>
     {% block content %}
     {% endblock %}
+
+    {% include 'footer.html' %}
 </body>
 </html>
