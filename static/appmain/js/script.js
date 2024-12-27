@@ -44,7 +44,7 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.5s ease-in-out;
-            background: linear-gradient(135deg,rgb(67, 111, 58),rgb(55, 89, 48),rgb(67, 111, 58));
+            background: linear-gradient(135deg,rgb(67, 111, 58, 0.95),rgb(55, 89, 48, 0.95),rgb(67, 111, 58, 0.95));
             border-bottom: 1px solid var(--black-color);
         }
         #who.small, #register.small {
