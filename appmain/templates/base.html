@@ -36,20 +36,19 @@
                 <div class="logo-image">
                 </div>
                 <div class="nav-who-box">
-                    <a id="who" href="">{% translate 'QUI SOMMES NOUS' %}</a>
+                    <a id="who" href="{% url 'identity' %}">{% translate 'QUI SOMMES NOUS' %}</a>
                 </div>
             </div>
             <div class="contact-box">
-                <div>
+                <div class="flag-box">
                     <a href="#">
-
+                        <img src="{% static 'images/icons/french_flag.webp' %}" alt="french flag" class="flag-img">
                     </a>
                     <a href="#">
-                        
+                        <img src="{% static 'images/icons/us_flag.webp' %}" alt="us flag" class="flag-img-us">
                     </a>
+                    <p><a href="">{% translate 'nous contacter' %}</a></p>
                 </div>
-
-                <p><a href="">{% translate 'nous contacter' %}</a></p>
             </div>
         </div>
     </nav>
