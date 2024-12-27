@@ -71,8 +71,14 @@ function addStyles(selector) {
             width: 30%;
             transition:  0.3s ease-in-out;
         }
+        .flag-img.small {
+            width: 40px;
+            }
+        .flag-img-us.small {
+            width: 38px;
+        }
         .contact-box.small {
-            margin-top: 2%;
+            margin-top: 1%;
             width: 30%;
             transition:  0.3s ease-in-out;
         }
@@ -98,7 +104,8 @@ const title = document.querySelector('.title')
 const titleSpan = document.querySelector('.title span')
 const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
-
+const flagImg = document.querySelector('.flag-img');
+const flagImgUs = document.querySelector('.flag-img-us');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
@@ -112,6 +119,8 @@ window.addEventListener('scroll', () => {
         titleSpan.classList.add('small');
         titleBox.classList.add('small');
         contactBox.classList.add('small');
+        flagImg.classList.add('small');
+        flagImgUs.classList.add('small');
 
     } else {
         navbar.classList.remove('small');
@@ -124,6 +133,8 @@ window.addEventListener('scroll', () => {
         titleSpan.classList.remove('small');
         titleBox.classList.remove('small');
         contactBox.classList.remove('small');
+        flagImg.classList.remove('small')
+        flagImgUs.classList.remove('small')
 
     }
 });

@@ -13,16 +13,18 @@
 
 {% block content %}
 <div class="landing-banner">
+    <!-- Longhorn picture banner -->
     <div class="round-banner">
         <p>{% translate 'Planifiez votre voyage sur une application et les meilleures activités au Texas' %}</p>
     </div>
 </div>
+    <!-- First banner with adds on the right -->
     <div class="first-banner">
         <div class="mobile-picture">
         </div>
         <div class="bdd-accroche">
             <p>{% translate 'Des centaines de visites, activités, évènements et sorties mis à jour quotidiennement' %}</p>
-            <p>{% translate 'Obtenez le meilleur du Texas à partir de' %} <strong>{% translate '5 euros/jour' %}</strong></p>
+            <p>{% translate 'Obtenez le meilleur du Texas à partir de' %} <strong>{% translate '5 euros' %}</strong></p>
         </div>
         <div class="bdd-activities-box">
             <!-- carrousel for advertissements -->
@@ -44,6 +46,12 @@
                 <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
                 <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
             </div>            
+        </div>
+    </div>
+    <div class="second-banner">
+        <h1 class="banner-title">Nos services</h1>
+        <div class="service-box">
+            
         </div>
     </div>
 {% endblock %}

@@ -142,6 +142,11 @@ a {
     transition:  0.4s ease-in-out;
 }
 
+#register:hover, #who:hover {
+    background: var(--white-texas);
+    color: var(--green-color);
+}
+
 #who {
     float: right;
     font-size: 18px;
@@ -166,8 +171,22 @@ a {
     opacity: 1;
 }
 
+.flag-box {
+    float: right;
+}
+
+.flag-img {
+    width: 50px;
+    margin-left: 10%;
+}
+
+.flag-img-us {
+    width: 48px;
+    margin-left: 10%;
+}
+
 .contact-box {
-    margin-top: 9%;
+    margin-top: 6%;
     width: 20%;
     height: 100%;
     color: var(--white-texas);
@@ -176,7 +195,7 @@ a {
 .contact-box  p {
     text-align: end;
     margin: 0px 10px;
-    font-size: 30px;
+    font-size: 25px;
     font-style: italic;
     text-decoration: underline;
 }
@@ -253,6 +272,15 @@ a {
     height: 100%;
 }
 
+.flag-box-fixed {
+    float: right;
+}
+
+.flag-img-fixed {
+    width: 40px;
+    margin-left: 10%;
+}
+
 .contact-box-fixed {
     margin-top: 2%;
     width: 30%;
@@ -291,7 +319,7 @@ a {
     width: 250px;
     height: 250px;
     font-size: 1.7rem;
-    background: linear-gradient(135deg,rgb(80, 132, 70),rgb(55, 89, 48),rgb(67, 111, 58));
+    background: linear-gradient(135deg,rgb(80, 132, 70, 0.9),rgb(55, 89, 48, 0.9),rgb(67, 111, 58, 0.9));
     border-radius: 50%; 
     display: flex;
     justify-content: center;
@@ -311,7 +339,7 @@ a {
     justify-content: space-between;
     gap: 20px;
     height: 60vh;
-    margin-top: 1px;
+    margin-top: 30px;
 }
 
 .mobile-picture {
@@ -406,6 +434,46 @@ a {
 
 .carousel-btn:hover {
     background-color: rgb(55, 89, 48,0.8);
+}
+
+/* SECOND BANNER STYLE */
+.second-banner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.service-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* WHO ARE WE PAGE */
+.who-banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/fort_worth_stockayds_coliseum.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.round-who-banner {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    max-width: 25%;
+    background-color: var(--white-texas);
+    opacity: 0.7;
+    border-radius: 10px;
+    color: var(--green-color);
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 /* FORM STYLE*/
