@@ -124,6 +124,7 @@ h2{
 
 .nav-register-box, .nav-who-box {
    margin-top: 15%;
+   width: auto;
    transition:  0.3s ease-in-out;
 }
 
@@ -464,7 +465,7 @@ a {
     justify-content: space-between;
     gap: 20px;
     height: auto;
-    padding: 0.8rem 0;
+    padding: 1.3rem 0;
     background-color: rgba(79, 143, 66, 0.3);
     border-top: 1px solid var(--black-color);
     border-bottom: 1px solid var(--black-color);
@@ -521,6 +522,29 @@ a {
 
 .veil:hover {
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+.veil h3 {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    font-size: 2.2rem;
+    width: 80%;
+}
+
+.veil p {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 1.6rem;
+    width: 60%;
+    font-style: italic;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.6;
+}
+
+.veil:hover p {
+    opacity: 1;
 }
 
 /* WHO ARE WE PAGE */
