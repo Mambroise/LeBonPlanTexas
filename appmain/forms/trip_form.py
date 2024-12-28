@@ -29,7 +29,7 @@ class TripForm(forms.ModelForm):
                 "style": ("font-size: 20px;"
                           "width : 100%;"  
                           ),
-                "placeholder": _("Ajoutez ici toute information utile..."),
+                "placeholder": _("Information utile, adresse complète de l'hotel..."),
             }),
         }
 
