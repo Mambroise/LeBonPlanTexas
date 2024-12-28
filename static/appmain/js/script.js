@@ -43,9 +43,13 @@ function addStyles(selector) {
         }
         ${selector}.small {
             height: 100px;
-            transition: height 0.5s ease-in-out;
+            transition: height 0.3s ease-in-out;
             background: linear-gradient(135deg,rgb(67, 111, 58, 0.95),rgb(55, 89, 48, 0.95),rgb(67, 111, 58, 0.95));
             border-bottom: 1px solid var(--black-color);
+        }
+        .logo-image.small {
+           background-position-x: 5rem;
+           transition: 0.1s ease
         }
         #who.small, #register.small {
             font-size: 12px;
@@ -106,10 +110,12 @@ const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
 const flagImg = document.querySelector('.flag-img');
 const flagImgUs = document.querySelector('.flag-img-us');
+const logoImage = document.querySelector('.logo-image');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
+        logoImage.classList.add('small');
         who.classList.add('small');
         register.classList.add('small');
         navRegisterBox.classList.add('small');
@@ -124,6 +130,7 @@ window.addEventListener('scroll', () => {
 
     } else {
         navbar.classList.remove('small');
+        logoImage.classList.remove('small');
         who.classList.remove('small');
         register.classList.remove('small');
         navRegisterBox.classList.remove('small');
