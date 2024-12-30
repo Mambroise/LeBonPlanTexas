@@ -1,0 +1,40 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/footer.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+/* FOOTER STYLE */
+footer {
+    margin-top: 1.875rem;
+    width: 100%;
+    height: 25rem;
+    background-color: var(--black-color);
+}
+
+.social-box {
+    padding-top: 1rem;
+    padding-left: 1.25rem;
+    height: 3.125;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--white-texas);
+}
+
+.info-box {
+    width: 100%;
+    height: 13.75rem;
+}
+
+.right-reserved-box {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid var(--white-texas);
+}
+
+.right-reserved-box p, .right-reserved-box a {
+    text-align: center;
+}

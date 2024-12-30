@@ -1,0 +1,38 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/responsive.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+/* RESPONSIVE */
+
+html {
+    font-size: 16px; /* par défaut */
+}
+
+@media (max-width: 1100px) {
+    html {
+        font-size: 12px; /* réduire la taille pour tablettes */
+    }
+    /* REGISTER PAGE */
+    .register-instructions {
+        width: 60%;
+        border-bottom: 1px solid var(--black-color);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px; /* encore plus petit pour mobiles */
+    }
+
+    /* WHO ARE WE PAGE */
+    .round-who-banner {
+        width: 80%;
+        max-width: 90%;
+        top: 80%;
+        left: 8%;
+    }
+}

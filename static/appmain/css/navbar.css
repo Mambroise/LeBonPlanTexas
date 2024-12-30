@@ -1,0 +1,136 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/navbar.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+/* NAVBAR CSS */
+.navbar {
+    width: 100%;
+    background: transparent;
+    height: 18.75rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    align-items: center; 
+}
+
+.nav-box {
+    width: 60%;
+    height: 100%;
+    transition:  0.2s ease-in-out;
+}
+
+.title-box {
+    width: 20%;
+    height: 100%;
+}
+
+.title {
+    margin-top: 18%;
+    margin-left: 10px;
+    font-size: 3.1rem;
+    font-weight: 600;
+    color: var(--white-texas);
+    transition:  0.3s ease-in-out;
+}
+
+.title p {
+    margin: 0;
+    margin-bottom: 1%;
+}
+
+.title span {
+    font-size: 4.5rem;
+    margin: 0;
+    color: var(--white-texas);
+    text-shadow: 
+    2px 2px 0px var(--red-texas),
+    -2px -2px 0px var(--red-texas),
+    -2px 2px 0px var(--red-texas),
+    2px -2px 0px var(--red-texas);
+    transition:  0.3s ease-in-out;
+}
+
+.nav-register-box, .nav-who-box {
+   margin-top: 12%;
+   width: 30%;
+   transition:  0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-texas);
+}
+
+#register {
+    float: left;
+    font-size: 1.33rem;
+    font-weight: 600;
+    border: 3px solid var(--white-texas);
+    border-radius: 10px;
+    padding: 2px 5px;
+    transition:  0.4s ease-in-out;
+}
+
+#register:hover, #who:hover {
+    background: var(--white-texas);
+    color: var(--brick-color);
+}
+
+#who {
+    float: right;
+    font-size: 1.33rem;
+    font-weight: 600;
+    border: 3px solid var(--white-texas);
+    border-radius: 10px;
+    padding: 2px 5px;
+    transition:  0.4s ease-in-out;
+}
+
+.logo-image {
+    width: 40%;
+    height: auto;
+    max-height: 300px;
+    position: relative;
+    right: 15px;
+    background-image: url(../../images/logo_star.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.flag-box {
+    float: right;
+}
+
+.flag-img {
+    width: 50px;
+    margin-left: 10%;
+}
+
+.flag-img-us {
+    width: 48px;
+    margin-left: 10%;
+}
+
+.contact-box {
+    margin-top: 6%;
+    width: 20%;
+    height: 100%;
+    color: var(--white-texas);
+}
+
+.contact-box  p {
+    text-align: end;
+    margin: 0px 10px;
+    font-size: 1.56rem;
+    font-style: italic;
+    text-decoration: underline;
+}

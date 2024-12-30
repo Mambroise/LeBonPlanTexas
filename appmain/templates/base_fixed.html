@@ -1,0 +1,60 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/base_fixed.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'appmain/css/style.css' %}">
+    <script src="{% static 'appmain/js/script.js' %}" defer></script>
+    <script src="{% static 'appmain/js/carousels.js' %}" defer></script>
+    <title>Voyage au texas</title>
+</head>
+<body>
+    <nav class="navbar-fixed">
+        <div class="flex-center-g0 w-100 h-100">
+            <div class="title-box-fixed">
+                <div class="title-fixed">
+                    <a href="{% url 'index' %}">
+                        <p>{% translate 'LeBonPlan' %}</p>
+                        <p><span>{% translate 'TEXAS' %}</span></p>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-around nav-box-fixed">
+                <div class="nav-register-box-fixed">
+                    <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'DEVIS GRATUIT' %}</a>
+                </div>
+                <div class="logo-image-fixed" href="#">
+                </div>
+                <div class="nav-who-box-fixed">
+                    <a id="who-fixed" href="{% url 'identity' %}">{% translate 'QUI SOMMES NOUS' %}</a>
+                </div>
+            </div>
+            <div class="contact-box-fixed">
+                <div class="flag-box-fixed">
+                    <a href="#">
+                        <img src="{% static 'images/icons/french_flag.webp' %}" alt="french flag" class="flag-img-fixed">
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/icons/us_flag.webp' %}" alt="us flag" class="flag-img-fixed">
+                    </a>
+                    <p><a href="">{% translate 'nous contacter' %}</a></p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+</body>
+</html>

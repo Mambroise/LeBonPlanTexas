@@ -44,15 +44,18 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.3s ease-in-out;
-            background: var(--navbar-and-dot);
+            /*  VERSION2 BG */
+            /* background: var(--navbar-and-dot); */
+            /* VERSION3 BG */
+            background: var(--navbar-black);
             border-bottom: 1px solid var(--black-color);
         }
         .logo-image.small {
-           background-position-x: 5rem;
+           background-position-x: 4.5rem;
            transition: 0.1s ease
         }
         #who.small, #register.small {
-            font-size: 12px;
+            font-size: 1.05rem;
             transition:  0.3s ease-in-out;
         }
         .nav-register-box.small, .nav-who-box.small {
