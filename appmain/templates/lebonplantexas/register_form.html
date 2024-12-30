@@ -6,156 +6,115 @@
 # --------------------------------------------------------------------------- -->
 
 
+{% extends 'base_fixed.html' %}
+
 {% load static %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'appmain/css/style.css' %}">
-    <script src="{% static 'appmain/js/script.js' %}" defer></script>
-    <title>Voyage au texas</title>
-</head>
-<body>
-    <nav class="navbar-fixed">
-        <div class="flex-center-g0 w-100 h-100">
-            <div class="title-box-fixed">
-                <div class="title-fixed">
-                    <a href="{% url 'index' %}">
-                        <p>{% translate 'LeBonPlan' %}</p>
-                        <p><span>{% translate 'TEXAS' %}</span></p>
-                    </a>
-                </div>
-            </div>
-            <div class="flex-around nav-box-fixed">
-                <div class="nav-register-box-fixed">
-                    <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'DEVIS GRATUIT' %}</a>
-                </div>
-                <div class="logo-image-fixed" href="#">
-                </div>
-                <div class="nav-who-box-fixed">
-                    <a id="who-fixed" href="{% url 'identity' %}">{% translate 'QUI SOMMES NOUS' %}</a>
-                </div>
-            </div>
-            <div class="contact-box-fixed">
-                <div class="flag-box-fixed">
-                    <a href="#">
-                        <img src="{% static 'images/icons/french_flag.webp' %}" alt="french flag" class="flag-img-fixed">
-                    </a>
-                    <a href="#">
-                        <img src="{% static 'images/icons/us_flag.webp' %}" alt="us flag" class="flag-img-fixed">
-                    </a>
-                    <p><a href="">{% translate 'nous contacter' %}</a></p>
-                </div>
-            </div>
+{% block content %}
+<div class="form-banner">
+    <div class="form-blurry-container">
+        <div class="register-instructions">
+            <h1>{% translate 'DISCUTONS DE VOTRE PROJET' %}</h1>
+            <p>{% translate 'Enregistrez vous afin que nous puissions découvrir ce que vous recherchez.' %}
+            {% translate 'Nous communiquerons rapidement autour de vos besoins et nous saurons gagner votre confiance.' %}
+            <p>{% translate 'Etape 1: coodonnées de base' %}</p>
+            <p>{% translate 'Etape 2: votre voyage. N\'hésitez pas à le diviser à l\'aide du bouton "ajouter une étape",' %}
+                {% translate ' surtout si ces étapes impliquent de nouvelles villes et adresses.' %}<br>
+                {% translate '(Ne signalez que les dates/étapes où vous auriez éventuellement besoin de nous)' %}</p>
+            <p>{% translate 'Etape 3: Cliquez frénétiquement sur ce qui vous intéresse!!' %}</p>
         </div>
-    </nav>
-    <div class="form-banner">
-        <div class="form-blurry-container">
-            <div class="register-instructions">
-                <h1>{% translate 'DISCUTONS DE VOTRE PROJET' %}</h1>
-                <p>{% translate 'Enregistrez vous afin que nous puissions découvrir ce que vous recherchez.' %}
-                {% translate 'Nous communiquerons rapidement autour de vos besoins et nous saurons gagner votre confiance.' %}
-                <p>{% translate 'Etape 1: coodonnées de base' %}</p>
-                <p>{% translate 'Etape 2: votre voyage. N\'hésitez pas à le diviser à l\'aide du bouton "ajouter une étape",' %}
-                    {% translate ' surtout si ces étapes impliquent de nouvelles villes et adresses.' %}<br>
-                    {% translate '(Ne signalez que les dates/étapes où vous auriez éventuellement besoin de nous)' %}</p>
-                <p>{% translate 'Etape 3: Cliquez frénétiquement sur ce qui vous intéresse!!' %}</p>
-            </div>
-            <div class="frame">
-                <div>
-                    <h2 class="text-center">{% translate 'Étape' %} {{ step }}/3</h2>
-                
-                    <form method="post">
+        <div class="frame">
+            <div>
+                <h2 class="text-center">{% translate 'Étape' %} {{ step }}/3</h2>
+            
+                <form method="post">
+                    {% csrf_token %}
+                    {% if step == 1 %}
+                    <div class="flex-center">
+                        <div>
+                            <div class="inputBox">
+                                <input type="text" name="first_name" id="id_first_name" class="form-control" required>
+                                <strong for="id_first_name">{{ form.first_name.label }}</strong>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="last_name" id="id_last_name" class="form-control" required>
+                                <strong for="id_last_name">{{ form.last_name.label }}</strong>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inputBox">
+                                <input type="text" name="email" id="id_email" class="form-control" required>
+                                <strong for="id_email">{{ form.email.label }}</strong>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="phone" id="id_phone" class="form-control" required>
+                                <strong for="id_phone">{{ form.phone.label }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-center my-4">
+                        <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
+                    </div>
+    
+                    {% elif step == 2 %}
+                    <div class="flex-center">
+                        <div>
+                            <!-- start and end dates box -->
+                            <div class="flex-around">
+                                <div>
+                                    <p class="label-text">{{ form.start_date.label }}</p>
+                                    {{ form.start_date }}
+                                </div>
+                                <div>
+                                    <p class="label-text">{{ form.end_date.label }}</p>
+                                    {{ form.end_date }}
+                                </div>
+                            </div>
+                            <div class="inputBox my-4">
+                                <input type="text" name="cities" id="id_cities" class="form-control" required>
+                                <strong for="id_cities">{{ form.cities.label }}</strong>
+                            </div>
+                            <div class="">
+                                <strong class="label-text">{{ form.vehiculed.label }}</strong>
+                                {{ form.vehiculed }}
+                            </div>
+                        </div>
+                        <div class="w-50">
+                            <p class="label-text">{{ form.comment.label }}</p>
+                            {{ form.comment }}
+                        </div>
+                    </div>
+                    
+                    <!-- step2 special buttons box -->
+                    <div class="step2-buttons">
+                        <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
+                        <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
+                    </div>
+                </form>
+                {% elif step == 3 %}
+                    <p class="label-text">Choisissez une ou plusieurs catégories :</p>
+                    <form id="category-form" method="post">
                         {% csrf_token %}
-                        {% if step == 1 %}
-                        <div class="flex-center">
-                            <div>
-                                <div class="inputBox">
-                                    <input type="text" name="first_name" id="id_first_name" class="form-control" required>
-                                    <strong for="id_first_name">{{ form.first_name.label }}</strong>
+                        <div id="category-container">
+                            {% for category in categories %}
+                                <div class="category-card" data-category-id="{{ category.id }}">
+                                    {{ category.name }}
                                 </div>
-                                <div class="inputBox">
-                                    <input type="text" name="last_name" id="id_last_name" class="form-control" required>
-                                    <strong for="id_last_name">{{ form.last_name.label }}</strong>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="inputBox">
-                                    <input type="text" name="email" id="id_email" class="form-control" required>
-                                    <strong for="id_email">{{ form.email.label }}</strong>
-                                </div>
-                                <div class="inputBox">
-                                    <input type="text" name="phone" id="id_phone" class="form-control" required>
-                                    <strong for="id_phone">{{ form.phone.label }}</strong>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
-                        <div class="flex-center">
-                            <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
-                        </div>
-        
-                        {% elif step == 2 %}
-                        <div class="flex-center">
-                            <div>
-                                <!-- start and end dates box -->
-                                <div class="flex-around">
-                                    <div>
-                                        <p class="label-text">{{ form.start_date.label }}</p>
-                                        {{ form.start_date }}
-                                    </div>
-                                    <div>
-                                        <p class="label-text">{{ form.end_date.label }}</p>
-                                        {{ form.end_date }}
-                                    </div>
-                                </div>
-                                <div class="inputBox my-4">
-                                    <input type="text" name="cities" id="id_cities" class="form-control" required>
-                                    <strong for="id_cities">{{ form.cities.label }}</strong>
-                                </div>
-                                <div class="">
-                                    <strong class="label-text">{{ form.vehiculed.label }}</strong>
-                                    {{ form.vehiculed }}
-                                </div>
-                            </div>
-                            <div class="w-50">
-                                <p class="label-text">{{ form.comment.label }}</p>
-                                {{ form.comment }}
-                            </div>
-                        </div>
-                        
-                        <!-- step2 special buttons box -->
-                        <div class="step2-buttons">
-                            <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
-                            <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
+                        <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
+                        <input type="hidden" name="categories" id="selected-categories" value="">
+                        <div class="flex-center">                
+                            <button type="submit" class="btn-primary">VALIDER</button>
                         </div>
                     </form>
-                    {% elif step == 3 %}
-                        <p class="label-text">Choisissez une ou plusieurs catégories :</p>
-                        <form id="category-form" method="post">
-                            {% csrf_token %}
-                            <div id="category-container">
-                                {% for category in categories %}
-                                    <div class="category-card" data-category-id="{{ category.id }}">
-                                        {{ category.name }}
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
-                            <input type="hidden" name="categories" id="selected-categories" value="">
-                            <div class="flex-center">                
-                                <button type="submit" class="btn-primary">VALIDER</button>
-                            </div>
-                        </form>
-                    {% endif %}
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    {% include 'footer.html' %}
-</body>
-</html>
+</div>
+{% endblock %}
+
 
 

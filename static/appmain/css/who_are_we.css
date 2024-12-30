@@ -1,0 +1,33 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/who_are_we.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+/* WHO ARE WE PAGE */
+.who-banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/fort_worth_stockayds_coliseum.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.round-who-banner {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    max-width: 25%;
+    background-color: var(--white-texas);
+    opacity: 0.8;
+    border-radius: 0.625rem;
+    color: var(--navbar-and-dot);
+    padding: 0.625rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
