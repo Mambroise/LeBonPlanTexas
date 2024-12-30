@@ -45,13 +45,13 @@ def multi_step_form(request):
             # Vérifier quel bouton a été utilisé
             if "add_trip" in request.POST:
                 messages.success(request, _("L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."))
-                return redirect('multi_step_form')  # Retourne à l'étape 2 pour une nouvelle entrée
+                return redirect('multi_step_form') 
             elif "finish_trips" in request.POST:
                 request.session['step'] = 3
                 return redirect('multi_step_form')
 
     elif step == 3:
-        categories = Category.objects.all()
+        categories = Category.objects.all().order_by('-id')
         if request.method == "POST":
             # Étape 3.1 : Création du client
             customer_data = request.session.get('customer_data')

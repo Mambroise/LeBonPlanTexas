@@ -31,9 +31,9 @@
             </div>
             <div class="flex-around nav-box-fixed">
                 <div class="nav-register-box-fixed">
-                    <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'DEMANDER UN DEVIS' %}</a>
+                    <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'DEVIS GRATUIT' %}</a>
                 </div>
-                <div class="logo-image" href="#">
+                <div class="logo-image-fixed" href="#">
                 </div>
                 <div class="nav-who-box-fixed">
                     <a id="who-fixed" href="{% url 'identity' %}">{% translate 'QUI SOMMES NOUS' %}</a>
@@ -54,7 +54,7 @@
     </nav>
     <div class="form-banner">
         <div class="form-blurry-container">
-            <div class="register-title">
+            <div class="register-instructions">
                 <h1>{% translate 'DISCUTONS DE VOTRE PROJET' %}</h1>
                 <p>{% translate 'Enregistrez vous afin que nous puissions découvrir ce que vous recherchez.' %}
                 {% translate 'Nous communiquerons rapidement autour de vos besoins et nous saurons gagner votre confiance.' %}
@@ -111,7 +111,7 @@
                                         {{ form.end_date }}
                                     </div>
                                 </div>
-                                <div class="inputBox my-40">
+                                <div class="inputBox my-4">
                                     <input type="text" name="cities" id="id_cities" class="form-control" required>
                                     <strong for="id_cities">{{ form.cities.label }}</strong>
                                 </div>
@@ -128,8 +128,8 @@
                         
                         <!-- step2 special buttons box -->
                         <div class="step2-buttons">
-                            <button type="submit" name="add_trip" class="btn-secondary">Ajouter une autre étape</button>
-                            <button type="submit" name="finish_trips" class="btn-primary">Passer à l'étape suivante</button>
+                            <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
+                            <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
                         </div>
                     </form>
                     {% elif step == 3 %}
@@ -145,7 +145,9 @@
                             </div>
                             <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
                             <input type="hidden" name="categories" id="selected-categories" value="">
-                            <button type="submit" class="btn-primary">Valider</button>
+                            <div class="flex-center">                
+                                <button type="submit" class="btn-primary">VALIDER</button>
+                            </div>
                         </form>
                     {% endif %}
                 </div>

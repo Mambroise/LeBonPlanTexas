@@ -19,14 +19,14 @@ class TripForm(forms.ModelForm):
         widgets = {
             "start_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": "font-size: 17px;",
+                "style": "font-size: 1rem;",
             }),
             "end_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": "font-size: 17px;",
+                "style": "font-size: 1rem;",
             }),
             "comment": forms.Textarea(attrs={
-                "style": ("font-size: 20px;"
+                "style": ("font-size: 1.25rem;"
                           "width : 100%;"  
                           ),
                 "placeholder": _("Information utile, adresse complète de l'hotel..."),

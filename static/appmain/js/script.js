@@ -44,7 +44,7 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.3s ease-in-out;
-            background: linear-gradient(135deg,rgb(67, 111, 58, 0.95),rgb(55, 89, 48, 0.95),rgb(67, 111, 58, 0.95));
+            background: var(--navbar-and-dot);
             border-bottom: 1px solid var(--black-color);
         }
         .logo-image.small {
@@ -64,11 +64,11 @@ function addStyles(selector) {
         }
         .title.small {
             margin-top: 15px;
-            font-size: 25px;
+            font-size: 1.6rem;
             transition:  0.3s ease-in-out;
         }
         .title span.small {
-            font-size: 35px;
+            font-size: 2.2rem;
             transition:  0.3s ease-in-out;
         }
         .title-box.small {
