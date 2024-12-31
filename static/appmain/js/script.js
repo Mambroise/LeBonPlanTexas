@@ -87,7 +87,7 @@ function addStyles(selector) {
             transition:  0.3s ease-in-out;
         }
         .contact-box.small p {
-            font-size: 20px;
+            font-size: 1.5rem;
             transition:  0.3s ease-in-out;
         }
 

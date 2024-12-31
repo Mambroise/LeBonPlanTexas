@@ -192,6 +192,13 @@ html {
     } 
 }
 
+@media (max-width: 600px) {
+    .mobile-picture {
+        display: none;
+    }
+
+}
+
 
 @media (max-width: 480px) {
     html {
@@ -212,9 +219,6 @@ html {
         height: 30vh;
     }
 
-    .mobile-picture {
-        display: none;
-    }
 
     /* WHO ARE WE PAGE */
     .round-who-banner {
@@ -222,5 +226,13 @@ html {
         max-width: 90%;
         top: 80%;
         left: 8%;
+    }
+
+    /* /REGISTER */
+    .form1 {
+        /* display: flex; */
+        flex-direction: column;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 }

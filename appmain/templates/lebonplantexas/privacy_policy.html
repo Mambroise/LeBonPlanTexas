@@ -1,0 +1,103 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/privacy_policy.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% extends 'base_fixed.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="privacy_policy">
+    <h1>{% trans "Politique de Confidentialité" %}</h1>
+    <p>{% trans "Dernière mise à jour : " %}01/01/2025</p>
+
+    <section>
+        <h2>{% trans "1. Informations que nous collectons" %}</h2>
+        <p>{% trans "Nous pouvons collecter les informations suivantes lorsque vous utilisez notre site ou nos services :" %}</p>
+        
+        <h3>{% trans "Informations personnelles fournies directement par vous :" %}</h3>
+        <ul>
+            <li>{% trans "Nom, prénom, adresse e-mail, numéro de téléphone." %}</li>
+            <li>{% trans "Données fournies via des formulaires (ex. : devis gratuit, inscription)." %}</li>
+        </ul>
+        
+        <h3>{% trans "Données collectées automatiquement :" %}</h3>
+        <ul>
+            <li>{% trans "Adresse IP, type de navigateur, système d'exploitation." %}</li>
+            <li>{% trans "Données de navigation (pages visitées, temps passé sur le site, clics)." %}</li>
+        </ul>
+        
+        <h3>{% trans "Données issues de tiers :" %}</h3>
+        <p>{% trans "Si vous connectez vos comptes tiers (ex. : réseaux sociaux), nous pouvons recevoir certaines informations selon les permissions que vous accordez." %}</p>
+    </section>
+
+    <section>
+        <h2>{% trans "2. Utilisation des données collectées" %}</h2>
+        <p>{% trans "Vos données sont utilisées aux fins suivantes :" %}</p>
+        <ul>
+            <li>{% trans "Fournir et personnaliser nos services." %}</li>
+            <li>{% trans "Répondre à vos demandes (ex. : devis ou support client)." %}</li>
+            <li>{% trans "Améliorer l'expérience utilisateur et notre contenu." %}</li>
+            <li>{% trans "Envoyer des offres promotionnelles ou des newsletters (avec votre consentement)." %}</li>
+            <li>{% trans "Assurer la sécurité de notre site et prévenir les fraudes." %}</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>{% trans "3. Partage des données" %}</h2>
+        <p>{% trans "Nous ne partageons vos données qu'avec les parties suivantes :" %}</p>
+        <ul>
+            <li>{% trans "Prestataires tiers : pour l'hébergement, les paiements ou l'analyse web." %}</li>
+            <li>{% trans "Autorités légales : en cas de demande ou pour respecter la loi." %}</li>
+            <li>{% trans "Partenaires marketing : uniquement avec votre consentement explicite." %}</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>{% trans "4. Vos droits" %}</h2>
+        <p>{% trans "Conformément au RGPD et aux lois applicables, vous disposez des droits suivants :" %}</p>
+        <ul>
+            <li>{% trans "Accès à vos données personnelles." %}</li>
+            <li>{% trans "Rectification ou suppression de vos données." %}</li>
+            <li>{% trans "Retrait de votre consentement à tout moment." %}</li>
+            <li>{% trans "Portabilité des données dans un format structuré." %}</li>
+            <li>{% trans "Opposition à l'utilisation de vos données pour des finalités spécifiques." %}</li>
+        </ul>
+        <p>{% trans "Pour exercer vos droits, contactez-nous à" %} [email@example.com].</p>
+    </section>
+
+    <section>
+        <h2>{% trans "5. Sécurité des données" %}</h2>
+        <p>{% trans "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation." %}</p>
+    </section>
+
+    <section>
+        <h2>{% trans "6. Cookies et technologies similaires" %}</h2>
+        <p>{% trans "Notre site utilise des cookies pour :" %}</p>
+        <ul>
+            <li>{% trans "Assurer son bon fonctionnement." %}</li>
+            <li>{% trans "Analyser les comportements des utilisateurs et améliorer nos services." %}</li>
+            <li>{% trans "Offrir des contenus adaptés à vos préférences." %}</li>
+        </ul>
+        <p>{% trans "Vous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur." %}</p>
+    </section>
+
+    <section>
+        <h2>{% trans "7. Modifications de cette politique" %}</h2>
+        <p>{% trans "Nous nous réservons le droit de mettre à jour cette Politique de Confidentialité. Toute modification sera affichée sur cette page avec la date de mise à jour." %}</p>
+    </section>
+
+    <section>
+        <h2>{% trans "8. Nous contacter" %}</h2>
+        <p>{% trans "Pour toute question concernant cette Politique de Confidentialité, veuillez nous contacter :" %}</p>
+        <p>{% trans "Email : " %} [email@example.com]</p>
+        <p>{% trans "Adresse : " %} [Votre adresse postale]</p>
+    </section>
+</div>
+
+{% endblock %}
