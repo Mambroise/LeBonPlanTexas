@@ -20,21 +20,27 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="flex-center-g0 w-100 h-100">
+        <div class="navbar-container w-100 h-100">
             <div class="title-box">
-                <div class="title">
-                    <a href="{% url 'index' %}">
-                        <p>{% translate 'LeBonPlan' %}</p>
-                        <p><span>{% translate 'TEXAS' %}</span></p>
-                    </a>
+                <div class="buger_and_title_box">
+                    <button class="burger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="title">
+                        <a href="{% url 'index' %}">
+                            <p>{% translate 'LeBonPlan' %}</p>
+                            <p><span>{% translate 'TEXAS' %}</span></p>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="flex-around nav-box">
+            <div class="nav-box nav-links">
                 <div class="nav-register-box">
                     <a id="register" href="{% url 'multi_step_form' %}">{% translate 'DEVIS GRATUIT' %}</a>
                 </div>
-                <div class="logo-image">
-                </div>
+                <div class="logo-image"></div>
                 <div class="nav-who-box">
                     <a id="who" href="{% url 'identity' %}">{% translate 'QUI SOMMES NOUS' %}</a>
                 </div>
@@ -52,6 +58,7 @@
             </div>
         </div>
     </nav>
+    
     {% block content %}
     {% endblock %}
 

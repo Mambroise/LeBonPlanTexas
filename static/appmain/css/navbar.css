@@ -19,7 +19,18 @@
     align-items: center; 
 }
 
+.navbar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.buger_and_title_box {
+    display: flex;
+}
+
 .nav-box {
+    display: flex;
+    justify-content: space-around;
     width: 60%;
     height: 100%;
     transition:  0.2s ease-in-out;

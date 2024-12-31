@@ -16,7 +16,7 @@
     top: 0;
     z-index: 100;
     align-items: center; 
-    background: var(--navbar-and-dot);
+    background: var(--navbar-black);
     border-bottom: 1px solid var(--black-color);
 }
 
@@ -64,6 +64,8 @@
 }
 
 .nav-box-fixed {
+    display: flex;
+    justify-content: space-around;
     width: 40%;
     height: 100%;
 }

@@ -12,9 +12,47 @@ html {
     font-size: 16px; /* par défaut */
 }
 
+/* NAVBAR */
+
+/* Styles pour le bouton burger */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 12%;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--white-texas);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Masquer les liens par défaut en mode mobile */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 1200px) {
+    .first-banner {
+        width: 100%;
+        height: clamp(30vh, 10vw + 30vh, 70vh);
+    }
+}
+
 @media (max-width: 1100px) {
     html {
-        font-size: 12px; /* réduire la taille pour tablettes */
+        font-size: 12px; 
     }
     /* REGISTER PAGE */
     .register-instructions {
@@ -23,9 +61,159 @@ html {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
+
+    /* NAVBAR RESPONSIVE */
+    .burger-menu {
+        display: flex;
+        margin-top: 8%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        justify-content: start;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--navbar-black);
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .active {
+        display: flex;
+    }
+
+    .nav-register-box,
+    .nav-who-box {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    #who {
+        float: left;
+    }
+
+    .nav-box.small {
+        height: 90vh;
+    }
+
+    .logo-image {
+        display: none;
+    }
+
+    .navbar-container  {
+        justify-content: space-between;
+    }
+    .title {
+        margin-top: 15px;
+        font-size: 1.6rem;
+        transition:  0.3s ease-in-out;
+    }
+    .title span {
+        font-size: 2.2rem;
+        transition:  0.3s ease-in-out;
+    }
+
+    .contact-box {
+        margin-top: 1%;
+    }
+
+    /* NAVBAR FIXED RESPONSIVE  */
+    .nav-register-box-fixed,
+    .nav-who-box-fixed {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    #who-fixed {
+        float: left;
+    }
+
+    .nav-box-fixed {
+        height: 20vh;
+    }
+
+    .logo-image-fixed {
+        display: none;
+    }
+
+    .navbar-container  {
+        justify-content: space-between;
+    }
+    .title-fixed {
+        margin-top: 15px;
+        font-size: 1.6rem;
+        transition:  0.3s ease-in-out;
+    }
+    .title-fixed span {
+        font-size: 2.2rem;
+        transition:  0.3s ease-in-out;
+    }
+
+    .contact-box-fixed {
+        margin-top: 1%;
+    }
+
+    /* INDEX ROUND BANNER */
+    .round-banner {
+        width: 13rem;
+        height: 13rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 750px) {
+
     html {
         font-size: 10px; /* encore plus petit pour mobiles */
+    }
+
+    .service-box {
+        flex-direction: column;
+    }
+
+    .service-app-column {
+        width: 100%;
+        height: 85vh;
+        background-size: cover;
+        background-position: center;
+    }
+    .service-custom-column {
+        width: 100%;
+
+    }
+    .service_guide {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    } 
+}
+
+
+@media (max-width: 480px) {
+    html {
+        font-size: 8px; /* encore plus petit pour mobiles */
+    }
+
+    /* INDEX ROUND BANNER */
+    .round-banner {
+        border-radius: 0;
+        width: 95%;
+        height: 2rem;
+        top: 100%;
+        left: 0;
+    }
+
+    .first-banner {
+        padding-top: 4rem;
+        height: 30vh;
+    }
+
+    .mobile-picture {
+        display: none;
     }
 
     /* WHO ARE WE PAGE */
