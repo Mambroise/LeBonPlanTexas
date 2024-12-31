@@ -54,6 +54,13 @@ form{
     color: var(--black-color);
 }
 
+.form1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 #category-container {
     display: flex;
     flex-wrap: wrap;
