@@ -20,16 +20,23 @@
 </head>
 <body>
     <nav class="navbar-fixed">
-        <div class="flex-center-g0 w-100 h-100">
+        <div class="navbar-container w-100 h-100">
             <div class="title-box-fixed">
-                <div class="title-fixed">
-                    <a href="{% url 'index' %}">
-                        <p>{% translate 'LeBonPlan' %}</p>
-                        <p><span>{% translate 'TEXAS' %}</span></p>
-                    </a>
+                <div class="buger_and_title_box">
+                    <button class="burger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="title-fixed">
+                        <a href="{% url 'index' %}">
+                            <p>{% translate 'LeBonPlan' %}</p>
+                            <p><span>{% translate 'TEXAS' %}</span></p>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="flex-around nav-box-fixed">
+            <div class="nav-box-fixed nav-links">
                 <div class="nav-register-box-fixed">
                     <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'DEVIS GRATUIT' %}</a>
                 </div>

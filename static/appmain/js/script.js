@@ -44,9 +44,6 @@ function addStyles(selector) {
         ${selector}.small {
             height: 100px;
             transition: height 0.3s ease-in-out;
-            /*  VERSION2 BG */
-            /* background: var(--navbar-and-dot); */
-            /* VERSION3 BG */
             background: var(--navbar-black);
             border-bottom: 1px solid var(--black-color);
         }
@@ -148,3 +145,13 @@ window.addEventListener('scroll', () => {
 
     }
 });
+
+// NAVBAR BURGER
+
+function toggleMenu() {
+    console.log('click');
+    
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
