@@ -10,10 +10,21 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
-from .customer import Customer
+from ..models import Customer
+from appmain.models.texas_trip import TexasTrip
 
 class Trip(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='trips')
+    customer = models.ForeignKey(
+        Customer,
+        on_delete=models.CASCADE,
+        related_name='trips')
+    texas_trip = models.ForeignKey(
+        TexasTrip, 
+        on_delete=models.CASCADE, 
+        related_name='whole_trips',
+        null=True,  
+        blank=True
+    )
     start_date = models.DateField(_('Date de début:'))
     end_date = models.DateField(_('Date de fin:'))
     cities = models.CharField(_('Villes'),max_length=255,null=True)

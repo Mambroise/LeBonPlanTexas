@@ -5,6 +5,7 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
+
 from django.db import IntegrityError
 from ..models import Category, Interest,Customer
 

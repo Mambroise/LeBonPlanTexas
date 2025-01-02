@@ -52,16 +52,25 @@ def multi_step_form(request):
 
     elif step == 3:
         categories = Category.objects.all().order_by('-id')
+        # translate categories according to language
+        translated_categories = [
+            {'id': category.id, 'name': category.get_translated_name()}
+            for category in categories
+        ]
+
         if request.method == "POST":
-            # Étape 3.1 : Création du client
+            # Step 3.1 : Customer creation
             customer_data = request.session.get('customer_data')
             customer_id, success = CustumerService.create_custumer(customer_data)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
                 request.session.flush()
                 return redirect('multi_step_form')
+            
+            # Step 3.2 : TexasTrip creation
+            
 
-            # Étape 3.2 : Création des voyages
+            # Step 3.3 : Trip creation
             trip_data = request.session.get('trip_data', [])
             for trip in trip_data:
                 success = TripService.create_trip(trip, customer_id)
@@ -70,7 +79,7 @@ def multi_step_form(request):
                     request.session.flush()
                     return redirect('multi_step_form')
 
-            # Étape 3.3 : Création des intérêts
+            # Step 3.4 : Interests creation
             raw_categories = request.POST.getlist('categories')
             if len(raw_categories) == 1 and ',' in raw_categories[0]:
                 raw_categories = raw_categories[0].split(',')
@@ -93,7 +102,7 @@ def multi_step_form(request):
             request.session.flush()
             return redirect('success')
 
-        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': categories})
+        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories})
 
     else:
         request.session['step'] = 1
