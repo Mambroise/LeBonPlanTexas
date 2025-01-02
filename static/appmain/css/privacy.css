@@ -6,9 +6,8 @@
 # --------------------------------------------------------------------------- */
 
 
-
-
 .privacy_policy {
-    padding: 7rem;
+    padding: 8rem;
     color: var(--black-color);
+    font-size: 1.5rem;
 }

@@ -1,13 +1,15 @@
 # ---------------------------------------------------------------------------
 #                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : appmain/models/__init__.py
+# File   : appmain/models/texas_trip.py
 # Author : Morice
 # ---------------------------------------------------------------------------
 
 
-from .customer import Customer
-from .category import Category
-from .interest import Interest
-from .trip import Trip
-from .invoice import Invoice
+from django.db import models
+
+from .trip import Customer
+
+class TexasTrip(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='one_trip')
+    created_at = models.DateTimeField(auto_now=True)

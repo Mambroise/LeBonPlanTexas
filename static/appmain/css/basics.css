@@ -7,37 +7,22 @@
 
 
 :root {
-    /* VERSION 1 COULEURS*/ 
-    /* --white-texas: rgb(255, 255, 255); */
-    /* Variables globales pour les couleurs vertes */
-    /* --blue-texas: rgb(0, 33, 165); */
-    /* --white-texas: rgb(255, 255, 255);
-    --red-texas: rgb(190, 0, 33); */
-    /* --black-color: rgb(36, 32, 32); */
-    /* texte dans bulles et category card selected, button hover */
-    /* --brick-color: rgb(55, 89, 48); */
-    /* --navbar-and-dot: linear-gradient(135deg, rgba(67, 111, 58, 0.95), rgba(55, 89, 48, 0.95), rgba(67, 111, 58, 0.95)); */
-    /* --register-frames-bg: rgb(240, 255, 255,0.6); */
-    /* --cat-card-selected: rgb(55, 89, 48,0.8); */
-    /* --primary-btn-hover: rgba(79, 143, 66, 0.6); */
-    /* --caroussel-service-bg: rgba(79, 143, 66, 0.6); */
 
     /* VERSION 2 COULEURS*/ 
     /* Variables globales pour les couleurs vertes */
-    --navbar-and-dot: rgb(226,114,91,0.9);
+    --navbar-and-dot: rgba(226,114,91,0.9);
     /* texte dans bulles et category card selected, button hover */
     --brick-color: rgb(152, 48, 63);
-    --caroussel-service-bg: rgb(36, 32, 32,0.9);
     --cat-card-selected: rgb(152, 48, 63);
     --primary-btn-hover: rgb(121, 39, 50);
-    --register-frames-bg: rgb(240, 255, 255,0.7);
+    --register-frames-bg: rgba(240, 255, 255,0.7);
     --black-color: rgb(36, 32, 32);
     --red-texas: rgb(190, 0, 33);
     --white-texas: rgb(255, 255, 255);
     
     /* VERSION 3 COULEURS*/ 
-    --caroussel-service-bg:  rgb(226,114,91,0.9);
-    --navbar-black:  rgb(36, 32, 32,0.9);
+    --caroussel-service-bg:  rgba(226,114,91,0.9);
+    --navbar-black:  rgba(36, 32, 32,0.9);
 
   }
 
