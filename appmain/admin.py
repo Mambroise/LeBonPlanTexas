@@ -6,12 +6,13 @@
 # ---------------------------------------------------------------------------
 
 
-from django.conf import settings
-from django.contrib import admin
+from django.contrib import admin,messages
 
 from .models import Customer, Trip, Category, Interest, Invoice
 from .models.texas_trip import TexasTrip
 from .services.send_email import send_payment_link
+from .services.invoice_service import InvoiceService
+from .services.customer_service import CustumerService
 
 # Inline pour les Intérêts liés à un Customer
 class InterestInline(admin.TabularInline):  # Ou `StackedInline` pour une disposition différente
@@ -32,22 +33,32 @@ class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une dispositio
 
 @admin.action(description="Envoyer un e-mail à l'utilisateur")
 def send_email_action(modeladmin, request, queryset):
-    for invoice in queryset:
+    success_count = 0
+    error_count = 0
 
-        customer = invoice.customer
-        # subject = "Un message de Le Bon Plan Texas"
-        # message = f"Bonjour {customer.first_name},\n\nVoici un message personnalisé pour vous."
-        # from_email = settings.DEFAULT_FROM_EMAIL
-        # recipient_list = [customer.email]
-        
-        # send_mail(subject, message, from_email, recipient_list)
-        send_payment_link(customer, invoice)
-    
-    modeladmin.message_user(request, "E-mails envoyés avec succès.")
+    for invoice in queryset:
+        try:
+            success,invoice = InvoiceService().create_token(invoice)
+            if not success:
+                modeladmin.message_user(request, "Problème lors de l'envoi des emails.", level="error")
+            customer = invoice.customer
+
+            if send_payment_link(customer, invoice):    
+                success_count += 1
+                CustumerService.custumer_is_mailed(customer)
+            else:
+                error_count += 1
+        except Exception as e:
+            error_count += 1
+
+    if success_count:
+        modeladmin.message_user(request, f"{success_count} e-mails envoyés avec succès.", level=messages.SUCCESS)
+    if error_count:
+        modeladmin.message_user(request, f"Échec pour {error_count} e-mails.", level=messages.ERROR)
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone', 'timestamp', 'selected_categories')
+    list_display = ('first_name', 'last_name', 'email', 'phone', 'timestamp', 'selected_categories', 'is_called', 'is_mailed', 'is_done')
     search_fields = ('first_name', 'last_name', 'email')
     list_filter = ('email',)
     inlines = [InterestInline, TripInline,TexasTripInline] # Affichage des objets liés dans l'admin du Customer
@@ -57,8 +68,8 @@ class CustomerAdmin(admin.ModelAdmin):
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('customer','texas_trip','mobile_service','nbr_days_mobile',
         'price_mobile','driver_service', 'nbr_days_driver', 'price_driver', 
-        'platinum_service', 'nbr_days_platinum', 'price_platinum','total', 
-        'payment_type', 'status')
+        'platinum_service', 'nbr_days_platinum', 'price_platinum','token','token_created_at','total', 
+        'payment_type', 'is_paid')
     search_fields = ('customer', 'texas_trip', 'total')
     list_filter = ('customer',)
     actions = [send_email_action] 
