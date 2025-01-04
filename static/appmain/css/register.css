@@ -52,6 +52,7 @@
 form{
     margin: 4rem 0rem 0rem 0rem;
     color: var(--black-color);
+    height: auto;
 }
 
 .form1 {

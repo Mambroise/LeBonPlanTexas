@@ -25,7 +25,7 @@ class CustumerService:
             required_fields = ['first_name', 'last_name', 'email', 'phone']
             for field in required_fields:
                 if field not in data:
-                    raise ValueError(f"Le champ {field} est manquant dans les données.")
+                    raise ValueError(f"Field {field} is missing data.")
 
             # Creating customer instance
             customer = Customer.objects.create(
@@ -40,7 +40,7 @@ class CustumerService:
             return customer, True 
 
         except (IntegrityError, ValueError) as e:
-            print(f"Erreur lors de la création du voyage : {e}")
+            print(f"A problem occured while creating a customer : {e}")
             return None, False  
         except Exception as e:
             print(f"Une erreur inattendue s'est produite : {e}")
@@ -55,3 +55,13 @@ class CustumerService:
             print('Customer successfully deleted')
         except Exception as e:
             print(f'Customer not deleted: {e}')
+
+    
+    @staticmethod
+    def custumer_is_mailed(customer : Customer):
+        try:
+            customer.is_mailed = True
+            customer.save()
+            print(f'is_mailed successfully updated ')
+        except Exception as e:
+            print(f'is_mailed update unsuccessful: {e}')

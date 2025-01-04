@@ -18,6 +18,8 @@ class Customer(models.Model):
     email = models.CharField(_('Email'), max_length=150)
     phone = models.CharField(_('Portable'),max_length=12, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now=True)
+    is_called = models.BooleanField(default=False)
+    is_mailed = models.BooleanField(default=False)
     is_done = models.BooleanField(default=False)
 
     def selected_categories(self):
