@@ -5,8 +5,31 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
+from django.db import IntegrityError
+
+from ..models import Customer
+from ..models.texas_trip import TexasTrip
 
 class TexasTripService():
     @staticmethod
-    def create_teaxas_trip():
-        pass
+    def create_texas_trip(customer_id):
+        try:
+            # check if customer exists
+            customer = Customer.objects.get(pk=customer_id)
+
+            texas_trip = TexasTrip.objects.create(customer=customer)
+            texas_trip.save()
+
+            return texas_trip, True
+        
+        except Customer.DoesNotExist:
+            print(f"No customer found with ID {customer_id}.")
+            return None, False
+        
+        except (IntegrityError, ValueError) as e:
+            print(f"Problem while creating TexasTrip : {e}")
+            return None, False  
+        
+        except Exception as e:
+            print(f"Problem occured : {e}")
+            return None, False

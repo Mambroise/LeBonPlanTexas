@@ -22,7 +22,7 @@ class InterestInline(admin.TabularInline):  # Ou `StackedInline` pour une dispos
 class TexasTripInline(admin.TabularInline):
     model = TexasTrip
     extra = 1
-    fields = ('created_at',)
+    fields = ('id',)
 
 # Inline pour les Trips liés à un Customer
 class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une disposition différente
@@ -32,15 +32,16 @@ class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une dispositio
 
 @admin.action(description="Envoyer un e-mail à l'utilisateur")
 def send_email_action(modeladmin, request, queryset):
-    for customer in queryset:
-        print(customer)
+    for invoice in queryset:
+
+        customer = invoice.customer
         # subject = "Un message de Le Bon Plan Texas"
         # message = f"Bonjour {customer.first_name},\n\nVoici un message personnalisé pour vous."
         # from_email = settings.DEFAULT_FROM_EMAIL
         # recipient_list = [customer.email]
         
         # send_mail(subject, message, from_email, recipient_list)
-        send_payment_link()
+        send_payment_link(customer, invoice)
     
     modeladmin.message_user(request, "E-mails envoyés avec succès.")
 

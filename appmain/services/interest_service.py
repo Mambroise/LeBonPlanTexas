@@ -28,13 +28,13 @@ class InterestService:
 
             return True
         except Customer.DoesNotExist:
-            print(f"Client avec l'ID {customer_id} introuvable.")
+            print(f"No customer found with ID {customer_id}.")
             return False
 
         except (IntegrityError, ValueError) as e:
-            print(f"Erreur lors de la création des catégories du client : {e}")
+            print(f"Problem while creating custuomer Interests : {e}")
             return  False  
         
         except Exception as e:
-            print(f"Une erreur inattendue s'est produite : {e}")
+            print(f"Problem occured : {e}")
             return  False

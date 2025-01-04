@@ -18,6 +18,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+
 from pathlib import Path
 from decouple import config
 
@@ -39,6 +40,14 @@ ALLOWED_HOSTS = []
 # Durée de la session (30 minutes en secondes)
 SESSION_COOKIE_AGE = 3600  # 60 minutes
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+#Email settings:
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST =  config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
 # Application definition

@@ -37,7 +37,7 @@ class CustumerService:
             customer.full_clean() 
             customer.save()
 
-            return customer.id, True 
+            return customer, True 
 
         except (IntegrityError, ValueError) as e:
             print(f"Erreur lors de la création du voyage : {e}")
