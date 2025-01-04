@@ -1,0 +1,117 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/email/success_registration_email.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: rgb(152, 48, 63);
+            text-align: center;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(152, 48, 63);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .cta a:hover {
+            background-color: rgb(152, 48, 63);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bonjour {{ customer.first_name|capfirst }} !</h1>
+
+        <p>
+            Nous avons bien reçu votre demande de renseignements et devis pour votre prochain voyage au Texas. Merci de votre intérêt pour 
+            <span class="highlight">{{ company_name }}</span> !
+        </p>
+
+        <p>
+            Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos attentes. Voici un récapitulatif des informations que vous nous avez fournies :
+        </p>
+
+        <h3>👤 Vos coordonnées :</h3>
+        <ul>
+            <li><strong>Prénom :</strong> {{ customer.first_name }}</li>
+            <li><strong>Nom :</strong> {{ customer.last_name }}</li>
+            <li><strong>Email :</strong> {{ customer.email }}</li>
+            {% if customer.phone %}
+            <li><strong>Téléphone :</strong> {{ customer.phone }}</li>
+            {% endif %}
+        </ul>
+
+        <h3>🌟 Votre voyage :</h3>
+        {% for trip in trips %}
+        <ul>
+            <li><strong>Dates :</strong> du {{ trip.start_date }} au {{ trip.end_date }}</li>
+            {% if trip.cities %}
+            <li><strong>Villes prévues :</strong> {{ trip.cities }}</li>
+            {% endif %}
+            <li><strong>Vous êtes véhiculés :</strong> 
+                {% if trip.vehiculed %} Oui {% else %} Non {% endif %}
+            </li>
+            {% if trip.comment %}
+            <li><strong>Commentaires :</strong> {{ trip.comment }}</li>
+            {% endif %}
+        </ul>
+        <br>
+        {% endfor %}
+
+        <h3>🎯 Vos centres d'intérêt :</h3>
+        <ul>
+            {% for interest in interests %}
+            <li>{{ interest }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>
+            Nous vous contacterons très bientôt pour présenter nos services et répondre à toutes vos questions. Si vous avez des précisions à apporter ou si vous souhaitez nous faire part de nouvelles idées, n'hésitez pas à répondre à cet e-mail.
+        </p>
+
+        <div class="cta">
+            <a href="mailto:{{ company_email }}">Contactez-nous directement</a>
+        </div>
+
+        <p>
+            Merci encore pour votre confiance et à très bientôt, <br>
+            <strong>L'équipe de {{ company_name }}</strong>
+        </p>
+    </div>
+</body>
+</html>

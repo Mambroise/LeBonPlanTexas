@@ -17,6 +17,9 @@ from ..models import Category
 from ..services.customer_service import CustumerService
 from ..services.trip_service import TripService
 from ..services.interest_service import InterestService
+from ..services.texas_trip_service import TexasTripService
+
+from ..services.send_email import success_registration_email
 
 def multi_step_form(request):
     step = request.session.get('step', 1) 
@@ -61,19 +64,23 @@ def multi_step_form(request):
         if request.method == "POST":
             # Step 3.1 : Customer creation
             customer_data = request.session.get('customer_data')
-            customer_id, success = CustumerService.create_custumer(customer_data)
+            customer, success = CustumerService.create_custumer(customer_data)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
                 request.session.flush()
                 return redirect('multi_step_form')
             
             # Step 3.2 : TexasTrip creation
-            
+            texas_trip, success = TexasTripService.create_texas_trip(customer.id)
+            if not success:
+                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
+                request.session.flush()
+                return redirect('multi_step_form')
 
             # Step 3.3 : Trip creation
             trip_data = request.session.get('trip_data', [])
             for trip in trip_data:
-                success = TripService.create_trip(trip, customer_id)
+                success = TripService.create_trip(trip, customer.id,texas_trip.id)
                 if not success:
                     messages.error(request, _("Une erreur s'est produite lors de l'enregistrement d'un voyage."))
                     request.session.flush()
@@ -90,14 +97,16 @@ def multi_step_form(request):
                 messages.error(request, _("Les catégories sélectionnées sont invalides."))
                 return redirect('multi_step_form')
 
-            success = InterestService.create_customer_interests(selected_categories, customer_id)
+            success = InterestService.create_customer_interests(selected_categories, customer.id)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement des catégories."))
-                CustumerService.delete_customer(customer_id)
+                CustumerService.delete_customer(customer.id)
                 request.session.flush()
                 return redirect('multi_step_form')
 
             # Final success
+            trips = texas_trip.whole_trips.all()
+            success_registration_email(customer,trips,selected_categories)
             messages.success(request, _('Enregistrement terminé avec succès.'))
             request.session.flush()
             return redirect('success')

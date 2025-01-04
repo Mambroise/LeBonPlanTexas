@@ -11,20 +11,21 @@ from django.db import IntegrityError
 
 class TripService:
     @staticmethod
-    def create_trip(data, customer_id):
+    def create_trip(data, customer_id,texas_trip_id):
         try:
             # Creating Trip object
             trip = Trip(
-                customer_id=customer_id,  
+                customer_id=customer_id,
+                texas_trip_id = texas_trip_id,  
                 start_date=data.get('start_date'),  
                 end_date=data.get('end_date'),  
                 cities=data.get('cities'),  
                 comment=data.get('comment'),  
                 vehiculed=data.get('vehiculed', False),  
             )
-            trip.save()  # Enregistre l'objet dans la base de données
+            trip.save()  
 
-            return True  # Indique que la création du voyage a réussi
+            return True  
         except IntegrityError as e:
             # Gère les erreurs d'intégrité, par exemple si des contraintes sont violées
             print(f"Erreur d'intégrité : {e}")

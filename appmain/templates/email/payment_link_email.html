@@ -1,0 +1,109 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/email/payment_link_email.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Email</title>
+    <style>
+        .container {
+            width: 90%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .text-center {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(36, 32, 32,0.9);
+            color: white;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: rgba(226,114,91,0.9);
+        }
+        .frame {
+            border: 2px solid blue;
+            border-radius: 5px;
+            margin: 10px auto;
+            padding: 5px 40px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ company_name }}</h1>
+        <p>{% translate 'Cher.e' %} {{ customer.first_name|capfirst }}</p>
+        <p>{% translate 'Comme convenu après notre discussion téléphonique, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
+
+        <!-- Tableau pour les services -->
+        <table>
+            <thead>
+                <tr>
+                    <th>{% translate 'Service' %}</th>
+                    <th>{% translate 'Choix' %}</th>
+                    <th>{% translate 'Nombre de jours' %}</th>
+                    <th>{% translate 'Prix (€)' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% translate 'Autonome' %}</td>
+                    <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
+                    <td>{{ trip_invoice.price_mobile|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>{% translate 'Guide' %}</td>
+                    <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
+                    <td>{{ trip_invoice.price_driver|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>{% translate 'Platinum' %}</td>
+                    <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
+                    <td>{{ trip_invoice.price_platinum|default:"-" }}</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="3">{% translate 'Total TTC' %}</td>
+                    <td>{{ trip_invoice.total }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="text-center">{% translate 'Pour valider votre voyage, merci de cliquer sur le lien suivant et regler le montant du devis.' %}</p>
+        <div class="frame">
+            <a href="#">Ici pour valider et régler votre devis. Merci pour votre confiance.</a>
+        </div>
+        <p class="text-center">{% translate 'Nous espérons vous voir bientôt!' %}</p>
+    </div>
+</body>
+</html>
