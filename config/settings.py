@@ -21,6 +21,7 @@ import os
 
 from pathlib import Path
 from decouple import config
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,10 @@ ALLOWED_HOSTS = []
 SESSION_COOKIE_AGE = 3600  # 60 minutes
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+# Durée de validité du token (24 heures en secondes)
+PAYMENT_TOKEN_VALIDITY = timedelta(days=1).total_seconds()
+
+
 #Email settings:
 EMAIL_BACKEND = config('EMAIL_BACKEND')
 EMAIL_HOST =  config('EMAIL_HOST')
@@ -49,6 +54,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
+# STRIPE SETTINGS
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+DOMAIN = "http://127.0.0.1:8000"
 
 # Application definition
 
