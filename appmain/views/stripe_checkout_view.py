@@ -1,7 +1,15 @@
+# ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/views/stripe_checkout_session.py
+# Author : Morice
+# ---------------------------------------------------------------------------
+
+
 import stripe
 from django.conf import settings
 from django.shortcuts import redirect,get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseForbidden
 from django.utils.translation import gettext as _
 
 from ..models import Invoice
@@ -11,6 +19,9 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def create_checkout_session(request):
     invoice_id = request.GET.get('invoice_id')
     invoice = get_object_or_404(Invoice, id=invoice_id)
+
+    if not invoice.terms_accepted:
+        return HttpResponseForbidden(_("Vous devez accepter les CGU avant de payer."))
 
     try:
         # Create Stripe Checkout session
@@ -27,8 +38,8 @@ def create_checkout_session(request):
                 'quantity': 1,
             }],
             mode='payment',
-            success_url=f"{settings.DOMAIN}/payment-success/?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=f"{settings.DOMAIN}/payment-cancelled/",
+            success_url=f"{settings.DOMAIN}/checkout-success/?session_id={{CHECKOUT_SESSION_ID}}",
+            cancel_url=f"{settings.DOMAIN}/checkout-cancelled/",
         )
         return redirect(session.url)
     except Exception as e:

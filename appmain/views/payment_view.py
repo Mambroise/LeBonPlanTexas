@@ -6,17 +6,17 @@
 # ---------------------------------------------------------------------------
 
 
-from django.shortcuts import redirect
+from django.shortcuts import render
 from django.http import HttpResponseForbidden
 from ..services.invoice_service import InvoiceService
 
 def payment_view(request):
     token = request.GET.get('token')
-    print('in the view')
     # Vérification du token
     invoice, success = InvoiceService.check_token_validity(token)
     if not success:
         return HttpResponseForbidden("Lien expiré ou invalide.")
 
-    # Redirection vers Stripe Checkout
-    return redirect(f"/create-checkout-session/?invoice_id={invoice.id}")
+    
+    # accept terms of use modal
+    return render(request, 'lebonplantexas/terms_of_use.html',{'invoice_id':invoice.id})

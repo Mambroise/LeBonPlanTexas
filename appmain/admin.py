@@ -69,7 +69,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('customer','texas_trip','mobile_service','nbr_days_mobile',
         'price_mobile','driver_service', 'nbr_days_driver', 'price_driver', 
         'platinum_service', 'nbr_days_platinum', 'price_platinum','token','token_created_at','total', 
-        'payment_type', 'is_paid')
+        'payment_type','terms_accepted', 'is_paid')
     search_fields = ('customer', 'texas_trip', 'total')
     list_filter = ('customer',)
     actions = [send_email_action] 

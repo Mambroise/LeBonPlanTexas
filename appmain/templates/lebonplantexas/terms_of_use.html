@@ -1,0 +1,83 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/terms_of_use.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Validation des CGU" %}</title>
+    <style>
+        .modal {
+            width: 40vw;
+            height: 80vh;
+            background: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .scrollable {
+            margin: auto;
+            width: 80%;
+            height: 70%;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .align-center {
+            text-align: center;
+        }
+        /* form buttons */
+        .btn-primary {
+            padding: 20px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: rgb(152, 48, 63);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(121, 39, 50);
+        }
+        .btn-position {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h2 class="align-center">{% translate 'Conditions Générales d'Utilisation' %}</h2>
+        <div class="scrollable">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <!-- Ajoutez le contenu complet des CGU ici -->
+        </div>
+        <form method="POST" action="/validate_terms/">
+            {% csrf_token %}
+            <input type="hidden" name="invoice_id" value="{{ invoice_id }}">
+            <label>
+                <input type="checkbox" name="accept_terms" required>
+                {% translate 'J\'accepte les conditions générales d'utilisation.' %}
+            </label>
+            <div class="btn-position">
+                <button class="btn-primary" type="submit">{% translate 'VALIDER' %}</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
