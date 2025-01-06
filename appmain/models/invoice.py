@@ -30,6 +30,7 @@ class Invoice(models.Model):
     # token part
     token = models.CharField(max_length=100,null=True,blank=True)
     token_created_at = models.DateTimeField(null=True,blank=True)
+    terms_accepted = models.BooleanField(default=False)
 
     total = models.FloatField(null=True,blank=True)
     payment_type = models.CharField(max_length=20,default="Credit card")
