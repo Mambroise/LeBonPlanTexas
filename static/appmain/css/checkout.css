@@ -1,0 +1,87 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/checkout.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+@import url('basics.css');
+@import url('button.css');
+
+
+.modal {
+    width: 40vw;
+    height: 95vh;
+    background: linear-gradient(rgb(152, 48, 63),rgb(152, 48, 63),rgb(255, 255, 255),rgb(255, 255, 255));
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 8px;
+    
+    color: var(--black-color);
+}
+
+.scrollable {
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    
+}
+
+.terms-bg-image {
+    position: relative;
+    height: 25vh;
+    width: 100%;
+    background-image: url(../../images/austin_colorado.jpg);
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.icon-round {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    height: 5rem;
+    width: 5rem;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: var(--brick-color);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.invoice-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: auto auto;
+    background-image: url(../../images/icons/invoice_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+h2 {
+    color: var(--white-texas);
+}
+
+.align-center {
+    text-align: center;
+}
+/* form buttons */
+.btn-position {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
