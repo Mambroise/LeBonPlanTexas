@@ -54,7 +54,7 @@
     left: 50%;
     height: 5rem;
     width: 5rem;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -50%);
     border-radius: 50%;
     background-color: var(--brick-color);
     display: flex;
@@ -65,7 +65,6 @@
 .invoice-icon {
     width: 3rem;
     height: 3rem;
-    margin: auto auto;
     background-image: url(../../images/icons/invoice_icon.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -79,9 +78,55 @@ h2 {
 .align-center {
     text-align: center;
 }
+
 /* form buttons */
 .btn-position {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
+}
+
+.cgv-checkbox {
+    margin-left: 2rem;
+}
+
+/* CHECKOUT SUCCESS TABLE */
+.invoice-container {
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(36, 32, 32,0.9);
+    color: white;
+}
+
+td {
+    background-color: var(--white-texas);
+}
+
+.total-row, .total-row td {
+    font-weight: bold;
+    background-color: rgba(36, 32, 32,0.9);
+    color: white;
 }

@@ -19,9 +19,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def create_checkout_session(request):
     invoice_id = request.GET.get('invoice_id')
     invoice = get_object_or_404(Invoice, id=invoice_id)
-
-    if not invoice.terms_accepted:
-        return HttpResponseForbidden(_("Vous devez accepter les CGU avant de payer."))
+    if not invoice.terms_of_sale_accepted:
+        return HttpResponseForbidden(_("Vous devez accepter les CGV avant de payer."))
 
     try:
         # Create Stripe Checkout session
@@ -41,7 +40,9 @@ def create_checkout_session(request):
             mode='payment',
             success_url=f"{settings.DOMAIN}/checkout-success/?session_id={{CHECKOUT_SESSION_ID}}",
             cancel_url=f"{settings.DOMAIN}/checkout-cancelled/",
+            client_reference_id=str(invoice.id),
         )
+        print(f"Session créée : {session}")
         return redirect(session.url)
     except Exception as e:
         print(f"Erreur lors de la création de la session Stripe: {e}")
