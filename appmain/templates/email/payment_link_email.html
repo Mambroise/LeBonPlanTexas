@@ -44,26 +44,28 @@
             background-color: rgba(226,114,91,0.9);
         }
         .frame {
-            border: 2px solid blue;
+            width: 60%;
+            border: 2px solid rgb(152, 48, 63);
             border-radius: 5px;
             margin: 10px auto;
             padding: 5px 40px;
             text-align: center;
+            background: rgb(152, 48, 63);
         }
-        a {
+        .frame a {
             text-decoration: none;
             font-size: 1.2rem;
-            color: blue;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>{{ company_name }}</h1>
-        <p>{% translate 'Cher.e' %} {{ customer.first_name|capfirst }}</p>
-        <p>{% translate 'Comme convenu après notre discussion téléphonique, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
+        <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}</p>
+        <p>{% translate 'Comme convenu par téléphone, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
 
-        <!-- Tableau pour les services -->
+        <!-- estimate table -->
         <table>
             <thead>
                 <tr>

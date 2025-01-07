@@ -1,0 +1,76 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/checkout_success.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Validation des CGV" %}</title>
+    <link rel="stylesheet" href="{% static 'appmain/css/checkout.css' %}">
+</head>
+<body>
+    <div class="modal">
+        <div class="terms-bg-image">
+            <div class="icon-round">
+                <div class="invoice-icon"></div>
+            </div>
+        </div>
+        <h2 class="align-center">{% translate 'Votre transaction a été accepté' %}</h2>
+        <div class="invoice-container">
+            <p>{% translate 'Votre réservation est confirmée. Nous vous contacterons sous peu.' %}</p>
+            <p>{% translate "Numéro de transaction" %}: </p>
+            <p>{% translate "Date de paiement" %}: </p>
+            <!-- invoice table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>{% translate 'Service' %}</th>
+                        <th>{% translate 'Choix' %}</th>
+                        <th>{% translate 'Nombre de jours' %}</th>
+                        <th>{% translate 'Prix (€)' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% translate 'Autonome' %}</td>
+                        <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
+                        <td>{{ trip_invoice.price_mobile|default:"-" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Guide' %}</td>
+                        <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
+                        <td>{{ trip_invoice.price_driver|default:"-" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Platinum' %}</td>
+                        <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
+                        <td>{{ trip_invoice.price_platinum|default:"-" }}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3">{% translate 'Total TTC' %}</td>
+                        <td>{{ amount_paid }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form method="POST" action="/validate_terms/">
+            {% csrf_token %}
+            <input type="hidden" name="invoice_id" value="{{ trip_invoice.id }}">
+            <div class="btn-position">
+                <button class="btn-primary" type="submit">{% translate 'FACTURE' %}</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

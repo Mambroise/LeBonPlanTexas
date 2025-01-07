@@ -66,6 +66,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
+    readonly_fields = ('invoice_number',)
     list_display = ('customer','texas_trip','mobile_service','nbr_days_mobile',
         'price_mobile','driver_service', 'nbr_days_driver', 'price_driver', 
         'platinum_service', 'nbr_days_platinum', 'price_platinum','token','token_created_at','total', 

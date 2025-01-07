@@ -17,6 +17,5 @@ def payment_view(request):
     if not success:
         return HttpResponseForbidden("Lien expiré ou invalide.")
 
-    
     # accept terms of use modal
-    return render(request, 'lebonplantexas/terms_of_use.html',{'invoice_id':invoice.id})
+    return render(request, 'lebonplantexas/terms_of_sale.html',{'invoice':invoice})

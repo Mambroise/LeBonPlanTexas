@@ -14,12 +14,13 @@ from ..models import Invoice
 def validate_terms(request):
     if request.method == "POST":
         invoice_id = request.POST.get('invoice_id')
-        accept_terms = request.POST.get('accept_terms')
-        if not accept_terms:
-            return HttpResponseBadRequest(_("Vous devez accepter les CGU."))
-        
         invoice = get_object_or_404(Invoice, id=invoice_id)
-        invoice.terms_accepted = True
+
+        accept_terms = request.POST.get('accept_terms')
+
+        if not accept_terms and not invoice.terms_of_sale_accepted:
+            return HttpResponseBadRequest(_("Vous devez accepter les CGV."))
+        invoice.terms_of_sale_accepted = True
         invoice.save()
 
         return redirect(f"/create-checkout-session/?invoice_id={invoice.id}")
