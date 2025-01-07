@@ -31,7 +31,8 @@ def create_checkout_session(request):
                 'price_data': {
                     'currency': 'eur',
                     'product_data': {
-                        'name': f'Devis {invoice.id}',
+                        'name': _('Reglement du devis %s' % {invoice.id}),
+                        'description': _('Client : %s' % invoice.customer )
                     },
                     'unit_amount': int(invoice.total * 100),  # En centimes
                 },
@@ -44,4 +45,4 @@ def create_checkout_session(request):
         return redirect(session.url)
     except Exception as e:
         print(f"Erreur lors de la création de la session Stripe: {e}")
-        return HttpResponse(f"Erreur lors de la création de la session Stripe: {e}", status=500)
+        return HttpResponse(_("Erreur lors de la création de la session Stripe: %s") % {e}, status=500)
