@@ -46,8 +46,3 @@ class Invoice(models.Model):
     def generate_token(self):
         self.token = secrets.token_hex(32)
 
-    # def save(self, *args, **kwargs):
-    #     if not self.invoice_number:
-    #         today_str = now().strftime('%Y%m%d')
-    #         self.invoice_number = f"{self.pk or ''}{self.customer.id}{today_str}"
-    #     super().save(*args, **kwargs)

@@ -12,10 +12,22 @@ from ..services.invoice_service import InvoiceService
 
 def payment_view(request):
     token = request.GET.get('token')
-    # Vérification du token
-    invoice, success = InvoiceService.check_token_validity(token)
-    if not success:
-        return HttpResponseForbidden("Lien expiré ou invalide.")
 
-    # accept terms of use modal
+    # Vérification du token
+    invoice, success, message = InvoiceService.check_token_validity(token)
+    
+    # case : Invoice already paid
+    if invoice and not success:
+        context = {'trip_invoice' : invoice,
+                   'customer_email' : invoice.customer.email,
+                   'amount_paid' : invoice.total}
+        
+        return render(request, 'lebonplantexas/checkout_success.html', context )
+   
+    # case : 
+    if not success and not invoice:
+         print('message:',message)
+         return render(request, "error.html", {"message": message})
+
+    # cas: everything ok, go to accept terms of use modal
     return render(request, 'lebonplantexas/terms_of_sale.html',{'invoice':invoice})

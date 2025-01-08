@@ -97,8 +97,11 @@ h2 {
     height: 50%;
     overflow-y: auto;
     margin-bottom: 20px;
-    border-radius: 5px;
-    
+    border-radius: 5px;   
+}
+
+.invoice-container p {
+    color: white;
 }
 
 table {
