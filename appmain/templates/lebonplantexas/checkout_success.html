@@ -26,8 +26,8 @@
         <h2 class="align-center">{% translate 'Votre transaction a été accepté' %}</h2>
         <div class="invoice-container">
             <p>{% translate 'Votre réservation est confirmée. Nous vous contacterons sous peu.' %}</p>
-            <p>{% translate "Numéro de transaction" %}: </p>
-            <p>{% translate "Date de paiement" %}: </p>
+            <p>{% translate "Numéro de transaction :" %} {{ trip_invoice.invoice_number }}</p>
+            <p>{% translate "Date de paiement :" %} {{ trip_invoice.is_paid_date }}</p>
             <!-- invoice table -->
             <table>
                 <thead>

@@ -7,6 +7,9 @@
 
 from django.utils.timezone import now, timedelta
 from django.db import IntegrityError
+from django.utils.translation import gettext as _
+from django.http import HttpResponse
+
 from ..models import Invoice
 
 
@@ -29,19 +32,36 @@ class InvoiceService:
     def check_token_validity(token):
         if not token:
             print("Token is missing.")
-            return None, False
+            return None, False, _('Le token est introuvable.')
 
         try:
             # Récupération de la facture associée au token
-            invoice = Invoice.objects.get(token=token, is_paid=False)
+            invoice = Invoice.objects.filter(token=token, is_paid=False).first()
+
+            if not invoice:
+                invoice = InvoiceService.invoice_is_paid(token)
+                if invoice:
+                    return invoice, False, _('')
+                else:
+                    return None, False, _('La facture est introuvable')
 
             # Vérification de l'expiration
             token_validity_period = timedelta(seconds=84600)
             if now() > invoice.token_created_at + token_validity_period:
-                print("Token has expired.")
-                return invoice, False
+                return invoice, False, _("Validité du token expirée.")
 
             return invoice, True
         except Exception as e:
             print(f"Unexpected problem while checking token: {e}")
-            return None, False
+            return None, False, _("Une erreur s'est produite lors de la vérification du token: %s." % str({e}))
+
+    @staticmethod
+    def invoice_is_paid(token):
+        invoice = Invoice.objects.get(token=token, is_paid=True)
+        
+        if invoice:
+            return invoice
+        else:
+            return None
+        
+        
