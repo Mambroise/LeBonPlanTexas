@@ -68,12 +68,13 @@ class CustomerAdmin(admin.ModelAdmin):
 class InvoiceAdmin(admin.ModelAdmin):
     readonly_fields = ('invoice_number',)
     list_display = ('customer','texas_trip','mobile_service','nbr_days_mobile',
-        'price_mobile','driver_service', 'nbr_days_driver', 'price_driver', 
-        'platinum_service', 'nbr_days_platinum', 'price_platinum','token','token_created_at','total', 
-        'payment_type','terms_of_sale_accepted','terms_of_sale_accepted_date', 'is_paid')
-    search_fields = ('customer', 'texas_trip', 'total')
-    list_filter = ('customer',)
+        'mobile_price_excl_tax','driver_service', 'nbr_days_driver', 'driver_price_excl_tax', 
+        'platinum_service', 'nbr_days_platinum', 'platinum_price_excl_tax',
+        'tax_amount','total_excl_tax','total','terms_of_sale_accepted', 'is_paid')
+    search_fields = ('customer', 'total','invoice_number')
+    list_filter = ('customer','tax_amount','total_excl_tax','total',)
     actions = [send_email_action] 
+
     
 # Enregistrement des autres modèles
 admin.site.register(Category)

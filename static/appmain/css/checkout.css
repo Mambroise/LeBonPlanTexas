@@ -91,7 +91,7 @@ h2 {
 }
 
 /* CHECKOUT SUCCESS TABLE */
-.invoice-container {
+.invoice-container, .error-container {
     margin: auto;
     width: 90%;
     height: 50%;

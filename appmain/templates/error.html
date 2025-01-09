@@ -1,0 +1,45 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/checkout_success.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Validation des CGV" %}</title>
+    <link rel="stylesheet" href="{% static 'appmain/css/error.css' %}">
+</head>
+<body>
+    <div class="modal">
+        <div class="terms-bg-image">
+            <div class="icon-round">
+                <div class="warning-icon"></div>
+            </div>
+        </div>
+        <h2 class="align-center">{% translate 'Une erreur s\'est produite' %}</h2>
+        <div class="error-container">
+            <div class="error-box">
+                <div class="message-box">
+                    <p>{{ message }}.</p>
+                </div>
+                <div class="fishing-picture-box">
+                    <p>{% translate 'Alors, ca mort??' %}</p>
+                    <div class="fishing-picture"></div>
+                </div>
+            </div>
+        </div>
+        <p class="float-end"><a href="{% url 'index' %}">Accueil du site</a></p>
+        <p class="site-name">{% translate 'LeBonPlanTEXAS' %}</p>
+    </div>
+</body>
+</html>
+
+

@@ -10,6 +10,7 @@ import stripe
 from django.conf import settings
 from django.shortcuts import render
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from ..models import Invoice
 
@@ -18,7 +19,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def checkout_success(request):
     session_id = request.GET.get('session_id')
     if not session_id:
-        return render(request, "error.html", {"message": "Session ID manquant."})
+        message = _("Session ID manquant.")
+        return render(request, "error.html", {"message": message})
 
     try:
         # retreive checkout session from Stripe
@@ -31,6 +33,7 @@ def checkout_success(request):
         invoice = Invoice.objects.get(pk=invoice_id)
         invoice.is_paid = True
         invoice.is_paid_date = timezone.now()
+        invoice.stripe_session_id = session_id
         invoice.save()
 
 
@@ -46,8 +49,19 @@ def checkout_success(request):
 
     except Exception as e:
         print(f'error : {str(e)}')
+        message = _("Error : %s" % {str(e)})
         return render(request, "error.html", {"message": f"Erreur : {str(e)}"})
 
 
-def checkout_cancelled():
-    pass
+def checkout_cancelled(request):
+    invoice_id = request.GET.get('invoice_id')
+    if not invoice_id:
+        message = _("L'attribut invoice_id absent de la requête")
+        return render(request,'error.html', {'message' : message})
+    try:
+        invoice = Invoice.objects.get(pk=invoice_id)
+    except Exception as e:
+        message = _('Erreur : %s' % {str(e)})
+        return render(request,'error.html', {'message' : message})
+    
+    return render(request, "lebonplantexas/checkout_cancelled.html", {'trip_invoice' : invoice})

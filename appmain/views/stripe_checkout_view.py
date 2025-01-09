@@ -39,7 +39,7 @@ def create_checkout_session(request):
             }],
             mode='payment',
             success_url=f"{settings.DOMAIN}/checkout-success/?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=f"{settings.DOMAIN}/checkout-cancelled/",
+            cancel_url=f"{settings.DOMAIN}/checkout-cancelled/?invoice_id={invoice.id}",
             client_reference_id=str(invoice.id),
         )
         print(f"Session créée : {session}")
