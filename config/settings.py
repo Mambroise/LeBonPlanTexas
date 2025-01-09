@@ -155,3 +155,13 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Company informations for invoices
+COMPANY_INFO = {
+    'name': 'Le Bon Plan Texas',
+    'siren': '123456789',
+    'address': '123 Rue de Texas, Austin, TX',
+    'tva_info' : '20%',
+    'tva_math' : 1.2,
+}
+

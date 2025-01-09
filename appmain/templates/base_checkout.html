@@ -1,0 +1,30 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/base_checkout.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Validation des CGV" %}</title>
+    <link rel="stylesheet" href="{% static 'appmain/css/checkout.css' %}">
+</head>
+<body>
+    <div class="modal">
+        <div class="terms-bg-image">
+            <div class="icon-round">
+                <div class="invoice-icon"></div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

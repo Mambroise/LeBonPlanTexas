@@ -1,0 +1,60 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/error.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+@import url('basics.css');
+@import url('checkout.css');
+
+.warning-icon {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(../../images/icons/icon_warning.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.error-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message-box {
+    width: 55%;
+}
+
+.message-box p {
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.fishing-picture-box {
+    width: 35%;
+    padding-top: 2.4rem;
+}
+
+.fishing-picture-box p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.fishing-picture {
+    height: 35vh;
+    background-image: url(../../images/fishing_picture.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.float-end {
+    float: right;
+    margin-right: 2rem;
+}
+
+.site-name {
+    margin-left: 2rem;
+}

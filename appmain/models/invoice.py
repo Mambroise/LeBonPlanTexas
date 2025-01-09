@@ -22,25 +22,29 @@ class Invoice(models.Model):
     # classic service part
     mobile_service = models.BooleanField(default=False)
     nbr_days_mobile = models.IntegerField(null=True,blank=True)
-    price_mobile = models.FloatField(null=True,blank=True)
+    mobile_price_excl_tax = models.FloatField(null=True,blank=True)
     # driver service part
     driver_service = models.BooleanField(default=False)
     nbr_days_driver = models.IntegerField(null=True,blank=True)
-    price_driver = models.FloatField(null=True,blank=True)
+    driver_price_excl_tax = models.FloatField(null=True,blank=True)
     # platinum service part
     platinum_service = models.BooleanField(default=False)
     nbr_days_platinum = models.IntegerField(null=True,blank=True)
-    price_platinum = models.FloatField(null=True,blank=True)
+    platinum_price_excl_tax = models.FloatField(null=True,blank=True)
     # token part
     token = models.CharField(max_length=100,null=True,blank=True)
     token_created_at = models.DateTimeField(null=True,blank=True)
     terms_of_sale_accepted = models.BooleanField(default=False)
     terms_of_sale_accepted_date = models.DateTimeField(null=True,blank=True)
 
+    tax_rate = models.FloatField(null=True,blank=True)
+    tax_amount = models.FloatField(null=True,blank=True)
+    total_excl_tax = models.FloatField(null=True,blank=True)
     total = models.FloatField(null=True,blank=True)
     payment_type = models.CharField(max_length=20,default="Credit card")
     is_paid = models.BooleanField(default=False)
     is_paid_date = models.DateTimeField(null=True, blank=True)
+    stripe_session_id = models.CharField(max_length=255,null=True,blank=True)
 
 
     def generate_token(self):

@@ -41,7 +41,7 @@ class InvoiceService:
             if not invoice:
                 invoice = InvoiceService.invoice_is_paid(token)
                 if invoice:
-                    return invoice, False, _('')
+                    return invoice, False, None
                 else:
                     return None, False, _('La facture est introuvable')
 
@@ -50,7 +50,7 @@ class InvoiceService:
             if now() > invoice.token_created_at + token_validity_period:
                 return invoice, False, _("Validité du token expirée.")
 
-            return invoice, True
+            return invoice, True, None
         except Exception as e:
             print(f"Unexpected problem while checking token: {e}")
             return None, False, _("Une erreur s'est produite lors de la vérification du token: %s." % str({e}))
