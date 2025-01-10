@@ -42,7 +42,6 @@ def create_checkout_session(request):
             cancel_url=f"{settings.DOMAIN}/checkout-cancelled/?invoice_id={invoice.id}",
             client_reference_id=str(invoice.id),
         )
-        print(f"Session créée : {session}")
         return redirect(session.url)
     except Exception as e:
         print(f"Erreur lors de la création de la session Stripe: {e}")

@@ -1,0 +1,110 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/pdf/invoice_pdf.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                
+        .my-0 {
+            margin: 0.3rem 0rem;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        /* CHECKOUT SUCCESS TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(36, 32, 32,0.9);
+            color: white;
+        }
+
+        td {
+            background-color: var(--white-texas);
+        }
+
+        .total-row, .total-row td {
+            font-weight: bold;
+            background-color: rgba(36, 32, 32,0.9);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="align-center"><u>{% translate 'Facture' %}</u></h1>
+    <br><br><br><br>
+    <p>{% translate "Numéro de Facture :" %} {{ trip_invoice.invoice_number }}</p>
+    <p>{% translate "Date de paiement :" %} {{ trip_invoice.is_paid_date }}</p>
+    <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
+    <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
+    <p class="my-0">{{ company_info.address }}</p>
+    <br>
+    <p>{% translate 'Vos coordonnées :' %}</p>
+    <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+    <p class="my-0">{{ trip_invoice.customer.address }}</p>
+    <p class="my-0">{{ trip_invoice.customer.email }}</p>
+    <p class="my-0">{{ trip_invoice.customer.phone }}</p>
+    <br>
+    <!-- invoice table -->
+    <table>
+        <thead>
+            <tr>
+                <th>{% translate 'Service' %}</th>
+                <th>{% translate 'Choix' %}</th>
+                <th>{% translate 'Nombre de jours' %}</th>
+                <th>{% translate 'Prix/jour hors taxe(€)' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{% translate 'Autonome' %}</td>
+                <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
+                <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
+                <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
+            </tr>
+            <tr>
+                <td>{% translate 'Chauffeur privé' %}</td>
+                <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
+                <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
+                <td>{{ trip_invoice.driver_price_excl_tax|default:"-" }}</td>
+            </tr>
+            <tr>
+                <td>{% translate 'Platinum' %}</td>
+                <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
+                <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
+                <td>{{ trip_invoice.platinum_price_excl_tax|default:"-" }}</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3">{% translate 'Total TTC' %}</td>
+                <td>{{ trip_invoice.total }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

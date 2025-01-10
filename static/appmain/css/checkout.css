@@ -12,29 +12,25 @@
 
 .modal {
     width: 40vw;
-    height: 95vh;
+
     background: linear-gradient(rgb(152, 48, 63),rgb(152, 48, 63),rgb(255, 255, 255),rgb(255, 255, 255));
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    border-radius: 8px;
-    
+
+    border-radius: 8px;    
     color: var(--black-color);
 }
 
 .scrollable {
     margin: auto;
-    width: 90%;
-    height: 50%;
+    padding: 2rem;
+    width: 87%;
+    min-height: 45vh;
     overflow-y: auto;
     margin-bottom: 20px;
     background-color: white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    
+    border-radius: 5px;   
 }
 
 .terms-bg-image {
@@ -74,6 +70,14 @@
 h2 {
     color: var(--white-texas);
 }
+.hr {
+    background-color: var(--white-texas);
+    height: 1px; 
+    border: none; 
+}
+.my-0 {
+    margin: 0.3rem 0rem;
+}
 
 .align-center {
     text-align: center;
@@ -95,13 +99,11 @@ h2 {
     margin: auto;
     width: 90%;
     height: 50%;
+    padding: 2rem;
+    background-color: var(--white-texas);
     overflow-y: auto;
     margin-bottom: 20px;
     border-radius: 5px;   
-}
-
-.invoice-container p {
-    color: white;
 }
 
 table {
@@ -132,4 +134,19 @@ td {
     font-weight: bold;
     background-color: rgba(36, 32, 32,0.9);
     color: white;
+}
+
+.footer {
+    height: 4vh;
+    width: 99.9%;
+    margin-top: 1.5rem;
+    padding-top: 2px;
+    background: rgb(152, 48, 63);
+    border: 1px solid #333;
+    border-top: none;
+}
+
+.footer p {
+    color: var(--white-texas);
+    text-align: center;
 }

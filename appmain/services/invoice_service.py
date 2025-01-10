@@ -8,7 +8,7 @@
 from django.utils.timezone import now, timedelta
 from django.db import IntegrityError
 from django.utils.translation import gettext as _
-from django.http import HttpResponse
+from django.conf import settings
 
 from ..models import Invoice
 
@@ -46,7 +46,7 @@ class InvoiceService:
                     return None, False, _('La facture est introuvable')
 
             # Vérification de l'expiration
-            token_validity_period = timedelta(seconds=84600)
+            token_validity_period = timedelta(seconds=settings.PAYMENT_TOKEN_VALIDITY)
             if now() > invoice.token_created_at + token_validity_period:
                 return invoice, False, _("Validité du token expirée.")
 

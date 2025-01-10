@@ -19,6 +19,9 @@
             margin: auto;
             font-family: Arial, sans-serif;
             color: #333;
+        } 
+        .my-0 {
+            margin: 0.3rem 0rem;
         }
         .text-center {
             text-align: center;
@@ -61,10 +64,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ company_name }}</h1>
+        <h1>{{ company_info.name }}</h1>
         <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}</p>
         <p>{% translate 'Comme convenu par téléphone, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
-
+        <hr><br>
+        <h3>{% translate 'DEVIS N°' %} {{ trip_invoice.invoice_number }}</h3>
+        <p class="my-0">{% translate 'Date :' %} {{ trip_invoice.created_at }}</p>
+        <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
+        <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
+        <p class="my-0">{{ company_info.address }}</p>
+        <br>
+        <p>{% translate 'Vos coordonnées :' %}</p>
+        <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+        <p class="my-0">{{ trip_invoice.customer.address }}</p>
+        <p class="my-0">{{ trip_invoice.customer.email }}</p>
+        <p class="my-0">{{ trip_invoice.customer.phone }}</p>
         <!-- estimate table -->
         <table>
             <thead>
@@ -72,7 +86,7 @@
                     <th>{% translate 'Service' %}</th>
                     <th>{% translate 'Choix' %}</th>
                     <th>{% translate 'Nombre de jours' %}</th>
-                    <th>{% translate 'Prix (€)' %}</th>
+                    <th>{% translate 'Prix/jour hors taxe(€)' %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,28 +94,29 @@
                     <td>{% translate 'Autonome' %}</td>
                     <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
                     <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
-                    <td>{{ trip_invoice.price_mobile|default:"-" }}</td>
+                    <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
                 </tr>
                 <tr>
-                    <td>{% translate 'Guide' %}</td>
+                    <td>{% translate 'Chauffeur privé' %}</td>
                     <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
                     <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
-                    <td>{{ trip_invoice.price_driver|default:"-" }}</td>
+                    <td>{{ trip_invoice.driver_price_excl_tax|default:"-" }}</td>
                 </tr>
                 <tr>
                     <td>{% translate 'Platinum' %}</td>
                     <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
                     <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
-                    <td>{{ trip_invoice.price_platinum|default:"-" }}</td>
+                    <td>{{ trip_invoice.platinum_price_excl_tax|default:"-" }}</td>
                 </tr>
                 <tr class="total-row">
                     <td colspan="3">{% translate 'Total TTC' %}</td>
-                    <td>{{ trip_invoice.total }}</td>
+                    <td>{{ trip_invoice.total }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
                 </tr>
             </tbody>
         </table>
 
         <p class="text-center">{% translate 'Pour valider votre voyage, merci de cliquer sur le lien suivant et regler le montant du devis.' %}</p>
+        <p class="text-center"><strong>{% translate 'Ce lien de paiement restera actif 48h. Contactez nous pour le renouveler.' %}</strong></p>
         <div class="frame">
             <a href="{{ token_url }}">Ici pour valider et régler votre devis. Merci pour votre confiance.</a>
         </div>

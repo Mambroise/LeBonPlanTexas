@@ -10,6 +10,7 @@ from .views.payment_view import payment_view
 from .views.stripe_checkout_view import create_checkout_session
 from .views.validate_terms_view import validate_terms
 from .views.checkout_suc_can import checkout_success,checkout_cancelled
+from .views.checkout_suc_can import print_invoice
 
 urlpatterns = [
     path('index/', index, name='index'), 
@@ -21,5 +22,6 @@ urlpatterns = [
     path('create-checkout-session/', create_checkout_session, name='create-checkout-session'), 
     path('checkout-success/', checkout_success, name='checkout_success'), 
     path('checkout-cancelled/', checkout_cancelled, name='checkout_cancelled'), 
+    path('print_invoice/<int:invoice_id>/', print_invoice, name='print_invoice'),
     path('thanku/', multi_step_form, name='success'), 
  ]

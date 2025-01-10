@@ -58,7 +58,7 @@ class CustumerService:
 
     
     @staticmethod
-    def custumer_is_mailed(customer : Customer):
+    def customer_is_mailed(customer : Customer):
         try:
             customer.is_mailed = True
             customer.save()

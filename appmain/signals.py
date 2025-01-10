@@ -8,6 +8,7 @@
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.timezone import now
 from django.conf import settings
 from .models import Invoice
 
@@ -42,4 +43,12 @@ def calculate_invoice_totals(sender, instance, created, **kwargs):
             tax_rate=tax_rate,
             tax_amount=tax_amount,
             total=total_incl_tax
+        )
+
+@receiver(post_save, sender=Invoice)
+def set_invoice_number(sender, instance, created, **kwargs):
+    if created and not instance.invoice_number:
+        today_str = now().strftime('%Y%m%d')
+        Invoice.objects.filter(pk=instance.pk).update(
+            invoice_number=f"{instance.pk}{instance.customer.id}{today_str}"
         )
