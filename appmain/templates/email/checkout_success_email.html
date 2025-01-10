@@ -1,0 +1,180 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/email/checkout_success_email.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Email</title>
+    <style>
+        .modal {
+            width: 50vw;
+            margin: auto;
+            background: linear-gradient(rgb(152, 48, 63),rgb(152, 48, 63),rgb(255, 255, 255),rgb(255, 255, 255));
+            border: 1px solid #333;
+            border-bottom: none;
+            border-radius: 8px 8px 0px 0px;
+            color: var(--black-color);
+        }
+        .terms-bg-image {
+            position: relative;
+            height: 35vh;
+            width: 100%;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .icon-round {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            height: 5rem;
+            width: 5rem;
+            transform: translate(-55%, -50%);
+            border-radius: 50%;
+            background-color: rgb(152, 48, 63);
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 2rem;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: white;
+            border-radius: 3px;
+        } 
+        .my-0 {
+            margin: 0.3rem 0rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(36, 32, 32,0.9);
+            color: white;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: rgba(226,114,91,0.9);
+        }
+        .frame {
+            width: 60%;
+            border: 2px solid rgb(152, 48, 63);
+            border-radius: 5px;
+            margin: 10px auto;
+            padding: 5px 40px;
+            text-align: center;
+            background: rgb(152, 48, 63);
+        }
+        .frame a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+        }
+        .footer {
+            height: 4vh;
+            width: 99.9%;
+            padding-top: 2px;
+            background: rgb(152, 48, 63);
+            border: 1px solid #333;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="terms-bg-image">
+            <img src="cid:fort_worth" alt="fort worth coliseum" width="100%" height="auto" style="background-size: cover;background-position: bottom;">                  
+        </div>
+        <h2  style="color: white; text-align: center;">{% translate 'Votre transaction a été accepté' %}</h2>
+        <hr style="background-color: white; height: 1px; border: none;">
+        <div class="container">
+            {% get_current_language as LANGUAGE_CODE %}
+            <h1 style="text-align: center;">{% translate 'GO BIG OR GO HOME!' %}{% if LANGUAGE_CODE == 'fr' %}*{% endif %}</h1>
+            
+            <br>
+            <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}!!</p>
+            <p>{% translate 'Merci d\'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage.' %}</p>
+            <p>{% translate 'Vos identidiants et mots de passe vous serons envoyez par email d\'ici peu.' %}</p>
+            <br>
+            <h3>{% translate 'FACTURE N°' %} {{ trip_invoice.invoice_number }}</h3>
+            <p class="my-0">{% translate 'Date de paiement :' %} {{ trip_invoice.is_paid_date }}</p>
+            <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
+            <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
+            <p class="my-0">{{ company_info.address }}</p>
+            <br>
+            <p><u>{% translate 'Vos coordonnées :' %}</u></p>
+            <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+            <p class="my-0">{{ trip_invoice.customer.address }}</p>
+            <p class="my-0">{{ trip_invoice.customer.email }}</p>
+            <p class="my-0">{{ trip_invoice.customer.phone }}</p>
+            <!-- invoice table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>{% translate 'Service' %}</th>
+                        <th>{% translate 'Choix' %}</th>
+                        <th>{% translate 'Nombre de jours' %}</th>
+                        <th>{% translate 'Prix/jour hors taxe(€)' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% translate 'Autonome' %}</td>
+                        <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
+                        <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Chauffeur privé' %}</td>
+                        <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
+                        <td>{{ trip_invoice.driver_price_excl_tax|default:"-" }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Platinum' %}</td>
+                        <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
+                        <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
+                        <td>{{ trip_invoice.platinum_price_excl_tax|default:"-" }}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="3">{% translate 'Total TTC' %}</td>
+                        <td>{{ trip_invoice.total }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
+                    </tr>
+                </tbody>
+            </table>
+            <strong class="">{% translate 'Type de paiement :' %} {{ trip_invoice.payment_type }}</strong>
+            <div class="frame">
+                <a href="http://127.0.0.1:8000/print_invoice/{{ trip_invoice.id}}" target="_blank">Ici pour voir votre facture en pdf téléchargeable.</a>
+            </div>
+            <p class="text-center">{% translate 'Nous reviendrons au plus vite vers vous!' %}</p>
+        </div>
+        <div class="footer">
+            <p style="color: white; text-align: center;">LeBonPlanTEXAS</p>
+        </div>
+    </div>
+</body>
+</html>

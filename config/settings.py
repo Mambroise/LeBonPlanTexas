@@ -43,7 +43,7 @@ SESSION_COOKIE_AGE = 3600  # 60 minutes
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Durée de validité du token (24 heures en secondes)
-PAYMENT_TOKEN_VALIDITY = timedelta(days=1).total_seconds()
+PAYMENT_TOKEN_VALIDITY = timedelta(days=2).total_seconds()
 
 
 #Email settings:
@@ -156,10 +156,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Company informations for invoices
+# Company informations for french invoices
 COMPANY_INFO = {
-    'name': 'Le Bon Plan Texas',
+    'name': 'LeBonPlanTexas',
     'siren': '123456789',
+    'legal_structure': 'SA',
     'address': '123 Rue de Texas, Austin, TX',
     'tva_info' : '20%',
     'tva_math' : 1.2,

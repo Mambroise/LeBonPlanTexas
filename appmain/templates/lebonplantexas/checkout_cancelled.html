@@ -13,10 +13,21 @@
 
 {% block content %}
         <h2 class="align-center">{% translate 'Votre transaction a été annulée' %}</h2>
+        <hr class="hr">
         <div class="invoice-container">
             <p>{% translate 'Vos accès à nos service ne sont plus disponible.' %}</p>
             <p>{% translate 'Nous sommes navré de cette situation et serions heureux de vous revoir bientôt.' %}</p>
             <p>{% translate "Numéro de facture annulée:" %} {{ trip_invoice.invoice_number }}</p>
+            <br>
+            <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
+            <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
+            <p class="my-0">{{ company_info.address }}</p>
+            <br>
+            <p>{% translate 'Vos coordonnées :' %}</p>
+            <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+            <p class="my-0">{{ trip_invoice.customer.address }}</p>        
+            <p class="my-0">{{ trip_invoice.customer.email }}</p>
+            <p class="my-0">{{ trip_invoice.customer.phone }}</p>
             <!-- invoice table -->
             <table>
                 <thead>
@@ -24,7 +35,7 @@
                         <th>{% translate 'Service' %}</th>
                         <th>{% translate 'Choix' %}</th>
                         <th>{% translate 'Nombre de jours' %}</th>
-                        <th>{% translate 'Prix (€)' %}</th>
+                        <th>{% translate 'Prix/jour hors taxe(€)' %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,23 +43,23 @@
                         <td>{% translate 'Autonome' %}</td>
                         <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
                         <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
-                        <td>{{ trip_invoice.price_mobile|default:"-" }}</td>
+                        <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
                     </tr>
                     <tr>
-                        <td>{% translate 'Guide' %}</td>
+                        <td>{% translate 'Chauffeur privé' %}</td>
                         <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
                         <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
-                        <td>{{ trip_invoice.price_driver|default:"-" }}</td>
+                        <td>{{ trip_invoice.driver_price_excl_tax|default:"-" }}</td>
                     </tr>
                     <tr>
                         <td>{% translate 'Platinum' %}</td>
                         <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
                         <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
-                        <td>{{ trip_invoice.price_platinum|default:"-" }}</td>
+                        <td>{{ trip_invoice.platinum_price_excl_tax|default:"-" }}</td>
                     </tr>
                     <tr class="total-row">
                         <td colspan="3">{% translate 'Total TTC' %}</td>
-                        <td>{{ amount_paid }}</td>
+                        <td>{{ amount_paid }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
                     </tr>
                 </tbody>
             </table>

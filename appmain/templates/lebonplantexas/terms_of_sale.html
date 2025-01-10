@@ -6,23 +6,12 @@
 # --------------------------------------------------------------------------- -->
 
 
+{% extends 'base_checkout.html' %}
+
 {% load static %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% translate "Validation des CGV" %}</title>
-    <link rel="stylesheet" href="{% static 'appmain/css/checkout.css' %}">
-</head>
-<body>
-    <div class="modal">
-        <div class="terms-bg-image">
-            <div class="icon-round">
-                <div class="invoice-icon"></div>
-            </div>
-        </div>
+
+{% block content %}
         <h2 class="align-center">{% translate 'Conditions Générales de vente' %}</h2>
         <div class="scrollable">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
@@ -43,6 +32,4 @@
                 <button class="btn-primary" type="submit">{% translate 'VALIDER' %}</button>
             </div>
         </form>
-    </div>
-</body>
-</html>
+{% endblock %}

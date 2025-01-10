@@ -13,6 +13,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from ..models import Invoice
+from ..services.generate_invoice_pdf import PdfHandler
+from ..services.send_email import send_checkout_success_email
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -36,16 +38,22 @@ def checkout_success(request):
         invoice.stripe_session_id = session_id
         invoice.save()
 
+        #  mailing the invoice to the customer
+        if not send_checkout_success_email(invoice):
+            return render(request, "error.html", {"message": "Erreur email envoi facture"})
 
         # Optionnel : récupérer plus de détails si nécessaire
         payment = stripe.PaymentIntent.retrieve(payment_intent)
         amount_paid = payment.amount_received / 100  # in euros
 
-        return render(request, "lebonplantexas/checkout_success.html", {
+        context = {
+            "company_info": settings.COMPANY_INFO,
             "trip_invoice": invoice,
             "customer_email": customer_email,
             "amount_paid": amount_paid,
-        })
+        }
+
+        return render(request, "lebonplantexas/checkout_success.html", context)
 
     except Exception as e:
         print(f'error : {str(e)}')
@@ -64,4 +72,12 @@ def checkout_cancelled(request):
         message = _('Erreur : %s' % {str(e)})
         return render(request,'error.html', {'message' : message})
     
-    return render(request, "lebonplantexas/checkout_cancelled.html", {'trip_invoice' : invoice})
+    context = {
+            "company_info": settings.COMPANY_INFO,
+            "trip_invoice": invoice,
+        }
+    
+    return render(request, "lebonplantexas/checkout_cancelled.html", context)
+
+def print_invoice(request, invoice_id):
+    return PdfHandler.generate_invoice_pdf(invoice_id, method='inline')

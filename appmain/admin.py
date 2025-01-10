@@ -42,14 +42,14 @@ def send_email_action(modeladmin, request, queryset):
             if not success:
                 modeladmin.message_user(request, "Problème lors de l'envoi des emails.", level="error")
             customer = invoice.customer
-
             if send_payment_link(customer, invoice):    
                 success_count += 1
-                CustumerService.custumer_is_mailed(customer)
+                CustumerService.customer_is_mailed(customer)
             else:
                 error_count += 1
         except Exception as e:
             error_count += 1
+
 
     if success_count:
         modeladmin.message_user(request, f"{success_count} e-mails envoyés avec succès.", level=messages.SUCCESS)
