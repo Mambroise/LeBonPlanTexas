@@ -134,6 +134,17 @@ form{
     font-size: 1.6rem;
 }
 
+select[name="country"] {
+    height: 3rem; 
+    width: 10rem;
+    background: transparent;
+    font-size: 1.6rem; 
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.5rem; 
+    color: #333; 
+}
+
 .step2-buttons {
     margin-top: 5rem;
     display: flex;

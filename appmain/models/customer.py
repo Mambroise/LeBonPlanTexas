@@ -6,9 +6,11 @@
 # ---------------------------------------------------------------------------
 
 import re
+from django_countries.fields import CountryField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from django import forms
 
 # Create your models here.
 class Customer(models.Model):
@@ -18,6 +20,7 @@ class Customer(models.Model):
     email = models.CharField(_('Email'), max_length=150)
     phone = models.CharField(_('Portable'),max_length=12, blank=True, null=True)
     address = models.CharField(_('Adresse'),max_length=200,null=True,blank=True)
+    country = CountryField(blank_label=_('Pays'), null=False, blank=False)
     timestamp = models.DateTimeField(auto_now=True)
     is_called = models.BooleanField(default=False)
     is_mailed = models.BooleanField(default=False)
@@ -50,3 +53,8 @@ class Customer(models.Model):
                 raise ValidationError(_('Le numéro de téléphone doit comporter uniquement des chiffres après nettoyage.'))
 
         return cleaned_data
+    def clean_country(self):
+        country = self.cleaned_data.get('country')
+        if not country:
+            raise forms.ValidationError(_("Veuillez sélectionner un pays."))
+        return country

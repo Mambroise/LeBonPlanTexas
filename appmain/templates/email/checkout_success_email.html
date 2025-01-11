@@ -6,115 +6,18 @@
 # --------------------------------------------------------------------------- -->
 
 
+{% extends 'base_email.html' %}
+
 {% load i18n %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Email</title>
-    <style>
-        .modal {
-            width: 50vw;
-            margin: auto;
-            background: linear-gradient(rgb(152, 48, 63),rgb(152, 48, 63),rgb(255, 255, 255),rgb(255, 255, 255));
-            border: 1px solid #333;
-            border-bottom: none;
-            border-radius: 8px 8px 0px 0px;
-            color: var(--black-color);
-        }
-        .terms-bg-image {
-            position: relative;
-            height: 35vh;
-            width: 100%;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        .icon-round {
-            position: absolute;
-            top: 95%;
-            left: 50%;
-            height: 5rem;
-            width: 5rem;
-            transform: translate(-55%, -50%);
-            border-radius: 50%;
-            background-color: rgb(152, 48, 63);
-            display: flex;
-            align-items: center; 
-            justify-content: center;
-        }
-        .container {
-            width: 90%;
-            margin: auto;
-            padding: 2rem;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: white;
-            border-radius: 3px;
-        } 
-        .my-0 {
-            margin: 0.3rem 0rem;
-        }
-        .text-center {
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: rgba(36, 32, 32,0.9);
-            color: white;
-        }
-        .total-row {
-            font-weight: bold;
-            background-color: rgba(226,114,91,0.9);
-        }
-        .frame {
-            width: 60%;
-            border: 2px solid rgb(152, 48, 63);
-            border-radius: 5px;
-            margin: 10px auto;
-            padding: 5px 40px;
-            text-align: center;
-            background: rgb(152, 48, 63);
-        }
-        .frame a {
-            text-decoration: none;
-            font-size: 1.2rem;
-            color: white;
-        }
-        .footer {
-            height: 4vh;
-            width: 99.9%;
-            padding-top: 2px;
-            background: rgb(152, 48, 63);
-            border: 1px solid #333;
-            border-top: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="modal">
-        <div class="terms-bg-image">
-            <img src="cid:fort_worth" alt="fort worth coliseum" width="100%" height="auto" style="background-size: cover;background-position: bottom;">                  
-        </div>
+{% block content %}
         <h2  style="color: white; text-align: center;">{% translate 'Votre transaction a été accepté' %}</h2>
         <hr style="background-color: white; height: 1px; border: none;">
         <div class="container">
             {% get_current_language as LANGUAGE_CODE %}
-            <h1 style="text-align: center;">{% translate 'GO BIG OR GO HOME!' %}{% if LANGUAGE_CODE == 'fr' %}*{% endif %}</h1>
-            
+            <h1 style="text-align: center;">{% translate 'GO BIG OR GO HOME!' %}{% if LANGUAGE_CODE == 'fr' %}*</h1>{% endif %}
+            {% if LANGUAGE_CODE == 'fr' %}<small style="float: right;"><i>*Voyez grand ou restez chez vous !</i></small>{% endif %}</div>
             <br>
             <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}!!</p>
             <p>{% translate 'Merci d\'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage.' %}</p>
@@ -126,7 +29,7 @@
             <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
             <p class="my-0">{{ company_info.address }}</p>
             <br>
-            <p><u>{% translate 'Vos coordonnées :' %}</u></p>
+            <p><u>{% translate '👤 Vos coordonnées :' %}</u></p>
             <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
             <p class="my-0">{{ trip_invoice.customer.address }}</p>
             <p class="my-0">{{ trip_invoice.customer.email }}</p>
@@ -172,9 +75,5 @@
             </div>
             <p class="text-center">{% translate 'Nous reviendrons au plus vite vers vous!' %}</p>
         </div>
-        <div class="footer">
-            <p style="color: white; text-align: center;">LeBonPlanTEXAS</p>
-        </div>
-    </div>
-</body>
-</html>
+
+{% endblock %}

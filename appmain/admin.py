@@ -58,7 +58,7 @@ def send_email_action(modeladmin, request, queryset):
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone', 'timestamp', 'selected_categories', 'is_called', 'is_mailed', 'is_done')
+    list_display = ('first_name', 'last_name', 'email', 'phone','country', 'timestamp', 'selected_categories', 'is_called', 'is_mailed', 'is_done')
     search_fields = ('first_name', 'last_name', 'email')
     list_filter = ('email',)
     inlines = [InterestInline, TripInline,TexasTripInline] # Affichage des objets liés dans l'admin du Customer
