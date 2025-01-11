@@ -32,7 +32,8 @@ class CustumerService:
                 first_name=data['first_name'],
                 last_name=data['last_name'],
                 email=data['email'],
-                phone=data['phone']
+                phone=data['phone'],
+                country=data['country']
             )
             customer.full_clean() 
             customer.save()
@@ -65,3 +66,5 @@ class CustumerService:
             print(f'is_mailed successfully updated ')
         except Exception as e:
             print(f'is_mailed update unsuccessful: {e}')
+
+    

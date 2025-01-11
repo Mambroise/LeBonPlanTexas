@@ -7,13 +7,14 @@
 
 
 from django import forms
+from django_countries.widgets import CountrySelectWidget
 
 from appmain.models import Customer
 
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
-        fields = ['first_name','last_name','email','phone']
+        fields = ['first_name','last_name','email','phone','country']
         widgets = {
             'first_name': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -30,5 +31,9 @@ class CustomerForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
                 'required': True,
+            }),
+            'country': CountrySelectWidget(attrs={
+                'class': 'form-control',
+                'required': True, 
             }),
         }

@@ -5,55 +5,13 @@
 # Author : Morice
 # --------------------------------------------------------------------------- -->
 
-{% load i18n %}
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            color: rgb(152, 48, 63);
-            text-align: center;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        .highlight {
-            font-weight: bold;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: rgb(152, 48, 63);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .cta a:hover {
-            background-color: rgb(152, 48, 63);
-        }
-    </style>
-</head>
-<body>
+{% extends 'base_email.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
     <div class="container">
         <h1>Bonjour {{ customer.first_name|capfirst }} !</h1>
 
@@ -113,5 +71,5 @@
             <strong>L'équipe de {{ company_name }}</strong>
         </p>
     </div>
-</body>
-</html>
+{% endblock %}
+

@@ -164,5 +164,6 @@ COMPANY_INFO = {
     'address': '123 Rue de Texas, Austin, TX',
     'tva_info' : '20%',
     'tva_math' : 1.2,
+    'my_email' : 'maurice.ambroise79@gmail.com',
 }
 
