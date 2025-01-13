@@ -23,11 +23,11 @@
 
 .round-banner {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 10%;
     width: 15.625rem;
     height: 15.625rem;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     background: var(--navbar-and-dot);
     border-radius: 50%;border: 1px solid var(--black-color);
     display: flex;
@@ -40,6 +40,54 @@
 
 .round-banner p {
     padding: 0rem 1.25rem;
+}
+
+.demo-banner {
+    display: grid;
+    margin-top: 8rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    gap: 10px;
+    width: 100%; 
+}
+
+.item {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.mobile-step1 {
+    width: 50%;
+    height: 40vh;
+    background-image: url(../../images/mobile_step1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.mobile-step2 {
+    width: 50%;
+    height: 40vh;
+    background-image: url(../../images/mobile_step2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mobile-step3 {
+    width: 50%;
+    height: 40vh;
+    background-image: url(../../images/mobile_step3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mobile-step-p {
+    display: flex;
+    align-items: center;
+    color: var(--black-color);
+    width: 40%;
+    font-size: 1.7rem;
 }
 
 /* first banner */
