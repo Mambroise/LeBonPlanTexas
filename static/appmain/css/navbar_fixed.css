@@ -33,8 +33,6 @@
     width: 40%;
     height: auto;
     max-height: 300px;
-    position: relative;
-    right: 15px;
     background-image: url(../../images/logo_star.png);
     background-size: contain;
     background-position: center;
@@ -60,7 +58,17 @@
 }
 
 .nav-register-box-fixed, .nav-who-box-fixed {
-    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.nav-register-box-fixed {
+    justify-content:right ;
+}
+
+.nav-who-box-fixed {
+    justify-content:left ;
 }
 
 .nav-box-fixed {

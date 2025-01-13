@@ -47,17 +47,12 @@ function addStyles(selector) {
             background: var(--navbar-black);
             border-bottom: 1px solid var(--black-color);
         }
-        .logo-image.small {
-           background-position-x: 4.5rem;
-           transition: 0.1s ease
-        }
+
         #who.small, #register.small {
             font-size: 1.05rem;
             transition:  0.3s ease-in-out;
         }
-        .nav-register-box.small, .nav-who-box.small {
-            margin-top: 40px;
-        }
+
         .nav-box.small {
             width: 40%;
             transition:  0.5s ease-in-out;
@@ -101,8 +96,6 @@ addStyles(navbarSelector);
 
 const who = document.querySelector('#who');
 const register = document.querySelector('#register');
-const navRegisterBox = document.querySelector('.nav-register-box');
-const navWhoBox = document.querySelector('.nav-who-box');
 const navBox = document.querySelector('.nav-box')
 const title = document.querySelector('.title')
 const titleSpan = document.querySelector('.title span')
@@ -110,16 +103,12 @@ const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
 const flagImg = document.querySelector('.flag-img');
 const flagImgUs = document.querySelector('.flag-img-us');
-const logoImage = document.querySelector('.logo-image');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
-        logoImage.classList.add('small');
         who.classList.add('small');
         register.classList.add('small');
-        navRegisterBox.classList.add('small');
-        navWhoBox.classList.add('small');
         navBox.classList.add('small');
         title.classList.add('small');
         titleSpan.classList.add('small');
@@ -130,11 +119,8 @@ window.addEventListener('scroll', () => {
 
     } else {
         navbar.classList.remove('small');
-        logoImage.classList.remove('small');
         who.classList.remove('small');
         register.classList.remove('small');
-        navRegisterBox.classList.remove('small');
-        navWhoBox.classList.remove('small');
         navBox.classList.remove('small');
         title.classList.remove('small');
         titleSpan.classList.remove('small');
