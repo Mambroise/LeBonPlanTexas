@@ -11,11 +11,13 @@ from .views.stripe_checkout_view import create_checkout_session
 from .views.validate_terms_view import validate_terms
 from .views.checkout_suc_can import checkout_success,checkout_cancelled
 from .views.checkout_suc_can import print_invoice
+from .views.service_view import service_view
 
 urlpatterns = [
     path('index/', index, name='index'), 
     path('privacy_policy/', privacy, name='privacy'), 
     path('identity/', identity, name='identity'), 
+    path('services/', service_view, name='services'), 
     path('register/', multi_step_form, name='multi_step_form'), 
     path('payment/', payment_view, name='payment_view'), 
     path('validate_terms/', validate_terms, name='validate_terms'), 

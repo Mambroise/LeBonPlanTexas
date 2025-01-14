@@ -1,0 +1,75 @@
+/* # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : static/appmain/css/service.css
+# Author : Morice
+# --------------------------------------------------------------------------- */
+
+
+.service-container {
+
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.column {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: flex 0.3s ease-in-out;
+    cursor: pointer;
+    border-left: 1px solid var(--black-color);
+}
+
+.column:hover {
+    flex: 2; 
+}
+
+.column:not(:hover) {
+    flex: 1; 
+}
+
+.column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#service1::before {
+    background-image: url('../../images/cotton_bowl.jpg'); 
+}
+
+#service2::before {
+    background-image: url('../../images/peer.jpg');
+}
+
+#service3::before {
+    background-image: url('../../images/rockport_beach.jpg');
+}
+
+.column:hover::before {
+    opacity: 1;
+}
+
+.content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+}
