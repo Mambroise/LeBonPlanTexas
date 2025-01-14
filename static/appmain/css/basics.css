@@ -30,4 +30,9 @@
 body{
     margin: 0;
     color: var(--white-texas);
+    font-family: 'Roboto', sans-serif;
 }
+
+/* h1,h2 {
+  font-family: 'Cinzel', serif;
+} */

@@ -68,9 +68,18 @@
 }
 
 .nav-register-box, .nav-who-box {
-   margin-top: 12%;
+   display: flex;
+   align-items: center;
    width: 30%;
    transition:  0.3s ease-in-out;
+}
+
+.nav-register-box {
+    justify-content:right ;
+}
+
+.nav-who-box {
+    justify-content:left ;
 }
 
 a {
@@ -107,8 +116,6 @@ a {
     width: 40%;
     height: auto;
     max-height: 300px;
-    position: relative;
-    right: 15px;
     background-image: url(../../images/logo_star.png);
     background-size: contain;
     background-position: center;
