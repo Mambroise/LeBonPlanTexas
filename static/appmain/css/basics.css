@@ -73,18 +73,13 @@ body{
   color: var(--black-color);
 }
 
-.flex-center{
+.flex-center-{
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.flex-center{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
 
 .flex-around {
   display: flex;

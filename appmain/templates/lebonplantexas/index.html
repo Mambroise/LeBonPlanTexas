@@ -66,7 +66,7 @@
                 <div class="service">
                     <div class="service-custom-img">
                         <div class="veil">
-                            <h3>{% translate 'Formule Platinium' %}</h3>
+                            <h3>{% translate 'Formule Platinum' %}</h3>
                             <p>{% translate 'Planifiez votre séjour avec un grand connaisseur du Texas.' %}
                                 {% translate 'Je vous suggérerai les meilleurs activités adaptées à vos besoins et ferai toutes recherches supplémentaires pour un voyage parfait.' %}   
                             </p>
@@ -79,14 +79,27 @@
     <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not trip_invoice.customer.country == 'US' %}*</h2>{% else %}</h2>{% endif %}
     {% if not trip_invoice.customer.country == 'US' %}<p class="text-center"><small class="c-black"><i>*Voyez grand ou restez chez vous !</i></small></p>{% endif %}
     <br>
-    <section>
-        <div class="flex-center">
-            <h3>{% translate 'Coup de coeur du moment' %}</h3>
-            <form action="">
-                
-            </form>
+    <section class="third-banner">
+        <div class="third-banner-form-box">
+            <h3 class="c-black">{% translate 'Les immanquables du texas' %}</h3>
+            <form class="third-banner-form" id="city-selector-form">
+                <select class="region-selector" id="city-select" name="city">
+                    <option value="austin">{% translate 'Austin' %}</option>
+                    <option value="dallas" selected>{% translate 'Dallas' %}</option>
+                    <option value="houston">{% translate 'Houston' %}</option>
+                    <option value="san_antonio">{% translate 'San Antonio' %}</option>
+                    <option value="east">{% translate 'Port Isabel' %}</option>
+                    <!-- Ajoutez d'autres villes ici -->
+                </select>
+                <button class="btn-primary" type="submit">{% translate 'VOIR LES ACTIVITES' %}</button>
+            </form>         
+        </div>
+        <div id="activities-container" class="activities-container">
+            <!-- Activity cards injected here from ajax -->
         </div>
     </section>
+
+        
         <!-- First banner with adds on the right
         <section class="first-banner">
             <div class="mobile-picture">
