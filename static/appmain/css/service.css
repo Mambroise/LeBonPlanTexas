@@ -6,11 +6,76 @@
 # --------------------------------------------------------------------------- */
 
 
-.service-container {
+.service-banner {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url(../../images/bayou_large.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
+.service-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-color); /* Voile noir */
+    opacity: 0.2; 
+    z-index: 1;
+}
+
+.service-banner h2 {
+    position: absolute;
+    width: 80%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    color: var(--white-texas);
+    font-size: clamp(3.5rem, 2.5vw, 3rem);
+    margin: 0;
+}
+
+.round-service-banner {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    width: 15.625rem;
+    height: 15.625rem;
+    font-size: 1.4rem;
+    background: var(--navbar-and-dot);
+    border-radius: 50%;border: 1px solid var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    z-index: 2;
+    padding: 10px; 
+    opacity: 0.95;
+    overflow: hidden; 
+}
+
+.round-service-banner p{
+    z-index: 3;
+}
+
+
+.service-container-frame {
+    margin-top: 4rem;
+    padding: 0.6rem 0;
+    border: 1px solid var(--black-color);
+    background-color: var(--caroussel-service-bg);
+}
+
+.service-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
+    background-color: var(--white-texas);
 }
 
 .column {
@@ -24,7 +89,7 @@
 }
 
 .column:hover {
-    flex: 2; 
+    flex: 3; 
 }
 
 .column:not(:hover) {

@@ -18,8 +18,9 @@
         <p>{% translate 'Vos vacances intelligentes : planifiez, explorez et vivez des expériences inoubliables via un assitant mobile.' %}</p>
     </div>
 </div>
-    <!-- company concept quick explantion part -->
-    <div class="demo-banner">
+    <!-- company concept quick explantion banner -->
+    <h2 class="demo-banner-title">{% translate 'Pourquoi voyager avec LeBonPlanTEXAS ?' %}</h2>
+    <section class="demo-banner">
         <div class="item">
             <div class="mobile-step1"></div>
             <div class="mobile-step-p"><p>{% translate 'Votre guide ultime : découvrez une mine d\'idees touristiques incontournables au Texas.' %}</p></div>
@@ -32,12 +33,12 @@
             <div class="mobile-step3"></div>
             <div class="mobile-step-p"><p>{% translate 'Votre copilote touristique : trajets, horaires et conseils, notre assitant vous guide en temps réel.' %}</p></div>
         </div>
-    </div>
+    </section>
 
     <!-- Introducing the different services provided -->
-    <div class="second-banner">
-        <div class="banner-title">
-            <h1>{% translate 'NOS SERVICES' %}</h1>
+    <section class="second-banner">
+        <div class="second-banner-title">
+            <h2>{% translate 'Nos services' %}</h2>
         </div>
         <div class="service-box">
             <div class="service-app-column">
@@ -67,16 +68,27 @@
                         <div class="veil">
                             <h3>{% translate 'Formule Platinium' %}</h3>
                             <p>{% translate 'Planifiez votre séjour avec un grand connaisseur du Texas.' %}
-                                {% translate 'Je vous suggererai les meilleurs activités adaptées à vos besoins et ferai toutes recherches supplémentaires pour un voyage parfait.' %}   
+                                {% translate 'Je vous suggérerai les meilleurs activités adaptées à vos besoins et ferai toutes recherches supplémentaires pour un voyage parfait.' %}   
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        <!-- First banner with adds on the right -->
-        <div class="first-banner">
+    </section>
+    <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not trip_invoice.customer.country == 'US' %}*</h2>{% else %}</h2>{% endif %}
+    {% if not trip_invoice.customer.country == 'US' %}<p class="text-center"><small class="c-black"><i>*Voyez grand ou restez chez vous !</i></small></p>{% endif %}
+    <br>
+    <section>
+        <div class="flex-center">
+            <h3>{% translate 'Coup de coeur du moment' %}</h3>
+            <form action="">
+                
+            </form>
+        </div>
+    </section>
+        <!-- First banner with adds on the right
+        <section class="first-banner">
             <div class="mobile-picture">
             </div>
             <div class="bdd-accroche">
@@ -86,8 +98,8 @@
                 </p>
             </div>
             <div class="bdd-activities-box">
-                <!-- carrousel for advertissements -->
-                <div class="carousel">
+                 carrousel for advertissements -->
+                <!-- <div class="carousel">
                     <div class="carousel-images">
                         <div class="carousel-item">
                             <img src="{% static 'images/gruene_grove.jpg' %}" alt="Pub 1">
@@ -106,7 +118,7 @@
                     <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
                 </div>            
             </div>
-        </div>
+        </section> --> 
 {% endblock %}
 
 

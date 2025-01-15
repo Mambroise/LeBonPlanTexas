@@ -36,6 +36,70 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-/* h1,h2 {
-  font-family: 'Cinzel', serif;
-} */
+/* MARGIN AND PADDING GENERALS*/
+.no-mt {
+  margin-top: 0;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mt-6 {
+  margin-top: 6rem ;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.c-white {
+  color: var(--white-texas);
+}
+
+.c-black {
+  color: var(--black-color);
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2{
+  font-size:3.5rem;
+  color: var(--black-color);
+}
+
+h3 {
+  font-size: 2rem;
+}

@@ -27,7 +27,7 @@
     left: 10%;
     width: 15.625rem;
     height: 15.625rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     background: var(--navbar-and-dot);
     border-radius: 50%;border: 1px solid var(--black-color);
     display: flex;
@@ -40,6 +40,14 @@
 
 .round-banner p {
     padding: 0rem 1.25rem;
+}
+
+.demo-banner-title {
+    margin-top: 6rem;
+    margin-bottom: 0;
+    color: var(--black-color);
+    text-align: center;
+    font-size: 3.5rem;
 }
 
 .demo-banner {
@@ -207,14 +215,10 @@
     margin: 5rem 0;
 }
 
-.banner-title {
+.second-banner-title {
     color: var(--black-color);
     width: 90vw;
     margin: auto;
-}
-
-.banner-title p {
-    font-size: 1.5rem;
 }
 
 .service-box {
