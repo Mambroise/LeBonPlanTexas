@@ -12,9 +12,11 @@ from .views.validate_terms_view import validate_terms
 from .views.checkout_suc_can import checkout_success,checkout_cancelled
 from .views.checkout_suc_can import print_invoice
 from .views.service_view import service_view
+from .views.ajax_activities_view import get_activities
 
 urlpatterns = [
     path('index/', index, name='index'), 
+    path('get_activities/', get_activities, name='get_activities'), 
     path('privacy_policy/', privacy, name='privacy'), 
     path('identity/', identity, name='identity'), 
     path('services/', service_view, name='services'), 

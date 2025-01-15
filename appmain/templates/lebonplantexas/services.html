@@ -6,29 +6,41 @@
 # --------------------------------------------------------------------------- -->
 
 
-{% extends 'base_fixed.html' %}
+{% extends 'base.html' %}
 
 {% load i18n %}
 {% load static %}
 
 {% block content %}
-<div class="service-container">
-    <div class="column" id="service1">
-        <div class="content">
-            <h2>Service 1</h2>
-            <p>Description du service 1.</p>
-        </div>
+<div class="service-banner">
+    <!-- Longhorn picture banner -->
+    <div class="round-service-banner">
+        <p>{% translate 'Plus économique et flexible qu\'une agence de voyage, vous ne partirez plus sans nous !' %}</p>
     </div>
-    <div class="column" id="service2">
-        <div class="content">
-            <h2>Service 2</h2>
-            <p>Description du service 2.</p>
+    <h2 class="text-center">{% translate 'Tarification des services LeBonPlanTEXAS' %}</h2>
+</div>
+<h2 class="mt-6 text-center">{% translate 'Everthing\'s bigger in TEXAS!' %}{% if not trip_invoice.customer.country == 'US' %}*</h2>{% else %}</h2>{% endif %}
+{% if not trip_invoice.customer.country == 'US' %}<p class="text-center"><small class="c-black"><i>*Tout est plus grand au TEXAS !</i></small></p>{% endif %}
+<br>
+<div class="service-container-frame">
+    <div class="service-container">
+        <div class="column" id="service1">
+            <div class="content">
+                <h3>{% translate 'Formule Autonome' %}</h3>
+                <p>Description du service 1.</p>
+            </div>
         </div>
-    </div>
-    <div class="column" id="service3">
-        <div class="content">
-            <h2>Service 3</h2>
-            <p>Description du service 3.</p>
+        <div class="column" id="service2">
+            <div class="content">
+                <h3>{% translate 'Formule Chauffeur privé' %}</h3>
+                <p>Description du service 2.</p>
+            </div>
+        </div>
+        <div class="column" id="service3">
+            <div class="content">
+                <h3>{% translate 'Formule Platinum' %}</h3>
+                <p>Description du service 3.</p>
+            </div>
         </div>
     </div>
 </div>

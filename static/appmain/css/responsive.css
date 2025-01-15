@@ -169,6 +169,15 @@ html {
         height: 13rem;
         font-size: 1.5rem;
     }
+
+    /* /SERVICE */
+    .column:hover {
+        flex: 4; 
+    }
+
+    .column:not(:hover) {
+        flex: 1; 
+    }
 }
 
 @media (max-width: 750px) {
@@ -240,5 +249,14 @@ html {
         flex-direction: column;
         padding-left: 5rem;
         padding-right: 5rem;
+    }
+
+    /* /SERVICE */
+    .column:hover {
+        flex: 10; 
+    }
+
+    .column:not(:hover) {
+        flex: 1; 
     }
 }
