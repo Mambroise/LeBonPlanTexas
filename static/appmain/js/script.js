@@ -141,3 +141,61 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+// TEXAS CARDS CLASSICS BANNER
+document.addEventListener('DOMContentLoaded', () => {
+    const words = document.querySelectorAll('.word');
+    const banner = document.querySelector('.texas-banner');
+    const fadeInTime = 300; // fade-in length (ms)
+    const visibleTime = 4000; // Temps visible (ms)
+    const fadeOutTime = 300; // fade-out length (ms)
+    const pauseTime = 5000; // break between cycles (ms)
+
+    // Fonction pour distribuer horizontalement et mélanger les positions
+    function distributeWordsEvenly() {
+        const totalWidth = banner.offsetWidth;
+        const step = totalWidth / words.length; // Espacement horizontal
+        const positions = Array.from({ length: words.length }, (_, i) => i * step); // Liste des positions horizontales
+
+        // Mélanger les positions avec l'algorithme de Fisher-Yates
+        for (let i = positions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [positions[i], positions[j]] = [positions[j], positions[i]];
+        }
+
+        words.forEach((word, index) => {
+            const top = Math.random() * (banner.offsetHeight - 50); // Position verticale aléatoire
+            const rotation = Math.random() * 60 - 30; // Rotation aléatoire entre -30° et 30°
+            word.style.left = `${positions[index]}px`;
+            word.style.top = `${top}px`;
+            word.style.transform = `rotate(${rotation}deg)`;
+        });
+    }
+
+    // Fonction d'animation des mots
+    function animateWords() {
+        let delay = 0;
+
+        words.forEach(word => {
+            setTimeout(() => {
+                word.style.opacity = 1; // Fade in
+            }, delay);
+
+            setTimeout(() => {
+                word.style.opacity = 0; // Fade out
+            }, delay + visibleTime);
+
+            delay += fadeInTime + 200; // Espacement entre les mots
+        });
+
+        // Répéter après une pause
+        setTimeout(() => {
+            distributeWordsEvenly();
+            animateWords();
+        }, delay + fadeOutTime + pauseTime); // Ajouter une pause après tous les mots
+    }
+
+    // Initialiser l'animation
+    distributeWordsEvenly();
+    animateWords();
+});
+

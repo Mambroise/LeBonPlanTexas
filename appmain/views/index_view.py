@@ -7,7 +7,8 @@
 
 
 from django.shortcuts import render
+from ..models import FileForImage
 
 def index(request):
-
-    return render(request, 'lebonplantexas/index.html')
+    files = FileForImage.objects.filter(is_active=True)
+    return render(request, 'lebonplantexas/index.html',{'filen_names':files})
