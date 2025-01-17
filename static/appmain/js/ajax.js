@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Load dallas data on document loading
             loadActivities('dallas');
 
-            // add listener for the button
-            form.addEventListener('submit', function (e) {
+            // add listener for select button
+            form.addEventListener('change', function (e) {
                 e.preventDefault(); // prevent reload on submit
                 const city = document.getElementById('city-select').value;
                 loadActivities(city); 

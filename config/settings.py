@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
     'appmain',
 ]
 
@@ -141,6 +142,18 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# langues que je souhaite prendre en charge
+LANGUAGES = (
+    ('fr', 'French'),
+    ('en', 'English'),
+)
+
+# Langue par défaut pour les traductions
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
+
+# Langues disponibles pour la traduction
+MODELTRANSLATION_LANGUAGES = ('fr', 'en')
 
 
 # Static files (CSS, JavaScript, Images)

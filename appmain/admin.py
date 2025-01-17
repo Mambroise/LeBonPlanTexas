@@ -8,7 +8,7 @@
 
 from django.contrib import admin,messages
 
-from .models import Customer, Trip, Category, Interest, Invoice
+from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme
 from .models.texas_trip import TexasTrip
 from .services.send_email import send_payment_link
 from .services.invoice_service import InvoiceService
@@ -77,5 +77,30 @@ class InvoiceAdmin(admin.ModelAdmin):
 
     
 # Enregistrement des autres modèles
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
+#########################################
+# ADVERTISSEMENT PART
+
+@admin.register(Attraction)
+class AttractionAdmin(admin.ModelAdmin):
+    list_display = ('title','description','image_url')
+
+# Inline pour les Trips liés à un Customer
+class AttrictionInline(admin.TabularInline):  
+    model = Attraction
+    extra = 1  
+    fields = ('title','description','image_url') 
+
+
+# enregistrement  model FilForImage
+@admin.register(FileForImage)
+class FileForImageAdmin(admin.ModelAdmin):
+    list_display = ('file_name','is_active')
+    inlines = [AttrictionInline]
+
+@admin.register(ImageDisplayTheme)
+class ImageDisplayTheme(admin.ModelAdmin):
+    list_display = ('theme','is_active')

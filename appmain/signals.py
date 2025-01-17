@@ -6,11 +6,13 @@
 # ---------------------------------------------------------------------------
 
 
+import os
 from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils.timezone import now
 from django.conf import settings
-from .models import Invoice
+from .models import Invoice,FileForImage,Attraction
 
 @receiver(post_save, sender=Invoice)
 def calculate_invoice_totals(sender, instance, created, **kwargs):
@@ -52,3 +54,35 @@ def set_invoice_number(sender, instance, created, **kwargs):
         Invoice.objects.filter(pk=instance.pk).update(
             invoice_number=f"{instance.pk}{instance.customer.id}{today_str}"
         )
+
+@receiver(post_save, sender=FileForImage)
+def create_directory(sender, instance, created, **kwargs):
+    if created:
+        # Location where to create file
+        directory_path = os.path.join(settings.BASE_DIR, 'static', 'images', 'best_of_cities', instance.file_name)
+        
+        # Create file if not exists
+        os.makedirs(directory_path, exist_ok=True)
+
+
+@receiver(post_delete, sender=FileForImage)
+def delete_directory(sender, instance, **kwargs):
+    # Location where to delete file
+    directory_path = os.path.join(settings.BASE_DIR, 'static', 'images', 'best_of_cities', instance.file_name)
+    
+    # delete file if exists
+    if os.path.exists(directory_path):
+        os.rmdir(directory_path) 
+
+@receiver(post_delete, sender=Attraction)
+def delete_attraction_image(sender, instance, **kwargs):
+    """Supprime le fichier d'image associé à une Attraction lorsqu'elle est supprimée."""
+    if instance.image_url and os.path.isfile(instance.image_url.path):
+        try:
+            os.remove(instance.image_url.path)  # Supprime le fichier
+            # Supprime également le dossier si nécessaire
+            folder_path = os.path.dirname(instance.image_url.path)
+            if not os.listdir(folder_path):  # Vérifie si le dossier est vide
+                os.rmdir(folder_path)
+        except Exception as e:
+            print(f"Erreur lors de la suppression du fichier ou dossier: {e}")
