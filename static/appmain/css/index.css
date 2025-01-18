@@ -350,17 +350,15 @@
 .card {
     min-width: 300px;
     width: 22%;
-    padding: 0 0.4rem;
     border: 1px solid var(--black-color);
-    border-radius: 8px;
+    border-radius: 3px;
     overflow: hidden;
-    background: linear-gradient(rgb(152, 48, 63),rgb(152, 48, 63),rgb(152, 48, 63),rgb(255, 255, 255));
+    background: var(--brick-color)
 }
 
 .card-image {
     display: flex;
     justify-content: center;
-    padding-top: 0.4rem;
 }
 
 .card-image img {
@@ -374,7 +372,8 @@
     padding: 0.5rem;
     border-radius: 5px;
     min-height: 20vh;
-    text-align: center;
+    height: 100%;
+    text-align: justify;
     color: var(--black-color);
 }
 
