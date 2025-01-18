@@ -7,8 +7,9 @@
 
 
 from django.shortcuts import render
-from ..models import FileForImage
+from ..models import FileForImage,ImageDisplayTheme
 
 def index(request):
+    theme_displayed = ImageDisplayTheme.objects.get(is_active=True)
     files = FileForImage.objects.filter(is_active=True)
-    return render(request, 'lebonplantexas/index.html',{'filen_names':files})
+    return render(request, 'lebonplantexas/index.html',{'file_names':files,'theme_displayed':theme_displayed})

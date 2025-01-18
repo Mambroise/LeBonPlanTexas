@@ -7,26 +7,27 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname === '/index/') {
-        console.log('coucou');
         
         const form = document.getElementById('city-selector-form');
         const container = document.getElementById('activities-container');
 
         if (form && container) {
             // Fonction pour charger les activités
-            function loadActivities(city) {
+            function loadActivities(city_id) {
                 fetch('/get_activities/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRFToken': '{{ csrf_token }}' // Inclure le token CSRF pour les requêtes POST
                     },
-                    body: JSON.stringify({ city: city })
+                    body: JSON.stringify({ city: city_id })
                 })
                     .then(response => response.json())
                     .then(data => {
                         container.innerHTML = ''; // Réinitialiser le contenu du conteneur
-
+                        console.log(data);
+                        console.log('ata');
+                        
                         if (data.activities && data.activities.length > 0) {
                             data.activities.forEach(activity => {
                                 const card = document.createElement('div');
@@ -60,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // add listener for select button
             form.addEventListener('change', function (e) {
                 e.preventDefault(); // prevent reload on submit
-                const city = document.getElementById('city-select').value;
-                loadActivities(city); 
+                const city_id = document.getElementById('city-select').value;
+                loadActivities(city_id); 
             });
         }
     }
