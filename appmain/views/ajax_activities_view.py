@@ -17,16 +17,16 @@ def get_activities(request):
         try:
             # Charger les données depuis la requête
             data = json.loads(request.body)
-            city = data.get('city')
+            city_id = data.get('city')
 
-            if not city:
-                return JsonResponse({'error': 'La ville est requise.'}, status=400)
+            if not city_id:
+                return JsonResponse({'error': 'City id is required.'}, status=400)
 
             # Trouver le fichier associé à la ville
             try:
-                file = FileForImage.objects.get(file_name=city)
+                file = FileForImage.objects.get(pk=city_id)
             except FileForImage.DoesNotExist:
-                return JsonResponse({'error': 'Ville introuvable.'}, status=404)
+                return JsonResponse({'error': 'City not found.'}, status=404)
 
             # Récupérer les attractions associées
             activities = Attraction.objects.filter(file=file)
@@ -47,11 +47,11 @@ def get_activities(request):
             return JsonResponse({'activities': activities_list})
 
         except json.JSONDecodeError:
-            return JsonResponse({'error': 'Format JSON invalide.'}, status=400)
+            return JsonResponse({'error': 'JSON invalid format.'}, status=400)
         except Exception as e:
             # Log l'erreur pour le débogage
             print(f'Erreur : {e}')
-            return JsonResponse({'error': f'Erreur interne du serveur. {e}'}, status=500)
+            return JsonResponse({'error': f'Server error. {e}'}, status=500)
 
     # Si la méthode HTTP n'est pas POST
-    return JsonResponse({'error': 'Méthode non autorisée.'}, status=405)
+    return JsonResponse({'error': 'Not authorized method.'}, status=405)

@@ -25,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     .then(response => response.json())
                     .then(data => {
                         container.innerHTML = ''; // Réinitialiser le contenu du conteneur
-                        console.log(data);
-                        console.log('ata');
                         
                         if (data.activities && data.activities.length > 0) {
                             data.activities.forEach(activity => {
@@ -56,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Load dallas data on document loading
-            loadActivities('dallas');
+            loadActivities(2);
 
             // add listener for select button
             form.addEventListener('change', function (e) {
