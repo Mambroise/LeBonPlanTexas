@@ -82,17 +82,20 @@
     <section class="third-banner">
         <div class="third-banner-form-box">
             <h3 class="c-black">{% translate 'Les classiques du texas' %}</h3>
+            {% if  file_names %}
             <form class="third-banner-form" id="city-selector-form">
                 <select class="region-selector" id="city-select" name="city">
-                    
-                    <option value="austin">{% translate 'Austin' %}</option>
-                    <option value="dallas" selected>{% translate 'Dallas' %}</option>
-                    <option value="houston">{% translate 'Houston' %}</option>
-                    <option value="san_antonio">{% translate 'San Antonio' %}</option>
-                    <option value="rockport">{% translate 'Rockport' %}</option>
-                    <!-- Ajoutez d'autres villes ici -->
+                    {% for file in file_names %}
+                        {% if file.file_name == 'dallas' %}
+                        <option value='{{ file.id }}' selected>{{ file.file_name|capfirst }}</option>
+                        {% else %}
+                        <option value='{{ file.id }}'>{{ file.file_name|capfirst }}</option>
+                        {% endif %}
+                    {% endfor %}
                 </select>
-            </form>         
+            {% else %}
+            <p>no access to BDD</p>
+            {% endif %}</form>         
         </div>
         <div id="activities-container" class="activities-container">
             <!-- Activity cards injected here from ajax -->
