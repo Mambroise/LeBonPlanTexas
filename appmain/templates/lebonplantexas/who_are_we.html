@@ -15,9 +15,22 @@
 <div class="who-banner">
     <!-- Longhorn picture banner -->
     <div class="round-who-banner">
-        <p>{% translate 'Découvrez quel passionné du Texas est à l\'origine de cette petite entreprise familiale' %}</p>
+        {% if contact %}
+        <ul>
+            <li><i class="fas fa-envelope"> {{ contact.my_email }}</i>
+            </li>
+            <li><i class="fas fa-phone"></i> +33 {{ contact.my_phone }} <small><i>{% translate 'whatsapp uniquement' %}</i></small></i>
+            </li>
+            <li><i class="fas fa-map-marker-alt"></i> {{ contact.address }}
+            </li>
+            <li><i class="fab fa-instagram"></i> {{ contact.instagram }}
+            </li>
+        </ul>
+        {% else %}
+        <p>{% translate 'Coordonnées non disponibles' %}</p>
+        {% endif %}
     </div>
-    <h2 class=" text-center">{% translate 'Découvrez qui nous sommes' %}</h2>
+    <h2 class=" text-center">{% translate 'Découvrez ci-dessous qui nous sommes' %}</h2>
 </div>
   
 {% endblock %}
