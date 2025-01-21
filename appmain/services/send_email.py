@@ -15,22 +15,24 @@ import os
 from email.mime.image import MIMEImage
 
 from ..models import Customer,Invoice,Category
+from ..services.company_service import CompanyService
 
 def send_payment_link(customer: Customer,invoice:Invoice):
     try:
+        domain = settings.DOMAIN
         object_content = _('LeBonPlanTexas : DEVIS pour votre voyage!')
-        payment_url_with_token = 'http://127.0.0.1:8000/payment/?token=' + invoice.token
-
+        payment_url_with_token = f'{domain}/payment/?token=' + invoice.token
+        company_info = CompanyService.get_company_info()
 
         email_body = { 
-            'company_info': settings.COMPANY_INFO,
+            'company_info': company_info,
             'trip_invoice' : invoice,
             'token_url' : payment_url_with_token
         }
 
         # Render the email template with context data
         subject = object_content
-        from_email = config('EMAIL_HOST_USER')
+        from_email = company_info.email
         to_email = customer.email
         text_content = 'Your email client does not support HTML content'
 
@@ -56,25 +58,25 @@ def send_payment_link(customer: Customer,invoice:Invoice):
 def success_registration_email(customer, trips, interests):
     try:
         categories = dict(Category.objects.values_list('id', 'name'))
+        company_info = CompanyService.get_company_info()
         customer_interests = [categories[interest] for interest in interests if interest in categories]
-        company_email = config('EMAIL_HOST_USER')
+        
         
         object_content =_('LeBonPlanTEXAS : On se parle bientôt!!')
-        company_name = _('LebonPlanTEXAS')
 
         email_body = {
-            'company_name' : company_name,
+            'company_name' : company_info.name,
             'customer' : customer,
             'trips' : trips,
             'interests' : customer_interests,
-            'company_email' : company_email
+            'company_email' : company_info.email,
         }
 
         # Render the email template with context data
         subject = object_content
-        from_email = config('EMAIL_HOST_USER')
+        from_email = company_info.name
         to_email = customer.email
-        bcc_email = [settings.COMPANY_INFO['my_email']] 
+        bcc_email = [company_info.email] 
         text_content = 'Your email client does not support HTML content'
 
         html_payment_link_content = render_to_string('email/success_registration_email.html', email_body)
@@ -94,16 +96,17 @@ def success_registration_email(customer, trips, interests):
 
 def send_checkout_success_email(invoice):
     try:
+        company_info = CompanyService.get_company_info()
         # Objet de l'email
         subject = _('LeBonPlanTexas : Votre paiement est confirmé!')
-        from_email = settings.EMAIL_HOST_USER  
+        from_email = company_info.email 
         to_email = invoice.customer.email
-        bcc_email = [settings.COMPANY_INFO['my_email']] 
+        bcc_email = [company_info.email ] 
         text_content = 'Your email client does not support HTML content'
         
         # Contenu du template HTML
         email_body = {
-            'company_info': settings.COMPANY_INFO,
+            'company_info': company_info,
             'trip_invoice': invoice,
         }
         html_payment_link_content = render_to_string('email/checkout_success_email.html', email_body)

@@ -4,7 +4,7 @@ from django.urls import path
 
 from .views.register_view import multi_step_form
 from .views.index_view import index
-from .views.contact import contact
+from .views.contact_view import contact
 from .views.privacy import privacy
 from .views.payment_view import payment_view
 from .views.stripe_checkout_view import create_checkout_session

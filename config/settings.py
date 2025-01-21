@@ -169,15 +169,3 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Company informations for french invoices
-COMPANY_INFO = {
-    'name': 'LeBonPlanTexas',
-    'siren': '123456789',
-    'legal_structure': 'SA',
-    'address': '123 Rue de Texas, Austin, TX',
-    'tva_info' : '20%',
-    'tva_math' : 1.2,
-    'my_email' : 'ambroise.lebonplantexas@gmail.com',
-    'instagram' : 'LeBonPlanTEXAS',
-}
-
