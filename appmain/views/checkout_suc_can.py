@@ -15,6 +15,7 @@ from django.utils.translation import gettext_lazy as _
 from ..models import Invoice
 from ..services.generate_invoice_pdf import PdfHandler
 from ..services.send_email import send_checkout_success_email
+from ..services.company_service import CompanyService
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -45,9 +46,10 @@ def checkout_success(request):
         # Optionnel : récupérer plus de détails si nécessaire
         payment = stripe.PaymentIntent.retrieve(payment_intent)
         amount_paid = payment.amount_received / 100  # in euros
+        company_info = CompanyService.get_company_info()
 
         context = {
-            "company_info": settings.COMPANY_INFO,
+            "company_info": company_info,
             "trip_invoice": invoice,
             "customer_email": customer_email,
             "amount_paid": amount_paid,
@@ -68,12 +70,13 @@ def checkout_cancelled(request):
         return render(request,'error.html', {'message' : message})
     try:
         invoice = Invoice.objects.get(pk=invoice_id)
+        company_info = CompanyService.get_company_info()
     except Exception as e:
         message = _('Erreur : %s' % {str(e)})
         return render(request,'error.html', {'message' : message})
     
     context = {
-            "company_info": settings.COMPANY_INFO,
+            "company_info": company_info,
             "trip_invoice": invoice,
         }
     

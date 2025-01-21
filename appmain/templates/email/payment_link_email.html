@@ -22,7 +22,7 @@
         <h3 style="text-align: center;">{% translate 'DEVIS N°' %} {{ trip_invoice.invoice_number }}</h3>
         <p class="my-0">{% translate 'Date :' %} {{ trip_invoice.created_at }}</p>
         <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
-        <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
+        <p class="my-0">{% translate 'SIREN :' %} {{ company_info.SIREN }}</p>
         <p class="my-0">{{ company_info.address }}</p>
         <br>
         <p><u>{% translate '👤 Vos coordonnées :' %}</u></p>

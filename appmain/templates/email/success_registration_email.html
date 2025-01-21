@@ -13,45 +13,45 @@
 
 {% block content %}
     <div class="container">
-        <h1>Bonjour {{ customer.first_name|capfirst }} !</h1>
+        <h1> {% translate 'Bonjour' %} {{ customer.first_name|capfirst }} !</h1>
 
         <p>
-            Nous avons bien reçu votre demande de renseignements et devis pour votre prochain voyage au Texas. Merci de votre intérêt pour 
+            {% translate 'Nous avons bien reçu votre demande de renseignements et devis pour votre prochain voyage au Texas. Merci de votre intérêt pour' %} 
             <span class="highlight">{{ company_name }}</span> !
         </p>
 
         <p>
-            Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos attentes. Voici un récapitulatif des informations que vous nous avez fournies :
+            {% translate 'Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos attentes. Voici un récapitulatif des informations que vous nous avez fournies :' %}
         </p>
 
-        <h3>👤 Vos coordonnées :</h3>
+        <h3>👤  {% translate 'Vos coordonnées :' %}</h3>
         <ul>
-            <li><strong>Prénom :</strong> {{ customer.first_name }}</li>
-            <li><strong>Nom :</strong> {{ customer.last_name }}</li>
-            <li><strong>Email :</strong> {{ customer.email }}</li>
+            <li><strong> {% translate 'Prénom :' %}</strong> {{ customer.first_name }}</li>
+            <li><strong> {% translate 'Nom :' %}</strong> {{ customer.last_name }}</li>
+            <li><strong> {% translate 'Email :' %}</strong> {{ customer.email }}</li>
             {% if customer.phone %}
-            <li><strong>Téléphone :</strong> {{ customer.phone }}</li>
+            <li><strong> {% translate 'Téléphone :' %}</strong> {{ customer.phone }}</li>
             {% endif %}
         </ul>
 
-        <h3>🌟 Votre voyage :</h3>
+        <h3>🌟  {% translate 'Votre voyage :' %}</h3>
         {% for trip in trips %}
         <ul>
-            <li><strong>Dates :</strong> du {{ trip.start_date }} au {{ trip.end_date }}</li>
+            <li><strong> {% translate 'Dates :' %}</strong>  {% translate 'du' %} {{ trip.start_date }}  {% translate 'au' %} {{ trip.end_date }}</li>
             {% if trip.cities %}
-            <li><strong>Villes prévues :</strong> {{ trip.cities }}</li>
+            <li><strong> {% translate 'Villes prévues :' %}</strong> {{ trip.cities }}</li>
             {% endif %}
-            <li><strong>Vous êtes véhiculés :</strong> 
+            <li><strong> {% translate 'Vous êtes véhiculés :' %}</strong> 
                 {% if trip.vehiculed %} Oui {% else %} Non {% endif %}
             </li>
             {% if trip.comment %}
-            <li><strong>Commentaires :</strong> {{ trip.comment }}</li>
+            <li><strong> {% translate 'Commentaires :' %}</strong> {{ trip.comment }}</li>
             {% endif %}
         </ul>
         <br>
         {% endfor %}
 
-        <h3>🎯 Vos centres d'intérêt :</h3>
+        <h3>🎯  {% translate 'Vos centres d'intérêt :' %}</h3>
         <ul>
             {% for interest in interests %}
             <li>{{ interest }}</li>
@@ -59,16 +59,16 @@
         </ul>
 
         <p>
-            Nous vous contacterons très bientôt pour présenter nos services et répondre à toutes vos questions. Si vous avez des précisions à apporter ou si vous souhaitez nous faire part de nouvelles idées, n'hésitez pas à répondre à cet e-mail.
+            {% translate 'Nous vous contacterons très bientôt pour présenter nos services et répondre à toutes vos questions. Si vous avez des précisions à apporter ou si vous souhaitez nous faire part de nouvelles idées, n'hésitez pas à répondre à cet e-mail.' %}
         </p>
 
         <div class="cta">
-            <a href="mailto:{{ company_email }}">Contactez-nous directement</a>
+            <a href="mailto:{{ company_email }}"> {% translate 'Contactez-nous directement' %}</a>
         </div>
 
         <p>
-            Merci encore pour votre confiance et à très bientôt, <br>
-            <strong>L'équipe de {{ company_name }}</strong>
+            {% translate 'Merci encore pour votre confiance et à très bientôt' %}, <br>
+            <strong> {% translate 'L'équipe de' %} {{ company_name }}</strong>
         </p>
     </div>
 {% endblock %}

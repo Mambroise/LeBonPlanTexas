@@ -98,3 +98,7 @@ h2{
 h3 {
   font-size: 2rem;
 }
+
+ul {
+  padding-inline-start: 15px;
+}

@@ -17,9 +17,9 @@
     <div class="round-who-banner">
         {% if contact %}
         <ul>
-            <li><i class="fas fa-envelope"> {{ contact.my_email }}</i>
+            <li><i class="fas fa-envelope"></i> {{ contact.email }}
             </li>
-            <li><i class="fas fa-phone"></i> +33 {{ contact.my_phone }} <small><i>{% translate 'whatsapp uniquement' %}</i></small></i>
+            <li><i class="fas fa-phone"></i> +33 {{ contact.phone }} <small><i>{% translate 'whatsapp uniquement' %}</i></small></i>
             </li>
             <li><i class="fas fa-map-marker-alt"></i> {{ contact.address }}
             </li>

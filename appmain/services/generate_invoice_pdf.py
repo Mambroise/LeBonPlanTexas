@@ -12,13 +12,15 @@ from xhtml2pdf import pisa
 
 from django.conf import settings
 from ..models import Invoice
+from ..services.company_service import CompanyService
 
 class PdfHandler:
     @staticmethod
     def generate_invoice_pdf(invoice_id, method='inline'):
         invoice = Invoice.objects.get(pk=invoice_id)
+        company_info = CompanyService.get_company_info()
         context = {
-            "company_info": settings.COMPANY_INFO,
+            "company_info": company_info,
             "trip_invoice": invoice,
         }
         html = render_to_string('pdf/invoice_pdf.html', context)

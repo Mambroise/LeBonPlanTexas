@@ -8,12 +8,20 @@
 
 from django.contrib import admin,messages
 
-from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme
+from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme,CompanyInfo
 from .models.texas_trip import TexasTrip
 from .services.send_email import send_payment_link
 from .services.invoice_service import InvoiceService
 from .services.customer_service import CustumerService
+from .services.company_service import CompanyService
 
+
+# COMPANY PART
+@admin.register(CompanyInfo)
+class CompanyInfoAdmin(admin.ModelAdmin):
+    list_display = ('name','EIN','SIREN','legal_structure','address','tax_info','tax_math','email','phone','instagram','is_in_texas',)
+
+# CUSTOMER PART
 # Inline pour les Intérêts liés à un Customer
 class InterestInline(admin.TabularInline):  # Ou `StackedInline` pour une disposition différente
     model = Interest
@@ -31,6 +39,15 @@ class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une dispositio
     extra = 1  # Nombre d'instances vides à afficher par défaut (1 par exemple)
     fields = ('start_date','end_date','cities','comment','vehiculed','is_done')  # Remplacez par les champs de Trip que vous souhaitez afficher
 
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'phone','country', 'timestamp', 'selected_categories', 'is_called', 'is_mailed', 'is_done')
+    search_fields = ('first_name', 'last_name', 'email')
+    list_filter = ('email',)
+    inlines = [InterestInline, TripInline,TexasTripInline] # Affichage des objets liés dans l'admin du Customer
+    
+
+# INVOICE PART
 @admin.action(description="Envoyer un e-mail à l'utilisateur")
 def send_email_action(modeladmin, request, queryset):
     success_count = 0
@@ -56,14 +73,6 @@ def send_email_action(modeladmin, request, queryset):
     if error_count:
         modeladmin.message_user(request, f"Échec pour {error_count} e-mails.", level=messages.ERROR)
 
-@admin.register(Customer)
-class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone','country', 'timestamp', 'selected_categories', 'is_called', 'is_mailed', 'is_done')
-    search_fields = ('first_name', 'last_name', 'email')
-    list_filter = ('email',)
-    inlines = [InterestInline, TripInline,TexasTripInline] # Affichage des objets liés dans l'admin du Customer
-    
-
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
     readonly_fields = ('invoice_number',)
@@ -76,10 +85,12 @@ class InvoiceAdmin(admin.ModelAdmin):
     actions = [send_email_action] 
 
     
+
 # Enregistrement des autres modèles
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
+
 
 #########################################
 # ADVERTISSEMENT PART

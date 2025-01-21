@@ -14,3 +14,4 @@ from .invoice import Invoice
 from .file_for_image import FileForImage
 from .attraction import Attraction
 from .image_display_theme import ImageDisplayTheme
+from .company_info import CompanyInfo
