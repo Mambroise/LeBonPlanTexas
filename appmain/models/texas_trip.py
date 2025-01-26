@@ -9,7 +9,9 @@
 from django.db import models
 
 from .trip import Customer
+from .service_package import PackageChoice
 
 class TexasTrip(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='one_trip')
+    package = models.IntegerField(choices=PackageChoice.choices,default=PackageChoice.AUTONOMOUS)
     created_at = models.DateTimeField(auto_now=True)

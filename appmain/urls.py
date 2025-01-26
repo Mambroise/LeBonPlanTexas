@@ -13,6 +13,7 @@ from .views.checkout_suc_can import checkout_success,checkout_cancelled
 from .views.checkout_suc_can import print_invoice
 from .views.service_view import service_view
 from .views.ajax_activities_view import get_activities
+from .views.register_view import multi_step_form
 
 urlpatterns = [
     path('index/', index, name='index'), 

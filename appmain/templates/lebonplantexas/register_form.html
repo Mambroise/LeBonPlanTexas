@@ -1,7 +1,7 @@
 <!-- # ---------------------------------------------------------------------------
 #                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : appmain/templates/lebonplantexas/register_form.html
+# File   : appmain/templates/lebonplantexas/register_form2.html
 # Author : Morice
 # --------------------------------------------------------------------------- -->
 
@@ -12,109 +12,128 @@
 {% load i18n %}
 
 {% block content %}
-<div class="form-banner">
-    <div class="form-blurry-container">
-        <div class="register-instructions">
-            <h1>{% translate 'DISCUTONS DE VOTRE PROJET' %}</h1>
-            <p>{% translate 'Enregistrez vous afin que nous puissions découvrir ce que vous recherchez.' %}
-            {% translate 'Nous communiquerons rapidement autour de vos besoins et nous saurons gagner votre confiance.' %}
-            <p>{% translate 'Etape 1: coodonnées de base' %}</p>
-            <p>{% translate 'Etape 2: votre voyage. N\'hésitez pas à le diviser à l\'aide du bouton "ajouter une étape",' %}
-                {% translate ' surtout si ces étapes impliquent de nouvelles villes et adresses.' %}<br>
-                {% translate '(Ne signalez que les dates/étapes où vous auriez éventuellement besoin de nous)' %}</p>
-            <p>{% translate 'Etape 3: Cliquez frénétiquement sur ce qui vous intéresse!!' %}</p>
-        </div>
-        <div class="frame">
-            <div>
-                <h3 class="text-center c-black">{% translate 'Étape' %} {{ step }}/3</h3>
-            
-                <form class="register-form" method="post">
-                    {% csrf_token %}
-                    {% if step == 1 %}
-                    <div class="form1">
-                        <div>
-                            <div class="inputBox my-4">
-                                <input type="text" name="first_name" id="id_first_name" class="form-control" required>
-                                <strong for="id_first_name">{{ form.first_name.label }}</strong>
-                            </div>
-                            <div class="inputBox my-4">
-                                <input type="text" name="last_name" id="id_last_name" class="form-control" required>
-                                <strong for="id_last_name">{{ form.last_name.label }}</strong>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="inputBox my-4">
-                                <input type="text" name="email" id="id_email" class="form-control" required>
-                                <strong for="id_email">{{ form.email.label }}</strong>
-                            </div>
-                            <div class="inputBox my-4">
-                                <input type="text" name="phone" id="id_phone" class="form-control" required>
-                                <strong for="id_phone">{{ form.phone.label }}</strong>
-                            </div>
-                        </div>
+
+<div class="texas-trip-form-container mt-6">
+    <div class="form-header">
+        <h2>{{ title }}</h2>
+    </div>
+        <!-- <h3 class="text-center c-black">{% translate 'Étape' %} {{ step }}/3</h3> --> 
+        <form class="register-form" method="post">
+            {% csrf_token %}
+            {% if step == 1 %}
+            <div class="flex-center">
+                {% for choice_value, choice_label in form.package.field.choices %}
+                <label class="texas-trip-card  package-card" for="id_package_{{ forloop.counter }}">
+                    <input 
+                        type="radio" 
+                        id="id_package_{{ forloop.counter }}" 
+                        name="{{ form.package.name }}" 
+                        value="{{ choice_value }}" 
+                        {% if form.package.value == choice_value %}checked{% endif %}
+                        class="d-none"
+                    >
+                    <div class="text-center h-100">
+                        <h3 class="package-card-title">{{ choice_label }}</h3>
+                        <p>
+                            {% if choice_value == 1 %}
+                                {% translate 'Autonomous: Manage your own activities without any additional services.' %}
+                            {% elif choice_value == 2 %}
+                                {% translate 'Private Driver: Includes a chauffeur for all your travel needs.' %}
+                            {% elif choice_value == 3 %}
+                                {% translate 'Platinum: Premium service with all-inclusive luxury features.' %}
+                            {% endif %}
+                        </p>
                     </div>
-                    <div class="flex-center">
-                        {{ form.country }}
-                    </div>
-                    <div class="flex-center my-4">
-                        <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
-                    </div>
-    
-                    {% elif step == 2 %}
-                    <div class="flex-center">
-                        <div>
-                            <!-- start and end dates box -->
-                            <div class="flex-around">
-                                <div>
-                                    <p class="label-text">{{ form.start_date.label }}</p>
-                                    {{ form.start_date }}
-                                </div>
-                                <div>
-                                    <p class="label-text">{{ form.end_date.label }}</p>
-                                    {{ form.end_date }}
-                                </div>
-                            </div>
-                            <div class="inputBox my-4">
-                                <input type="text" name="cities" id="id_cities" class="form-control" required>
-                                <strong for="id_cities">{{ form.cities.label }}</strong>
-                            </div>
-                            <div class="">
-                                <strong class="label-text">{{ form.vehiculed.label }}</strong>
-                                {{ form.vehiculed }}
-                            </div>
-                        </div>
-                        <div class="w-50">
-                            <p class="label-text">{{ form.comment.label }}</p>
-                            {{ form.comment }}
-                        </div>
-                    </div>
-                    
-                    <!-- step2 special buttons box -->
-                    <div class="step2-buttons">
-                        <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
-                        <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
-                    </div>
-                </form>
-                {% elif step == 3 %}
-                    <p class="label-text">Choisissez une ou plusieurs catégories :</p>
-                    <form id="category-form" method="post">
-                        {% csrf_token %}
-                        <div id="category-container">
-                            {% for category in categories %}
-                                <div class="category-card" data-category-id="{{ category.id }}">
-                                    {{ category.name }}
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
-                        <input type="hidden" name="categories" id="selected-categories" value="">
-                        <div class="flex-center">                
-                            <button type="submit" class="btn-primary">VALIDER</button>
-                        </div>
-                    </form>
-                {% endif %}
+                </label>
+                {% endfor %}
             </div>
-        </div>
+                <div class="flex-center">
+                    <button type="submit" class="btn-primary mt-1">{% translate 'Commencer' %}</button>
+                </div>
+            {% elif step == 2 %}
+            <div class="form1">
+                <div>
+                    <div class="inputBox mt-2">
+                        <input type="text" name="first_name" id="id_first_name" class="form-control" required>
+                        <strong for="id_first_name">{{ form.first_name.label }}</strong>
+                    </div>
+                    <div class="inputBox mt-2">
+                        <input type="text" name="last_name" id="id_last_name" class="form-control" required>
+                        <strong for="id_last_name">{{ form.last_name.label }}</strong>
+                    </div>
+                </div>
+                <div>
+                    <div class="inputBox mt-2">
+                        <input type="text" name="email" id="id_email" class="form-control" required>
+                        <strong for="id_email">{{ form.email.label }}</strong>
+                    </div>
+                    <div class="inputBox mt-2">
+                        <input type="text" name="phone" id="id_phone" class="form-control" required>
+                        <strong for="id_phone">{{ form.phone.label }}</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-center">
+                {{ form.country }}
+            </div>
+            <div class="flex-center my-2">
+                <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
+            </div>
+
+            {% elif step == 3 %}
+            <div class="flex-center">
+                <div>
+                    <!-- start and end dates box -->
+                    <div class="flex-around">
+                        <div>
+                            <p class="label-text">{{ form.start_date.label }}</p>
+                            {{ form.start_date }}
+                        </div>
+                        <div>
+                            <p class="label-text">{{ form.end_date.label }}</p>
+                            {{ form.end_date }}
+                        </div>
+                    </div>
+                    <div class="inputBox my-4">
+                        <input type="text" name="cities" id="id_cities" class="form-control" required>
+                        <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
+                    </div>
+                    <div class="">
+                        <strong class="label-text">{{ form.vehiculed.label }}</strong>
+                        {{ form.vehiculed }}
+                    </div>
+                </div>
+                <div class="w-50">
+
+                    {{ form.comment }}
+                </div>
+            </div>
+            
+            <!-- step2 special buttons box -->
+            <div class="step2-buttons">
+                <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
+                <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
+            </div>
+        </form>
+        {% elif step == 4 %}
+            <p class="label-text">Choisissez une ou plusieurs catégories :</p>
+            <form id="category-form" method="post">
+                {% csrf_token %}
+                <div id="category-container">
+                    {% for category in categories %}
+                        <div class="category-card" data-category-id="{{ category.id }}">
+                            {{ category.name }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
+                <input type="hidden" name="categories" id="selected-categories" value="">
+                <div class="flex-center">                
+                    <button type="submit" class="btn-primary">VALIDER</button>
+                </div>
+            </form>
+        {% endif %}
+    <div class="form-footer">
     </div>
 </div>
 {% endblock %}

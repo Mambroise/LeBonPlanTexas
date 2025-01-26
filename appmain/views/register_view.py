@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------
 #                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : appmain/views/register_view.py
+# File   : appmain/views/register_view2.py
 # Author : Morice
 # ---------------------------------------------------------------------------
 
@@ -18,20 +18,35 @@ from ..services.customer_service import CustumerService
 from ..services.trip_service import TripService
 from ..services.interest_service import InterestService
 from ..services.texas_trip_service import TexasTripService
+from ..forms.texas_trip_form import TexasTripForm
 
 from ..services.send_email import success_registration_email
 
 def multi_step_form(request):
     step = request.session.get('step', 1) 
+    title = request.session.get('title', 'Choisir une formule')  
 
     if step == 1:
+        form = TexasTripForm(request.POST or None)
+        if form.is_valid():
+            try:
+                request.session['texas_trip'] = form.cleaned_data
+                request.session['step'] = 2
+                request.session['title'] = 'Entrez vos coordonnées'
+                return redirect('multi_step_form')
+                
+            except Exception as e:
+                print(f'error in register_view, texas_trip part, step1 : {e}')
+
+    elif step == 2:
         form = CustomerForm(request.POST or None)
         if form.is_valid():
             request.session['customer_data'] = form.cleaned_data
-            request.session['step'] = 2
+            request.session['step'] = 3
+            request.session['title'] = 'Détails du voyage'
             return redirect('multi_step_form')
 
-    elif step == 2:
+    elif step == 3:
         form = TripForm(request.POST or None)
 
         if form.is_valid():
@@ -50,10 +65,11 @@ def multi_step_form(request):
                 messages.success(request, _("L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."))
                 return redirect('multi_step_form') 
             elif "finish_trips" in request.POST:
-                request.session['step'] = 3
+                request.session['step'] = 4
+                request.session['title'] = 'Vos intérêts'
                 return redirect('multi_step_form')
 
-    elif step == 3:
+    elif step == 4:
         categories = Category.objects.all().order_by('-id')
         # translate categories according to language
         translated_categories = [
@@ -62,7 +78,7 @@ def multi_step_form(request):
         ]
 
         if request.method == "POST":
-            # Step 3.1 : Customer creation
+            # Step 4.1 : Customer creation
             customer_data = request.session.get('customer_data')
             customer, success = CustumerService.create_custumer(customer_data)
             if not success:
@@ -70,14 +86,15 @@ def multi_step_form(request):
                 request.session.flush()
                 return redirect('multi_step_form')
             
-            # Step 3.2 : TexasTrip creation
-            texas_trip, success = TexasTripService.create_texas_trip(customer.id)
+            # Step 4.2 : TexasTrip creation
+            texas_trip_data = request.session.get('texas_trip')
+            texas_trip, success = TexasTripService.create_texas_trip(customer.id,texas_trip_data)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
                 request.session.flush()
                 return redirect('multi_step_form')
 
-            # Step 3.3 : Trip creation
+            # Step 4.3 : Trip creation
             trip_data = request.session.get('trip_data', [])
             for trip in trip_data:
                 success = TripService.create_trip(trip, customer.id,texas_trip.id)
@@ -86,7 +103,7 @@ def multi_step_form(request):
                     request.session.flush()
                     return redirect('multi_step_form')
 
-            # Step 3.4 : Interests creation
+            # Step 4.4 : Interests creation
             raw_categories = request.POST.getlist('categories')
             if len(raw_categories) == 1 and ',' in raw_categories[0]:
                 raw_categories = raw_categories[0].split(',')
@@ -111,10 +128,10 @@ def multi_step_form(request):
             request.session.flush()
             return redirect('success')
 
-        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories})
+        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories, "title" : title})
 
     else:
         request.session['step'] = 1
         return redirect('multi_step_form')
 
-    return render(request, 'lebonplantexas/register_form.html', {'step': step, 'form': form})
+    return render(request, 'lebonplantexas/register_form.html', {'step': step, 'form': form, "title" : title})

@@ -37,12 +37,24 @@ body{
 }
 
 /* MARGIN AND PADDING GENERALS*/
-.no-mt {
-  margin-top: 0;
+.my-2 {
+  margin: 2rem 0;
 }
 
 .my-4 {
   margin: 4rem 0;
+}
+
+.no-mt {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top:  1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem 0;
 }
 
 .mt-6 {
@@ -80,10 +92,14 @@ body{
   flex-wrap: wrap;
 }
 
-
 .flex-around {
   display: flex;
   justify-content: space-around;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .text-center {

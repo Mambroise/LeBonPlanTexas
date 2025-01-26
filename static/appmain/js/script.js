@@ -71,19 +71,20 @@ function addStyles(selector) {
             transition:  0.3s ease-in-out;
         }
         .flag-img.small {
-            width: 40px;
+            width: 2rem;
             }
         .flag-img-us.small {
-            width: 38px;
+            width: 2.4rem;
         }
         .contact-box.small {
-            margin-top: 1%;
             width: 30%;
             transition:  0.3s ease-in-out;
         }
-        .contact-box.small p {
-            font-size: 1.5rem;
-            transition:  0.3s ease-in-out;
+        .contact-link.small{
+            padding: 0.8rem 0.8rem;
+        }
+        .contact-link.small a {
+            font-size: 0.8rem;
         }
 
     `;
@@ -103,6 +104,7 @@ const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
 const flagImg = document.querySelector('.flag-img');
 const flagImgUs = document.querySelector('.flag-img-us');
+const contactLink = document.querySelector('.contact-link');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
@@ -116,6 +118,7 @@ window.addEventListener('scroll', () => {
         contactBox.classList.add('small');
         flagImg.classList.add('small');
         flagImgUs.classList.add('small');
+        contactLink.classList.add('small');
 
     } else {
         navbar.classList.remove('small');
@@ -128,6 +131,7 @@ window.addEventListener('scroll', () => {
         contactBox.classList.remove('small');
         flagImg.classList.remove('small')
         flagImgUs.classList.remove('small')
+        contactLink.classList.remove('small')
 
     }
 });

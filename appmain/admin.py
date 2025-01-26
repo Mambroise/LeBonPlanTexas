@@ -31,7 +31,7 @@ class InterestInline(admin.TabularInline):  # Ou `StackedInline` pour une dispos
 class TexasTripInline(admin.TabularInline):
     model = TexasTrip
     extra = 1
-    fields = ('id',)
+    fields = ('id', 'package',)
 
 # Inline pour les Trips liés à un Customer
 class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une disposition différente

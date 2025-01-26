@@ -94,12 +94,13 @@ a {
     border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 2px 5px;
-    transition:  0.4s ease-in-out;
+    transition:  0.2s ease-in-out;
 }
 
-#register:hover, #who:hover {
+#register:hover, #who:hover,.contact-link:hover {
     background: var(--white-texas);
     color: var(--brick-color);
+    border-color: var(--white-texas);
 }
 
 #who {
@@ -109,7 +110,7 @@ a {
     border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 2px 5px;
-    transition:  0.4s ease-in-out;
+    transition:  0.2s ease-in-out;
 }
 
 .logo-image {
@@ -123,32 +124,45 @@ a {
     transition: height 0.3s ease, opacity 0.3s ease;
     opacity: 1;
 }
-
+/* */
 .flag-box {
-    float: right;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0 0.8rem;
 }
 
 .flag-img {
-    width: 50px;
-    margin-left: 10%;
+    width: 2.2rem;
 }
 
 .flag-img-us {
-    width: 48px;
-    margin-left: 10%;
-}
+    width: 2.6rem;
+} 
 
 .contact-box {
-    margin-top: 6%;
     width: 20%;
     height: 100%;
-    color: var(--white-texas);
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
-.contact-box  p {
-    text-align: end;
-    margin: 0px 10px;
-    font-size: 1.56rem;
-    font-style: italic;
-    text-decoration: underline;
+.contact-container {
+    display: flex;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.contact-link {
+    border: 3px solid var(--navbar-and-dot);
+    color: var(--navbar-and-dot) !important;
+    border-radius: 25px;
+    padding: 1rem 1rem;
+}
+
+.contact-link:hover a{
+    background-color: var(--white-texas);
+    color: var(--brick-color);
+    font-weight: bold;
 }
