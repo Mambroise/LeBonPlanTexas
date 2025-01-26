@@ -15,3 +15,5 @@ from .file_for_image import FileForImage
 from .attraction import Attraction
 from .image_display_theme import ImageDisplayTheme
 from .company_info import CompanyInfo
+from .service_package import PackageChoice
+from  .texas_trip import TexasTrip

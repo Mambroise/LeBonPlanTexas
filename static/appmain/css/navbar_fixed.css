@@ -27,6 +27,7 @@
     border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 2px 5px;
+    transition:  0.2s ease-in-out;
 }
 
 .logo-image-fixed {
@@ -50,9 +51,10 @@
     border: 3px solid var(--white-texas);
     border-radius: 10px;
     padding: 2px 5px;
+    transition:  0.2s ease-in-out;
 }
 
-#register-fixed:hover, #who-fixed:hover {
+#register-fixed:hover, #who-fixed:hover, .contact-link-fixed:hover {
     background: var(--white-texas);
     color: var(--brick-color);
 }
@@ -108,25 +110,46 @@
 }
 
 .flag-box-fixed {
-    float: right;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0 0.8rem;
 }
 
 .flag-img-fixed {
-    width: 40px;
-    margin-left: 10%;
+    width: 2rem;
 }
+
+.flag-img-us-fixed {
+    width: 2.4rem;
+} 
 
 .contact-box-fixed {
-    margin-top: 1%;
     width: 30%;
     height: 100%;
-    color: var(--white-texas);
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
-.contact-box-fixed p {
-    font-size: 1.5rem;
-    text-align: end;
-    margin: 0px 10px;
-    font-style: italic;
-    text-decoration: underline;
+.contact-container-fixed {
+    display: flex;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.contact-link-fixed {
+    border: 3px solid var(--navbar-and-dot);
+    border-radius: 25px;
+    padding: 0.8rem 0.8rem;
+}
+
+.contact-link-fixed a {
+    font-size: 0.8rem;
+}
+
+.contact-link-fixed:hover a{
+    background-color: var(--white-texas);
+    color: var(--brick-color);
+    font-weight: bold;
 }

@@ -12,12 +12,13 @@ from ..models.texas_trip import TexasTrip
 
 class TexasTripService():
     @staticmethod
-    def create_texas_trip(customer_id):
+    def create_texas_trip(customer_id,texas_trip_data):
         try:
             # check if customer exists
             customer = Customer.objects.get(pk=customer_id)
+            package = texas_trip_data['package']
 
-            texas_trip = TexasTrip.objects.create(customer=customer)
+            texas_trip = TexasTrip.objects.create(customer=customer,package=package)
             texas_trip.save()
 
             return texas_trip, True

@@ -6,7 +6,80 @@
 # --------------------------------------------------------------------------- */
 
 
+
 /* REGISTER PAGE STYLE*/
+/* step1 texas_trip css */
+.texas-trip-form-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 7rem;
+    color: var(--black-color);
+}
+
+.texas-trip-card {
+    height: 40vh;
+    width: 20%;
+    border: 1px solid var(--black-color);
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    color: var(--brick-color)
+}
+
+.package-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.package-card-title {
+    height: 30%;
+    margin-top: 1rem;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.package-card input:checked {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+
+.form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 3rem auto;
+    height: 15vh;
+    background-image: url('../../images/austin_buildings_large.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-header h2 {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--white-texas);
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 1rem auto;
+    height: 15vh;
+    background-image: url('../../images/austin_buildings_large.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* step2 identity css */
 /* title */
 .register-instructions {
     width: 30%;
@@ -56,12 +129,14 @@
 }
 
 .form1 {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
+/* step3 interests css */
 #category-container {
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +164,7 @@
     color: var(--white-texas);
     border-color: var(--brick-color);
 }
-
+/* commun part */
 /* forms inputs */
 .inputBox{
   position: relative;
@@ -129,9 +204,9 @@
 
 .label-text {
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 select[name="country"] {
