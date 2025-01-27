@@ -25,8 +25,8 @@ class Trip(models.Model):
         null=True,  
         blank=True
     )
-    start_date = models.DateField(_('Date de début:'))
-    end_date = models.DateField(_('Date de fin:'))
+    start_date = models.DateField(_('Début:'))
+    end_date = models.DateField(_('Fin:'))
     cities = models.CharField(_('Villes'),max_length=255,null=True)
     comment = models.TextField(_('Commentaire:'),max_length=500,null=True)
     vehiculed = models.BooleanField(_('Véhiculé'),default=False)

@@ -14,8 +14,10 @@
 {% block content %}
 
 <div class="texas-trip-form-container mt-6">
-    <div class="form-header">
-        <h2>{{ title }}</h2>
+    <div class="form-header-bg">
+        <div class="form-header">
+            <h2>{{ title }}</h2>
+        </div>
     </div>
         <!-- <h3 class="text-center c-black">{% translate 'Étape' %} {{ step }}/3</h3> --> 
         <form class="register-form" method="post">
@@ -36,19 +38,19 @@
                         <h3 class="package-card-title">{{ choice_label }}</h3>
                         <p>
                             {% if choice_value == 1 %}
-                                {% translate 'Autonomous: Manage your own activities without any additional services.' %}
+                                {% translate 'Accés à l\'application de planification, aux meilleures activités du Texas et à l\'assistant de voyage.' %}
                             {% elif choice_value == 2 %}
-                                {% translate 'Private Driver: Includes a chauffeur for all your travel needs.' %}
+                                {% translate 'Chauffeur et guide touristique pour une journée ou plus. Accès gratuit à la formule autonome.' %}
                             {% elif choice_value == 3 %}
-                                {% translate 'Platinum: Premium service with all-inclusive luxury features.' %}
+                                {% translate 'Nous organisons votre voyage en fonction de vos besoins. Accès gratuit à la formule autonome.' %}
                             {% endif %}
                         </p>
                     </div>
                 </label>
                 {% endfor %}
             </div>
-                <div class="flex-center">
-                    <button type="submit" class="btn-primary mt-1">{% translate 'Commencer' %}</button>
+                <div class="flex-center align-center">
+                    <button type="submit" class="btn-primary mt-2">{% translate 'Commencer' %}</button>
                 </div>
             {% elif step == 2 %}
             <div class="form1">
@@ -98,6 +100,8 @@
                         <input type="text" name="cities" id="id_cities" class="form-control" required>
                         <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
+
+                    <p>{{ package }}</p>
                     <div class="">
                         <strong class="label-text">{{ form.vehiculed.label }}</strong>
                         {{ form.vehiculed }}
@@ -132,10 +136,12 @@
                     <button type="submit" class="btn-primary">VALIDER</button>
                 </div>
             </form>
-        {% endif %}
-    <div class="form-footer">
-    </div>
+            {% endif %}
 </div>
+    <div class="form-footer-bg">
+        <div class="form-footer">
+        </div>
+    </div>
 {% endblock %}
 
 
