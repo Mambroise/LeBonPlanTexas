@@ -10,9 +10,9 @@
 /* REGISTER PAGE STYLE*/
 /* step1 texas_trip css */
 .texas-trip-form-container {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 6.25rem;
     color: var(--black-color);
 }
 
@@ -47,12 +47,21 @@
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
 }
 
+.form-header-bg {
+    width: 100%;
+    background-color: var(--brick-color);
+}
+
+.form-footer-bg {
+    width: 100%;
+    background-color: var(--black-color);
+}
 
 .form-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 70%;
     margin: 3rem auto;
     height: 15vh;
     background-image: url('../../images/austin_buildings_large.jpg');
@@ -70,8 +79,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 1rem auto;
+    width: 70%;
+    margin: auto;
     height: 15vh;
     background-image: url('../../images/austin_buildings_large.jpg');
     background-position: bottom;
@@ -123,7 +132,8 @@
 }
 
 .register-form{
-    margin: 4rem 0rem 0rem 0rem;
+    width: 80%;
+    margin: 2rem auto;
     color: var(--black-color);
     height: auto;
 }
@@ -186,7 +196,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.56rem;
   -webkit-transition: 0.2s ease-in;
   -moz-transition: 0.2s ease-in;
@@ -205,8 +215,8 @@
 .label-text {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 select[name="country"] {

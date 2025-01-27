@@ -42,7 +42,7 @@ function addStyles(selector) {
             transition: height 0.3s ease-in-out;
         }
         ${selector}.small {
-            height: 100px;
+            height: 6.25rem;
             transition: height 0.3s ease-in-out;
             background: var(--navbar-black);
             border-bottom: 1px solid var(--black-color);

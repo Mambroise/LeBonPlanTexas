@@ -9,7 +9,7 @@
 /* NAVBAR NO ANIMATION  */
 .navbar-fixed {
     width: 100%;
-    height: 100px;
+    height: 6.25rem;
     display: flex;
     flex-direction: column;
     position: fixed;
