@@ -25,7 +25,7 @@ from ..services.send_email import success_registration_email
 def multi_step_form(request):
     step = request.session.get('step', 1) 
     title = request.session.get('title', 'Choisir une formule') 
-    package = '' 
+    package = request.session.get('texas_trip',{}).get('package')
 
     if step == 1:
         form = TexasTripForm(request.POST or None)
@@ -130,7 +130,7 @@ def multi_step_form(request):
             request.session.flush()
             return redirect('success')
 
-        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories, "title" : title})
+        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories, "title" : title, "package": package})
 
     else:
         request.session['step'] = 1

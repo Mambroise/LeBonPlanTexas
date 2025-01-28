@@ -37,7 +37,7 @@ class TexasTripInline(admin.TabularInline):
 class TripInline(admin.TabularInline):  # Ou `StackedInline` pour une disposition différente
     model = Trip
     extra = 1  # Nombre d'instances vides à afficher par défaut (1 par exemple)
-    fields = ('start_date','end_date','cities','comment','vehiculed','is_done')  # Remplacez par les champs de Trip que vous souhaitez afficher
+    fields = ('start_date','end_date','cities','comment','nbr_days_driver','is_done')  # Remplacez par les champs de Trip que vous souhaitez afficher
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):

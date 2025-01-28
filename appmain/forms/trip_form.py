@@ -14,30 +14,31 @@ from appmain.models import Trip
 class TripForm(forms.ModelForm):
     class Meta:
         model = Trip
-        fields = ['start_date','end_date','cities','comment','vehiculed']
+        fields = ['start_date','end_date','cities','comment','nbr_days_driver']
     
         widgets = {
             "start_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": ("font-size: 1rem;"
+                "style": ("font-size: 1.3rem;"
                           "padding : 10px;"
                           "border-radius : 10px;"
                           ),
             }),
             "end_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": ("font-size: 1rem;"
+                "style": ("font-size: 1.3rem;"
                           "padding : 10px;"
                           "border-radius : 10px;"
                           ),
             }),
             "comment": forms.Textarea(attrs={
+                "class": "custom-placeholder",
                 "style": ("font-size: 1.25rem;"
                           "width : 100%;"
                           "margin : auto;"
-                          "height : 20vh;"  
+                          "height : 100%;"  
                           "border : 2px solid black;"
-                          "border-radius : 10px;"  
+                          "border-radius : 10px;"   
                           ),
                 "placeholder": _("Commentaire :information utile, adresse complète de l'hotel..."),
             }),
