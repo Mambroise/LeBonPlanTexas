@@ -101,7 +101,7 @@
                         <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
                     {% if package == '2' %}
-                    <p>{% translate 'Formule chauffeur privé:' %}</p>
+                    <strong>{% translate 'Formule chauffeur privé:' %}</strong>
                     <div class="flex-between">
                         <strong class="label-text">{{ form.nbr_days_driver.label }}</strong>
                         {{ form.nbr_days_driver }}

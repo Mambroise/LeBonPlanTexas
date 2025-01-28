@@ -31,14 +31,16 @@ class TripForm(forms.ModelForm):
                           "border-radius : 10px;"
                           ),
             }),
+            "nbr_days_driver": forms.DateInput(attrs={
+                "class": "custom-integer_input",
+                "style": ("width : 5rem;"
+                          ),
+            }),
             "comment": forms.Textarea(attrs={
                 "class": "custom-placeholder",
-                "style": ("font-size: 1.25rem;"
-                          "width : 100%;"
+                "style": ("width : 100%;"
                           "margin : auto;"
-                          "height : 100%;"  
-                          "border : 2px solid black;"
-                          "border-radius : 10px;"   
+                          "height : 100%;"   
                           ),
                 "placeholder": _("Commentaire :information utile, adresse complète de l'hotel..."),
             }),
