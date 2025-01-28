@@ -50,7 +50,7 @@
                 {% endfor %}
             </div>
                 <div class="flex-center align-center">
-                    <button type="submit" class="btn-primary mt-2">{% translate 'Commencer' %}</button>
+                    <button type="submit" class="btn-secondary mt-2">{% translate 'Commencer' %}</button>
                 </div>
             {% elif step == 2 %}
             <div class="form1">
@@ -79,14 +79,14 @@
                 {{ form.country }}
             </div>
             <div class="flex-center my-2">
-                <button type="submit" class="btn-primary">{% translate 'SUIVANT' %}</button>
+                <button type="submit" class="btn-secondary">{% translate 'SUIVANT' %}</button>
             </div>
 
             {% elif step == 3 %}
-            <div class="flex-center">
-                <div>
+            <div class="flex-around">
+                <div class="w-40">
                     <!-- start and end dates box -->
-                    <div class="flex-around">
+                    <div class="flex-between">
                         <div>
                             <p class="label-text">{{ form.start_date.label }}</p>
                             {{ form.start_date }}
@@ -96,27 +96,27 @@
                             {{ form.end_date }}
                         </div>
                     </div>
-                    <div class="inputBox my-4">
+                    <div class="inputBox mt-2">
                         <input type="text" name="cities" id="id_cities" class="form-control" required>
                         <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
-
-                    <p>{{ package }}</p>
-                    <div class="">
-                        <strong class="label-text">{{ form.vehiculed.label }}</strong>
-                        {{ form.vehiculed }}
+                    {% if package == '2' %}
+                    <strong>{% translate 'Formule chauffeur privé:' %}</strong>
+                    <div class="flex-between">
+                        <strong class="label-text">{{ form.nbr_days_driver.label }}</strong>
+                        {{ form.nbr_days_driver }}
                     </div>
+                    {% endif %}
                 </div>
-                <div class="w-50">
-
+                <div class="w-40">
                     {{ form.comment }}
                 </div>
             </div>
             
             <!-- step2 special buttons box -->
             <div class="step2-buttons">
-                <button type="submit" name="add_trip" class="btn-secondary">AJOUTER UNE ETAPE</button>
-                <button type="submit" name="finish_trips" class="btn-primary">SUIVANT</button>
+                <button type="submit" name="add_trip" class="btn-primary">AJOUTER UNE ETAPE</button>
+                <button type="submit" name="finish_trips" class="btn-secondary">SUIVANT</button>
             </div>
         </form>
         {% elif step == 4 %}
@@ -133,7 +133,7 @@
                 <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
                 <input type="hidden" name="categories" id="selected-categories" value="">
                 <div class="flex-center">                
-                    <button type="submit" class="btn-primary">VALIDER</button>
+                    <button type="submit" class="btn-secondary">VALIDER</button>
                 </div>
             </form>
             {% endif %}

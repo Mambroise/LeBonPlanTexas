@@ -21,16 +21,16 @@ class TripService:
                 end_date=data.get('end_date'),  
                 cities=data.get('cities'),  
                 comment=data.get('comment'),  
-                vehiculed=data.get('vehiculed', False),  
+                nbr_days_driver=data.get('nbr_days_driver', 0),  
             )
             trip.save()  
 
             return True  
         except IntegrityError as e:
             # Gère les erreurs d'intégrité, par exemple si des contraintes sont violées
-            print(f"Erreur d'intégrité : {e}")
+            print(f"Erreur d'intégrité dans trip_service.py: {e}")
             return False
         except Exception as e:
             # Gère toutes les autres erreurs
-            print(f"Erreur lors de la création du voyage : {e}")
+            print(f"Erreur lors de la création du voyage dans trip_service.py : {e}")
             return False
