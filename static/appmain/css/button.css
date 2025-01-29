@@ -33,3 +33,17 @@
 .btn-secondary:hover {
     background-color: #5a6268;
 }
+
+.btn-no-appearance {
+    border: none;
+    background: none;
+    color: var(--black-color);
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+}
+
+.btn-no-appearance:hover {
+    color: var(--brick-color);
+    font-style: italic;
+}

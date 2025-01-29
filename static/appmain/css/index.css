@@ -134,7 +134,7 @@
 }
 
 /* caroussel bdd activities style*/
-.carousel {
+/* .carousel {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -204,7 +204,7 @@
 
 .carousel-btn:hover {
     background-color: rgb(55, 89, 48,0.8);
-}
+} */
 
 /* SECOND BANNER STYLE */
 .second-banner {
@@ -339,7 +339,7 @@
 }
 
 .activities-container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;

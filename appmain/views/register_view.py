@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------
 #                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : appmain/views/register_view2.py
+# File   : appmain/views/register_view.py
 # Author : Morice
 # ---------------------------------------------------------------------------
 
@@ -38,6 +38,12 @@ def multi_step_form(request):
                 
             except Exception as e:
                 print(f'error in register_view, texas_trip part, step1 : {e}')
+                messages.error(request,_('A problem occured. Please try again or contact us'))
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{form.fields[field].label}: {error}")
+
 
     elif step == 2:
         form = CustomerForm(request.POST or None)
@@ -46,7 +52,13 @@ def multi_step_form(request):
             request.session['step'] = 3
             request.session['title'] = 'Détails du voyage'
             package = request.session.get('texas_trip')
+            messages.info(request,_('Divisez votre voyages en plusieurs étapes en fonction des villes où vous resterez!'))
             return redirect('multi_step_form')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{form.fields[field].label}: {error}")
+
 
     elif step == 3:
         form = TripForm(request.POST or None)
@@ -67,24 +79,24 @@ def multi_step_form(request):
                 messages.success(request, _("L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."))
                 return redirect('multi_step_form') 
             elif "finish_trips" in request.POST:
+                print("coucou")
                 request.session['step'] = 4
                 request.session['title'] = 'Vos intérêts'
                 return redirect('multi_step_form')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{form.fields[field].label}: {error}")
 
     elif step == 4:
         categories = Category.objects.all().order_by('-id')
-        # translate categories according to language
-        translated_categories = [
-            {'id': category.id, 'name': category.get_translated_name()}
-            for category in categories
-        ]
 
         if request.method == "POST":
             # Step 4.1 : Customer creation
             customer_data = request.session.get('customer_data')
             customer, success = CustumerService.create_custumer(customer_data)
             if not success:
-                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
+                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement des coordonnées."))
                 request.session.flush()
                 return redirect('multi_step_form')
             
@@ -92,7 +104,7 @@ def multi_step_form(request):
             texas_trip_data = request.session.get('texas_trip')
             texas_trip, success = TexasTripService.create_texas_trip(customer.id,texas_trip_data)
             if not success:
-                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du client."))
+                messages.error(request, _("Une erreur s'est produite lors de l'enregistrement de la formule."))
                 request.session.flush()
                 return redirect('multi_step_form')
 
@@ -101,7 +113,7 @@ def multi_step_form(request):
             for trip in trip_data:
                 success = TripService.create_trip(trip, customer.id,texas_trip.id)
                 if not success:
-                    messages.error(request, _("Une erreur s'est produite lors de l'enregistrement d'un voyage."))
+                    messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du voyage."))
                     request.session.flush()
                     return redirect('multi_step_form')
 
@@ -126,14 +138,23 @@ def multi_step_form(request):
             # Final success
             trips = texas_trip.whole_trips.all()
             success_registration_email(customer,trips,selected_categories)
-            messages.success(request, _('Enregistrement terminé avec succès.'))
+            messages.success(request, _('Enregistrement terminé avec succès. Une email vous a été envoyé'))
             request.session.flush()
             return redirect('success')
 
-        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': translated_categories, "title" : title, "package": package})
+        return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': categories, "title" : title, "package": package})
 
     else:
         request.session['step'] = 1
         return redirect('multi_step_form')
 
     return render(request, 'lebonplantexas/register_form.html', {'step': step, 'form': form, "title" : title, "package": package})
+
+from django.shortcuts import redirect
+
+def reset_form(request):
+    """Réinitialise forms after flushing session."""
+    request.session.flush()
+    messages.info(request,_("L'enregistrement a été abandonné"))
+    return redirect('multi_step_form')
+

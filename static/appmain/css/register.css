@@ -155,8 +155,9 @@
 }
 
 .category-card {
-    border: 3px solid #ccc;
-    border-radius: 0.6prem;
+    border: 3px solid var(--form-input-border);
+    background-color: var(--form-input-bg);
+    border-radius: 0.6rem;
     padding: 1rem 2rem;
     font-size: 1.6rem;
     font-weight: bold;
@@ -188,7 +189,7 @@
   color: var(--black-color);
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--black-color);
+  border-bottom: 2px solid var(--form-input-border);
   border-radius: 2px;
   margin-bottom: 1.875rem;
 }
@@ -225,12 +226,12 @@
 select[name="country"] {
     height: 3rem; 
     width: 10rem;
-    background: transparent;
+    background: var(--form-input-bg);
     font-size: 1.6rem; 
-    border: 1px solid #333;
+    border: 1px solid var(--form-input-border);
     border-radius: 5px;
     padding: 0.5rem; 
-    color: #333; 
+    color: var(--black-color); 
 }
 
 .step2-buttons {
@@ -248,9 +249,9 @@ input[type="date"],
   -moz-appearance: none;
   padding: 10px;
   font-size: 1.3rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--form-input-border);
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: var(--form-input-bg);
   cursor: pointer;
 }
 
@@ -274,3 +275,48 @@ input[type="date"]:focus,
     box-shadow: 0 0 6px rgba(152, 48, 63,0.5);
 }
 
+/* MESSAGES ALERTS */
+.alert {
+    font-size: 1rem;
+    color: var(--black-color);
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.alert-info, .alert-success {
+    background: var(--alert-main);
+    border: 1px solid var(--navbar-and-dot);
+}
+
+
+.alert-error {
+    background: rgba(190, 0, 33 0.2);
+    border: 1px solid var(--red-texas);
+}
+
+.alert-info::before {
+    content: "💡 ";  /* Icône ampoule */
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.alert-success::before {
+    content: "👍 ";  /* Pouce vers le haut */
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.alert-error::before {
+    content: "⚠️ ";  /* Icône avertissement */
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+
+/** messages fadde out **/
+.hide {
+    opacity: 0;
+    transition: opacity 3s ease-out;
+}

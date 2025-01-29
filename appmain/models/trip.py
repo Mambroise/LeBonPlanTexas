@@ -29,7 +29,7 @@ class Trip(models.Model):
     end_date = models.DateField(_('Fin:'))
     cities = models.CharField(_('Villes'),max_length=255,null=True)
     comment = models.TextField(_('Commentaire:'),max_length=500,null=True)
-    nbr_days_driver = models.IntegerField(_("Nombre de jour de service"), max_length=3,null=False, blank=False,default=0)
+    nbr_days_driver = models.IntegerField(_("Nombre de jour de service"),null=True, blank=False,default=0)
     timestamp = models.DateTimeField(auto_now=True)
     is_done = models.BooleanField(default=False)
 
