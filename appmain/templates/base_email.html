@@ -52,6 +52,12 @@
         .text-center {
             text-align: center;
         }
+        .hr {
+            margin-top: 1rem;
+            background-color: white;
+            height: 1px; 
+            border: none; 
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -124,7 +130,8 @@
 <body>
     <div class="modal">
         <div class="terms-bg-image">
-            <img src="cid:fort_worth" alt="fort worth coliseum" width="100%" height="auto" style="background-size: cover;background-position: bottom;">                  
+            <img src="cid:fort_worth" alt="fort worth coliseum" width="100%" height="auto" style="background-size: cover;background-position: bottom;">  
+            <hr class="hr">                
         </div>
         {% block content %}
         {% endblock %}

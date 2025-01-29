@@ -9,7 +9,6 @@
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.translation import gettext as _
-from decouple import config
 from django.conf import settings
 import os
 from email.mime.image import MIMEImage

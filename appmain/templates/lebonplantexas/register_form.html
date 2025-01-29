@@ -21,7 +21,19 @@
     </div>
         <!-- <h3 class="text-center c-black">{% translate 'Étape' %} {{ step }}/3</h3> --> 
         <form class="register-form" method="post">
+            {% if messages %}
+            <div class="messages mb-1">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                    {{ message }} 
+
+                </div>
+            {% endfor %}
+            </div>
+            {% endif %}
             {% csrf_token %}
+            <a href="{% url 'reset_form' %}" class="btn-no-appearance">{% translate 'Annuler' %}</a>
+
             {% if step == 1 %}
             <div class="flex-center">
                 {% for choice_value, choice_label in form.package.field.choices %}
@@ -96,15 +108,20 @@
                             {{ form.end_date }}
                         </div>
                     </div>
+                    {% if package == '2' %}
                     <div class="inputBox mt-2">
                         <input type="text" name="cities" id="id_cities" class="form-control" required>
                         <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
-                    {% if package == '2' %}
                     <strong>{% translate 'Formule chauffeur privé:' %}</strong>
-                    <div class="flex-between">
+                    <div class="flex-between mt-1">
                         <strong class="label-text">{{ form.nbr_days_driver.label }}</strong>
                         {{ form.nbr_days_driver }}
+                    </div>
+                    {% else %}
+                    <div class="inputBox mt-6">
+                        <input type="text" name="cities" id="id_cities" class="form-control" required>
+                        <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
                     {% endif %}
                 </div>
@@ -142,6 +159,24 @@
         <div class="form-footer">
         </div>
     </div>
+
+<!-- javascript for messages fade out -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const messages = document.querySelectorAll('.messages .alert');
+    if (messages) {
+        messages.forEach(function(message) {
+            setTimeout(function() {
+                message.classList.add('hide');
+            }, 4000); 
+            setTimeout(function() {
+                message.remove();
+            }, 6500); 
+        });
+    }
+});
+
+</script>
 {% endblock %}
 
 

@@ -8,6 +8,8 @@
 
 from django import forms
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
+from django.utils.timezone import now
 
 from appmain.models import Trip
 
@@ -31,7 +33,7 @@ class TripForm(forms.ModelForm):
                           "border-radius : 10px;"
                           ),
             }),
-            "nbr_days_driver": forms.DateInput(attrs={
+            "nbr_days_driver": forms.NumberInput(attrs={
                 "class": "custom-integer_input",
                 "style": ("width : 5rem;"
                           ),
@@ -49,3 +51,19 @@ class TripForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['comment'].required = False
+        self.fields['nbr_days_driver'].required = False
+
+    def clean(self):
+        cleaned_data = super().clean()
+        start_date = cleaned_data.get("start_date")
+        end_date = cleaned_data.get("end_date")
+
+        # Vérification que start_date n'est pas dans le passé
+        if start_date and start_date < now().date():
+            raise ValidationError({'start_date': _("La date de début ne peut pas être antérieure à aujourd'hui.")})
+
+        # Vérification que end_date est après start_date (déjà implémentée mais renforcée ici)
+        if start_date and end_date and end_date < start_date:
+            raise ValidationError({'end_date': _("La date de fin doit être postérieure à la date de début.")})
+
+        return cleaned_data
