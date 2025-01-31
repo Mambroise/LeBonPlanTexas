@@ -32,7 +32,9 @@
             </div>
             {% endif %}
             {% csrf_token %}
-            <a href="{% url 'reset_form' %}" class="btn-no-appearance">{% translate 'Annuler' %}</a>
+            <div class="reset-form-box">
+                <a href="{% url 'reset_form' %}" class="btn-no-appearance">{% translate 'Annuler' %}</a>
+            </div>
 
             {% if step == 1 %}
             <div class="flex-center">
@@ -47,7 +49,7 @@
                         class="d-none"
                     >
                     <div class="text-center h-100">
-                        <h3 class="package-card-title">{{ choice_label }}</h3>
+                        <h3 class="package-card-title">{{ choice_label|upper }}</h3>
                         <p>
                             {% if choice_value == 1 %}
                                 {% translate 'Accés à l\'application de planification, aux meilleures activités du Texas et à l\'assistant de voyage.' %}

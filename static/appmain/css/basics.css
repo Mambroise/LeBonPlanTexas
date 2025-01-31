@@ -18,6 +18,7 @@
     --black-color: rgb(36, 32, 32);
     --red-texas: rgb(190, 0, 33);
     --white-texas: rgb(255, 255, 255);
+    --white-texas-trans: rgba(255, 255, 255,0.8);
     
     /* VERSION 3 COULEURS*/ 
     --form-input-border: #ccc;
@@ -34,7 +35,19 @@
 body{
     margin: 0;
     color: var(--white-texas);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Barlow Condensed", serif;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+p {
+  line-height: 1.3;
+}
+
+h1,h2,h3,h4 {
+  font-family: "Barlow Condensed", serif;
+  font-weight: 700;
+  font-style: normal;  
 }
 
 /* MARGIN AND PADDING GENERALS*/

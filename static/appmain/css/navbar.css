@@ -21,10 +21,19 @@
 
 .navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
 }
 
-.buger_and_title_box {
+#texas-star-base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 13rem;
+}
+
+.burger-and-title-box {
     display: flex;
 }
 
@@ -37,12 +46,14 @@
 }
 
 .title-box {
-    width: 20%;
+    display: flex;
+    width: 50%;
     height: 100%;
 }
 
 .title {
-    margin-top: 18%;
+    display: flex;
+    align-items: center;
     margin-left: 10px;
     font-size: 3.1rem;
     font-weight: 600;
@@ -52,11 +63,11 @@
 
 .title p {
     margin: 0;
-    margin-bottom: 1%;
+    line-height: 2.7rem;
 }
 
 .title span {
-    font-size: 4.5rem;
+    font-size: 5rem;
     margin: 0;
     color: var(--white-texas);
     text-shadow: 
@@ -65,6 +76,21 @@
     -2px 2px 0px var(--red-texas),
     2px -2px 0px var(--red-texas);
     transition:  0.3s ease-in-out;
+}
+
+.title-box ul {
+    margin: 0;
+    padding-inline-start: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    gap: 3rem;
+    list-style-type: none;
+}
+.title-box ul li {
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 .nav-register-box, .nav-who-box {
@@ -87,43 +113,20 @@ a {
     color: var(--white-texas);
 }
 
-#register {
-    float: left;
-    font-size: 1.33rem;
+#register, #service {
+    font-size: 2rem;
     font-weight: 600;
-    border: 3px solid var(--white-texas);
-    border-radius: 10px;
-    padding: 2px 5px;
+    border-radius: 1rem;
+    padding: 1px 7px;
     transition:  0.2s ease-in-out;
 }
 
-#register:hover, #who:hover,.contact-link:hover {
+#register:hover, #service:hover,.contact-link:hover {
     background: var(--white-texas);
     color: var(--brick-color);
     border-color: var(--white-texas);
 }
 
-#who {
-    float: right;
-    font-size: 1.33rem;
-    font-weight: 600;
-    border: 3px solid var(--white-texas);
-    border-radius: 10px;
-    padding: 2px 5px;
-    transition:  0.2s ease-in-out;
-}
-
-.logo-image {
-    width: 40%;
-    height: auto;
-    max-height: 300px;
-    background-image: url(../../images/logo_star.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: height 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
-}
 /* */
 .flag-box {
     display: flex;
@@ -155,10 +158,15 @@ a {
 }
 
 .contact-link {
-    border: 3px solid var(--navbar-and-dot);
-    color: var(--navbar-and-dot) !important;
-    border-radius: 25px;
+    border: 1px solid var(--brick-color);
+    background: var(--white-texas-trans);
+    border-radius: 2rem;
     padding: 1rem 1rem;
+}
+
+.contact-link a {
+    color: var(--brick-color);
+    font-weight: 500;
 }
 
 .contact-link:hover a{

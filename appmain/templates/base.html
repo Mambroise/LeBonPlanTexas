@@ -24,8 +24,9 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container w-100 h-100">
+            <img src="{% static 'images/logo_star.png' %}" alt="étoile blanche du texas" id="texas-star-base">
             <div class="title-box">
-                <div class="buger_and_title_box">
+                <div class="burger-and-title-box">
                     <button class="burger-menu" onclick="toggleMenu()">
                         <span></span>
                         <span></span>
@@ -38,15 +39,14 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="nav-box nav-links">
-                <div class="nav-register-box">
-                    <a id="register" href="{% url 'multi_step_form' %}">{% translate 'INSCRIPTION' %}</a>
-                </div>
-                <div class="logo-image"></div>
-                <div class="nav-who-box">
-                    <a id="who" href="{% url 'services' %}">{% translate 'NOS SERVICES' %}</a>
-                </div>
+                <ul>
+                    <li>
+                        <a id="register" href="{% url 'multi_step_form' %}">{% translate 'INSCRIPTION' %}</a>
+                    </li>
+                    <li>
+                        <a id="service" href="{% url 'services' %}">{% translate 'NOS SERVICES' %}</a>
+                    </li>
+                </ul>
             </div>
             <div class="contact-box">
                 <div class="contact-container">
