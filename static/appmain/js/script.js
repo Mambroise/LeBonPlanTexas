@@ -70,6 +70,9 @@ function addStyles(selector) {
             width: 30%;
             transition:  0.3s ease-in-out;
         }
+        .title-box.small ul li {
+            margin-bottom: 1rem;
+        }
         .contact-link.small{
             border: 3px solid var(--brick-color);
             background: transparent;

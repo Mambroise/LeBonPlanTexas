@@ -31,6 +31,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 13rem;
+    transition:  0.3s ease-in-out;
 }
 
 .burger-and-title-box {
@@ -87,8 +88,9 @@
     gap: 3rem;
     list-style-type: none;
 }
+
 .title-box ul li {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-decoration: underline;
     font-style: italic;
 }
@@ -169,8 +171,12 @@ a {
     font-weight: 500;
 }
 
-.contact-link:hover a{
+.contact-link.small:hover {
     background-color: var(--white-texas);
     color: var(--brick-color);
+    font-weight: bold;
+}
+.contact-link.small:hover a {
+    color: var(--brick-color) !important;
     font-weight: bold;
 }
