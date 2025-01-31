@@ -42,49 +42,41 @@ function addStyles(selector) {
             transition: height 0.3s ease-in-out;
         }
         ${selector}.small {
-            height: 6.25rem;
+            height: 5rem;
             transition: height 0.3s ease-in-out;
             background: var(--navbar-black);
             border-bottom: 1px solid var(--black-color);
         }
-
-        #who.small, #register.small {
-            font-size: 1.05rem;
+        #texas-star-base.small {
+            width: 4rem;
             transition:  0.3s ease-in-out;
         }
-
-        .nav-box.small {
-            width: 40%;
-            transition:  0.5s ease-in-out;
+        #service.small, #register.small {
+            font-size: 1.5rem;
+            font-weight: normal;
         }
         .title.small {
-            margin-top: 15px;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             transition:  0.3s ease-in-out;
         }
+        .title.small p {
+            line-height: 1.35rem;
+        }
         .title span.small {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             transition:  0.3s ease-in-out;
         }
         .title-box.small {
             width: 30%;
             transition:  0.3s ease-in-out;
         }
-        .flag-img.small {
-            width: 2rem;
-            }
-        .flag-img-us.small {
-            width: 2.4rem;
-        }
-        .contact-box.small {
-            width: 30%;
-            transition:  0.3s ease-in-out;
-        }
         .contact-link.small{
+            border: 3px solid var(--brick-color);
+            background: transparent;
             padding: 0.8rem 0.8rem;
         }
         .contact-link.small a {
-            font-size: 0.8rem;
+            color: var(--white-texas);
         }
 
     `;
@@ -95,42 +87,37 @@ function addStyles(selector) {
 
 addStyles(navbarSelector);
 
-const who = document.querySelector('#who');
-const register = document.querySelector('#register');
 const navBox = document.querySelector('.nav-box')
+const star = document.querySelector('#texas-star-base');
+const service = document.querySelector('#service');
+const register = document.querySelector('#register');
 const title = document.querySelector('.title')
 const titleSpan = document.querySelector('.title span')
 const titleBox = document.querySelector('.title-box')
 const contactBox = document.querySelector('.contact-box')
-const flagImg = document.querySelector('.flag-img');
-const flagImgUs = document.querySelector('.flag-img-us');
 const contactLink = document.querySelector('.contact-link');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
-        who.classList.add('small');
+        star.classList.add('small');
+        service.classList.add('small');
         register.classList.add('small');
-        navBox.classList.add('small');
         title.classList.add('small');
         titleSpan.classList.add('small');
         titleBox.classList.add('small');
         contactBox.classList.add('small');
-        flagImg.classList.add('small');
-        flagImgUs.classList.add('small');
         contactLink.classList.add('small');
 
     } else {
         navbar.classList.remove('small');
-        who.classList.remove('small');
+        star.classList.remove('small');
+        service.classList.remove('small');
         register.classList.remove('small');
-        navBox.classList.remove('small');
         title.classList.remove('small');
         titleSpan.classList.remove('small');
         titleBox.classList.remove('small');
         contactBox.classList.remove('small');
-        flagImg.classList.remove('small')
-        flagImgUs.classList.remove('small')
         contactLink.classList.remove('small')
 
     }
@@ -147,7 +134,7 @@ function toggleMenu() {
 
 // TEXAS CULTURE WORDS BANNER
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname === '/index/') {
+    if (window.location.pathname === '/') {
 
         const words = document.querySelectorAll('.word');
         const banner = document.querySelector('.texas-banner');

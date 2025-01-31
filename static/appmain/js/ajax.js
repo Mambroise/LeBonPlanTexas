@@ -6,7 +6,7 @@
 // # ---------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.pathname === '/index/') {
+    if (window.location.pathname === '/') {
         
         const form = document.getElementById('city-selector-form');
         const container = document.getElementById('activities-container');

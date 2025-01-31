@@ -16,7 +16,7 @@ from .views.ajax_activities_view import get_activities
 from .views.register_view import multi_step_form,reset_form
 
 urlpatterns = [
-    path('index/', index, name='index'), 
+    path('', index, name='index'), 
     path('get_activities/', get_activities, name='get_activities'), 
     path('privacy_policy/', privacy, name='privacy'), 
     path('contact/', contact, name='contact'), 

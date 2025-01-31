@@ -12,7 +12,7 @@
 .texas-trip-form-container {
     width: 100%;
     margin: auto;
-    margin-top: 6.25rem;
+    margin-top: 5rem;
     color: var(--black-color);
 }
 
@@ -24,6 +24,11 @@
     margin: 0 0.5rem;
     padding: 0.5rem;
     color: var(--brick-color)
+}
+
+.reset-form-box {
+    display: flex;
+    justify-content: end;
 }
 
 .package-card {
@@ -231,7 +236,13 @@ select[name="country"] {
     border: 1px solid var(--form-input-border);
     border-radius: 5px;
     padding: 0.5rem; 
-    color: var(--black-color); 
+    color: var(--brick-color); 
+}
+
+select[name="country"]:focus {
+    border-color: var(--brick-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(152, 48, 63,0.5);
 }
 
 .step2-buttons {
@@ -277,11 +288,11 @@ input[type="date"]:focus,
 
 /* MESSAGES ALERTS */
 .alert {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--black-color);
     width: 80%;
     margin: auto;
-    padding: 1rem 0.5rem;
+    padding: 0.7rem 0.5rem;
     border-radius: 1rem;
 }
 

@@ -1,7 +1,7 @@
 <!-- # ---------------------------------------------------------------------------
 #                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : appmain/templates/base_fixed.html
+# File   : appmain/templates/base_fixed2.0.html
 # Author : Morice
 # --------------------------------------------------------------------------- -->
 
@@ -20,7 +20,8 @@
 </head>
 <body>
     <nav class="navbar-fixed">
-        <div class="navbar-container w-100 h-100">
+        <div class="navbar-container-fixed w-100 h-100">
+            <img src="{% static 'images/logo_star.png' %}" alt="étoile blanche du texas" id="texas-star">
             <div class="title-box-fixed">
                 <div class="buger_and_title_box">
                     <button class="burger-menu" onclick="toggleMenu()">
@@ -35,23 +36,21 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="nav-box-fixed nav-links">
-                <div class="nav-register-box-fixed">
-                    <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'INSCRIPTION' %}</a>
-                </div>
-                <div class="logo-image-fixed">
-                </div>
-                <div class="nav-who-box-fixed">
-                    <a id="who-fixed" href="{% url 'services' %}">{% translate 'NOS SERVICES' %}</a>
-                </div>
+                <ul>
+                    <li>
+                        <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'INSCRIPTION' %}</a>
+                    </li>
+                    <li>
+                        <a id="service-fixed" href="{% url 'services' %}">{% translate 'NOS SERVICES' %}</a>
+                    </li>
+                </ul>
             </div>
             <div class="contact-box-fixed">
                 <div class="contact-container-fixed">
                     <div class="contact-link-fixed">
                         <a href="{% url 'contact' %}"><i class="fas fa-phone-alt"></i> Contactez-nous
+                        </a>
                     </div>
-                    </a>
                     <div class="flag-box-fixed">
                         <a href="#">
                             <img src="{% static 'images/icons/french_flag.png' %}" alt="french flag" class="flag-img-fixed">
