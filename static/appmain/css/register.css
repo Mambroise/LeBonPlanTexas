@@ -55,6 +55,7 @@
 .form-header-bg {
     width: 100%;
     background-color: var(--brick-color);
+    border-bottom: 1px solid var(--black-color);
 }
 
 .form-footer-bg {
@@ -67,7 +68,7 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    margin: 3rem auto;
+    margin: 3rem auto 0rem auto;
     height: 15vh;
     background-image: url('../../images/austin_buildings_large.jpg');
     background-position: top;
@@ -137,14 +138,14 @@
     background-color: var(--register-frames-bg);
 }
 
-.register-form{
+.register-form, .register-success-frame {
     width: 80%;
     margin: 2rem auto;
     color: var(--black-color);
     height: auto;
 }
 
-.form1 {
+.customer-details {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -285,6 +286,19 @@ input[type="date"]:focus,
     border-color: var(--brick-color);
     outline: none;
     box-shadow: 0 0 6px rgba(152, 48, 63,0.5);
+}
+
+/* REGISTER SUCCESS */
+
+.congrates {
+    text-align: center;
+    margin: 1rem 0 0.5rem 0;
+    font-size: 2.5rem;
+    color: var(--brick-color);
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* MESSAGES ALERTS */

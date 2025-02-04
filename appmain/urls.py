@@ -14,6 +14,7 @@ from .views.checkout_suc_can import print_invoice
 from .views.service_view import service_view
 from .views.ajax_activities_view import get_activities
 from .views.register_view import multi_step_form,reset_form
+from .views.register_success_view import register_success
 
 urlpatterns = [
     path('', index, name='index'), 
@@ -29,5 +30,5 @@ urlpatterns = [
     path('checkout-success/', checkout_success, name='checkout_success'), 
     path('checkout-cancelled/', checkout_cancelled, name='checkout_cancelled'), 
     path('print_invoice/<int:invoice_id>/', print_invoice, name='print_invoice'),
-    path('thanku/', multi_step_form, name='success'), 
+    path('thanku/<int:customer_id>', register_success, name='success'), 
  ]

@@ -12,7 +12,7 @@ from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Att
 from .models.texas_trip import TexasTrip
 from .services.send_email import send_payment_link
 from .services.invoice_service import InvoiceService
-from .services.customer_service import CustumerService
+from .services.customer_service import CustomerService
 from .services.company_service import CompanyService
 
 
@@ -61,7 +61,7 @@ def send_email_action(modeladmin, request, queryset):
             customer = invoice.customer
             if send_payment_link(customer, invoice):    
                 success_count += 1
-                CustumerService.customer_is_mailed(customer)
+                CustomerService.customer_is_mailed(customer)
             else:
                 error_count += 1
         except Exception as e:

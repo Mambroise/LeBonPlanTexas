@@ -9,10 +9,10 @@
 from django.db import IntegrityError
 from appmain.models import Customer
 
-class CustumerService:
+class CustomerService:
     #  Method to create a customer
     @staticmethod
-    def create_custumer(data):
+    def create_customer(data):
         """
         Creates a customer based on the provided data.
 
@@ -67,4 +67,11 @@ class CustumerService:
         except Exception as e:
             print(f'is_mailed update unsuccessful: {e}')
 
-    
+    @staticmethod
+    def find_by_id(customer_id):
+        try:
+            customer = Customer.objects.get(pk=customer_id)
+            return customer
+        except:
+            print('customer not found in customer_service find_by_id')
+            return None
