@@ -1,0 +1,63 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/register_form2.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% extends 'base_fixed.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="texas-trip-form-container mt-6">
+    <div class="form-header-bg">
+        <div class="form-header">
+            <h2>{{ title }}</h2>
+        </div>
+    </div>
+    <section class="register-success-frame">
+        <p class="congrates">{% translate 'Félicitation' %} {{ customer.first_name|capfirst }}!!</p>
+        <p class="congrates">{% translate 'Le Texas vous ouvre ses portes. Un email a été envoyé à cette adresse:' %}</p>
+        <p class="text-center fs-2 no-mt">{{ customer.email }}</p>
+        <div class="texas-banner rounded">
+            <span class="word">Howdy {{ customer.first_name|capfirst }}</span>
+            <span class="word">{% translate 'Alligators' %}</span>
+            <span class="word">{% translate 'Bon voyage' %} {{ customer.first_name|capfirst }}!</span>
+            <span class="word">{% translate 'Coyotes' %}</span>
+            <span class="word">Alabama-Coushatta</span>
+            <span class="word">{% translate 'Désert' %}</span>
+            <span class="word">{% translate 'Forêt' %}</span>
+            <span class="word">{% translate 'Golfe du Mexique' %}</span>
+            <span class="word">{% translate 'Viticulture' %}</span>
+            <span class="word">{% translate 'A très vite' %} {{ customer.first_name|capfirst }}</span>
+            <span class="word">{% translate 'Longhorns' %}</span>
+            <span class="word">{% translate 'Honky Tonk' %}</span>
+            <span class="word">Ysleta del Sur Pueblo</span>
+            <span class="word">{% translate 'Liberté' %}</span>
+            <span class="word">{% translate 'Barbecue' %}</span>
+            <span class="word">{% translate 'Cowboys' %}</span>
+            <span class="word">{% translate 'Rodéo' %}</span>
+            <span class="word">{% translate 'Bisons' %}</span>
+            <span class="word">{% translate 'Prairie' %}</span>
+            <span class="word">Ranch</span>
+            <span class="word">{% translate 'Pétrole' %}</span>
+            <span class="word">Kickapoo</span>
+            <span class="word">{% translate 'Chili' %}</span>
+            <span class="word">Western</span>
+            <span class="word">{% translate 'Amusez-vous bien!' %}</span>
+        </div>
+    </section>
+</div>
+<div class="form-footer-bg">
+    <div class="form-footer">
+    </div>
+</div>
+
+{% endblock %}
+
+
+

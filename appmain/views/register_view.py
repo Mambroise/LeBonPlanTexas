@@ -14,7 +14,7 @@ from django.utils.translation import gettext_lazy as _
 from ..forms.customer_form import CustomerForm
 from ..forms.trip_form import TripForm
 from ..models import Category
-from ..services.customer_service import CustumerService
+from ..services.customer_service import CustomerService
 from ..services.trip_service import TripService
 from ..services.interest_service import InterestService
 from ..services.texas_trip_service import TexasTripService
@@ -94,7 +94,7 @@ def multi_step_form(request):
         if request.method == "POST":
             # Step 4.1 : Customer creation
             customer_data = request.session.get('customer_data')
-            customer, success = CustumerService.create_custumer(customer_data)
+            customer, success = CustomerService.create_customer(customer_data)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement des coordonnées."))
                 request.session.flush()
@@ -131,16 +131,16 @@ def multi_step_form(request):
             success = InterestService.create_customer_interests(selected_categories, customer.id)
             if not success:
                 messages.error(request, _("Une erreur s'est produite lors de l'enregistrement des catégories."))
-                CustumerService.delete_customer(customer.id)
+                CustomerService.delete_customer(customer.id)
                 request.session.flush()
                 return redirect('multi_step_form')
 
             # Final success
             trips = texas_trip.whole_trips.all()
             success_registration_email(customer,trips,selected_categories)
-            messages.success(request, _('Enregistrement terminé avec succès. Une email vous a été envoyé'))
             request.session.flush()
-            return redirect('success')
+            return redirect('success', customer_id=customer.id)
+
 
         return render(request, 'lebonplantexas/register_form.html', {'step': step, 'categories': categories, "title" : title, "package": package})
 

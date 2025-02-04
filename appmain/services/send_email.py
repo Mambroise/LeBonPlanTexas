@@ -58,6 +58,7 @@ def success_registration_email(customer, trips, interests):
     try:
         categories = dict(Category.objects.values_list('id', 'name'))
         company_info = CompanyService.get_company_info()
+        print(company_info.email)
         customer_interests = [categories[interest] for interest in interests if interest in categories]
         
         
@@ -73,12 +74,13 @@ def success_registration_email(customer, trips, interests):
 
         # Render the email template with context data
         subject = object_content
-        from_email = company_info.name
+        from_email = company_info.email
         to_email = customer.email
         bcc_email = [company_info.email] 
         text_content = 'Your email client does not support HTML content'
 
         html_payment_link_content = render_to_string('email/success_registration_email.html', email_body)
+        print(f"Vérification des emails : from_email={from_email}, EMAIL_HOST_USER={settings.EMAIL_HOST_USER}")
 
         # Create the email message
         email = EmailMultiAlternatives(subject, text_content, from_email, [to_email], bcc=bcc_email)

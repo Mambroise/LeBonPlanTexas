@@ -137,7 +137,9 @@ function toggleMenu() {
 
 // TEXAS CULTURE WORDS BANNER
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname === '/') {
+    console.log(window.location.pathname);
+    
+    if (window.location.pathname === '/' || window.location.pathname.startsWith('/thanku/')) {
 
         const words = document.querySelectorAll('.word');
         const banner = document.querySelector('.texas-banner');

@@ -7,7 +7,6 @@
 
 
 from django.shortcuts import render
-from django.http import HttpResponseForbidden
 from ..services.invoice_service import InvoiceService
 
 def payment_view(request):
