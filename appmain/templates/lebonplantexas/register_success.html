@@ -22,8 +22,8 @@
     <section class="register-success-frame">
         <p class="congrates">{% translate 'Félicitation' %} {{ customer.first_name|capfirst }}!!</p>
         <p class="congrates">{% translate 'Le Texas vous ouvre ses portes. Un email a été envoyé à cette adresse:' %}</p>
-        <p class="text-center fs-2 no-mt">{{ customer.email }}</p>
         <div class="texas-banner rounded">
+            <p class="text-center fs-2 no-mt">{{ customer.email }}</p>
             <span class="word">Howdy {{ customer.first_name|capfirst }}</span>
             <span class="word">{% translate 'Alligators' %}</span>
             <span class="word">{% translate 'Bon voyage' %} {{ customer.first_name|capfirst }}!</span>

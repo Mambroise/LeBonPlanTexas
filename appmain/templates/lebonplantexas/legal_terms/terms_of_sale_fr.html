@@ -1,0 +1,299 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/lebonplantexas/legal_terms/terms_of_sale_fr.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% extends 'base_fixed.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="flex-center">
+        <div class="w-50 c-black mt-6">
+            <h2>CONDITIONS GENERALES DE VENTE</h1>
+            <br>
+            <h3>1. Caractéristiques essentielles des services proposés</h2>
+            <p>Notre entreprise propose des services touristiques destinés à optimiser l'expérience de voyage de nos clients au Texas. Ces services sont conçus pour offrir une organisation fluide et personnalisée, en fonction des préférences et des besoins de chaque voyageur.</p>
+            <h4>1.1 Service Autonome : application mobile interactive de planification d'activités</h3>
+            <p>Notre application permet aux clients de composer leur programme quotidien en fonction de la localisation de leur hébergement et des activités disponibles à proximité ou sur leur itinéraire. Elle offre notamment :</p>
+            <ul>
+                <li>Une sélection d'activités variées : musées, édifices historiques, parcs nationaux, restaurants, hôtels, activités culturelles, sportives, etc.</li>
+                <li>Un guidage optimisé indiquant les trajets les plus courts et les heures idéales de départ.</li>
+                <li>Une estimation du temps conseillé pour chaque activité.</li>
+            </ul>
+            <h4>1.2 Service de chauffeur privé</h3>
+            <p>Nous proposons un service de chauffeur privé disponible à la location journalière, de 7h à 22h. Ce service inclut :</p>
+            <ul>
+                <li>Un chauffeur professionnel assurant le transport des clients vers leurs activités.</li>
+                <li>Une prise en charge flexible et adaptée aux besoins du client.</li>
+                <li>Un service exclusif de transport sans participation du chauffeur aux activités elles-mêmes.</li>
+            </ul>
+            <h4>1.3 Service "Platinum" d'accompagnement personnalisé</h3>
+            <p>Notre service "Platinum" offre une expérience sur mesure pour un voyage optimisé au Texas. Ce service inclut :</p>
+            <ul>
+                <li>Une consultation approfondie pour comprendre les préférences et attentes du client.</li>
+                <li>Une conception personnalisée de l'itinéraire avec des activités et hébergements sélectionnés selon les besoins exprimés.</li>
+                <li>Une prise en charge des réservations des hôtels et des activités préalablement validées par le client.</li>
+                <li>Une possibilité d'ajustement du parcours dans la limite des disponibilités et des conditions logistiques.</li>
+            </ul>
+            
+            <h3>2. Tarification des services</h2>
+            <ul>
+                <li><strong>Formule Autonome (Application Mobile)</strong> : 2 euros TTC par jour de vacances effectifs. Les journées d'arrivée et de départ sont offertes.</li>
+                <li><strong>Formule Chauffeur</strong> : 300 euros TTC par journée de service dans la région d'Austin et dans un rayon de 200 km.</li>
+                <li><strong>Formule Platinum</strong> : 40 euros TTC par jour de vacances organisées, réservations incluses.</li>
+            </ul>
+            
+            <h3>3. Modalités de paiement, d'exécution du contrat et de traitement des réclamations</h2>
+            <h4>3.1 Modalités de paiement</h3>
+            <p>Le paiement des services s'effectue exclusivement par carte bancaire via la plateforme sécurisée Stripe. Le règlement est exigé en totalité au moment de la réservation.</p>
+            <h4>3.2 Exécution du contrat</h3>
+            <p>Les services sont fournis selon les modalités suivantes :</p>
+            <ul>
+                <li><strong>Formule Autonome (Application Mobile)</strong> : L’accès à l’application est activé immédiatement après la confirmation du paiement.</li>
+                <li><strong>Formule Chauffeur</strong> : La prestation commence à la date et à l’heure convenues avec le client lors de la réservation.</li>
+                <li><strong>Formule Platinum</strong> : L’organisation et la réservation des prestations démarrent après la validation du devis et le paiement intégral du service.</li>
+            </ul>
+            <h4>3.3 Droit de rétractation</h3>
+            <p>Conformément aux dispositions légales en vigueur :</p>
+            <ul>
+                <li>Pour la Formule Autonome (Application Mobile), le droit de rétractation ne s'applique pas dès lors que l'accès au contenu numérique est fourni immédiatement après paiement.</li>
+                <li>Pour les Formules Chauffeur et Platinum, le client dispose d'un délai de 14 jours pour exercer son droit de rétractation, sauf si la prestation a déjà commencé avec son accord avant l'expiration de ce délai.</li>
+            </ul>
+            <h4>3.4 Réclamations</h3>
+            <p>Toute réclamation doit être adressée par e-mail à [adresse e-mail de contact] ou par courrier à [adresse postale]. Nous nous engageons à traiter chaque demande dans un délai de 14 jours.</p>
+        
+            <h3>4. Modèle de formulaire de rétractation</h2>
+            <p>Si vous souhaitez exercer votre droit de rétractation, veuillez compléter et renvoyer le formulaire ci-dessous par courrier recommandé avec accusé de réception à l'adresse suivante : [adresse de l'entreprise].</p>
+            <p>À l’attention de [Nom de l’entreprise]</p>
+            <p>Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services suivante :</p>
+            <ul>
+                <li>Commande effectuée le : [date]</li>
+                <li>Nom du client : [nom]</li>
+                <li>Adresse du client : [adresse]</li>
+                <li>Signature du client (uniquement en cas de notification par courrier)</li>
+                <li>Date : [date]</li>
+            </ul>
+            <p>Nous vous rembourserons les sommes versées dans un délai maximum de 14 jours à compter de la réception de votre demande, sous réserve du respect des conditions de rétractation applicables.</p>
+        
+            <h3>5. Date ou délai de livraison du produit vendu</h2>
+            <p>Les services sont fournis selon les modalités suivantes :</p>
+            <ul>
+                <li><strong>Formule Autonome (Application Mobile)</strong> : L’accès à l’application est activé immédiatement après la confirmation du paiement.</li>
+                <li><strong>Formule Chauffeur</strong> : Le service est délivré à la date et à l’heure convenues lors de la réservation.</li>
+                <li><strong>Formule Platinum</strong> : L’organisation et la réservation des prestations débutent dès la validation du devis et le règlement intégral. Les confirmations de réservation sont transmises au client dans un délai raisonnable en fonction des disponibilités des établissements partenaires.</li>
+            </ul>
+            <p>En cas de retard ou d’impossibilité de prestation pour des raisons indépendantes de notre volonté (événements climatiques, restrictions locales, etc.), le client sera informé dans les meilleurs délais et des solutions alternatives lui seront proposées.</p>
+        
+            <h3>6. Coordonnées de l’entreprise</h2>
+                <p>En cas de besoin, les coordonnées et contacts de l’entreprise sont les suivants :</p>
+            <ul>
+                <li>Nom de l’entreprise : leBonPlanTEXAS</li>
+                <li>Statut juridique : LLC (Limited Liability Company)</li>
+                <li>Siège social : 1055 Austin Road 75020 Austin</li>
+                <li>Email : ambroise.lebonplantexas@gmail.com</li>
+                <li>Téléphone : 0684197707 (WhatsApp uniquement)</li>
+                <li>Instagram : LeBonPlanTEXAS</li>
+            </ul>
+        
+            <h3>7. Recours à un médiateur de la consommation</h2>
+            <p>Conformément aux dispositions du Code de la consommation, en cas de litige, le client a la possibilité de recourir gratuitement à un médiateur de la consommation.</p>
+            <p>Le médiateur désigné sera communiqué une fois l’affiliation finalisée. En attendant, le client peut consulter la liste des médiateurs agréés sur le site de la Commission d’évaluation et de contrôle de la médiation de la consommation (CECMC) : <a href="https://www.economie.gouv.fr/mediation-conso">Médiation Conso</a></p>
+            <p>Le client peut également déposer une plainte sur la plateforme de règlement en ligne des litiges de la Commission européenne : <a href="https://ec.europa.eu/consumers/odr/">ODR</a></p>
+        
+            <h3>8. Numéro d'inscription au registre du commerce et des sociétés</h2>
+            <p>L'entreprise leBonPlanTEXAS est en cours d'immatriculation. Son numéro d'inscription au registre du commerce et des sociétés sera indiqué ici dès qu'il sera attribué.</p>
+        
+            <h3>9. Numéro de TVA intracommunautaire</h2>
+            <p>Le numéro de TVA intracommunautaire de l'entreprise sera mentionné ici une fois attribué par l'administration fiscale. Si l'entreprise n'est pas assujettie à la TVA, elle appliquera les règles en vigueur et en informera ses clients au moment de la facturation.</p>
+        
+            <h3>10. Activité réglementée</h2>
+            <p>L'entreprise leBonPlanTEXAS exerce une activité liée au tourisme et au transport privé. Elle veille à respecter les réglementations locales en vigueur au Texas, y compris les éventuelles licences et autorisations nécessaires pour l'exercice de ces prestations. Pour toute information complémentaire, les clients peuvent nous contacter aux coordonnées indiquées dans les présentes conditions générales de vente.</p>
+        
+            <h3>11. Loi applicable et tribunal compétent</h2>
+            <p>Les présentes conditions générales de vente sont régies par le droit de l'État du Texas, aux États-Unis. En cas de litige relatif à l’interprétation ou l’exécution des présentes conditions, et à défaut de résolution amiable, les tribunaux compétents seront ceux situés dans l'État du Texas, sauf dispositions légales impératives contraires applicables aux consommateurs européens.</p>
+        
+            <h3>12. Garantie financière</h2>
+            <p>Conformément à la législation française, l'entreprise leBonPlanTEXAS bénéficie d'une garantie financière souscrite auprès de [nom de l'organisme garant], permettant de couvrir les sommes versées par nos clients en cas de défaillance de notre entreprise. Cette garantie est mise en place pour assurer la protection des paiements effectués pour les services touristiques réservés et non rendus.</p>
+            <p>Le montant de cette garantie est suffisant pour couvrir les paiements effectués par les clients dans le cadre des prestations souscrites, selon les obligations légales et les conditions définies par l'organisme de garantie.</p>
+            <p>En cas de défaillance de notre entreprise avant la réalisation des prestations, les clients peuvent contacter l'organisme de garantie pour obtenir le remboursement des sommes versées, conformément à la réglementation applicable.</p>
+        
+            <h3>13. Titre professionnel et inscription à un organisme</h2>
+            <p>Conformément aux exigences légales françaises, notre entreprise leBonPlanTEXAS exerce une activité de transport privé au Texas et est enregistrée auprès des autorités compétentes de l'État du Texas. Nous respectons toutes les lois locales régissant le transport de passagers. Si notre activité nécessite une inscription spécifique en France ou en Suisse, nous vous fournirons ces informations sur demande.</p>
+        
+            <section id="assurance">
+                <h3>14. Engagement écrit de caution / Assurance responsabilité professionnelle</h2>
+                <p>
+                    Dans le cadre de notre activité, nous avons souscrit une assurance responsabilité professionnelle auprès de 
+                    <strong>[nom de l’assureur]</strong> pour garantir nos engagements vis-à-vis de nos clients et partenaires. 
+                    Cette assurance couvre les risques relatifs à la <em>[nature des risques couverts, par exemple, dommages corporels ou matériels pendant les activités touristiques et le transport]</em>.
+                </p>
+                <h4>Coordonnées de notre assureur :</h3>
+                <ul>
+                    <li><strong>Nom de l’assureur :</strong> [Nom de l’assureur]</li>
+                    <li><strong>Numéro de police :</strong> [Numéro de police]</li>
+                    <li><strong>Adresse :</strong> [Adresse de l’assureur]</li>
+                    <li><strong>Couverture géographique :</strong> [Pays ou régions couvertes par l’assurance]</li>
+                </ul>
+                <p>
+                    Cette assurance couvre les activités de transport privé et d’accompagnement touristique proposées par notre entreprise, 
+                    conformément à la réglementation en vigueur.
+                </p>
+            </section>
+        
+            <section id="garantie-sav">
+                <h3>15. Garantie commerciale et service après-vente</h2>
+                
+                <h3><u>Garantie commerciale</u></h3>
+                <p>
+                    Nous nous engageons à fournir des services de qualité, conformément aux attentes et descriptions définies lors de la réservation. 
+                    En cas de non-conformité des prestations, une garantie commerciale s'applique pour chaque service :
+                </p>
+            
+                <h4>Service Autonome (Application mobile interactive)</h4>
+                <p>
+                    Si l'application présente des dysfonctionnements ou si un client rencontre des difficultés techniques majeures affectant 
+                    l'utilisation de l'application, nous offrons un remboursement partiel pour la journée concernée ou une extension de service gratuite, 
+                    selon le problème rencontré.
+                </p>
+            
+                <h4>Service Chauffeur privé</h4>
+                <p>
+                    Si le chauffeur ne se présente pas à l'heure prévue, ou si un autre problème lié au service de transport survient 
+                    (par exemple, véhicule non conforme, trajet mal exécuté), le client pourra demander un remboursement partiel 
+                    ou une nouvelle réservation gratuite, selon la gravité de l'incident.
+                </p>
+            
+                <h4>Service "Platinum" d'accompagnement personnalisé</h4>
+                <p>
+                    Si le service d'accompagnement personnalisé ne respecte pas les attentes exprimées dans le cadre de la consultation initiale 
+                    (par exemple, mauvaises réservations d'hôtels ou d'activités), nous nous engageons à organiser une nouvelle réservation 
+                    dans un délai raisonnable, ou à offrir une compensation équivalente (réduction, remboursement partiel, etc.).
+                </p>
+            
+                <h4>Conditions de la garantie commerciale</h3>
+                <p>
+                    Toute réclamation dans le cadre de cette garantie doit être effectuée dans un délai de <strong>14 jours</strong> après la prestation concernée. 
+                    Les remboursements, ajustements ou compensations seront effectués après évaluation du problème par notre équipe.
+                </p>
+            
+                <h4>Service après-vente (SAV)</h3>
+                <p>
+                    Notre service client est disponible pour résoudre toute réclamation, modification ou ajustement lié à nos services. 
+                    Nous vous offrons une assistance réactive pour garantir que votre expérience au Texas se déroule selon vos attentes :
+                </p>
+            
+                <h4>Réclamations sur l'Application Mobile</h4>
+                <p>
+                    En cas de problèmes techniques avec l'application mobile, vous pouvez contacter notre support technique à l'adresse suivante : 
+                    <a class="c-black" href="mailto:ambroise.lebonplantexas@gmail.com">ambroise.lebonplantexas@gmail.com</a>. 
+                    Notre équipe s'engage à résoudre tout problème dans un délai de <strong>72 heures</strong>.
+                </p>
+            
+                <h4>Problèmes avec le Service Chauffeur Privé</h4>
+                <p>
+                    Si vous rencontrez un problème avec le service de chauffeur privé (retard, véhicule non conforme, etc.), 
+                    vous pouvez nous contacter immédiatement par e-mail à 
+                    <a class="c-black" href="mailto:ambroise.lebonplantexas@gmail.com">ambroise.lebonplantexas@gmail.com</a> 
+                    ou par téléphone au <strong>0684197707</strong> (WhatsApp seulement). 
+                    Nous nous engageons à vous proposer une solution alternative (par exemple, un autre chauffeur ou un remboursement partiel).
+                </p>
+            
+                <h4>Réclamations concernant le Service "Platinum"</h4>
+                <p>
+                    Pour toute réclamation concernant le service personnalisé, nous vous demandons de nous contacter dans les <strong>7 jours</strong> suivant la prestation. 
+                    Nous nous engageons à trouver une solution dans les plus brefs délais, que ce soit par un ajustement des réservations, 
+                    un nouveau conseil, ou une compensation partielle.
+                </p>
+            
+                <h3><u>Modalités de réclamation</u></h3>
+                <ul>
+                    <li>
+                        Toute réclamation doit être envoyée à l'adresse suivante : 
+                        <a class="c-black" href="mailto:ambroise.lebonplantexas@gmail.com">ambroise.lebonplantexas@gmail.com</a>.
+                    </li>
+                    <li>
+                        Les réclamations doivent être faites dans un délai de <strong>14 jours</strong> après la prestation. 
+                        Nous nous engageons à traiter toutes les réclamations dans un délai de <strong>14 jours ouvrés</strong>.
+                    </li>
+                </ul>
+            </section>
+            
+        
+            <section id="garantie-conformite">
+                <h3>16. Garantie légale de conformité et des vices cachés - Services numériques</h2>
+            
+                <h4>1. Nom du professionnel garantissant les services numériques</h3>
+                <ul>
+                    <li><strong>Nom de l'entreprise :</strong> leBonPlanTEXAS</li>
+                    <li><strong>Responsable des services numériques :</strong> [Votre nom, ou le nom du responsable en cas de changement]</li>
+                    <li><strong>Adresse de l'entreprise :</strong> 1055 Austin Road, 75020 Austin, Texas</li>
+                    <li><strong>Adresse e-mail :</strong> [adresse e-mail dédiée au support technique, si différente de l'email de contact]</li>
+                    <li><strong>Numéro de téléphone :</strong> [numéro de téléphone pour le support technique, si applicable]</li>
+                </ul>
+            
+                <h4>2. Coordonnées de contact pour la mise en place des garanties</h3>
+                <ul>
+                    <li><strong>E-mail pour les réclamations :</strong> [adresse e-mail de support technique ou dédiée aux réclamations concernant l'application et le site]</li>
+                    <li><strong>Adresse postale pour le support technique :</strong> 1055 Austin Road, 75020 Austin, Texas (ou votre adresse actuelle si différente)</li>
+                    <li><strong>Numéro de téléphone :</strong> [votre numéro de téléphone pour les demandes concernant les services numériques]</li>
+                </ul>
+            
+                <h4>3. Modalités de mise en œuvre de la garantie légale de conformité et des vices cachés</h3>
+                <p>
+                    Dans le cas où des dysfonctionnements ou des défauts de conformité affectent les services numériques (site web ou application mobile), 
+                    les clients peuvent exercer leurs droits en nous contactant par les moyens mentionnés ci-dessus. 
+                    Si une non-conformité est constatée, le client peut demander :
+                </p>
+                <ul>
+                    <li>Une mise à jour corrective</li>
+                    <li>Une solution alternative</li>
+                    <li>Dans certains cas, un remboursement partiel ou total de la prestation</li>
+                </ul>
+                <p>
+                    <strong>Délai de prise en charge :</strong> Nous nous engageons à traiter toute réclamation relative à un défaut de conformité 
+                    dans un délai de <strong>15 jours ouvrés</strong> suivant la réception de la demande.
+                </p>
+                <p>
+                    <strong>Mise à jour des services numériques :</strong> Si un problème lié à une mise à jour du logiciel ou à un vice caché est détecté, 
+                    une mise à jour corrective sera fournie dans les plus brefs délais, sous réserve de la disponibilité d'une solution technique.
+                </p>
+            
+                <h4>4. Logiciels nécessitant des mises à jour</h3>
+                <p>
+                    L'application mobile interactive, qui fait partie de la Formule Autonome, nécessite des mises à jour régulières pour garantir 
+                    son bon fonctionnement et la sécurité des utilisateurs. Ces mises à jour comprennent :
+                </p>
+                <ul>
+                    <li><strong>Mises à jour de sécurité :</strong> Distribuées régulièrement pour assurer la protection des données des utilisateurs 
+                        et le bon fonctionnement des fonctionnalités critiques de l'application.</li>
+                    <li><strong>Mises à jour fonctionnelles :</strong> Améliorations des fonctionnalités de l'application ou ajout de nouvelles activités et options pour les utilisateurs.</li>
+                </ul>
+            
+                <h4>5. Durée des mises à jour ou date de fin de la fourniture des mises à jour</h3>
+                <ul>
+                    <li><strong>Durée des mises à jour :</strong> Nous garantissons la mise à jour de l'application pendant une période de <strong>2 ans</strong> 
+                        après la première utilisation de l'application par le client, sauf en cas de retrait du service ou de modification majeure de l'application.</li>
+                    <li><strong>Fin des mises à jour :</strong> Après cette période de 2 ans, les mises à jour de l'application peuvent ne plus être disponibles, 
+                        bien que nous nous efforcions de maintenir les services numériques à jour aussi longtemps que possible.</li>
+                </ul>
+            
+                <h4>6. Conséquences des mises à jour sur la performance du bien</h3>
+                <ul>
+                    <li><strong>Batterie et performance :</strong> Certaines mises à jour, notamment les mises à jour fonctionnelles, peuvent avoir un impact sur la consommation 
+                        de la batterie des appareils mobiles. Nous nous efforçons de minimiser cet impact, mais il est possible que des mises à jour importantes augmentent 
+                        légèrement la consommation de la batterie.</li>
+                    <li><strong>Espace de stockage :</strong> Les mises à jour peuvent nécessiter un espace de stockage supplémentaire. Nous recommandons aux utilisateurs 
+                        de vérifier régulièrement l'espace disponible sur leurs appareils mobiles pour s'assurer que l'application fonctionne correctement après chaque mise à jour.</li>
+                    <li><strong>Mémoire vive (RAM) :</strong> Certaines versions de l'application peuvent également avoir un impact sur l'utilisation de la mémoire vive de l'appareil, 
+                        surtout si des fonctionnalités lourdes sont ajoutées. Les utilisateurs peuvent recevoir des recommandations sur la gestion de la mémoire dans les notifications de mise à jour.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}
+
+

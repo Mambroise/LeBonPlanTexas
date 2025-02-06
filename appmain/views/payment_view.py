@@ -29,4 +29,4 @@ def payment_view(request):
          return render(request, "error.html", {"message": message})
 
     # cas: everything ok, go to accept terms of use modal
-    return render(request, 'lebonplantexas/terms_of_sale.html',{'invoice':invoice})
+    return render(request, 'lebonplantexas/accept_terms_of_sale.html',{'invoice':invoice})
