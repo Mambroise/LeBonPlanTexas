@@ -15,6 +15,7 @@ from .views.service_view import service_view
 from .views.ajax_activities_view import get_activities
 from .views.register_view import multi_step_form,reset_form
 from .views.register_success_view import register_success
+from .views.terms_of_sale_view import terms_of_sale
 
 urlpatterns = [
     path('', index, name='index'), 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('reset-form/', reset_form, name='reset_form'),
     path('payment/', payment_view, name='payment_view'), 
     path('validate_terms/', validate_terms, name='validate_terms'), 
+    path('terms_of_sale/', terms_of_sale, name='terms_of_sale'), 
     path('create-checkout-session/', create_checkout_session, name='create-checkout-session'), 
     path('checkout-success/', checkout_success, name='checkout_success'), 
     path('checkout-cancelled/', checkout_cancelled, name='checkout_cancelled'), 
