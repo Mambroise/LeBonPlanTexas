@@ -20,10 +20,11 @@
 }
 
 .scrollable {
+    font-size: 0.7em;
     margin: auto;
     padding: 2rem;
     width: 87%;
-    min-height: 45vh;
+    height: 45vh;
     overflow-y: auto;
     margin-bottom: 20px;
     background-color: white;
@@ -148,3 +149,4 @@ td {
     color: var(--white-texas);
     text-align: center;
 }
+

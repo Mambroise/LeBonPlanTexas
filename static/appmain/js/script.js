@@ -43,9 +43,11 @@ function addStyles(selector) {
         }
         ${selector}.small {
             height: 5rem;
-            transition: height 0.3s ease-in-out;
-            background: var(--navbar-black);
+            }
+        .navbar-container.small {
             border-bottom: 1px solid var(--black-color);
+            transition:  0.5s ease-in-out;
+            background: var(--navbar-black);
         }
         #texas-star-base.small {
             width: 4rem;
@@ -91,6 +93,7 @@ function addStyles(selector) {
 addStyles(navbarSelector);
 
 const navBox = document.querySelector('.nav-box')
+const navContain = document.querySelector('.navbar-container')
 const star = document.querySelector('#texas-star-base');
 const service = document.querySelector('#service');
 const register = document.querySelector('#register');
@@ -103,6 +106,7 @@ const contactLink = document.querySelector('.contact-link');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
+        navContain.classList.add('small');
         star.classList.add('small');
         service.classList.add('small');
         register.classList.add('small');
@@ -114,6 +118,7 @@ window.addEventListener('scroll', () => {
 
     } else {
         navbar.classList.remove('small');
+        navContain.classList.remove('small');
         star.classList.remove('small');
         service.classList.remove('small');
         register.classList.remove('small');

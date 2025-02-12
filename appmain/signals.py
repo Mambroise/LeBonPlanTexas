@@ -12,7 +12,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils.timezone import now
 from django.conf import settings
-from .models import Invoice,FileForImage,Attraction
+from .models import Invoice,FileForImage,Attraction,CompanyInfo
 
 @receiver(post_save, sender=Invoice)
 def calculate_invoice_totals(sender, instance, created, **kwargs):
@@ -28,8 +28,10 @@ def calculate_invoice_totals(sender, instance, created, **kwargs):
         platinum_total = (instance.nbr_days_platinum or 0) * (instance.platinum_price_excl_tax or 0) if instance.platinum_service else 0
 
         # Calcul des totaux
+        company_info = CompanyInfo.objects.all().first()
+        print(company_info.tax_info)
         total_excl_tax = mobile_total + driver_total + platinum_total
-        tax_rate = float(settings.COMPANY_INFO['tva_info'].strip('%')) / 100  # Convertir le taux TVA en décimal
+        tax_rate = float(company_info.tax_info.strip('%')) / 100  # Convertir le taux TVA en décimal
         tax_amount = round(total_excl_tax * tax_rate, 2)
         total_incl_tax = total_excl_tax + tax_amount
 
