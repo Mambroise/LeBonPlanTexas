@@ -136,10 +136,12 @@ td {
 }
 
 .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 4vh;
     width: 99.9%;
-    margin-top: 1.5rem;
-    padding-top: 2px;
+    margin: 1.5rem 0rem;
     background: rgb(152, 48, 63);
     border: 1px solid #333;
     border-top: none;
@@ -147,6 +149,5 @@ td {
 
 .footer p {
     color: var(--white-texas);
-    text-align: center;
 }
 

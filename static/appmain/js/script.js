@@ -142,7 +142,6 @@ function toggleMenu() {
 
 // TEXAS CULTURE WORDS BANNER
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(window.location.pathname);
     
     if (window.location.pathname === '/' || window.location.pathname.startsWith('/thanku/')) {
 
@@ -201,5 +200,34 @@ document.addEventListener('DOMContentLoaded', () => {
         distributeWordsEvenly();
         animateWords();
     }
+
+// WHO_ARE_WE PAGE SCRIPT
+    if (window.location.pathname == '/contact/') {
+        function updateClocks() {
+
+            const userLang = navigator.language || navigator.userLanguage;
+            const isEnglish = userLang.startsWith('en');
+            const format = isEnglish ? 'en-US' : 'fr-FR'; // Format US or FR
+            const secondCity = isEnglish ? "EL PASO" : "PARIS";
+            const secondTimezone = isEnglish ? "America/Denver" : "Europe/Paris";
+
+            const options = { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const austinTime = new Intl.DateTimeFormat(format,options).format(new Date());          
+            
+            options.timeZone = secondTimezone;
+            const parisTime = new Intl.DateTimeFormat(format, options).format(new Date());
+
+            // Updating html elements
+            document.getElementById('second-city').textContent = secondCity;
+            document.getElementById('clock-austin').textContent = austinTime;
+            document.getElementById('clock-paris').textContent = parisTime;
+        }
+
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    }
+
 });
+
+
 

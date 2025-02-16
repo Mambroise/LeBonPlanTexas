@@ -29,7 +29,6 @@ def calculate_invoice_totals(sender, instance, created, **kwargs):
 
         # Calcul des totaux
         company_info = CompanyInfo.objects.all().first()
-        print(company_info.tax_info)
         total_excl_tax = mobile_total + driver_total + platinum_total
         tax_rate = float(company_info.tax_info.strip('%')) / 100  # Convertir le taux TVA en décimal
         tax_amount = round(total_excl_tax * tax_rate, 2)

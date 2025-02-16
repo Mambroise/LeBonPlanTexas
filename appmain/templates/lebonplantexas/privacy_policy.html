@@ -68,7 +68,7 @@
             <li>{% trans "Portabilité des données dans un format structuré." %}</li>
             <li>{% trans "Opposition à l'utilisation de vos données pour des finalités spécifiques." %}</li>
         </ul>
-        <p>{% trans "Pour exercer vos droits, contactez-nous à" %} [email@example.com].</p>
+        <p>{% trans "Pour exercer vos droits, contactez-nous à" %} <strong>{{ company_info.email }}</strong>.</p>
     </section>
 
     <section>
@@ -95,8 +95,8 @@
     <section>
         <h2>{% trans "8. Nous contacter" %}</h2>
         <p>{% trans "Pour toute question concernant cette Politique de Confidentialité, veuillez nous contacter :" %}</p>
-        <p>{% trans "Email : " %} [email@example.com]</p>
-        <p>{% trans "Adresse : " %} [Votre adresse postale]</p>
+        <p>{% trans "Email : " %} <strong>{{ company_info.email }}</strong></p>
+        <p>{% trans "Adresse : " %} <strong>{{ company_info.address }}</strong></p>
     </section>
 </div>
 

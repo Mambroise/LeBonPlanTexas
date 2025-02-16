@@ -17,7 +17,7 @@
     <div class="container">
         <h1>{{ company_info.name }}</h1>
         <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}</p>
-        <p>{% translate 'Comme convenu par téléphone, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
+        <p>{% translate 'Comme convenu, veuillez trouver ci-dessous votre devis gratuit.' %}</p>
         <hr><br>
         <h3 style="text-align: center;">{% translate 'DEVIS N°' %} {{ trip_invoice.invoice_number }}</h3>
         <p class="my-0">{% translate 'Date :' %} {{ trip_invoice.created_at }}</p>
@@ -27,7 +27,9 @@
         <br>
         <p><u>{% translate '👤 Vos coordonnées :' %}</u></p>
         <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+        {% if trip_invoice.customer.address %}
         <p class="my-0">{{ trip_invoice.customer.address }}</p>
+        {% endif %}
         <p class="my-0">{{ trip_invoice.customer.email }}</p>
         <p class="my-0">{{ trip_invoice.customer.phone }}</p>
         <!-- estimate table -->

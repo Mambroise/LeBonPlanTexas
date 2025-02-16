@@ -12,25 +12,41 @@
 {% load i18n %}
 
 {% block content %}
-<div class="who-banner">
-    <!-- Longhorn picture banner -->
-    <div class="round-who-banner">
-        {% if contact %}
-        <ul>
-            <li><i class="fas fa-envelope"></i> {{ contact.email }}
-            </li>
-            <li><i class="fas fa-phone"></i> +33 {{ contact.phone }} <small><i>{% translate 'whatsapp uniquement' %}</i></small></i>
-            </li>
-            <li><i class="fas fa-map-marker-alt"></i> {{ contact.address }}
-            </li>
-            <li><i class="fab fa-instagram"></i> {{ contact.instagram }}
-            </li>
-        </ul>
-        {% else %}
-        <p>{% translate 'Coordonnées non disponibles' %}</p>
-        {% endif %}
+<div>
+    <div class="who-banner">
+        <!-- stockyards picture banner -->
+        <div class="who-container">
+            <div class="round-who-banner">
+                {% if contact %}
+                <ul>
+                    <li><i class="fas fa-envelope"></i> {{ contact.email }}
+                     </li>
+                     <li><i class="fas fa-phone"></i> +33 {{ contact.phone }} <small><i>{% translate 'whatsapp uniquement' %}</i></small></i>
+                     </li>
+                     <li><i class="fas fa-map-marker-alt"></i> {{ contact.address }}
+                     </li>
+                     <li><i class="fab fa-instagram"></i> {{ contact.instagram }}
+                     </li>
+                    </ul>
+                    {% else %}
+                    <p>{% translate 'Coordonnées non disponibles' %}</p>
+                    {% endif %}
+            </div>
+            <div class="clock">
+                <ul>
+                    <li class="texas-clock">
+                        <p>AUSTIN</p>
+                        <p id="clock-austin"></p>
+                    </li>
+                    <li class="france-clock">
+                        <p id="second-city"></p>
+                        <p id="clock-paris"></p>
+                    </li>
+                </ul>
+            </div>      
+         </div>
+        <h2 class=" text-center">{% translate 'Découvrez ci-dessous qui nous sommes' %}</h2>
     </div>
-    <h2 class=" text-center">{% translate 'Découvrez ci-dessous qui nous sommes' %}</h2>
 </div>
   
 {% endblock %}

@@ -28,6 +28,9 @@
         <ul>
             <li><strong> {% translate 'Prénom :' %}</strong> {{ customer.first_name }}</li>
             <li><strong> {% translate 'Nom :' %}</strong> {{ customer.last_name }}</li>
+            {% if trip_invoice.customer.address %}
+            <li><strong> {{ trip_invoice.customer.address }}</li>
+            {% endif %}
             <li><strong> {% translate 'Email :' %}</strong> {{ customer.email }}</li>
             {% if customer.phone %}
             <li><strong> {% translate 'Téléphone :' %}</strong> {{ customer.phone }}</li>

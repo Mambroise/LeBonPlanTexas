@@ -6,13 +6,20 @@
 # --------------------------------------------------------------------------- -->
 
 
-{% extends 'base_fixed.html' %}
-{% load static %}
-{% block content %}
-
-    <div class="flex-center">
-        <div class="w-50 c-black mt-6">
-            <h2>CONDITIONS GENERALES DE VENTE</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV LeBonPlanTEXAS</title>
+</head>
+<body>
+        <div class=" c-black">
+            {% if pdf %}
+            <h2 class="c-black">LeBonPlanTEXAS</h2>
+            <h2 class="c-black">CONDITIONS GENERALES DE VENTE</h2>
+            {% endif %}
+            <p>Dernière mise à jour : 01/02/2025</p>
             <br>
             <section class="cgv">
                 <h3>1. Caractéristiques essentielles des services proposés</h3>
@@ -315,8 +322,7 @@
                 </ul>
             </section>
         </div>
-    </div>
-
-{% endblock %}
+</body>
+</html>
 
 
