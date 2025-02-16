@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from ..models import Invoice
-from ..services.generate_invoice_pdf import PdfHandler
+from ..services.generate_pdf_service import PdfHandler
 from ..services.send_email import send_checkout_success_email
 from ..services.company_service import CompanyService
 
@@ -81,6 +81,3 @@ def checkout_cancelled(request):
         }
     
     return render(request, "lebonplantexas/checkout_cancelled.html", context)
-
-def print_invoice(request, invoice_id):
-    return PdfHandler.generate_invoice_pdf(invoice_id, method='inline')

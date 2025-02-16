@@ -7,6 +7,37 @@
 
 
 /* WHO ARE WE PAGE */
+.who-container {
+    height: auto;
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.clock {
+    min-width: 11rem;
+    opacity: 0.9;
+    background-color:transparent;
+    padding: 1rem;
+    border: 3px solid var(--white-texas);
+    border-radius: 0 0.625rem 0.625rem 0; 
+}
+
+.clock li {
+    list-style-type: none; 
+    margin-top: 2rem;
+}
+
+.clock p {
+    color: var(--white-texas);
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 0;
+    opacity: 1 !important;
+}
+
+
 .who-banner {
     position: relative;
     width: 100%;
@@ -19,13 +50,9 @@
 }
 
 .round-who-banner {
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    max-width: 45%;
     background-color: var(--white-texas);
     opacity: 0.8;
-    border-radius: 0.625rem;
+    border-radius: 0.625rem 0 0 0.625rem;
     color: var(--navbar-and-dot);
     padding: 1rem;
     font-size: 1.4rem;

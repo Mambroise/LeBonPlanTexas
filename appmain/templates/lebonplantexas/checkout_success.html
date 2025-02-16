@@ -21,12 +21,14 @@
             <p><strong>{% translate "Numéro de Facture :" %} {{ trip_invoice.invoice_number }}</strong></p>
             <p><strong>{% translate "Date de paiement :" %} {{ trip_invoice.is_paid_date }}</strong></p>
             <p><strong class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</strong></p>
-            <p><strong class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</strong></p>
+            <p><strong class="my-0">{% translate 'SIREN :' %} {{ company_info.SIREN }}</strong></p>
             <p><strong class="my-0">{{ company_info.address }}</strong></p>
             <br>
             <p><u>{% translate '👤 Vos coordonnées :' %}</u></p>
             <p><strong class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</strong></p>
+            {% if trip_invoice.customer.address %}
             <p><strong class="my-0">{{ trip_invoice.customer.address }}</strong></p>
+            {% endif %}
             <p><strong class="my-0">{{ trip_invoice.customer.email }}</strong></p>
             <p><strong class="my-0">{{ trip_invoice.customer.phone }}</strong></p>
             <!-- invoice table -->
@@ -66,7 +68,7 @@
             </table>
         </div>
             <div class="btn-position">
-                <a class="btn-primary" href="{% url 'print_invoice' trip_invoice.id %}" target="_blank">{% translate 'TELECHARGER' %}</a>
+                <a class="btn-primary" href="{% url 'invoice_pdf' trip_invoice.id %}" target="_blank">{% translate 'TELECHARGER' %}</a>
             </div>
 {% endblock %}
 

@@ -43,9 +43,11 @@ function addStyles(selector) {
         }
         ${selector}.small {
             height: 5rem;
-            transition: height 0.3s ease-in-out;
-            background: var(--navbar-black);
+            }
+        .navbar-container.small {
             border-bottom: 1px solid var(--black-color);
+            transition:  0.5s ease-in-out;
+            background: var(--navbar-black);
         }
         #texas-star-base.small {
             width: 4rem;
@@ -91,6 +93,7 @@ function addStyles(selector) {
 addStyles(navbarSelector);
 
 const navBox = document.querySelector('.nav-box')
+const navContain = document.querySelector('.navbar-container')
 const star = document.querySelector('#texas-star-base');
 const service = document.querySelector('#service');
 const register = document.querySelector('#register');
@@ -103,6 +106,7 @@ const contactLink = document.querySelector('.contact-link');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
         navbar.classList.add('small');
+        navContain.classList.add('small');
         star.classList.add('small');
         service.classList.add('small');
         register.classList.add('small');
@@ -114,6 +118,7 @@ window.addEventListener('scroll', () => {
 
     } else {
         navbar.classList.remove('small');
+        navContain.classList.remove('small');
         star.classList.remove('small');
         service.classList.remove('small');
         register.classList.remove('small');
@@ -137,7 +142,6 @@ function toggleMenu() {
 
 // TEXAS CULTURE WORDS BANNER
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(window.location.pathname);
     
     if (window.location.pathname === '/' || window.location.pathname.startsWith('/thanku/')) {
 
@@ -196,5 +200,34 @@ document.addEventListener('DOMContentLoaded', () => {
         distributeWordsEvenly();
         animateWords();
     }
+
+// WHO_ARE_WE PAGE SCRIPT
+    if (window.location.pathname == '/contact/') {
+        function updateClocks() {
+
+            const userLang = navigator.language || navigator.userLanguage;
+            const isEnglish = userLang.startsWith('en');
+            const format = isEnglish ? 'en-US' : 'fr-FR'; // Format US or FR
+            const secondCity = isEnglish ? "EL PASO" : "PARIS";
+            const secondTimezone = isEnglish ? "America/Denver" : "Europe/Paris";
+
+            const options = { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const austinTime = new Intl.DateTimeFormat(format,options).format(new Date());          
+            
+            options.timeZone = secondTimezone;
+            const parisTime = new Intl.DateTimeFormat(format, options).format(new Date());
+
+            // Updating html elements
+            document.getElementById('second-city').textContent = secondCity;
+            document.getElementById('clock-austin').textContent = austinTime;
+            document.getElementById('clock-paris').textContent = parisTime;
+        }
+
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    }
+
 });
+
+
 

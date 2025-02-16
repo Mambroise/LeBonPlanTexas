@@ -31,7 +31,9 @@
             <br>
             <p><u>{% translate '👤 Vos coordonnées :' %}</u></p>
             <p class="my-0">{{ trip_invoice.customer.first_name|capfirst }} {{ trip_invoice.customer.last_name|capfirst }}</p>
+            {% if trip_invoice.customer.address %}
             <p class="my-0">{{ trip_invoice.customer.address }}</p>
+            {% endif %}
             <p class="my-0">{{ trip_invoice.customer.email }}</p>
             <p class="my-0">{{ trip_invoice.customer.phone }}</p>
             <!-- invoice table -->
@@ -71,7 +73,7 @@
             </table>
             <strong class="">{% translate 'Type de paiement :' %} {{ trip_invoice.payment_type }}</strong>
             <div class="frame">
-                <a href="http://127.0.0.1:8000/print_invoice/{{ trip_invoice.id}}" target="_blank">Ici pour voir votre facture en pdf téléchargeable.</a>
+                <a href="http://127.0.0.1:8000/print_invoice/{{ trip_invoice.id}}" target="_blank">{% translate 'Ici pour voir votre facture en pdf téléchargeable.' %}</a>
             </div>
             <p class="text-center">{% translate 'Nous reviendrons au plus vite vers vous!' %}</p>
         </div>

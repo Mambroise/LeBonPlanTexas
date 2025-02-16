@@ -9,7 +9,6 @@
 /* NAVBAR CSS */
 .navbar {
     width: 100%;
-    background: transparent;
     height: 13rem;
     display: flex;
     flex-direction: column;
@@ -23,6 +22,8 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+    transition: 0.4s ease-in-out;
+    background-color: transparent;
 }
 
 #texas-star-base {

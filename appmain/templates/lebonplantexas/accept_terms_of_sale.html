@@ -15,16 +15,16 @@
         <h3 class="align-center c-white">{% translate 'Conditions Générales de vente' %}</h3>
         <hr class="hr">
         <div class="scrollable">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             <!-- Ajoutez le contenu complet des CGU ici -->
+            {% include 'pdf/terms_of_sale_fr.html' %}     
         </div>
         <form method="POST" action="/validate_terms/">
             {% csrf_token %}
             <input type="hidden" name="invoice_id" value="{{ invoice.id }}">
             {% if not invoice.terms_of_sale_accepted %}
             <label class="cgv-checkbox">
-                <input type="checkbox" name="accept_terms" required>
-                {% translate 'J\'accepte les conditions générales de vente.' %}
+                <input type="checkbox" name="accept_terms" required> 
+                {% translate 'J\'ai lu et j\'accepte les ' %}<a href="{% url 'terms_of_sale_pdf' %}"  target="_blank">{% translate 'conditions générales de vente.' %}</a> 
             </label>
             {% else %}
             <p class="cgv-checkbox">{% translate 'Vous avez déjà accepté les conditions générales de vente.' %}</p>
