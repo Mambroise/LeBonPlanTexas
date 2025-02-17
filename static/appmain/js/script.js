@@ -35,6 +35,8 @@ categoryCards.forEach(card => {
 // NAVBAR FUNCTIONAL PROGRAMMING
 const navbarSelector = 'nav.navbar';
 const navbar = document.querySelector(navbarSelector);
+console.log(navbar);
+
 
 function addStyles(selector) {
     const style = `
@@ -134,7 +136,6 @@ window.addEventListener('scroll', () => {
 // NAVBAR BURGER
 
 function toggleMenu() {
-    console.log('click');
     
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');

@@ -9,7 +9,7 @@
 /* RESPONSIVE */
 
 html {
-    font-size: 16px; /* par défaut */
+    font-size: 16px; /* default */
 }
 
 /* NAVBAR */
@@ -38,26 +38,29 @@ html {
     transition: all 0.3s ease-in-out;
 }
 
-/* Masquer les liens par défaut en mode mobile */
-.nav-links {
-    display: flex;
-    flex-direction: row;
-}
-@media (max-width: 1200px) {
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 12px; 
+    }
+
     .first-banner {
         width: 100%;
         height: clamp(30vh, 10vw + 30vh, 70vh);
     }
+
 }
 
+
 @media (max-width: 1100px) {
-    html {
-        font-size: 12px; 
-    }
     /* REGISTER PAGE */
     .register-instructions {
         width: 60%;
         border-bottom: 1px solid var(--black-color);
+    }
+
+    #texas-star-base {
+        width: 10rem;
     }
 }
 
@@ -73,13 +76,12 @@ html {
         display: none;
         flex-direction: column;
         position: absolute;
-        justify-content: start;
+        justify-content: end;
         top: 100%;
         left: 0;
-        width: 100%;
+        width: 40%;
         background-color: var(--navbar-black);
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
     }
         /* Responsive Design */
 
@@ -87,34 +89,15 @@ html {
         grid-template-columns: 1fr; 
     }
           
-
     .active {
         display: flex;
-    }
-
-    .nav-register-box,
-    .nav-who-box {
-        margin: 10px 0;
-        width: 80%;
-    }
-
-    #who {
-        float: left;
-    }
-
-    .nav-box.small {
-        height: 90vh;
-    }
-
-    .logo-image {
-        display: none;
     }
 
     .navbar-container  {
         justify-content: space-between;
     }
+    
     .title {
-        margin-top: 15px;
         font-size: 1.6rem;
         transition:  0.3s ease-in-out;
     }
@@ -123,27 +106,11 @@ html {
         transition:  0.3s ease-in-out;
     }
 
-    .contact-box {
-        margin-top: 1%;
-    }
-
     /* NAVBAR FIXED RESPONSIVE  */
     .nav-register-box-fixed,
     .nav-who-box-fixed {
         margin: 10px 0;
         width: 80%;
-    }
-
-    #who-fixed {
-        float: left;
-    }
-
-    .nav-box-fixed {
-        height: 20vh;
-    }
-
-    .logo-image-fixed {
-        display: none;
     }
 
     .navbar-container  {
@@ -157,10 +124,6 @@ html {
     .title-fixed span {
         font-size: 2.2rem;
         transition:  0.3s ease-in-out;
-    }
-
-    .contact-box-fixed {
-        margin-top: 1%;
     }
 
     /* INDEX ROUND BANNER */

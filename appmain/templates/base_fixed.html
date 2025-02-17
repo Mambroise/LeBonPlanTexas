@@ -23,7 +23,7 @@
         <div class="navbar-container-fixed w-100 h-100">
             <img src="{% static 'images/logo_star.png' %}" alt="étoile blanche du texas" id="texas-star">
             <div class="title-box-fixed">
-                <div class="buger_and_title_box">
+                <div class="burger-and-title-box">
                     <button class="burger-menu" onclick="toggleMenu()">
                         <span></span>
                         <span></span>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                 </div>
-                <ul>
+                <ul class="nav-links">
                     <li>
                         <a id="register-fixed" href="{% url 'multi_step_form' %}">{% translate 'INSCRIPTION' %}</a>
                     </li>
