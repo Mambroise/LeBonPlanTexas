@@ -80,7 +80,7 @@
     transition:  0.3s ease-in-out;
 }
 
-.title-box ul {
+.nav-links {
     margin: 0;
     padding-inline-start: 3rem;
     width: 100%;
@@ -94,21 +94,6 @@
     margin-bottom: 2rem;
     text-decoration: underline;
     font-style: italic;
-}
-
-.nav-register-box, .nav-who-box {
-   display: flex;
-   align-items: center;
-   width: 30%;
-   transition:  0.3s ease-in-out;
-}
-
-.nav-register-box {
-    justify-content:right ;
-}
-
-.nav-who-box {
-    justify-content:left ;
 }
 
 a {
@@ -147,7 +132,6 @@ a {
 } 
 
 .contact-box {
-    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
