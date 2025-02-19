@@ -37,7 +37,7 @@
             </div>
 
             {% if step == 1 %}
-            <div class="flex-center">
+            <div class="texas-trip-card-container">
                 {% for choice_value, choice_label in form.package.field.choices %}
                 <label class="texas-trip-card  package-card" for="id_package_{{ forloop.counter }}">
                     <input 

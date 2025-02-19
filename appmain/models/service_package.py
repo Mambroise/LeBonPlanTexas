@@ -11,5 +11,5 @@ from django.utils.translation import gettext_lazy as _
 
 class PackageChoice(models.IntegerChoices):
     AUTONOMOUS = 1,_('autonome')
-    PRIVATE_DRIVER = 2,_('chauffeur privée')
+    PRIVATE_DRIVER = 2,_('chauffeur privé')
     PLATINUM = 3,_('platinum')

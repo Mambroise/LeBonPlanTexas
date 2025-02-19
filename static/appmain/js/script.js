@@ -35,103 +35,104 @@ categoryCards.forEach(card => {
 // NAVBAR FUNCTIONAL PROGRAMMING
 const navbarSelector = 'nav.navbar';
 const navbar = document.querySelector(navbarSelector);
-console.log(navbar);
 
+if (window.location.pathname !== '/register/') {
 
-function addStyles(selector) {
-    const style = `
-        ${selector} {
-            transition: height 0.3s ease-in-out;
-        }
-        ${selector}.small {
-            height: 5rem;
+    function addStyles(selector) {
+        const style = `
+            ${selector} {
+                transition: height 0.3s ease-in-out;
             }
-        .navbar-container.small {
-            border-bottom: 1px solid var(--black-color);
-            transition:  0.5s ease-in-out;
-            background: var(--navbar-black);
-        }
-        #texas-star-base.small {
-            width: 4rem;
-            transition:  0.3s ease-in-out;
-        }
-        #service.small, #register.small {
-            font-size: 1.5rem;
-            font-weight: normal;
-        }
-        .title.small {
-            font-size: 1.5rem;
-            transition:  0.3s ease-in-out;
-        }
-        .title.small p {
-            line-height: 1.35rem;
-        }
-        .title span.small {
-            font-size: 2.5rem;
-            transition:  0.3s ease-in-out;
-        }
-        .title-box.small {
-            width: 30%;
-            transition:  0.3s ease-in-out;
-        }
-        .title-box.small ul li {
-            margin-bottom: 1rem;
-        }
-        .contact-link.small{
-            border: 3px solid var(--brick-color);
-            background: transparent;
-            padding: 0.8rem 0.8rem;
-        }
-        .contact-link.small a {
-            color: var(--white-texas);
-        }
-
-    `;
-    const styleTag = document.createElement('style');
-    styleTag.innerHTML = style;
-    document.head.appendChild(styleTag);
-}
-
-addStyles(navbarSelector);
-
-const navBox = document.querySelector('.nav-box')
-const navContain = document.querySelector('.navbar-container')
-const star = document.querySelector('#texas-star-base');
-const service = document.querySelector('#service');
-const register = document.querySelector('#register');
-const title = document.querySelector('.title')
-const titleSpan = document.querySelector('.title span')
-const titleBox = document.querySelector('.title-box')
-const contactBox = document.querySelector('.contact-box')
-const contactLink = document.querySelector('.contact-link');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-        navbar.classList.add('small');
-        navContain.classList.add('small');
-        star.classList.add('small');
-        service.classList.add('small');
-        register.classList.add('small');
-        title.classList.add('small');
-        titleSpan.classList.add('small');
-        titleBox.classList.add('small');
-        contactBox.classList.add('small');
-        contactLink.classList.add('small');
-
-    } else {
-        navbar.classList.remove('small');
-        navContain.classList.remove('small');
-        star.classList.remove('small');
-        service.classList.remove('small');
-        register.classList.remove('small');
-        title.classList.remove('small');
-        titleSpan.classList.remove('small');
-        titleBox.classList.remove('small');
-        contactBox.classList.remove('small');
-        contactLink.classList.remove('small')
-
+            ${selector}.small {
+                height: 5rem;
+                }
+            .navbar-container.small {
+                border-bottom: 1px solid var(--black-color);
+                transition:  0.5s ease-in-out;
+                background: var(--navbar-black);
+            }
+            #texas-star-base.small {
+                width: 4rem;
+                transition:  0.3s ease-in-out;
+            }
+            #service.small, #register.small {
+                font-size: 1.5rem;
+                font-weight: normal;
+            }
+            .title.small {
+                font-size: 1.5rem;
+                transition:  0.3s ease-in-out;
+            }
+            .title.small p {
+                line-height: 1.35rem;
+            }
+            .title span.small {
+                font-size: 2.5rem;
+                transition:  0.3s ease-in-out;
+            }
+            .title-box.small {
+                width: 30%;
+                transition:  0.3s ease-in-out;
+            }
+            .title-box.small ul li {
+                margin-bottom: 1rem;
+            }
+            .contact-link.small{
+                border: 3px solid var(--brick-color);
+                background: transparent;
+                padding: 0.8rem 0.8rem;
+            }
+            .contact-link.small a {
+                color: var(--white-texas);
+            }
+    
+        `;
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = style;
+        document.head.appendChild(styleTag);
     }
-});
+    
+    addStyles(navbarSelector);
+    
+    const navBox = document.querySelector('.nav-box')
+    const navContain = document.querySelector('.navbar-container')
+    const star = document.querySelector('#texas-star-base');
+    const service = document.querySelector('#service');
+    const register = document.querySelector('#register');
+    const title = document.querySelector('.title')
+    const titleSpan = document.querySelector('.title span')
+    const titleBox = document.querySelector('.title-box')
+    const contactBox = document.querySelector('.contact-box')
+    const contactLink = document.querySelector('.contact-link');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add('small');
+            navContain.classList.add('small');
+            star.classList.add('small');
+            service.classList.add('small');
+            register.classList.add('small');
+            title.classList.add('small');
+            titleSpan.classList.add('small');
+            titleBox.classList.add('small');
+            contactBox.classList.add('small');
+            contactLink.classList.add('small');
+    
+        } else {
+            navbar.classList.remove('small');
+            navContain.classList.remove('small');
+            star.classList.remove('small');
+            service.classList.remove('small');
+            register.classList.remove('small');
+            title.classList.remove('small');
+            titleSpan.classList.remove('small');
+            titleBox.classList.remove('small');
+            contactBox.classList.remove('small');
+            contactLink.classList.remove('small')
+    
+        }
+    });
+}
 
 // NAVBAR BURGER
 
