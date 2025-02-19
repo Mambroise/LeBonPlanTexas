@@ -16,6 +16,13 @@
     color: var(--black-color);
 }
 
+.texas-trip-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .texas-trip-card {
     height: 40vh;
     width: 20%;

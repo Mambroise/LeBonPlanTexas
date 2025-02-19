@@ -11,8 +11,7 @@
 /* landing banner */
 .landing-banner{
     width: 100%;
-    padding-top: 20%;
-    padding-bottom: 25%;
+    height: 100vh;
     background-image: url('../../images/longhorn_index.jpg');
     background-size: cover;
     background-position: center;
@@ -23,7 +22,7 @@
 
 .round-banner {
     position: absolute;
-    top: 65%;
+    bottom: -10%;
     right: 10%;
     width: 18rem;
     height: 18rem;

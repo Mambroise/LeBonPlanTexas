@@ -19,9 +19,9 @@ html {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
+    width: 3.3rem;
+    min-width: 3rem;
+    height: 3rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -32,7 +32,7 @@ html {
 .burger-menu span {
     display: block;
     width: 100%;
-    height: 4px;
+    height: 0.25rem;
     background-color: var(--white-texas);
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
@@ -67,6 +67,10 @@ html {
 @media (max-width: 900px) {
 
     /* NAVBAR RESPONSIVE */
+    .landing-banner{
+        height: 50vh;
+    }
+
     .burger-menu {
         display: flex;
         margin-top: 8%;
@@ -83,16 +87,11 @@ html {
         background-color: var(--navbar-black);
         padding: 2rem;
     }
-        /* Responsive Design */
-
-    .demo-banner {
-        grid-template-columns: 1fr; 
-    }
-          
+    
     .active {
         display: flex;
     }
-
+    
     .navbar-container  {
         justify-content: space-between;
     }
@@ -101,38 +100,73 @@ html {
         font-size: 1.6rem;
         transition:  0.3s ease-in-out;
     }
-    .title span {
-        font-size: 2.2rem;
-        transition:  0.3s ease-in-out;
+
+    .title p {
+        margin: 0;
+        line-height: 1.45rem;
     }
 
+    .title span {
+        font-size: 2.7rem;
+        transition:  0.3s ease-in-out;
+    }
+    
     /* NAVBAR FIXED RESPONSIVE  */
     .nav-register-box-fixed,
     .nav-who-box-fixed {
         margin: 10px 0;
         width: 80%;
     }
-
+    
     .navbar-container  {
         justify-content: space-between;
     }
+
     .title-fixed {
         margin-top: 15px;
         font-size: 1.6rem;
         transition:  0.3s ease-in-out;
     }
+
+    .title-fixed p {
+        margin: 0;
+        line-height: 1.45rem;
+    }
+
     .title-fixed span {
         font-size: 2.2rem;
         transition:  0.3s ease-in-out;
     }
+    
+    /* INDEX PAGE */
+    /* Responsive Design */
 
-    /* INDEX ROUND BANNER */
+    .demo-banner {
+        grid-template-columns: 1fr; 
+    }
+
+    .mobile-step-p {
+        font-size: 3rem;
+    }
+
     .round-banner {
         width: 13rem;
         height: 13rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
+    .veil p {
+        font-size: 1.7rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-content {
+        font-size: 1.3rem;
+    }
+    
     /* /SERVICE */
     .column:hover {
         flex: 4; 
@@ -141,12 +175,63 @@ html {
     .column:not(:hover) {
         flex: 1; 
     }
+
+    /* REGISTER PAGE */
+    .btn-no-appearance{
+        font-size: 1.5rem;
+    }
+
+    .texas-trip-card-container {
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .texas-trip-card {
+        width: 80%;
+        margin: auto;
+        height: 20vh;
+    }
+
+    .texas-trip-card p {
+        font-size: 1.5rem;
+    }
+
+    .package-card-title {
+        height: 22%;
+        margin-top: 1rem;
+    }
+    
 }
 
 @media (max-width: 750px) {
 
     html {
         font-size: 10px; /* encore plus petit pour mobiles */
+    }
+
+    /* INDEX RESPONSIVE */
+    .round-banner {
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .service-app-img .veil {
+        height: 95%;
+    }
+
+    .veil h3 {
+        font-size: 2.5rem;
+    }
+
+    .veil p {
+        font-size: 1.8rem;
     }
 
     .service-box {
@@ -168,12 +253,6 @@ html {
         background-size: cover;
         background-position: center;
     } 
-}
-
-@media (max-width: 600px) {
-    .mobile-picture {
-        display: none;
-    }
 
 }
 
@@ -184,19 +263,25 @@ html {
     }
 
     /* INDEX ROUND BANNER */
-    .round-banner {
-        border-radius: 0;
-        width: 95%;
-        height: 2rem;
-        top: 100%;
-        left: 0;
+    .landing-banner{
+        height: 30vh;
     }
 
     .first-banner {
         padding-top: 4rem;
         height: 30vh;
     }
+    .veil h3 {
+        font-size: 2.8rem;
+    }
 
+    .veil p {
+        font-size: 2.4rem;
+    }
+
+    .card-content {
+        font-size: 1.8rem;
+    }
 
     /* WHO ARE WE PAGE */
     .round-who-banner {
@@ -207,11 +292,27 @@ html {
     }
 
     /* /REGISTER */
-    .form1 {
-        /* display: flex; */
+    .btn-no-appearance{
+        font-size: 2rem;
+    }
+
+        /* Step */
+    .texas-trip-card {
+        height: 15vh;
+    }
+
+    .texas-trip-card p {
+    font-size: 2rem;
+    }
+
+    .package-card-title {
+        height: 22%;
+        margin-top: 1rem;
+    }
+    
+        /* Step2 */
+    .customer-details {
         flex-direction: column;
-        padding-left: 5rem;
-        padding-right: 5rem;
     }
 
     /* /SERVICE */

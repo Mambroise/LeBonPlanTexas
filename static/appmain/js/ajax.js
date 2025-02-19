@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <img src="${activity.image_url}" alt="${activity.title}">
                                     </div>
                                     <div>
-                                        <h4 class="text-center c-white">${activity.title}</h4>
+                                        <h4 class="text-center c-white card-title">${activity.title}</h4>
                                         <hr class="hr">
                                     </div>
                                     <div class="card-content">
