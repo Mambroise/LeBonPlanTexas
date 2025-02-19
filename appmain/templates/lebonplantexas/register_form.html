@@ -97,8 +97,8 @@
             </div>
 
             {% elif step == 3 %}
-            <div class="flex-around">
-                <div class="w-40">
+            <div class="trip-details-container">
+                <div class="trip-details1">
                     <!-- start and end dates box -->
                     <div class="flex-between">
                         <div>
@@ -127,15 +127,15 @@
                     </div>
                     {% endif %}
                 </div>
-                <div class="w-40">
+                <div class="trip-details2">
                     {{ form.comment }}
                 </div>
             </div>
             
             <!-- step2 special buttons box -->
             <div class="step2-buttons">
-                <button type="submit" name="add_trip" class="btn-primary">AJOUTER UNE ETAPE</button>
-                <button type="submit" name="finish_trips" class="btn-secondary">SUIVANT</button>
+                <button type="submit" name="add_trip" class="btn-primary">{% translate 'AJOUTER UNE ETAPE' %}</button>
+                <button type="submit" name="finish_trips" class="btn-secondary">{% translate 'SUIVANT' %}</button>
             </div>
         </form>
         {% elif step == 4 %}
@@ -152,7 +152,7 @@
                 <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
                 <input type="hidden" name="categories" id="selected-categories" value="">
                 <div class="flex-center">                
-                    <button type="submit" class="btn-secondary">VALIDER</button>
+                    <button type="submit" class="btn-secondary">{% translate 'VALIDER' %}</button>
                 </div>
             </form>
             {% endif %}
