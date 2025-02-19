@@ -8,55 +8,16 @@
 
 
 /* REGISTER PAGE STYLE*/
-/* step1 texas_trip css */
-.texas-trip-form-container {
-    width: 100%;
-    margin: auto;
-    margin-top: 5rem;
+.register-form {
+    width: 80%;
+    margin: 2rem auto;
     color: var(--black-color);
-}
-
-.texas-trip-card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.texas-trip-card {
-    height: 40vh;
-    width: 20%;
-    border: 1px solid var(--black-color);
-    border-radius: 5px;
-    margin: 0 0.5rem;
-    padding: 0.5rem;
-    color: var(--brick-color);
+    height: auto;
 }
 
 .reset-form-box {
     display: flex;
     justify-content: end;
-}
-
-.package-card {
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.package-card-title {
-    height: 30%;
-    margin-top: 1rem;
-    border-bottom: 1px solid var(--black-color);
-}
-
-.package-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.package-card input:checked {
-    border-color: #007bff;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
 }
 
 .form-header-bg {
@@ -101,57 +62,54 @@
     background-size: cover;
 }
 
-/* step2 identity css */
-/* title */
-.register-instructions {
-    width: 30%;
-    min-width: 350px;
-    color: var(--black-color);
-    border-right: 1px solid var(--brick-color);
-    padding: 1rem 1rem;
-    z-index: 2;
-    background-color: var(--register-frames-bg);
-}
-.register-instructions p {
-    font-size: 1.5rem;
-}
-
-.form-banner{
+/* step1 texas_trip css */
+.texas-trip-form-container {
     width: 100%;
-    padding-top: 20%;
-    padding-bottom: 10%;
-    background-image: url('../../images/austin_buildings_large.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 5rem;
+    color: var(--black-color);
 }
 
-.form-blurry-container {
+.texas-trip-card-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    width: 100%;
-    margin: 0;
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px);
 }
 
-.frame{
-    width: 60%;
-    min-width: 350px;
-    padding: 1rem 1rem;
-    border-radius: 3px;
-    z-index: 2;
-    background-color: var(--register-frames-bg);
+.texas-trip-card {
+    height: 40vh;
+    width: 20%;
+    border: 1px solid var(--black-color);
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    color: var(--brick-color);
 }
 
-.register-form, .register-success-frame {
-    width: 80%;
-    margin: 2rem auto;
-    color: var(--black-color);
-    height: auto;
+.package-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.package-card-title {
+    height: 30%;
+    margin-top: 1rem;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.package-card input:checked {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+
+/* step2 identity css */
 .customer-details {
     margin-top: 2rem;
     display: flex;
@@ -160,7 +118,18 @@
     flex-wrap: wrap;
 }
 
-/* step3 interests css */
+/* step3 identity css */
+.trip-details-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.trip-details1, .trip-details2 {
+    width: 40%;
+    margin: auto;
+}
+
+/* step4 interests css */
 #category-container {
     display: flex;
     flex-wrap: wrap;

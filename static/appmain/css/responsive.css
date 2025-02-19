@@ -180,7 +180,7 @@ html {
     .btn-no-appearance{
         font-size: 1.5rem;
     }
-
+        /* Step1 */
     .texas-trip-card-container {
         flex-direction: column;
         gap: 20px;
@@ -201,7 +201,33 @@ html {
         height: 22%;
         margin-top: 1rem;
     }
-    
+        /* Step2 */
+    .inputBox strong {
+        top: -0.5rem;
+    }
+
+    .inputBox strong, .label-text {
+        font-size: 2.2rem;  
+    }
+
+    .inputBox input:focus~strong,
+    .inputBox input:valid~strong{
+        top: -2.5rem;
+    }
+
+        /* Step3 */
+    .trip-details-container {
+        flex-direction: column;
+    }
+
+    .trip-details1, .trip-details2 {
+        width: 60%;
+    }
+
+        /* Step4 */
+    .category-card {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 750px) {
@@ -291,12 +317,35 @@ html {
         left: 8%;
     }
 
-    /* /REGISTER */
+    /* /REGISTER PAGE*/
     .btn-no-appearance{
         font-size: 2rem;
     }
 
-        /* Step */
+    /* Step2 */
+    .inputBox input {
+        font-size: 2.5rem;
+    }
+    .inputBox strong {
+        top: -1.5rem;
+    }
+
+    .inputBox strong, .label-text {
+        font-size: 3rem;  
+    }
+
+    .inputBox input:focus~strong,
+    .inputBox input:valid~strong{
+        top: -4rem;
+    }
+
+    select[name='country'] {
+        font-size: 2.5rem;
+        height: 4rem;
+        width: 15rem;
+    }
+
+        /* Step1 */
     .texas-trip-card {
         height: 15vh;
     }
@@ -315,7 +364,17 @@ html {
         flex-direction: column;
     }
 
-    /* /SERVICE */
+        /* Step3 */
+    .trip-details1, .trip-details2 {
+        width: 80%;
+    }
+
+        /* Step4 */
+    .category-card {
+        font-size: 2.5rem;
+    }
+
+    /* SERVICE PAGE */
     .column:hover {
         flex: 10; 
     }
