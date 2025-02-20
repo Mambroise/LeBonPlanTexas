@@ -7,6 +7,18 @@
 
 
 /* WHO ARE WE PAGE */
+
+
+.who-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/fort_worth_stockyards_coliseum.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--black-color);
+}
 .who-container {
     height: auto;
     display: flex;
@@ -37,18 +49,6 @@
     opacity: 1 !important;
 }
 
-
-.who-banner {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../images/fort_worth_stockyards_coliseum.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-bottom: 1px solid var(--black-color);
-}
-
 .round-who-banner {
     background-color: var(--white-texas);
     opacity: 0.8;
@@ -59,7 +59,7 @@
     font-weight: 600;
 }
 
-.who-banner ul li {
+.round-who-banner ul li {
     color: var(--brick-color);
     text-decoration: none;
     line-height: 3rem;
