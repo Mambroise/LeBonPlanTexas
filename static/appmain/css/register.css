@@ -18,6 +18,7 @@
 .reset-form-box {
     display: flex;
     justify-content: end;
+    margin-bottom: 1rem;
 }
 
 .form-header-bg {
@@ -127,6 +128,11 @@
 .trip-details1, .trip-details2 {
     width: 40%;
     margin: auto;
+}
+
+.trip-details-date-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* step4 interests css */
@@ -299,19 +305,19 @@ input[type="date"]:focus,
 }
 
 .alert-info::before {
-    content: "💡 ";  /* Icône ampoule */
+    content: "💡 ";  
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }
 
 .alert-success::before {
-    content: "👍 ";  /* Pouce vers le haut */
+    content: "👍 ";  
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }
 
 .alert-error::before {
-    content: "⚠️ ";  /* Icône avertissement */
+    content: "⚠️ "; 
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }

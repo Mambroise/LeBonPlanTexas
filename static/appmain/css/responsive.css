@@ -123,9 +123,7 @@ html {
     }
 
     .title-fixed {
-        margin-top: 15px;
         font-size: 1.6rem;
-        transition:  0.3s ease-in-out;
     }
 
     .title-fixed p {
@@ -288,6 +286,11 @@ html {
         font-size: 8px; /* encore plus petit pour mobiles */
     }
 
+    #register, #register-fixed,
+    #service, #service-fixed {
+        font-size: 2.5rem;
+    }
+
     /* INDEX ROUND BANNER */
     .landing-banner{
         height: 30vh;
@@ -321,6 +324,21 @@ html {
     .btn-no-appearance{
         font-size: 2rem;
     }
+    
+        /* Step1 */
+    .texas-trip-card {
+        height: 20vh;
+        width: 100%;
+    }
+
+    .texas-trip-card p {
+        font-size: 2.5rem;
+    }
+
+    .package-card-title {
+        height: 22%;
+        margin-top: 1rem;
+    }
 
     /* Step2 */
     .inputBox input {
@@ -344,20 +362,6 @@ html {
         height: 4rem;
         width: 15rem;
     }
-
-        /* Step1 */
-    .texas-trip-card {
-        height: 15vh;
-    }
-
-    .texas-trip-card p {
-    font-size: 2rem;
-    }
-
-    .package-card-title {
-        height: 22%;
-        margin-top: 1rem;
-    }
     
         /* Step2 */
     .customer-details {
@@ -366,12 +370,38 @@ html {
 
         /* Step3 */
     .trip-details1, .trip-details2 {
-        width: 80%;
+        width: 100%;
+    }
+
+    .trip-details1 strong {
+        font-size: 2.5rem;
+    }
+
+    .trip-details-date-container {
+        flex-direction: column;
+    }
+    
+    input[type="date"],
+    .custom-placeholder,
+    .custom-integer_input {
+        font-size: 3rem;
+        width: 100%;
     }
 
         /* Step4 */
+    #category-container {
+        gap: 1.5rem;
+    }
+
     .category-card {
         font-size: 2.5rem;
+    }
+
+    /* ALERTS */
+
+    .alert {
+        width: 100%;
+        font-size: 2.2rem;
     }
 
     /* SERVICE PAGE */

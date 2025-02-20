@@ -21,17 +21,9 @@ class TripForm(forms.ModelForm):
         widgets = {
             "start_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": ("font-size: 1.3rem;"
-                          "padding : 10px;"
-                          "border-radius : 10px;"
-                          ),
             }),
             "end_date": forms.DateInput(attrs={
                 "type": "date", 
-                "style": ("font-size: 1.3rem;"
-                          "padding : 10px;"
-                          "border-radius : 10px;"
-                          ),
             }),
             "nbr_days_driver": forms.NumberInput(attrs={
                 "class": "custom-integer_input",
