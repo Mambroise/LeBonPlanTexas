@@ -7,7 +7,7 @@
 
 
 from modeltranslation.translator import register, TranslationOptions
-from .models import Attraction,ImageDisplayTheme,Category,CompanyInfo
+from .models import Attraction,ImageDisplayTheme,Category,CompanyInfo,Price
 
 @register(Attraction)
 class AttractionTranslationOptions(TranslationOptions):
@@ -24,3 +24,11 @@ class CategoryTranslation(TranslationOptions):
 @register(CompanyInfo)
 class CompanyInfoTranslation(TranslationOptions):
     fields = ('name','legal_structure','tax_info','tax_math','phone','instagram',)
+
+@register(Price)
+class PricesTranslation(TranslationOptions):
+    fields = ('service_name',
+               'price_excl_tax',
+               'main_tax_info','main_tax_math',
+               'main_tax_name','second_tax_info',
+               'second_tax_math','second_tax_name')
