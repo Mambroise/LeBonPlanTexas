@@ -42,11 +42,13 @@
 }
 
 .demo-banner-title {
-    margin-top: 6rem;
-    margin-bottom: 0;
-    color: var(--black-color);
+    margin: 4rem auto 2rem auto;
+
+    padding: 0 1rem;
     text-align: center;
+    color: var(--black-color);
     font-size: 3.5rem;
+
 }
 
 .demo-banner {

@@ -10,7 +10,7 @@ from django.db import IntegrityError
 from django.utils.translation import gettext as _
 from django.conf import settings
 
-from ..models import Invoice
+from ..models import Invoice,Price
 
 
 class InvoiceService:
@@ -54,6 +54,26 @@ class InvoiceService:
         except Exception as e:
             print(f"Unexpected problem while checking token: {e}")
             return None, False, _("Une erreur s'est produite lors de la vérification du token: %s." % str({e}))
+
+    @staticmethod
+    def create_invoice(customer, trips, texas_trip):
+        if texas_trip.package == '1':
+            total = 0
+            for trip in trips:
+                nbr_days = (trip.end_date - trip.start_date).days
+                print(nbr_days)
+                total += nbr_days
+            print(total)
+            price = Price.objects.get(service_name='autonome')
+            invoice = Invoice(customer=customer,
+                              texas_trip=texas_trip,
+                              mobile_service=True,
+                              nbr_days_mobile=total,
+                              mobile_price_excl_tax=price.price_excl_tax)
+            invoice.save()
+        else:
+            pass
+
 
     @staticmethod
     def invoice_is_paid(token):

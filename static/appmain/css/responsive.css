@@ -268,10 +268,12 @@ html {
         background-size: cover;
         background-position: center;
     }
+
     .service-custom-column {
         width: 100%;
 
     }
+
     .service_guide {
         width: 100%;
         background-size: cover;
@@ -296,10 +298,15 @@ html {
         height: 30vh;
     }
 
+    .demo-banner {
+        margin-top: 0;
+    }
+
     .first-banner {
         padding-top: 4rem;
         height: 30vh;
     }
+    
     .veil h3 {
         font-size: 2.8rem;
     }
@@ -439,7 +446,10 @@ html {
         transform: translateX(50%);
         border-radius: 1rem;
         width: 90%;
-        font-size: 2.9rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border: none;
+        background: transparent;
     }
 
     .column:hover {

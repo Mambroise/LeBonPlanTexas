@@ -8,7 +8,7 @@
 
 from django.contrib import admin,messages
 
-from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme,CompanyInfo
+from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme,CompanyInfo,Price
 from .models.texas_trip import TexasTrip
 from .services.send_email import send_payment_link
 from .services.invoice_service import InvoiceService
@@ -115,3 +115,11 @@ class FileForImageAdmin(admin.ModelAdmin):
 @admin.register(ImageDisplayTheme)
 class ImageDisplayTheme(admin.ModelAdmin):
     list_display = ('theme','is_active')
+
+@admin.register(Price)
+class Prices(admin.ModelAdmin):
+    list_display = ('service_name', 'price_excl_tax',
+                    'main_tax_info', 'main_tax_math',
+                    'main_tax_name', 'second_tax_info',
+                    'second_tax_math', 'second_tax_name',
+                    'is_created', 'is_obsolete', 'is_active')

@@ -17,6 +17,7 @@ from ..models import Category
 from ..services.customer_service import CustomerService
 from ..services.trip_service import TripService
 from ..services.interest_service import InterestService
+from .. services.invoice_service import InvoiceService
 from ..services.texas_trip_service import TexasTripService
 from ..forms.texas_trip_form import TexasTripForm
 
@@ -138,6 +139,7 @@ def multi_step_form(request):
             # Final success
             trips = texas_trip.whole_trips.all()
             success_registration_email(customer,trips,selected_categories)
+            InvoiceService.create_invoice(customer, trips, texas_trip)
             request.session.flush()
             return redirect('success', customer_id=customer.id)
 
@@ -153,7 +155,7 @@ def multi_step_form(request):
 from django.shortcuts import redirect
 
 def reset_form(request):
-    """Réinitialise forms after flushing session."""
+    """Reinitialise forms after flushing session."""
     request.session.flush()
     messages.info(request,_("L'enregistrement a été abandonné"))
     return redirect('multi_step_form')
