@@ -19,7 +19,20 @@
             {% translate 'Nous avons bien reçu votre demande de renseignements et devis pour votre prochain voyage au Texas. Merci de votre intérêt pour' %} 
             <span class="highlight">{{ company_name }}</span> !
         </p>
-
+        <br>
+        {% if texas_trip.package == '1' %}
+        <p>
+            {% translate 'Vous avez choisi la formule Autonome. Un devis vous sera envoyé d\'ici peu, après vérification de nos équipes.' %}
+        </p>
+        {% elif texas_trip.package == '2' %}
+        <p>
+            {% trans 'Vous avez choisi la formule Chauffeur privée. La formule autonome vous est offerte. Un devis vous sera envoyé par email après vérification de la disponibilité du chauffeur' %}
+        </p>
+        {% elif texas_trip.package == '3' %}
+        <p>
+            {% trans 'Vous avez choisi la formule Platinium. La formule autonome vous est offerte. Un conseiller vous contactera très bientôt pour s\'entretenir avec vous sur les détails de votre voyage' %}
+        </p>
+        {% endif %}
         <p>
             {% translate 'Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos attentes. Voici un récapitulatif des informations que vous nous avez fournies :' %}
         </p>
