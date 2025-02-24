@@ -1,0 +1,106 @@
+<!-- # ---------------------------------------------------------------------------
+#                    L e B o n P l a n T e x a s   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : appmain/templates/email/success_registration_email.html
+# Author : Morice
+# --------------------------------------------------------------------------- -->
+
+
+{% extends 'base_email.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h1> {% translate 'Bonjour' %}  !</h1>
+
+        <p>
+            {% translate 'Un devis vient d\'être créer et nécessite vérification et envoi vers le client' %} 
+        </p>
+        <br>
+
+        <h3>👤  {% translate 'Ses coordonnées :' %}</h3>
+        <ul>
+            <li><strong> {% translate 'Prénom :' %}</strong> {{ customer.first_name }}</li>
+            <li><strong> {% translate 'Nom :' %}</strong> {{ customer.last_name }}</li>
+            {% if trip_invoice.customer.address %}
+            <li><strong> {{ trip_invoice.customer.address }}</li>
+            {% endif %}
+            <li><strong> {% translate 'Email :' %}</strong> {{ customer.email }}</li>
+            {% if customer.phone %}
+            <li><strong> {% translate 'Téléphone :' %}</strong> {{ customer.phone }}</li>
+            {% endif %}
+        </ul>
+
+        <h3>🌟  {% translate 'Son voyage :' %}</h3>
+        {% for trip in trips %}
+        <ul>
+            <li><strong> {% translate 'Dates :' %}</strong>  {% translate 'du' %} {{ trip.start_date }}  {% translate 'au' %} {{ trip.end_date }}</li>
+            {% if trip.cities %}
+            <li><strong> {% translate 'Villes prévues :' %}</strong> {{ trip.cities }}</li>
+            {% endif %}
+            <li><strong> {% translate 'Vous êtes véhiculés :' %}</strong> 
+                {% if trip.vehiculed %} Oui {% else %} Non {% endif %}
+            </li>
+            {% if trip.comment %}
+            <li><strong> {% translate 'Commentaires :' %}</strong> {{ trip.comment }}</li>
+            {% endif %}
+        </ul>
+        <br>
+        {% endfor %}
+
+        <h3>🎯  {% translate 'Ses centres d\'intérêt :' %}</h3>
+        <ul>
+            {% for interest in interests %}
+            <li>{{ interest }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>
+            {% translate 'Ci dessous le devis à valider.' %}
+        </p>
+
+          <!-- estimate table -->
+          <table>
+            <thead>
+                <tr>
+                    <th>{% translate 'Service' %}</th>
+                    <th>{% translate 'Choix' %}</th>
+                    <th>{% translate 'Nombre de jours' %}</th>
+                    <th>{% translate 'Prix/jour hors taxe(€)' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{% translate 'Autonome' %}</td>
+                    <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
+                    <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>{% translate 'Chauffeur privé' %}</td>
+                    <td>{{ trip_invoice.driver_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_driver|default:"-" }}</td>
+                    <td>{{ trip_invoice.driver_price_excl_tax|default:"-" }}</td>
+                </tr>
+                <tr>
+                    <td>{% translate 'Platinum' %}</td>
+                    <td>{{ trip_invoice.platinum_service|yesno:"V,X" }}</td>
+                    <td>{{ trip_invoice.nbr_days_platinum|default:"-" }}</td>
+                    <td>{{ trip_invoice.platinum_price_excl_tax|default:"-" }}</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="3">{% translate 'Total TTC' %}</td>
+                    <td>{{ trip_invoice.total }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            {% translate 'Merci de vous connecter sur le site administratif pour finaliser ' %}, <br>
+            <strong> Maurice Ambroise</strong>
+        </p>
+    </div>
+{% endblock %}
+

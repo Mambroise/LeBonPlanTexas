@@ -49,16 +49,52 @@ def send_payment_link(customer: Customer,invoice:Invoice):
         return True
         
     except Exception as e:
-        print('erreurs', {e})
+        print('send_payment_link email error:', {e})
         return False
 
-    
-
-def success_registration_email(customer, trips, interests):
+def estimate_validation(customer, texas_trip, trips, interests, invoice):
     try:
         categories = dict(Category.objects.values_list('id', 'name'))
         company_info = CompanyService.get_company_info()
-        print(company_info.email)
+        customer_interests = [categories[interest] for interest in interests if interest in categories]
+        
+        
+        object_content =_('LeBonPlanTEXAS : validation de devis')
+
+        email_body = {
+            'company_name' : company_info.name,
+            'customer' : customer,
+            'texas_trip': texas_trip,
+            'trips' : trips,
+            'interests' : customer_interests,
+            'trip_invoice': invoice,
+        }
+
+        # Render the email template with context data
+        subject = object_content
+        from_email = company_info.email
+        to_email = company_info.email
+        bcc_email = [company_info.email] 
+        text_content = 'Your email client does not support HTML content'
+
+        html_email_content = render_to_string('email/estimate_validation_email.html', email_body)
+
+        # Create the email message
+        email = EmailMultiAlternatives(subject, text_content, from_email, [to_email], bcc=bcc_email)
+        email.attach_alternative(html_email_content, 'text/html')
+
+        # attach picture to email
+        email = attach_pic_to_email(email)
+
+        # Send the email
+        email.send()
+    except Exception as e:
+        print('estimate_validation email error:', {e})
+
+def success_registration_email(customer, texas_trip, trips, interests):
+    try:
+        categories = dict(Category.objects.values_list('id', 'name'))
+        company_info = CompanyService.get_company_info()
         customer_interests = [categories[interest] for interest in interests if interest in categories]
         
         
@@ -67,6 +103,7 @@ def success_registration_email(customer, trips, interests):
         email_body = {
             'company_name' : company_info.name,
             'customer' : customer,
+            'texas_trip': texas_trip,
             'trips' : trips,
             'interests' : customer_interests,
             'company_email' : company_info.email,
@@ -79,12 +116,11 @@ def success_registration_email(customer, trips, interests):
         bcc_email = [company_info.email] 
         text_content = 'Your email client does not support HTML content'
 
-        html_payment_link_content = render_to_string('email/success_registration_email.html', email_body)
-        print(f"Vérification des emails : from_email={from_email}, EMAIL_HOST_USER={settings.EMAIL_HOST_USER}")
+        html_email_content = render_to_string('email/success_registration_email.html', email_body)
 
         # Create the email message
         email = EmailMultiAlternatives(subject, text_content, from_email, [to_email], bcc=bcc_email)
-        email.attach_alternative(html_payment_link_content, 'text/html')
+        email.attach_alternative(html_email_content, 'text/html')
 
         # attach picture to email
         email = attach_pic_to_email(email)

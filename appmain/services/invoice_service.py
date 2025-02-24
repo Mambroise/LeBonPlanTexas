@@ -61,9 +61,7 @@ class InvoiceService:
             total = 0
             for trip in trips:
                 nbr_days = (trip.end_date - trip.start_date).days
-                print(nbr_days)
                 total += nbr_days
-            print(total)
             price = Price.objects.get(service_name='autonome')
             invoice = Invoice(customer=customer,
                               texas_trip=texas_trip,
@@ -71,8 +69,10 @@ class InvoiceService:
                               nbr_days_mobile=total,
                               mobile_price_excl_tax=price.price_excl_tax)
             invoice.save()
+            return True,invoice
         else:
-            pass
+            return False,None
+            
 
 
     @staticmethod

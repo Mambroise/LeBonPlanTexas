@@ -21,7 +21,7 @@ from .. services.invoice_service import InvoiceService
 from ..services.texas_trip_service import TexasTripService
 from ..forms.texas_trip_form import TexasTripForm
 
-from ..services.send_email import success_registration_email
+from ..services.send_email import success_registration_email,estimate_validation
 
 def multi_step_form(request):
     step = request.session.get('step', 1) 
@@ -80,7 +80,6 @@ def multi_step_form(request):
                 messages.success(request, _("L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."))
                 return redirect('multi_step_form') 
             elif "finish_trips" in request.POST:
-                print("coucou")
                 request.session['step'] = 4
                 request.session['title'] = 'Vos intérêts'
                 return redirect('multi_step_form')
@@ -136,10 +135,16 @@ def multi_step_form(request):
                 request.session.flush()
                 return redirect('multi_step_form')
 
-            # Final success
+            # FINAL SUCCESS
+                # retreive all trips registered in the same texas_trip
             trips = texas_trip.whole_trips.all()
-            success_registration_email(customer,trips,selected_categories)
-            InvoiceService.create_invoice(customer, trips, texas_trip)
+                # send email to customer with trip summary
+            success_registration_email(customer,texas_trip,trips,selected_categories)
+                # creation of invoice, only in autonomous service case
+            success, invoice = InvoiceService.create_invoice(customer, trips, texas_trip)
+                # send email to the company manager for invoice validation
+            if success:
+                estimate_validation(customer,texas_trip,trips,selected_categories,invoice)
             request.session.flush()
             return redirect('success', customer_id=customer.id)
 
