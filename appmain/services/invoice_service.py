@@ -69,6 +69,8 @@ class InvoiceService:
                               nbr_days_mobile=total,
                               mobile_price_excl_tax=price.price_excl_tax)
             invoice.save()
+
+            success, invoice = InvoiceService().create_token(invoice)
             return True,invoice
         else:
             return False,None

@@ -32,7 +32,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     color: var(--white-texas);
     font-family: "Barlow Condensed", serif;
@@ -129,6 +129,7 @@ h1,h2,h3,h4 {
 .flex-around {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .flex-between {
@@ -138,10 +139,6 @@ h1,h2,h3,h4 {
 
 .text-center {
   text-align: center;
-}
-
-.rounded {
-  
 }
 
 h2{
