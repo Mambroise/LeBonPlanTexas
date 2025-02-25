@@ -165,6 +165,22 @@
     border-color: var(--brick-color);
 }
 
+.discount-code {
+    background: var(--form-input-bg);
+    font-size: 1.6rem; 
+    border: 1px solid var(--form-input-border);
+    border-radius: 5px;
+    margin-left: 1rem;
+    padding: 0.5rem; 
+    color: var(--brick-color); 
+}
+
+.discount-code:focus {
+    border-color: var(--brick-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(152, 48, 63,0.5);
+}
+
 /* commun part */
 /* forms inputs */
 .inputBox{
@@ -229,12 +245,6 @@ select[name="country"]:focus {
     box-shadow: 0 0 5px rgba(152, 48, 63,0.5);
 }
 
-.step2-buttons {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-around;
-    gap: 0.625rem;
-}
 
 input[type="date"],
 .custom-placeholder,

@@ -40,6 +40,7 @@ class Invoice(models.Model):
     tax_rate = models.FloatField(null=True,blank=True)
     tax_amount = models.FloatField(null=True,blank=True)
     total_excl_tax = models.FloatField(null=True,blank=True)
+    discount = models.CharField(max_length=6,null=True,blank=True)
     total = models.FloatField(null=True,blank=True)
     payment_type = models.CharField(max_length=20,default="Credit card")
     is_paid = models.BooleanField(default=False)

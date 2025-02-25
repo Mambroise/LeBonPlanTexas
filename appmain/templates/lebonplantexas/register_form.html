@@ -133,8 +133,8 @@
             </div>
             
             <!-- step2 special buttons box -->
-            <div class="step2-buttons">
-                <button type="submit" name="add_trip" class="btn-primary">{% translate 'AJOUTER UNE ETAPE' %}</button>
+            <div class="flex-center my-2">
+                <!-- <button type="submit" name="add_trip" class="btn-primary">{% translate 'AJOUTER UNE ETAPE' %}</button> -->
                 <button type="submit" name="finish_trips" class="btn-secondary">{% translate 'SUIVANT' %}</button>
             </div>
         </form>
@@ -151,8 +151,13 @@
                 </div>
                 <!-- Champ caché pour transmettre les IDs des catégories sélectionnées -->
                 <input type="hidden" name="categories" id="selected-categories" value="">
-                <div class="flex-center">                
-                    <button type="submit" class="btn-secondary">{% translate 'VALIDER' %}</button>
+                <div class="flex-around"> 
+                    <div class="">
+                        <p class="label-text">{% trans 'Vous avez un code promo ?' %}</p>
+                        <strong class="label-text">{{ form.code.label }}</strong>
+                        {{ form.code }}
+                    </div>               
+                    <button type="submit" class="btn-secondary">{% translate 'FINALISER' %}</button>
                 </div>
             </form>
             {% endif %}
