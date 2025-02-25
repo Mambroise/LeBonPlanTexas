@@ -8,11 +8,10 @@
 
 from django.contrib import admin,messages
 
-from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction,ImageDisplayTheme,CompanyInfo,Price
-from .models.texas_trip import TexasTrip
+from .models import Customer, Trip, Category, Interest, Invoice,FileForImage,Attraction
+from .models import TexasTrip,Discount,ImageDisplayTheme,CompanyInfo,Price
 from .services.send_email import send_payment_link
-from .services.invoice_service import InvoiceService
-from .services.customer_service import CustomerService
+from .services import InvoiceService,CustomerService
 from .services.company_service import CompanyService
 
 
@@ -91,6 +90,10 @@ class InvoiceAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
+
+@admin.register(Discount)
+class DiscountAdmin(admin.ModelAdmin):
+    list_displau=y = ('code','rate','start_date','end_date',)
 
 #########################################
 # ADVERTISSEMENT PART
