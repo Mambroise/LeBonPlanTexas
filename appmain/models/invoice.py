@@ -11,7 +11,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.utils.timezone import now
 
-from ..models import Customer
+from ..models import Customer,Discount
 from appmain.models.texas_trip import TexasTrip
 
 class Invoice(models.Model):
@@ -40,11 +40,12 @@ class Invoice(models.Model):
     tax_rate = models.FloatField(null=True,blank=True)
     tax_amount = models.FloatField(null=True,blank=True)
     total_excl_tax = models.FloatField(null=True,blank=True)
-    discount = models.CharField(max_length=6,null=True,blank=True)
+    discount = models.ForeignKey(Discount,on_delete=models.DO_NOTHING, related_name='all_invoices_with_discounts',null=True,blank=True)
     total = models.FloatField(null=True,blank=True)
+    total_incl_discount = models.FloatField(null=True,blank=True)
     payment_type = models.CharField(max_length=20,default="Credit card")
     is_paid = models.BooleanField(default=False)
-    is_paid_date = models.DateTimeField(null=True, blank=True)
+    is_paid_date = models.DateTimeField(null=True,blank=True)
     stripe_session_id = models.CharField(max_length=255,null=True,blank=True)
 
 

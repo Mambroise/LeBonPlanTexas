@@ -25,7 +25,16 @@ and is trigger first in view checkout_suc_can.py in function print_invoice -->
         .align-center {
             text-align: center;
         }
+        .bold {
+            font-weight: bold;
+        }
 
+        .c-red{
+            color: red;
+        }
+        .c-green{
+             color: green;
+        }
         /* CHECKOUT SUCCESS TABLE */
         table {
             width: 100%;
@@ -109,6 +118,26 @@ and is trigger first in view checkout_suc_can.py in function print_invoice -->
                 <td colspan="3">{% translate 'Total TTC' %}</td>
                 <td>{{ trip_invoice.total }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
             </tr>
+            
+            <!-- Promo section -->
+            {% if trip_invoice.discount %}
+            <tr>
+                <td colspan="3" class="bold c-red">
+                    {% translate 'Réduction appliquée' %}
+                </td>
+                <td class="bold c-red">
+                    -{{ trip_invoice.discount.rate }} %
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="bold c-green">
+                    {% translate 'Total HTC après réduction en €' %}
+                </td>
+                <td class="bold c-green">
+                    {{ trip_invoice.total_incl_discount }} €
+                </td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </body>

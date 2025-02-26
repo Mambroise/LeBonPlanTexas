@@ -63,6 +63,26 @@
                         <td colspan="3">{% translate 'Total TTC' %}</td>
                         <td>{{ amount_paid }} ({% translate 'dont taxe :' %} {{trip_invoice.tax_amount}})</td>
                     </tr>
+                    
+                    <!-- Promo section -->
+                    {% if trip_invoice.discount %}
+                    <tr>
+                        <td colspan="3" class="bold c-red">
+                            {% translate 'Réduction appliquée' %}
+                        </td>
+                        <td class="bold c-red">
+                            -{{ trip_invoice.discount.rate }} %
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="bold c-green">
+                            {% translate 'Total HTC après réduction en €' %}
+                        </td>
+                        <td class="bold c-green">
+                            {{ trip_invoice.total_incl_discount }} €
+                        </td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div>

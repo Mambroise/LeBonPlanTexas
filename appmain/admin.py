@@ -78,7 +78,7 @@ class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('customer','texas_trip','mobile_service','nbr_days_mobile',
         'mobile_price_excl_tax','driver_service', 'nbr_days_driver', 'driver_price_excl_tax', 
         'platinum_service', 'nbr_days_platinum', 'platinum_price_excl_tax',
-        'tax_amount','total_excl_tax','total','terms_of_sale_accepted', 'is_paid')
+        'tax_amount','total_excl_tax','discount','total_incl_discount','total','terms_of_sale_accepted', 'is_paid')
     search_fields = ('customer', 'total','invoice_number')
     list_filter = ('customer','tax_amount','total_excl_tax','total',)
     actions = [send_email_action] 

@@ -31,14 +31,20 @@ def calculate_invoice_totals(sender, instance, created, **kwargs):
         price = Price.objects.get(service_name='autonome')
         total_excl_tax = mobile_total + driver_total + platinum_total
         tax_rate = float(price.main_tax_info.strip('%')) / 100  # Convertir le taux TVA en décimal
-        tax_amount = round(total_excl_tax * tax_rate, 2)
-        total_incl_tax = total_excl_tax + tax_amount
-
-        # Mettre à jour l'instance
         instance.total_excl_tax = total_excl_tax
+        if instance.discount:
+            discount_rate = float(instance.discount.rate.strip('%')) / 100
+            instance.total_incl_discount = round(instance.total_excl_tax - (instance.total_excl_tax * discount_rate),2)
+            tax_amount = round(instance.total_incl_discount * tax_rate, 2)
+            total_incl_tax = instance.total_incl_discount + tax_amount
+        else:
+            tax_amount = round(total_excl_tax * tax_rate, 2)
+            total_incl_tax = total_excl_tax + tax_amount
+
         instance.tax_rate = tax_rate
         instance.tax_amount = tax_amount
         instance.total = total_incl_tax
+
 
         # Sauvegarde pour appliquer les calculs
         Invoice.objects.filter(pk=instance.pk).update(

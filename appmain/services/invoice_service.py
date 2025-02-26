@@ -56,7 +56,7 @@ class InvoiceService:
             return None, False, _("Une erreur s'est produite lors de la vérification du token: %s." % str({e}))
 
     @staticmethod
-    def create_invoice(customer, trips, texas_trip):
+    def create_invoice(customer, trips, texas_trip,discount):
         if texas_trip.package == '1':
             total = 0
             for trip in trips:
@@ -67,11 +67,13 @@ class InvoiceService:
                               texas_trip=texas_trip,
                               mobile_service=True,
                               nbr_days_mobile=total,
+                              discount=discount,
                               mobile_price_excl_tax=price.price_excl_tax)
             invoice.save()
-
+            # create invoice token
             success, invoice = InvoiceService().create_token(invoice)
-            return True,invoice
+            if success:
+                return True,invoice
         else:
             return False,None
             
