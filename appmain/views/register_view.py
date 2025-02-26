@@ -92,8 +92,8 @@ def multi_step_form(request):
         categories = Category.objects.all().order_by('-id')
         if form.is_valid():
             code = form.cleaned_data.get('code')
-            success, message = DiscountService.find_valid_discount_by_code(code)
-            if not success:
+            discount, message = DiscountService.find_valid_discount_by_code(code)
+            if code and not discount:
                 messages.error(request, message)
                 return redirect('multi_step_form')
             if request.method == "POST":
@@ -146,7 +146,7 @@ def multi_step_form(request):
                     # send email to customer with trip summary
                 success_registration_email(customer,texas_trip,trips,selected_categories)
                     # creation of invoice, only in autonomous service case
-                success, invoice = InvoiceService.create_invoice(customer, trips, texas_trip)
+                success, invoice = InvoiceService.create_invoice(customer,trips,texas_trip,discount)
                     # send email to the client
                 if success:
                     send_payment_link(customer=customer,invoice=invoice)
