@@ -13,7 +13,7 @@ from django.utils.translation import gettext_lazy as _
 
 from ..forms.customer_form import CustomerForm
 from ..forms.trip_form import TripForm
-from ..models import Category
+from ..models import Category,Price
 from ..services import TripService,DiscountService
 from ..services import CustomerService, TexasTripService,InvoiceService,InterestService
 from ..forms.texas_trip_form import TexasTripForm
@@ -25,9 +25,24 @@ def multi_step_form(request):
     step = request.session.get('step', 1) 
     title = request.session.get('title', 'Choisir une formule') 
     package = request.session.get('texas_trip',{}).get('package')
+    pckg_auto = None
+    pckg_driver = None
+    pckg_plat = None
 
     if step == 1:
         form = TexasTripForm(request.POST or None)
+        # preparing package availability context for html cards
+        prices = Price.objects.filter(is_active=True)
+        if prices:
+
+            for price in prices:
+                if price.service_name == 'autonome':
+                    pckg_auto = True
+                elif price.service_name == 'chauffeur privé':
+                    pckg_driver = True
+                elif price.service_name == 'platinum':
+                    pckg_plat = True
+
         if form.is_valid():
             try:
                 request.session['texas_trip'] = form.cleaned_data
@@ -165,6 +180,9 @@ def multi_step_form(request):
             "title" : title, 
             "package": package,
             "form":form,
+            "pckg_auto":pckg_auto,
+            "pckg_driver":pckg_driver,
+            "pckg_plat":pckg_plat,
             })
 
     else:
@@ -176,6 +194,9 @@ def multi_step_form(request):
         'form': form,
         "title" : title, 
         "package": package,
+        "pckg_auto":pckg_auto,
+        "pckg_driver":pckg_driver,
+        "pckg_plat":pckg_plat,
         })
 
 

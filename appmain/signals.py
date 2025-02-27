@@ -10,12 +10,12 @@ import os
 from django.db.models.signals import post_save
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-from django.utils.timezone import now
 from django.conf import settings
-from .models import Invoice,FileForImage,Attraction,CompanyInfo,Price
+from .models import Invoice,FileForImage,Attraction,Price
+from .services import InvoiceService
 
 @receiver(post_save, sender=Invoice)
-def calculate_invoice_totals(sender, instance, created, **kwargs):
+def set_invoice_totals_and_number(sender, instance, created, **kwargs):
     # Calcul des totaux seulement si une modification ou une création a eu lieu
     if created or any([
         instance.mobile_service,
@@ -45,22 +45,22 @@ def calculate_invoice_totals(sender, instance, created, **kwargs):
         instance.tax_amount = tax_amount
         instance.total = total_incl_tax
 
+        # set invoice number part
+        invoice_number = InvoiceService.set_invoice_number(
+            instance.customer.id,
+            instance.texas_trip.id,
+            instance.id)
+        instance.invoice_number = invoice_number
 
         # Sauvegarde pour appliquer les calculs
         Invoice.objects.filter(pk=instance.pk).update(
+            invoice_number=invoice_number,
             total_excl_tax=total_excl_tax,
             tax_rate=tax_rate,
             tax_amount=tax_amount,
             total=total_incl_tax
         )
 
-@receiver(post_save, sender=Invoice)
-def set_invoice_number(sender, instance, created, **kwargs):
-    if created and not instance.invoice_number:
-        today_str = now().strftime('%Y%m%d')
-        Invoice.objects.filter(pk=instance.pk).update(
-            invoice_number=f"{instance.pk}{instance.customer.id}{today_str}"
-        )
 
 @receiver(post_save, sender=FileForImage)
 def create_directory(sender, instance, created, **kwargs):

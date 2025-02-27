@@ -62,6 +62,8 @@ class InvoiceService:
             for trip in trips:
                 nbr_days = (trip.end_date - trip.start_date).days
                 total += nbr_days
+            if total == 0:
+                total = 1
             price = Price.objects.get(service_name='autonome')
             invoice = Invoice(customer=customer,
                               texas_trip=texas_trip,
@@ -77,6 +79,10 @@ class InvoiceService:
         else:
             return False,None
             
+    @staticmethod
+    def set_invoice_number(customer_id,texas_trip_id, invoice_id):
+        today_str = now().strftime('%Y%m%d')
+        return f'{invoice_id}{customer_id}{today_str}'
 
 
     @staticmethod
