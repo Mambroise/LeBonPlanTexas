@@ -118,6 +118,7 @@ h1,h2,h3,h4 {
 .c-black {
   color: var(--black-color);
 }
+
 .bold {
   font-weight: bold;
 }
@@ -125,6 +126,7 @@ h1,h2,h3,h4 {
 .c-red{
   color: red;
 }
+
 .c-green{
   color: green;
 }
@@ -145,6 +147,11 @@ h1,h2,h3,h4 {
 .flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
 }
 
 .text-center {

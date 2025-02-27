@@ -40,14 +40,22 @@
             <div class="texas-trip-card-container">
                 {% for choice_value, choice_label in form.package.field.choices %}
                 <label class="texas-trip-card  package-card" for="id_package_{{ forloop.counter }}">
+                    {% if choice_value == 1 and not pckg_auto %}
+                        <h4 class="c-red text-center mt-1">{% trans 'Bientôt disponible' %}</h4>
+                    {% elif choice_value == 2 and not pckg_driver %}
+                        <h4 class="c-red text-center mt-1">{% trans 'Bientôt disponible' %}</h4>
+                    {% elif choice_value == 3 and not pckg_plat %}
+                        <h4 class="c-red text-center mt-1">{% trans 'Bientôt disponible' %}</h4>
+                    {% else %}
                     <input 
-                        type="radio" 
-                        id="id_package_{{ forloop.counter }}" 
-                        name="{{ form.package.name }}" 
-                        value="{{ choice_value }}" 
-                        {% if form.package.value == choice_value %}checked{% endif %}
-                        class="d-none"
+                    type="radio" 
+                    id="id_package_{{ forloop.counter }}" 
+                    name="{{ form.package.name }}" 
+                    value="{{ choice_value }}" 
+                    {% if form.package.value == choice_value %}checked{% endif %}
+                    class="d-none"
                     >
+                    {% endif %}
                     <div class="text-center h-100">
                         <h3 class="package-card-title">{{ choice_label|upper }}</h3>
                         <p>
@@ -156,8 +164,14 @@
                         <p class="label-text">{% trans 'Vous avez un code promo ?' %}</p>
                         <strong class="label-text">{{ form.code.label }}</strong>
                         {{ form.code }}
-                    </div>               
-                    <button type="submit" class="btn-secondary">{% translate 'FINALISER' %}</button>
+                    </div>  
+                    <div class="align-center">
+                        <button type="submit" id="finalize-btn" class="btn-secondary">{% translate 'FINALISER' %}</button>
+                        <div id="loading-spinner" class="hidden">
+                            <img src="{% static 'images/icons/loading.gif' %}" alt="Chargement..." width="50">
+                        </div>
+                    </div>             
+                    
                 </div>
             </form>
             {% endif %}
@@ -167,10 +181,14 @@
         </div>
     </div>
 
-<!-- javascript for messages fade out -->
+    <!-- javascript for messages fade out et loading spinner -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     const messages = document.querySelectorAll('.messages .alert');
+
+    const finalizeBtn = document.getElementById("finalize-btn");
+    const loadingSpinner = document.getElementById("loading-spinner");
+
     if (messages) {
         messages.forEach(function(message) {
             setTimeout(function() {
@@ -179,6 +197,13 @@
             setTimeout(function() {
                 message.remove();
             }, 6500); 
+        });
+    }
+
+    if (finalizeBtn) {
+        finalizeBtn.addEventListener("click", function() {
+            finalizeBtn.style.display = "none";  // Cache le bouton
+            loadingSpinner.classList.remove("hidden");  // Affiche la roue de chargement
         });
     }
 });

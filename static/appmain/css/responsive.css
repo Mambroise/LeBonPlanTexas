@@ -40,15 +40,27 @@ html {
 
 
 @media (max-width: 1300px) {
-    html {
-        font-size: 12px; 
-    }
 
     .first-banner {
         width: 100%;
         height: clamp(30vh, 10vw + 30vh, 70vh);
     }
+    #register, #register-fixed,
+    #service, #service-fixed {
+        font-size: 1.5rem;
+    }
+    #texas-star-base {
+        width: 10rem;
+    }
 
+    /* SERVICE PAGE */
+    .service-desc {
+        font-size: 1.35rem;
+    }
+    
+    .service-price {
+        font-size: 4rem;
+    }
 }
 
 
@@ -59,8 +71,11 @@ html {
         border-bottom: 1px solid var(--black-color);
     }
 
-    #texas-star-base {
-        width: 10rem;
+
+
+    /* SERVICE PAGE */
+    small {
+        font-size: 1.5rem;
     }
 }
 
@@ -185,6 +200,14 @@ html {
 
     }
 
+    .package-card h4{
+        margin: 0;
+    }
+    
+    .package-card h3{
+        margin: 0;
+    }
+
     .texas-trip-card {
         width: 80%;
         margin: auto;
@@ -280,6 +303,15 @@ html {
         background-position: center;
     } 
 
+    /* SERVICE PAGE */
+    .service-desc {
+        width: 90%;
+        font-size: 2.6rem;
+    }
+    
+    .service-price {
+        font-size: 5.5rem;
+    }
 }
 
 
@@ -369,6 +401,12 @@ html {
     .package-card-title {
         height: 22%;
         margin-top: 1rem;
+        font-size: 2.7em;
+    }
+
+    h4{
+        font-size: 2rem;
+        margin: 0;
     }
 
         /* Step2 */
@@ -440,6 +478,10 @@ html {
         font-size: 4.5rem;
     }
 
+    small {
+        font-size: 1.5rem;
+    }
+
     .round-service-banner {
         bottom: 10%;
         right: 50%;
@@ -458,5 +500,19 @@ html {
 
     .column:not(:hover) {
         flex: 1; 
+    }
+
+    .content h3 {
+        font-size: 3.2rem;
+    }
+
+    /* SERVICE PAGE */
+    .service-desc {
+        width: 95%;
+        font-size: 3.3rem;
+    }
+    
+    .service-price {
+        font-size: 6rem;
     }
 }

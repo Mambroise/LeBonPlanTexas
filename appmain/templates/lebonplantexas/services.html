@@ -24,22 +24,52 @@
 <br>
 <div class="service-container-frame">
     <div class="service-container">
+        <!-- a refactoriser en bouclant sur model Price !!attention ajuster les views service_view et register_view line 38,40,42!! -->
         <div class="column" id="service1">
             <div class="content">
-                <h3>{% translate 'Formule Autonome' %}</h3>
-                <p>Description du service 1.</p>
+                <div class="service-desc">
+                    <h3 class="c-white text-center">{% translate 'Formule Chauffeur privé' %}</h3>
+                    {% if not driver %}
+                    <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
+                    {% else %}
+                    <p><u>{% translate 'Description du service :' %}</u></p>
+                    {% endif %}
+                </div>
             </div>
         </div>
         <div class="column" id="service2">
             <div class="content">
-                <h3>{% translate 'Formule Chauffeur privé' %}</h3>
-                <p>Description du service 2.</p>
+                <div class="service-desc">
+                    <h3 class="c-white text-center">{% translate 'Formule Autonome' %}</h3>
+                    {% if not auto %}
+                    <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
+                    {% else %}
+                    <p><u>{% translate 'Description du service :' %}</u></p>
+                    <ul>
+                        <li>{% translate 'Une appli mobile facile d\'accès pour planifier vos journées.' %}</li>
+                        <li>{% translate 'Ne payez que pour les jours où vous désirez nos services.' %}</li>
+                        <li>{% translate '2 demi-journées (arrivée/départ) offertes (1jour minimum). ' %}</li>
+                    </ul>
+                    <ul>
+                        <li>{% translate 'Composez votre planning à partir d\'une immense base de donnée.' %}</li>
+                        <li>{% translate 'Enchainez les activités en fonction de leur géolocalisations et gagnez du temps.' %}</li>
+                        <li>{% translate 'Notre assistant vous guide tout au long de votre voyage. ' %}</li>
+                    </ul>
+                    <p class="service-price"><strong>{{ auto.price_excl_tax }}</strong>{% trans '€/jour' %}</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
         <div class="column" id="service3">
             <div class="content">
-                <h3>{% translate 'Formule Platinum' %}</h3>
-                <p>Description du service 3.</p>
+                <div class="service-desc">
+                    <h3 class="c-white text-center">{% translate 'Formule Platinum' %}</h3>
+                    {% if not plat %}
+                    <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
+                    {% else %}
+                    <p><u>{% translate 'Description du service :' %}</u></p>
+                    {% endif %}
+                </div> 
             </div>
         </div>
     </div>
