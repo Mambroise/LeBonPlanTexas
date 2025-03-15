@@ -24,7 +24,13 @@ footer {
 
 .info-box {
     width: 100%;
-    height: 13.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.info-box li {
+    list-style: none;;
 }
 
 .right-reserved-box {

@@ -57,7 +57,7 @@
     display: flex;
     align-items: center;
     margin-left: 10px;
-    font-size: 3.1rem;
+    font-size: 3rem;
     font-weight: 600;
     color: var(--white-texas);
     transition:  0.3s ease-in-out;
@@ -65,7 +65,7 @@
 
 .title p {
     margin: 0;
-    line-height: 2.7rem;
+    line-height: 2.5rem;
 }
 
 .title span {

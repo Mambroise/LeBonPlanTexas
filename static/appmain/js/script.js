@@ -36,8 +36,8 @@ categoryCards.forEach(card => {
 const navbarSelector = 'nav.navbar';
 const navbar = document.querySelector(navbarSelector);
 
-if (window.location.pathname !== '/register/') {
-
+if (window.location.pathname !== '/register/' && window.location.pathname !== '/privacy_policy/') {
+    
     function addStyles(selector) {
         const style = `
             ${selector} {

@@ -122,6 +122,7 @@ class ImageDisplayTheme(admin.ModelAdmin):
 @admin.register(Price)
 class Prices(admin.ModelAdmin):
     list_display = ('service_name', 'price_excl_tax',
+                    'price_excl_tax2', 'price_excl_tax3',
                     'main_tax_info', 'main_tax_math',
                     'main_tax_name', 'second_tax_info',
                     'second_tax_math', 'second_tax_name',
