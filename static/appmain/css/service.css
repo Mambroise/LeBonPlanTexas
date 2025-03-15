@@ -88,19 +88,6 @@
     border-left: 1px solid var(--black-color);
 }
 
-.column:hover {
-    flex: 3; 
-}
-
-.column:hover .content {
-    background: rgba(0, 0, 0, 0.3); 
-    color: rgba(255,255,255);
-}
-
-.column:not(:hover) {
-    flex: 1; 
-}
-
 .column::before {
     content: '';
     position: absolute;
@@ -148,14 +135,46 @@
     list-style: square;
 }
 
+.column:hover {
+    flex: 3; 
+}
+
+.column:hover .content {
+    background: rgba(0, 0, 0, 0.3); 
+    color: rgba(255,255,255);
+}
+
+.column:not(:hover) {
+    flex: 1; 
+}
+
+.column:hover .service-desc {
+    font-size: 1.5rem;
+}
+
 .service-desc {
     width: 70%;
     margin: auto;
     list-style: square;
-    font-size: 1.5rem;
+    font-size: 0.5rem;
+    transition: 0.3s ease-in-out;
 }
 
 .service-price {
     text-align: center;
     font-size: 5rem;
+}
+
+.service-price2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.table-price td,
+ .table-price th{
+    padding: 1rem;
+}
+
+.table-price td {
+    font-size: 1.5rem;
 }

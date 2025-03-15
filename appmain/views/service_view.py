@@ -22,7 +22,7 @@ def service_view(request):
                 auto = price
             elif price.service_name == 'chauffeur privé' and price.is_active == True:
                 driver = price
-            elif price.service_name == 'platinum' and price.is_active == True:
+            elif price.service_name == 'platinium' and price.is_active == True:
                 plat = price
 
         context = {

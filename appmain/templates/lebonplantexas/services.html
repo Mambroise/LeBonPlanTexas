@@ -28,11 +28,42 @@
         <div class="column" id="service1">
             <div class="content">
                 <div class="service-desc">
-                    <h3 class="c-white text-center">{% translate 'Formule Chauffeur privé' %}</h3>
-                    {% if not driver %}
+                    <h3 class="c-white text-center">{% translate 'Formule Chauffeur Privé' %}</h3>
+                    {% if not auto %}
                     <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
                     {% else %}
-                    <p><u>{% translate 'Description du service :' %}</u></p>
+                    <ul>
+                        <li>{% translate 'Transport jusqu\'à 4 personnes vers toutes les activités programmées.' %}</li>
+                        <li>{% translate 'Disponibilité du chauffeur et véhicule de 7h à 22h.' %}</li>
+                        <li>{% translate 'Aide linguistique pour pour facilité les activités' %}</li>
+                    </ul>
+                    <ul>
+                        <li>{% translate 'Le chauffeur n\'accompagne pas les voyageurs sauf sur demande de ces derniers et acceptation du premier.' %}</li>
+                        <li>{% translate 'Formule Autonome incluse gratuitement.' %}</li>
+                    </ul>
+                    <table class="table-price">
+                        <thead>
+                            <th></th>
+                            <th>{% trans '1 jour' %}</th>
+                            <th>{% trans '1-4 jours' %}</th>
+                            <th>{% trans '5 jours' %}</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>{% trans '90 mins*' %}</th>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax }}</strong>{% trans '€/j' %}</td>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax2 }}</strong>{% trans '€/j' %}</td>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax3 }}</strong>{% trans '€/j' %}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans '180 mins*' %}</th>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax|add:driver.distance_allowance }}</strong>{% trans '€/j' %}</td>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax2|add:driver.distance_allowance }}</strong>{% trans '€/j' %}</td>
+                                <td><strong class="service-price2">{{ driver.price_excl_tax3|add:driver.distance_allowance }}</strong>{% trans '€/j' %}</td>
+                            </tr>
+                       </tbody>
+                    </table>
+                    <p class="mt-0">{% trans '* temps de trajet du chauffeur pour se rendre auprès des voyageurs' %}</p>
                     {% endif %}
                 </div>
             </div>
@@ -44,7 +75,6 @@
                     {% if not auto %}
                     <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
                     {% else %}
-                    <p><u>{% translate 'Description du service :' %}</u></p>
                     <ul>
                         <li>{% translate 'Une appli mobile facile d\'accès pour planifier vos journées.' %}</li>
                         <li>{% translate 'Ne payez que pour les jours où vous désirez nos services.' %}</li>
@@ -67,7 +97,16 @@
                     {% if not plat %}
                     <h3 class="c-red">{% trans 'Bientôt disponible' %}</h3>
                     {% else %}
-                    <p><u>{% translate 'Description du service :' %}</u></p>
+                    <ul>
+                        <li>{% translate 'Révélez vos attentes à un expert du tourisme et de la culture Texan.' %}</li>
+                        <li>{% translate 'Validez chaque journée et activité au fil de la personalisation.' %}</li>
+                        <li>{% translate 'Enregistrement par nos soins aux activités et hotels.' %}</li>
+                    </ul>
+                    <ul>
+                        <li>{% translate 'Formule Autonome incluse gratuitement.' %}</li>
+                        <li>{% translate 'Mixez égalment la formule Chauffeur Privé avec 20% de réduction.' %}</li>
+                    </ul>
+                    <p class="service-price"><strong>{{ plat.price_excl_tax }}</strong>{% trans '€/jour' %}</p>
                     {% endif %}
                 </div> 
             </div>
