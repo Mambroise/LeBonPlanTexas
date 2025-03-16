@@ -161,8 +161,8 @@ html {
         grid-template-columns: 1fr; 
     }
 
-    .mobile-step-p {
-        font-size: 3rem;
+    .mobile-step {
+        font-size: 2.5rem;
     }
 
     .round-banner {
@@ -341,6 +341,10 @@ html {
         padding-top: 4rem;
         height: 30vh;
     }
+
+    .mobile-step {
+        width: 50%;
+    }
     
     .veil h3 {
         font-size: 2.8rem;
@@ -517,5 +521,14 @@ html {
     
     .service-price {
         font-size: 6rem;
+    }
+
+    /* FOOTER */
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        gap: 0;
     }
 }
