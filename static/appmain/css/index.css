@@ -42,8 +42,7 @@
 }
 
 .demo-banner-title {
-    margin: 4rem auto 2rem auto;
-
+    margin: 4rem auto 8rem auto;
     padding: 0 1rem;
     text-align: center;
     color: var(--black-color);
@@ -53,7 +52,6 @@
 
 .demo-banner {
     display: grid;
-    margin-top: 8rem;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
     gap: 10px;
     width: 100%; 
@@ -91,12 +89,21 @@
     background-position: center;
 }
 
-.mobile-step-p {
-    display: flex;
-    align-items: center;
-    color: var(--black-color);
+.mobile-step {
     width: 40%;
+    color: var(--black-color);
     font-size: 1.6rem;
+}
+.mobile-step-p {
+    margin: 0;
+}
+
+.mobile-step-numbers {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--navbar-and-dot);
 }
 
 /* first banner */

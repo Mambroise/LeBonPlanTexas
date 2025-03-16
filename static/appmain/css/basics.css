@@ -83,6 +83,10 @@ h1,h2,h3,h4 {
   margin-bottom: 1rem;
 }
 
+.pl-3 {
+  padding-left: 3rem;
+}
+
 .w-20 {
   width: 20%;
 }
@@ -117,6 +121,10 @@ h1,h2,h3,h4 {
 
 .c-black {
   color: var(--black-color);
+}
+
+.c-coral {
+  color: var(--navbar-and-dot);
 }
 
 .bold {

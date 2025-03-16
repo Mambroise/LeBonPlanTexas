@@ -64,8 +64,8 @@
         <div>
             <ul class="info-box">
                 <li>
+                    <p><strong>{% trans 'Nos services' %}</strong></p>
                     <ul>
-                        <p><strong>{% trans 'Nos services' %}</strong></p>
                         <li>{% trans 'Autonome: application mobile' %}</li>
                         <li>{% trans 'Chauffeur privé: Acompagnateur' %}</li>
                         <li>{% trans 'Platinum: planification sur mesure' %}</li>
@@ -80,13 +80,19 @@
                         <li>Sqlite</li>
                     </ul>
                 </li>
-                <li></li>
+                <li>
+                    <p><strong>{% trans 'Crédits' %}</strong></p>
+                    <ul>
+                        <li><a href="https://www.flaticon.com/" target="_blank">Flaticon</a></li>
+                        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="right-reserved-box">
             <p >&copy; 2024 {% translate 'LeBonPlanTexas' %}. {% translate 'Tous droits réservés' %}.</p>
             <p class="m-0"><a href="#">{% translate 'Conditions d\'utilisation' %}</a></p>
             <p class="m-0"><a href="{% url 'terms_of_sale_pdf' %}" target="_blank">{% translate 'Conditions de vente' %}</a></p>
-            <p class="no-mt"><a href="{% url 'privacy' %}">{% translate 'Politique de confidentialité' %}</a></p>
+            <p class="m-0"><a href="{% url 'privacy' %}">{% translate 'Politique de confidentialité' %}</a></p>
     </div>
 </footer>
