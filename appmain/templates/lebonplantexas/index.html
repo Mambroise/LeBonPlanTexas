@@ -20,14 +20,14 @@
     </div>
     <!-- company concept quick explantion banner -->
     <h2 class="demo-banner-title">{% translate 'Pourquoi voyager avec LeBonPlanTEXAS ?' %}</h2>
-    <h3 class="c-coral pl-3">{% trans 'Pour seulement 5euros par jour' %}</h3>
+    <h3 class="c-coral pl-4">{% trans 'Pour seulement ' %}{{ auto.price_excl_tax }}{% trans ' euros par jour' %}</h3>
     <section class="demo-banner">
         <div class="item">
             <div class="mobile-step1"></div>
             <div class="mobile-step">
                 <p class="mobile-step-numbers">1</p>
                 <strong>{% trans '+ 500 activités' %}</strong>
-                <p class="mobile-step-p">{% trans 'Votre guide ultime : découvrez une mine d\'idees touristiques incontournables au Texas.' %}</p>
+                <p class="mobile-step-p">{% trans 'Votre guide ultime : découvrez une mine d\'idees touristiques incontournables autour de vous.' %}</p>
             </div>
         </div>
         <div class="item">
@@ -35,7 +35,7 @@
             <div class="mobile-step">
                 <p class="mobile-step-numbers">2</p>
                 <strong>{% trans 'Parcours intelligent' %}</strong>
-                <p class="mobile-step-p">{% trans 'Planifiez malin : explorez plus, économisez du temps, vivez des merveilles.' %}</p>
+                <p class="mobile-step-p">{% trans 'Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation des activités.' %}</p>
             </div>
         </div>
         <div class="item">
@@ -58,7 +58,7 @@
                 <div class="service-app-img">
                     <div class="veil">
                         <h3>{% translate 'Planification autonome sur application mobile' %}</h3>
-                        <p>{% translate 'A partir de 5euros à la journée, composez vous-même votre voyage, à partir d\'une grande base de données incluant' %}
+                        <p>{% translate 'Composez vous-même votre voyage, à partir d\'une grande base de données incluant' %}
                             {% translate 'histoire, culture, sorties, évènements annuels et bien d\'autres...' %}   
                             {% translate 'Puis laissez notre application mobile vous guider' %}   
                         </p>
