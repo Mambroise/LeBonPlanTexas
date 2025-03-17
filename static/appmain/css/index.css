@@ -106,40 +106,6 @@
     color: var(--navbar-and-dot);
 }
 
-/* first banner */
-.first-banner {
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap;
-    height: 70vh;
-    margin-top: 1.875rem;
-}
-
-.mobile-picture {
-    margin-top: 8%;
-    width: 20%;
-    height: 60%;
-    background-image: url('../../images/mobile.webp');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.bdd-accroche {
-    width: 30%;
-    min-width: 20rem;
-    padding: 5%;
-    font-size: 2rem;
-    color: var(--black-color);
-}
-
-.bdd-activities-box {
-    width: 25%;
-    min-width: 20rem;
-    height: 100%;
-    padding: 0.6rem;
-    padding-right: 0;
-}
 
 /* SECOND BANNER STYLE */
 .second-banner {
@@ -157,14 +123,11 @@
 }
 
 .service-box {
-    padding: 0.6rem 0;
     display: flex;
     justify-content: space-between;   
     flex-wrap: wrap;
     height: auto;
     background-color: var(--caroussel-service-bg);
-    border-top: 1px solid var(--black-color);
-    border-bottom: 1px solid var(--black-color);
 }
 
 .service-app-column {
