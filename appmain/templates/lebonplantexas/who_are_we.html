@@ -12,6 +12,9 @@
 {% load i18n %}
 
 {% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+</style>
 <div>
     <div class="who-banner">
         <!-- stockyards picture banner -->
@@ -46,6 +49,14 @@
             </div>      
          </div>
         <h2 class=" text-center">{% translate 'Découvrez ci-dessous qui nous sommes' %}</h2>
+    </div>
+    <div class="biography-banner">
+        <p class="biography">
+            {% trans "Sécurité, chaleur humaine, grande variété, joie de vivre, qualité de vie incomparable, liberté (la vraie) : voici tout le bonheur que j'ai ressenti en visitant cet État incroyable." %}
+            {% trans "Ici, les grandes villes ont la chaleur et l'accueil des villages, et la nature est riche en animaux sauvages. Après des formations de reconversion en informatique et quelques voyages dans le Lone Star State, je n'ai pas pu réfréner mon besoin de faire découvrir à mes compatriotes un style de vie inoubliable, empreint d'une liberté que nous avons perdue." %}
+        </p>
+        
+        <img src="{% static 'images/me_at_the_office.jpg' %}" alt="CEO at the office" class="biography-picture">
     </div>
 </div>
   

@@ -74,6 +74,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,7 +143,7 @@ LANGUAGE_CODE = 'fr'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 # langues que je souhaite prendre en charge
@@ -150,6 +151,10 @@ LANGUAGES = (
     ('fr', 'French'),
     ('en', 'English'),
 )
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",  # Chemin où seront stockés les fichiers de traduction
+]
 
 # Langue par défaut pour les traductions
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
