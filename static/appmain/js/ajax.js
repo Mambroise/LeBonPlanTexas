@@ -6,15 +6,17 @@
 // # ---------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.pathname === '/') {
+    
+    if (window.location.pathname === '/fr/' || window.location.pathname === '/en/') {
         
         const form = document.getElementById('city-selector-form');
         const container = document.getElementById('activities-container');
-
+        
         if (form && container) {
             // Fonction pour charger les activités
+            const lang = window.location.pathname.split('/')[1];
             function loadActivities(city_id) {
-                fetch('/get_activities/', {
+                fetch(`/${lang}/get_activities/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

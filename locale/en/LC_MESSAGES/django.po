@@ -21,193 +21,194 @@ msgid ""
 "Information utile: dates de demande de chauffeur, adresse complète de "
 "l'hotel..."
 msgstr ""
+"Useful information: requested driver dates, full hotel address..."
 
 #: .\appmain\forms\trip_form.py:55
 msgid "La date de début ne peut pas être antérieure à aujourd'hui."
-msgstr ""
+msgstr "The start date cannot be earlier than today."
 
 #: .\appmain\forms\trip_form.py:59 .\appmain\models\trip.py:43
 msgid "La date de fin doit être postérieure à la date de début."
-msgstr ""
+msgstr "The end date must be later than the start date."
 
 #: .\appmain\models\category.py:13
 msgid "Catégories"
-msgstr ""
+msgstr "Categories"
 
 #: .\appmain\models\customer.py:18
 msgid "Prénom"
-msgstr ""
+msgstr "First Name"
 
 #: .\appmain\models\customer.py:19
 msgid "Nom"
-msgstr ""
+msgstr "Last Name"
 
 #: .\appmain\models\customer.py:20
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: .\appmain\models\customer.py:21
 msgid "Portable"
-msgstr ""
+msgstr "Mobile Phone"
 
 #: .\appmain\models\customer.py:22
 msgid "Adresse"
-msgstr ""
+msgstr "Address"
 
 #: .\appmain\models\customer.py:23
 msgid "Pays"
-msgstr ""
+msgstr "Country"
 
 #: .\appmain\models\customer.py:32
 msgid "Catégories sélectionnées"
-msgstr ""
+msgstr "Selected Categories"
 
 #: .\appmain\models\customer.py:49
 msgid "Le numéro de téléphone doit comporter entre 8 et 12 chiffres."
-msgstr ""
+msgstr "The phone number must contain between 8 and 12 digits."
 
 #: .\appmain\models\customer.py:53
 msgid ""
 "Le numéro de téléphone doit comporter uniquement des chiffres après "
 "nettoyage."
-msgstr ""
+msgstr "The phone number must contain only digits after cleaning."
 
 #: .\appmain\models\customer.py:59
 msgid "Veuillez sélectionner un pays."
-msgstr ""
+msgstr "Select your country"
 
 #: .\appmain\models\service_package.py:13
 msgid "autonome"
-msgstr ""
+msgstr "autonomous"
 
 #: .\appmain\models\service_package.py:14
 msgid "chauffeur privé"
-msgstr ""
+msgstr "personal driver"
 
 #: .\appmain\models\service_package.py:15
 msgid "platinum"
-msgstr ""
+msgstr "platinum"
 
 #: .\appmain\models\trip.py:28
 msgid "Début:"
-msgstr ""
+msgstr "Start"
 
 #: .\appmain\models\trip.py:29
 msgid "Fin:"
-msgstr ""
+msgstr "End"
 
 #: .\appmain\models\trip.py:30
 msgid "Villes"
-msgstr ""
+msgstr "Cities"
 
 #: .\appmain\models\trip.py:31
 msgid "Commentaire:"
-msgstr ""
+msgstr "Comment:"
 
 #: .\appmain\models\trip.py:32
 msgid "Nombre de jour de service"
-msgstr ""
+msgstr "Number of service days"
 
 #: .\appmain\services\discount_service.py:20
 msgid "Le code promo n'existe pas"
-msgstr ""
+msgstr "The promo code does not exist"
 
 #: .\appmain\services\discount_service.py:22
 msgid "La promotion a expiré"
-msgstr ""
+msgstr "The promotion has expired"
 
 #: .\appmain\services\discount_service.py:24
 msgid "ok"
-msgstr ""
+msgstr "ok"
 
 #: .\appmain\services\invoice_service.py:36
 msgid "Le token est introuvable."
-msgstr ""
+msgstr "The token could not be found."
 
 #: .\appmain\services\invoice_service.py:47
 msgid "La facture est introuvable"
-msgstr ""
+msgstr "The invoice could not be found."
 
 #: .\appmain\services\invoice_service.py:52
 msgid "Validité du token expirée."
-msgstr ""
+msgstr "Token validity expired."
 
 #: .\appmain\services\invoice_service.py:57
 #, python-format
 msgid "Une erreur s'est produite lors de la vérification du token: %s."
-msgstr ""
+msgstr "An error occurred while verifying the token: %s."
 
 #: .\appmain\services\send_email.py:22
 msgid "LeBonPlanTexas : DEVIS pour votre voyage!"
-msgstr ""
+msgstr "LeBonPlanTexas: QUOTE for your trip!"
 
 #: .\appmain\services\send_email.py:62
 msgid "LeBonPlanTEXAS : On se parle bientôt!!"
-msgstr ""
+msgstr "LeBonPlanTEXAS: Talk to you soon!!"
 
 #: .\appmain\services\send_email.py:99
 msgid "LeBonPlanTexas : Votre paiement est confirmé!"
-msgstr ""
+msgstr "LeBonPlanTexas: Your payment has been confirmed!"
 
 #: .\appmain\services\send_email.py:113
 msgid "Your email client does not support HTML content"
-msgstr ""
+msgstr "Your email client does not support HTML content"
 
 #: .\appmain\services\send_email.py:152
 msgid "LeBonPlanTEXAS : validation de devis"
-msgstr ""
+msgstr "LeBonPlanTEXAS: Quote validation"
 
 #: .\appmain\templates\base.html:37 .\appmain\templates\base_fixed.html:34
 msgid "LeBonPlan"
-msgstr ""
+msgstr "LeBonPlan"
 
 #: .\appmain\templates\base.html:38 .\appmain\templates\base_fixed.html:35
 msgid "TEXAS"
-msgstr ""
+msgstr "TEXAS"
 
 #: .\appmain\templates\base.html:44 .\appmain\templates\base_fixed.html:41
 msgid "INSCRIPTION"
-msgstr ""
+msgstr "SIGN UP"
 
 #: .\appmain\templates\base.html:47 .\appmain\templates\base_fixed.html:44
 msgid "SERVICES"
-msgstr ""
+msgstr "SERVICES"
 
 #: .\appmain\templates\base_checkout.html:16
 #: .\appmain\templates\base_email.html:16 .\appmain\templates\error.html:17
 msgid "Validation des CGV"
-msgstr ""
+msgstr "Terms and Conditions of sale validation"
 
 #: .\appmain\templates\email\checkout_success_email.html:15
 msgid "Votre transaction a été acceptée !"
-msgstr ""
+msgstr "Your transaction has been accepted!"
 
 #: .\appmain\templates\email\checkout_success_email.html:19
 msgid "GO BIG OR GO HOME!"
-msgstr ""
+msgstr "GO BIG OR GO HOME!"
 
 #: .\appmain\templates\email\checkout_success_email.html:22
 #: .\appmain\templates\email\payment_link_email.html:19
 msgid "Howdy"
-msgstr ""
+msgstr "Howdy"
 
 #: .\appmain\templates\email\checkout_success_email.html:23
-msgid "Merci d\\"
-msgstr ""
+msgid "Merci d'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage."
+msgstr "Thank you for choosing LeBonPlanTEXAS to accompany your journey."
 
 #: .\appmain\templates\email\checkout_success_email.html:24
-msgid "Vos identidiants et mots de passe vous serons envoyez par email d\\"
-msgstr ""
+msgid "Vos identifiants et mots de passe vous seront envoyés par email d'ici peu."
+msgstr "Your login credentials and passwords will be sent to you by email shortly."
 
 #: .\appmain\templates\email\checkout_success_email.html:26
 msgid "FACTURE N°"
-msgstr ""
+msgstr "INVOICE No"
 
 #: .\appmain\templates\email\checkout_success_email.html:27
 #: .\appmain\templates\lebonplantexas\checkout_success.html:22
 #: .\appmain\templates\pdf\invoice_pdf.html:75
 msgid "Date de paiement :"
-msgstr ""
+msgstr "Payment date:"
 
 #: .\appmain\templates\email\checkout_success_email.html:29
 #: .\appmain\templates\email\payment_link_email.html:25
@@ -215,13 +216,13 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:24
 #: .\appmain\templates\pdf\invoice_pdf.html:77
 msgid "SIREN :"
-msgstr ""
+msgstr "EIN:"
 
 #: .\appmain\templates\email\checkout_success_email.html:32
 #: .\appmain\templates\email\payment_link_email.html:28
 #: .\appmain\templates\lebonplantexas\checkout_success.html:27
 msgid "👤 Vos coordonnées :"
-msgstr ""
+msgstr "👤 Your contact details:"
 
 #: .\appmain\templates\email\checkout_success_email.html:43
 #: .\appmain\templates\email\estimate_validation_email.html:68
@@ -230,7 +231,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:38
 #: .\appmain\templates\pdf\invoice_pdf.html:92
 msgid "Service"
-msgstr ""
+msgstr "Service"
 
 #: .\appmain\templates\email\checkout_success_email.html:44
 #: .\appmain\templates\email\estimate_validation_email.html:69
@@ -239,7 +240,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:39
 #: .\appmain\templates\pdf\invoice_pdf.html:93
 msgid "Choix"
-msgstr ""
+msgstr "Choice"
 
 #: .\appmain\templates\email\checkout_success_email.html:45
 #: .\appmain\templates\email\estimate_validation_email.html:70
@@ -248,7 +249,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:40
 #: .\appmain\templates\pdf\invoice_pdf.html:94
 msgid "Nombre de jours"
-msgstr ""
+msgstr "Number of days"
 
 #: .\appmain\templates\email\checkout_success_email.html:46
 #: .\appmain\templates\email\estimate_validation_email.html:71
@@ -257,7 +258,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:41
 #: .\appmain\templates\pdf\invoice_pdf.html:95
 msgid "Prix/jour hors taxe(€)"
-msgstr ""
+msgstr "Price/day excl. tax ($)"
 
 #: .\appmain\templates\email\checkout_success_email.html:51
 #: .\appmain\templates\email\estimate_validation_email.html:76
@@ -266,7 +267,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:46
 #: .\appmain\templates\pdf\invoice_pdf.html:100
 msgid "Autonome"
-msgstr ""
+msgstr "Autonomous"
 
 #: .\appmain\templates\email\checkout_success_email.html:57
 #: .\appmain\templates\email\estimate_validation_email.html:82
@@ -275,7 +276,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:52
 #: .\appmain\templates\pdf\invoice_pdf.html:106
 msgid "Chauffeur privé"
-msgstr ""
+msgstr "Personal driver"
 
 #: .\appmain\templates\email\checkout_success_email.html:63
 #: .\appmain\templates\email\estimate_validation_email.html:88
@@ -284,7 +285,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:58
 #: .\appmain\templates\pdf\invoice_pdf.html:112
 msgid "Platinum"
-msgstr ""
+msgstr "Platinum"
 
 #: .\appmain\templates\email\checkout_success_email.html:69
 #: .\appmain\templates\email\estimate_validation_email.html:94
@@ -293,7 +294,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:64
 #: .\appmain\templates\pdf\invoice_pdf.html:118
 msgid "Total TTC"
-msgstr ""
+msgstr "Total incl. tax"
 
 #: .\appmain\templates\email\checkout_success_email.html:70
 #: .\appmain\templates\email\estimate_validation_email.html:95
@@ -302,94 +303,94 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:65
 #: .\appmain\templates\pdf\invoice_pdf.html:119
 msgid "dont taxe :"
-msgstr ""
+msgstr "including tax:"
 
 #: .\appmain\templates\email\checkout_success_email.html:74
 msgid "Type de paiement :"
-msgstr ""
+msgstr "Payment type:"
 
 #: .\appmain\templates\email\checkout_success_email.html:76
 msgid "Ici pour voir votre facture en pdf téléchargeable."
-msgstr ""
+msgstr "Click here to view your downloadable PDF invoice."
 
 #: .\appmain\templates\email\checkout_success_email.html:78
 msgid "Nous reviendrons au plus vite vers vous!"
-msgstr ""
+msgstr "We will get back to you as soon as possible!"
 
 #: .\appmain\templates\email\estimate_validation_email.html:16
 #: .\appmain\templates\email\success_registration_email.html:16
 msgid "Bonjour"
-msgstr ""
+msgstr "Howdy"
 
 #: .\appmain\templates\email\estimate_validation_email.html:19
-msgid "Un devis vient d\\"
-msgstr ""
+msgid "Un devis vient d'être créer et nécessite vérification et envoi vers le client."
+msgstr "A quote has just been created and requires verification before being sent to the client."
 
 #: .\appmain\templates\email\estimate_validation_email.html:23
 msgid "Ses coordonnées :"
-msgstr ""
+msgstr "Their contact details:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:25
 #: .\appmain\templates\email\success_registration_email.html:42
 msgid "Prénom :"
-msgstr ""
+msgstr "First name:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:26
 #: .\appmain\templates\email\success_registration_email.html:43
 msgid "Nom :"
-msgstr ""
+msgstr "Last name:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:30
 #: .\appmain\templates\email\success_registration_email.html:47
 msgid "Email :"
-msgstr ""
+msgstr "Email:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:32
 #: .\appmain\templates\email\success_registration_email.html:49
 msgid "Téléphone :"
-msgstr ""
+msgstr "Phone number:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:36
 msgid "Son voyage :"
-msgstr ""
+msgstr "Their trip:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:39
 #: .\appmain\templates\email\success_registration_email.html:56
 msgid "Dates :"
-msgstr ""
+msgstr "Dates:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:39
 #: .\appmain\templates\email\success_registration_email.html:56
 msgid "du"
-msgstr ""
+msgstr "from"
 
 #: .\appmain\templates\email\estimate_validation_email.html:39
 #: .\appmain\templates\email\success_registration_email.html:56
 msgid "au"
-msgstr ""
+msgstr "to"
 
 #: .\appmain\templates\email\estimate_validation_email.html:41
 #: .\appmain\templates\email\success_registration_email.html:58
 msgid "Villes prévues :"
-msgstr ""
+msgstr "Planned cities:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:43
 #: .\appmain\templates\email\success_registration_email.html:60
 msgid "Vous êtes véhiculés :"
-msgstr ""
+msgstr "Do you have a vehicle?:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:47
 #: .\appmain\templates\email\success_registration_email.html:64
 msgid "Commentaires :"
-msgstr ""
+msgstr "Comments:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:53
-msgid "Ses centres d\\"
-msgstr ""
+msgid "Ses centres d'intérêt :"
+msgstr "His interests:"
 
 #: .\appmain\templates\email\estimate_validation_email.html:61
-msgid "Ci dessous le devis à valider."
-msgstr ""
+msgid "Ci-dessous le devis à valider."
+msgstr "Below is the quote to be approved."
 
 #: .\appmain\templates\email\estimate_validation_email.html:102
 #: .\appmain\templates\email\payment_link_email.html:73
@@ -397,7 +398,7 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:72
 #: .\appmain\templates\pdf\invoice_pdf.html:126
 msgid "Réduction appliquée"
-msgstr ""
+msgstr "Discount applied"
 
 #: .\appmain\templates\email\estimate_validation_email.html:110
 #: .\appmain\templates\email\payment_link_email.html:81
@@ -405,617 +406,617 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\checkout_success.html:80
 #: .\appmain\templates\pdf\invoice_pdf.html:134
 msgid "Total HTC après réduction en €"
-msgstr ""
+msgstr "Total excluding tax after discount in $"
 
 #: .\appmain\templates\email\estimate_validation_email.html:121
 msgid "Merci de vous connecter sur le site administratif pour finaliser "
-msgstr ""
+msgstr "Please log in to the administrative site to finalize"
 
 #: .\appmain\templates\email\payment_link_email.html:15
 msgid "Voici votre devis !"
-msgstr ""
+msgstr "Here is your quote!"
 
 #: .\appmain\templates\email\payment_link_email.html:20
 msgid "Comme convenu, veuillez trouver ci-dessous votre devis gratuit."
-msgstr ""
+msgstr "As agreed, please find below your free quote."
 
 #: .\appmain\templates\email\payment_link_email.html:22
 msgid "DEVIS N°"
-msgstr ""
+msgstr "QUOTE No."
 
 #: .\appmain\templates\email\payment_link_email.html:23
 msgid "Date :"
-msgstr ""
+msgstr "Date:"
 
 #: .\appmain\templates\email\payment_link_email.html:91
 msgid ""
-"Pour valider votre voyage, merci de cliquer sur le lien suivant et regler le "
+"Pour valider votre voyage, merci de cliquer sur le lien suivant et régler le "
 "montant du devis."
-msgstr ""
+msgstr "To confirm your trip, please click on the following link and pay the quoted amount."
 
 #: .\appmain\templates\email\payment_link_email.html:92
 msgid ""
-"Ce lien de paiement restera actif 48h. Contactez nous pour le renouveler."
-msgstr ""
+"Ce lien de paiement restera actif 48h. Contactez-nous pour le renouveler."
+msgstr "This payment link will remain active for 48 hours. Contact us to renew it."
 
 #: .\appmain\templates\email\payment_link_email.html:96
 msgid "Nous espérons vous voir bientôt!"
-msgstr ""
+msgstr "We hope to see you soon!"
 
 #: .\appmain\templates\email\success_registration_email.html:19
 msgid ""
 "Nous avons bien reçu votre demande de renseignements et devis pour votre "
 "prochain voyage au Texas. Merci de votre intérêt pour"
-msgstr ""
+msgstr "We have received your request for information and a quote for your upcoming trip to Texas. Thank you for your interest in"
 
 #: .\appmain\templates\email\success_registration_email.html:25
-msgid "Vous avez choisi la formule Autonome. Un devis vous sera envoyé d\\"
-msgstr ""
+msgid "Vous avez choisi la formule Autonome. Un devis vous sera envoyé d'ici peu, après vérification de nos équipes."
+msgstr "You have chosen the Self-Guided package. A quote will be sent to you shortly after verification by our team."
 
 #: .\appmain\templates\email\success_registration_email.html:29
 msgid ""
-"Vous avez choisi la formule Chauffeur privée. La formule autonome vous est "
+"Vous avez choisi la formule Chauffeur privé. La formule autonome vous est "
 "offerte. Un devis vous sera envoyé par email après vérification de la "
-"disponibilité du chauffeur"
-msgstr ""
+"disponibilité du chauffeur."
+msgstr "You have chosen the Private Driver package. The Autonomous package is included for free. A quote will be sent to you by email after verifying the availability of the driver."
 
 #: .\appmain\templates\email\success_registration_email.html:33
 msgid ""
-"Vous avez choisi la formule Platinium. La formule autonome vous est offerte. "
-"Un conseiller vous contactera très bientôt pour s\\"
-msgstr ""
+"Vous avez choisi la formule Platinum. La formule autonome vous est offerte. "
+"Un conseiller vous contactera très bientôt pour s'entretenir avec vous sur les détails de votre voyage"
+msgstr "You have chosen the Platinum package. The self-guided package is offered to you for free. A consultant will contact you soon to discuss the details of your trip."
 
 #: .\appmain\templates\email\success_registration_email.html:37
 msgid ""
 "Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos "
 "attentes. Voici un récapitulatif des informations que vous nous avez "
 "fournies :"
-msgstr ""
+msgstr "We are doing everything we can to organize a trip that meets your expectations. Here is a summary of the information you provided:"
 
 #: .\appmain\templates\email\success_registration_email.html:40
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:26
 #: .\appmain\templates\pdf\invoice_pdf.html:80
 msgid "Vos coordonnées :"
-msgstr ""
+msgstr "Your contact details:"
 
 #: .\appmain\templates\email\success_registration_email.html:53
 msgid "Votre voyage :"
-msgstr ""
+msgstr "Your trip:"
 
 #: .\appmain\templates\email\success_registration_email.html:70
-msgid "Vos centres d\\"
-msgstr ""
+msgid "Vos centres d'intérêt :"
+msgstr "Interests:"
 
 #: .\appmain\templates\email\success_registration_email.html:78
 msgid ""
 "Nous vous enverrons sous peu vos identifiants et/ou vous contacterons pour "
 "présenter nos services et répondre à toutes vos questions. Si vous avez des "
 "précisions à apporter ou si vous souhaitez nous faire part de nouvelles "
-"idées, n\\"
-msgstr ""
+"idées, n'hésitez pas à répondre à cet email."
+msgstr "We will soon send you your credentials and/or contact you to introduce our services and answer all your questions. If you have any additional information to provide or new ideas to share, do not hesitate to answer this email."
 
 #: .\appmain\templates\email\success_registration_email.html:82
 msgid "Contactez-nous directement"
-msgstr ""
+msgstr "Contact us directly"
 
 #: .\appmain\templates\email\success_registration_email.html:86
 msgid "Merci encore pour votre confiance et à très bientôt"
-msgstr ""
+msgstr "Thank you again for your trust and see you soon"
 
 #: .\appmain\templates\email\success_registration_email.html:87
-msgid "L\\"
-msgstr ""
+msgid "L'équipe de '"
+msgstr "Team"
 
 #: .\appmain\templates\error.html:27
-msgid "Une erreur s\\"
-msgstr ""
+msgid "Une erreur s'est produite"
+msgstr "An error occurred\\"
 
 #: .\appmain\templates\error.html:34
 msgid "Alors, ca mort??"
-msgstr ""
+msgstr "So, any bites??"
 
 #: .\appmain\templates\error.html:40
 msgid "LeBonPlanTEXAS"
-msgstr ""
+msgstr "LeBonPlanTEXAS"
 
 #: .\appmain\templates\footer.html:67
 #: .\appmain\templates\lebonplantexas\index.html:54
 msgid "Nos services"
-msgstr ""
+msgstr "Our services"
 
 #: .\appmain\templates\footer.html:69
 msgid "Autonome: application mobile"
-msgstr ""
+msgstr "Autonomous: mobile app"
 
 #: .\appmain\templates\footer.html:70
 msgid "Chauffeur privé: Acompagnateur"
-msgstr ""
+msgstr "Private driver: Guide"
 
 #: .\appmain\templates\footer.html:71
 msgid "Platinum: planification sur mesure"
-msgstr ""
+msgstr "Platinum: tailored planning"
 
 #: .\appmain\templates\footer.html:75
 msgid "Outils de Développement"
-msgstr ""
+msgstr "Development tools"
 
 #: .\appmain\templates\footer.html:84
 msgid "Crédits"
-msgstr ""
+msgstr "Credits"
 
 #: .\appmain\templates\footer.html:93
 msgid "LeBonPlanTexas"
-msgstr ""
+msgstr "LeBonPlanTexas"
 
 #: .\appmain\templates\footer.html:93
 msgid "Tous droits réservés"
-msgstr ""
+msgstr "All rights reserved"
 
 #: .\appmain\templates\footer.html:94
-msgid "Conditions d\\"
-msgstr ""
+msgid "Conditions d'utilisation"
+msgstr "Terms of use"
 
 #: .\appmain\templates\footer.html:95
 msgid "Conditions de vente"
-msgstr ""
+msgstr "Terms of sale"
 
 #: .\appmain\templates\footer.html:96
 msgid "Politique de confidentialité"
-msgstr ""
+msgstr "Privacy Policy"
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:15
 msgid "Conditions Générales de vente"
-msgstr ""
+msgstr "Terms and conditions of sale"
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
-msgid "J\\"
-msgstr ""
+msgid "J'ai lu et j'accepte les '"
+msgstr "I have read and I accept the "
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
 msgid "conditions générales de vente."
-msgstr ""
+msgstr "terms and conditions of sale."
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:30
 msgid "Vous avez déjà accepté les conditions générales de vente."
-msgstr ""
+msgstr "You have already accepted the general terms of sale."
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:33
 msgid "VALIDER"
-msgstr ""
+msgstr "VALIDATE"
 
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:15
 msgid "Votre transaction a été annulée"
-msgstr ""
+msgstr "Your transaction has been cancelled"
 
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:18
-msgid "Vos accès à nos service ne sont plus disponible."
-msgstr ""
+msgid "Vos accès à nos services ne sont plus disponibles."
+msgstr "Your access to our services is no longer available."
 
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:19
 msgid ""
 "Nous sommes navré de cette situation et serions heureux de vous revoir "
 "bientôt."
-msgstr ""
+msgstr "We are sorry for this situation and would be happy to see you again soon."
 
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:20
 msgid "Numéro de facture annulée:"
-msgstr ""
+msgstr "Cancelled invoice number:"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:15
 msgid "Votre transaction a été accepté"
-msgstr ""
+msgstr "Your transaction has been accepted"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:18
 msgid "Merci de faire confiance à LeBonPlanTEXAS"
-msgstr ""
+msgstr "Thank you for trusting LeBonPlanTEXAS"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:19
 msgid "Votre réservation est confirmée. Nous vous contacterons sous peu."
-msgstr ""
+msgstr "Your booking is confirmed. We will contact you shortly."
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:20
 #: .\appmain\templates\pdf\invoice_pdf.html:72
 msgid "Facture"
-msgstr ""
+msgstr "Invoice"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:21
 #: .\appmain\templates\pdf\invoice_pdf.html:74
 msgid "Numéro de Facture :"
-msgstr ""
+msgstr "Invoice Number:"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:91
 msgid "TELECHARGER"
-msgstr ""
+msgstr "DOWNLOAD"
 
 #: .\appmain\templates\lebonplantexas\index.html:18
 msgid ""
 "Vos vacances intelligentes : planifiez, explorez et vivez des expériences "
 "inoubliables via un assitant mobile."
-msgstr ""
+msgstr "Your smart vacation: plan, explore, and enjoy unforgettable experiences with a mobile assistant."
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
-msgstr ""
+msgstr "Why travel with LeBonPlanTEXAS?"
 
 #: .\appmain\templates\lebonplantexas\index.html:23
 msgid "Pour seulement "
-msgstr ""
+msgstr "For only "
 
 #: .\appmain\templates\lebonplantexas\index.html:23
 msgid " euros par jour"
-msgstr ""
+msgstr " dollars per day"
 
 #: .\appmain\templates\lebonplantexas\index.html:29
 msgid "+ 500 activités"
-msgstr ""
+msgstr "+ 500 activities"
 
 #: .\appmain\templates\lebonplantexas\index.html:30
-msgid "Votre guide ultime : découvrez une mine d\\"
-msgstr ""
+msgid "Votre guide ultime : découvrez une mine d'idees touristiques incontournables autour de vous."
+msgstr "Your ultimate guide: discover a wealth of must-see tourist ideas around you."
 
 #: .\appmain\templates\lebonplantexas\index.html:37
 msgid "Parcours intelligent"
-msgstr ""
+msgstr "Smart itinerary"
 
 #: .\appmain\templates\lebonplantexas\index.html:38
 msgid ""
 "Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation "
 "des activités."
-msgstr ""
+msgstr "Plan smart: Create the best itinerary with activity geolocation."
 
 #: .\appmain\templates\lebonplantexas\index.html:45
 msgid "Copilote Offline"
-msgstr ""
+msgstr "Offline Co-Pilot"
 
 #: .\appmain\templates\lebonplantexas\index.html:46
 msgid ""
 "Votre copilote touristique : trajets, horaires et conseils, notre assitant "
 "vous guide en temps réel."
-msgstr ""
+msgstr "Your travel co-pilot: routes, schedules, and tips, our assistant guides you in real time."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
 msgid "Planification autonome sur application mobile"
-msgstr ""
+msgstr "Self-planning with a mobile app"
 
 #: .\appmain\templates\lebonplantexas\index.html:61
-msgid "Composez vous-même votre voyage, à partir d\\"
-msgstr ""
+msgid "Composez vous-même votre voyage, à partir d'une grande base de données incluant"
+msgstr "Create your own trip from a vast database including"
 
 #: .\appmain\templates\lebonplantexas\index.html:62
-msgid "histoire, culture, sorties, évènements annuels et bien d\\"
-msgstr ""
+msgid "histoire, culture, sorties, évènements annuels et bien d'autres..."
+msgstr "history, culture, outings, annual events, and much more..."
 
 #: .\appmain\templates\lebonplantexas\index.html:63
 msgid "Puis laissez notre application mobile vous guider"
-msgstr ""
+msgstr "Then let our mobile app guide you"
 
 #: .\appmain\templates\lebonplantexas\index.html:72
 msgid "Guide touriste bilingue et véhiculé à la journée"
-msgstr ""
+msgstr "Bilingual tourist guide with vehicle for the day (french clients)"
 
 #: .\appmain\templates\lebonplantexas\index.html:73
-msgid "Laissez moi être votre chauffeur personnel le temps d\\"
-msgstr ""
+msgid "Laissez moi être votre chauffeur personnel le temps d'une journée ou plus."
+msgstr "Let me be your personal driver for a day or more."
 
 #: .\appmain\templates\lebonplantexas\index.html:74
-msgid "Conseiller, compteur d\\"
-msgstr ""
+msgid "Conseiller, compteur d'histoire, traducteur, ambianceur ou tout bonnement invisible"
+msgstr "Advisor, storyteller, translator, entertainer, or simply invisible."
 
 #: .\appmain\templates\lebonplantexas\index.html:82
 #: .\appmain\templates\lebonplantexas\services.html:96
 msgid "Formule Platinum"
-msgstr ""
+msgstr "Platinum Package"
 
 #: .\appmain\templates\lebonplantexas\index.html:83
 msgid "Planifiez votre séjour avec un grand connaisseur du Texas."
-msgstr ""
+msgstr "Plan your stay with a Texas expert."
 
 #: .\appmain\templates\lebonplantexas\index.html:84
 msgid ""
 "Je vous suggérerai les meilleurs activités adaptées à vos besoins et ferai "
 "toutes recherches supplémentaires pour un voyage parfait."
-msgstr ""
+msgstr "I will suggest the best activities tailored to your needs and conduct any additional research for a perfect trip."
 
 #: .\appmain\templates\lebonplantexas\index.html:92
 msgid "Go big or go home!"
-msgstr ""
+msgstr "Go big or go home!"
 
 #: .\appmain\templates\lebonplantexas\index.html:97
 msgid "Les classiques du texas"
-msgstr ""
+msgstr "Texas Classics"
 
 #: .\appmain\templates\lebonplantexas\index.html:119
 #: .\appmain\templates\lebonplantexas\register_success.html:28
 msgid "Alligators"
-msgstr ""
+msgstr "Alligators"
 
 #: .\appmain\templates\lebonplantexas\index.html:120
 #: .\appmain\templates\lebonplantexas\register_success.html:30
 msgid "Coyotes"
-msgstr ""
+msgstr "Coyotes"
 
 #: .\appmain\templates\lebonplantexas\index.html:122
 #: .\appmain\templates\lebonplantexas\register_success.html:32
 msgid "Désert"
-msgstr ""
+msgstr "Desert"
 
 #: .\appmain\templates\lebonplantexas\index.html:123
 #: .\appmain\templates\lebonplantexas\register_success.html:33
 msgid "Forêt"
-msgstr ""
+msgstr "Forest"
 
 #: .\appmain\templates\lebonplantexas\index.html:124
 #: .\appmain\templates\lebonplantexas\register_success.html:34
 msgid "Golfe du Mexique"
-msgstr ""
+msgstr "Gulf of America"
 
 #: .\appmain\templates\lebonplantexas\index.html:125
 #: .\appmain\templates\lebonplantexas\register_success.html:35
 msgid "Viticulture"
-msgstr ""
+msgstr "Viticulture"
 
 #: .\appmain\templates\lebonplantexas\index.html:126
 #: .\appmain\templates\lebonplantexas\register_success.html:37
 msgid "Longhorns"
-msgstr ""
+msgstr "Longhorns"
 
 #: .\appmain\templates\lebonplantexas\index.html:127
 #: .\appmain\templates\lebonplantexas\register_success.html:38
 msgid "Honky Tonk"
-msgstr ""
+msgstr "Honky Tonk"
 
 #: .\appmain\templates\lebonplantexas\index.html:129
 #: .\appmain\templates\lebonplantexas\register_success.html:40
 msgid "Liberté"
-msgstr ""
+msgstr "Freedom"
 
 #: .\appmain\templates\lebonplantexas\index.html:130
 #: .\appmain\templates\lebonplantexas\register_success.html:41
 msgid "Barbecue"
-msgstr ""
+msgstr "Barbecue"
 
 #: .\appmain\templates\lebonplantexas\index.html:131
 #: .\appmain\templates\lebonplantexas\register_success.html:42
 msgid "Cowboys"
-msgstr ""
+msgstr "Cowboys"
 
 #: .\appmain\templates\lebonplantexas\index.html:132
 #: .\appmain\templates\lebonplantexas\register_success.html:43
 msgid "Rodéo"
-msgstr ""
+msgstr "Rodeo"
 
 #: .\appmain\templates\lebonplantexas\index.html:133
 #: .\appmain\templates\lebonplantexas\register_success.html:44
 msgid "Bisons"
-msgstr ""
+msgstr "Bisons"
 
 #: .\appmain\templates\lebonplantexas\index.html:134
 #: .\appmain\templates\lebonplantexas\register_success.html:45
 msgid "Prairie"
-msgstr ""
+msgstr "Meadow"
 
 #: .\appmain\templates\lebonplantexas\index.html:136
 #: .\appmain\templates\lebonplantexas\register_success.html:47
 msgid "Pétrole"
-msgstr ""
+msgstr "Oil"
 
 #: .\appmain\templates\lebonplantexas\index.html:138
 #: .\appmain\templates\lebonplantexas\register_success.html:49
 msgid "Chili"
-msgstr ""
+msgstr "Chil1"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:16
 msgid "Politique de Confidentialité"
-msgstr ""
+msgstr "Privacy Policy"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:17
 msgid "Dernière mise à jour : "
-msgstr ""
+msgstr "Last updated: "
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:20
 msgid "1. Informations que nous collectons"
-msgstr ""
+msgstr "1. Information We Collect"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:21
 msgid ""
 "Nous pouvons collecter les informations suivantes lorsque vous utilisez "
 "notre site ou nos services :"
-msgstr ""
+msgstr "We may collect the following information when you use our website or services:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:23
 msgid "Informations personnelles fournies directement par vous :"
-msgstr ""
+msgstr "Personal information provided directly by you:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:25
 msgid "Nom, prénom, adresse e-mail, numéro de téléphone."
-msgstr ""
+msgstr "Name, first name, email address, phone number."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:26
 msgid ""
 "Données fournies via des formulaires (ex. : devis gratuit, inscription)."
-msgstr ""
+msgstr "Data provided through forms (e.g.: free quote, registration)."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:29
 msgid "Données collectées automatiquement :"
-msgstr ""
+msgstr "Automatically collected data:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:31
 msgid "Adresse IP, type de navigateur, système d'exploitation."
-msgstr ""
+msgstr "IP address, browser type, operating system."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:32
 msgid "Données de navigation (pages visitées, temps passé sur le site, clics)."
-msgstr ""
+msgstr "Browsing data (pages visited, time spent on the site, clicks)."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:35
 msgid "Données issues de tiers :"
-msgstr ""
+msgstr "Data from third parties:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:36
 msgid ""
 "Si vous connectez vos comptes tiers (ex. : réseaux sociaux), nous pouvons "
 "recevoir certaines informations selon les permissions que vous accordez."
-msgstr ""
+msgstr "If you connect your third-party accounts (e.g.: social networks), we may receive certain information depending on the permissions you grant."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:40
 msgid "2. Utilisation des données collectées"
-msgstr ""
+msgstr "2. Use of Collected Data"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:41
 msgid "Vos données sont utilisées aux fins suivantes :"
-msgstr ""
+msgstr "Your data is used for the following purposes:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:43
 msgid "Fournir et personnaliser nos services."
-msgstr ""
+msgstr "Providing and personalizing our services."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:44
 msgid "Répondre à vos demandes (ex. : devis ou support client)."
-msgstr ""
+msgstr "Responding to your requests (e.g.: quotes or customer support)."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:45
 msgid "Améliorer l'expérience utilisateur et notre contenu."
-msgstr ""
+msgstr "Improving user experience and our content."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:46
 msgid ""
 "Envoyer des offres promotionnelles ou des newsletters (avec votre "
 "consentement)."
-msgstr ""
+msgstr "Sending promotional offers or newsletters (with your consent)."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:47
 msgid "Assurer la sécurité de notre site et prévenir les fraudes."
-msgstr ""
+msgstr "Ensuring the security of our website and preventing fraud."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:52
 msgid "3. Partage des données"
-msgstr ""
+msgstr "3. Data Sharing"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:53
 msgid "Nous ne partageons vos données qu'avec les parties suivantes :"
-msgstr ""
+msgstr "We only share your data with the following parties:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:55
 msgid ""
 "Prestataires tiers : pour l'hébergement, les paiements ou l'analyse web."
-msgstr ""
+msgstr "Third-party providers: for hosting, payments, or web analytics."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:56
 msgid "Autorités légales : en cas de demande ou pour respecter la loi."
-msgstr ""
+msgstr "Legal authorities: in case of request or to comply with the law."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:57
 msgid "Partenaires marketing : uniquement avec votre consentement explicite."
-msgstr ""
+msgstr "Marketing partners: only with your explicit consent."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:62
 msgid "4. Vos droits"
-msgstr ""
+msgstr "4. Your rights"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:63
 msgid ""
 "Conformément au RGPD et aux lois applicables, vous disposez des droits "
 "suivants :"
-msgstr ""
+msgstr "In accordance with the GDPR and applicable laws, you have the following rights:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:65
 msgid "Accès à vos données personnelles."
-msgstr ""
+msgstr "Access to your personal data."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:66
 msgid "Rectification ou suppression de vos données."
-msgstr ""
+msgstr "Correction or deletion of your data."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:67
 msgid "Retrait de votre consentement à tout moment."
-msgstr ""
+msgstr "Withdrawal of your consent at any time."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:68
 msgid "Portabilité des données dans un format structuré."
-msgstr ""
+msgstr "Data portability in a structured format."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:69
 msgid ""
 "Opposition à l'utilisation de vos données pour des finalités spécifiques."
-msgstr ""
+msgstr "Objection to the use of your data for specific purposes."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:71
 msgid "Pour exercer vos droits, contactez-nous à"
-msgstr ""
+msgstr "To exercise your rights, contact us at"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:75
 msgid "5. Sécurité des données"
-msgstr ""
+msgstr "5. Data security"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:76
 msgid ""
 "Nous mettons en œuvre des mesures de sécurité techniques et "
 "organisationnelles pour protéger vos données contre tout accès non autorisé, "
 "perte ou divulgation."
-msgstr ""
+msgstr "We implement technical and organizational security measures to protect your data from unauthorized access, loss, or disclosure."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:80
 msgid "6. Cookies et technologies similaires"
-msgstr ""
+msgstr "6. Cookies and similar technologies"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:81
 msgid "Notre site utilise des cookies pour :"
-msgstr ""
+msgstr "Our site uses cookies to:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:83
 msgid "Assurer son bon fonctionnement."
-msgstr ""
+msgstr "Ensure its proper functioning."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:84
 msgid "Analyser les comportements des utilisateurs et améliorer nos services."
-msgstr ""
+msgstr "Analyze user behavior and improve our services."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:85
 msgid "Offrir des contenus adaptés à vos préférences."
-msgstr ""
+msgstr "Offer content tailored to your preferences."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:87
 msgid ""
 "Vous pouvez gérer vos préférences de cookies via les paramètres de votre "
 "navigateur."
-msgstr ""
+msgstr "You can manage your cookie preferences through your browser settings."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:91
 msgid "7. Modifications de cette politique"
-msgstr ""
+msgstr "7. Changes to this policy"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:92
 msgid ""
 "Nous nous réservons le droit de mettre à jour cette Politique de "
 "Confidentialité. Toute modification sera affichée sur cette page avec la "
 "date de mise à jour."
-msgstr ""
+msgstr "We reserve the right to update this Privacy Policy. Any changes will be posted on this page with the update date."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:96
 msgid "8. Nous contacter"
-msgstr ""
+msgstr "8. Contact us"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:97
 msgid ""
 "Pour toute question concernant cette Politique de Confidentialité, veuillez "
 "nous contacter :"
-msgstr ""
+msgstr "For any questions regarding this Privacy Policy, please contact us:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:98
 msgid "Email : "
-msgstr ""
+msgstr "Email: "
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:99
 msgid "Adresse : "
-msgstr ""
+msgstr "Address: "
 
 #: .\appmain\templates\lebonplantexas\register_form.html:22
 msgid "Étape"
-msgstr ""
+msgstr "Step"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:36
 msgid "Annuler"
-msgstr ""
+msgstr "Cancel"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:44
 #: .\appmain\templates\lebonplantexas\register_form.html:46
@@ -1024,80 +1025,80 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\services.html:76
 #: .\appmain\templates\lebonplantexas\services.html:98
 msgid "Bientôt disponible"
-msgstr ""
+msgstr "Coming soon"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:63
 msgid "Accés à l\\"
-msgstr ""
+msgstr "Access to the planning app, the best activities in Texas, and the travel assistant."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:65
 msgid ""
 "Chauffeur et guide touristique pour une journée ou plus. Accès gratuit à la "
 "formule autonome."
-msgstr ""
+msgstr "Driver and tour guide for one or more days. Free access to the Autonomous Package."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:67
 msgid ""
 "Nous organisons votre voyage en fonction de vos besoins. Accès gratuit à la "
 "formule autonome."
-msgstr ""
+msgstr "We organize your trip according to your needs. Free access to the Autonomous Package."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:75
 msgid "Commencer"
-msgstr ""
+msgstr "Start"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:104
 #: .\appmain\templates\lebonplantexas\register_form.html:146
 msgid "SUIVANT"
-msgstr ""
+msgstr "NEXT"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:126
 msgid "Formule chauffeur privé:"
-msgstr ""
+msgstr "Personal Driver Package:"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:145
 msgid "AJOUTER UNE ETAPE"
-msgstr ""
+msgstr "ADD A STEP"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:164
 msgid "Vous avez un code promo ?"
-msgstr ""
+msgstr "Do you have a promo code?"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:169
 msgid "FINALISER"
-msgstr ""
+msgstr "FINALIZE"
 
 #: .\appmain\templates\lebonplantexas\register_success.html:23
 msgid "Félicitation"
-msgstr ""
+msgstr "Congratulations"
 
 #: .\appmain\templates\lebonplantexas\register_success.html:24
 msgid "Le Texas vous ouvre ses portes. Un email a été envoyé à cette adresse:"
-msgstr ""
+msgstr "Texas welcomes you! An email has been sent to this address:"
 
 #: .\appmain\templates\lebonplantexas\register_success.html:29
 msgid "Bon voyage"
-msgstr ""
+msgstr "Have a great trip"
 
 #: .\appmain\templates\lebonplantexas\register_success.html:36
 msgid "A très vite"
-msgstr ""
+msgstr "See you soon"
 
 #: .\appmain\templates\lebonplantexas\register_success.html:51
 msgid "Amusez-vous bien!"
-msgstr ""
+msgstr "Have fun!"
 
 #: .\appmain\templates\lebonplantexas\services.html:18
 msgid "Plus économique et flexible qu\\"
-msgstr ""
+msgstr "More affordable and flexible than a travel agency, you'll never travel without us again!"
 
 #: .\appmain\templates\lebonplantexas\services.html:20
 msgid "Tarification des services LeBonPlanTEXAS"
-msgstr ""
+msgstr "LeBonPlanTEXAS Service Pricing"
 
 #: .\appmain\templates\lebonplantexas\services.html:22
 msgid "Everthing\\"
-msgstr ""
+msgstr "Everthing's bigger in Texas"
 
 #: .\appmain\templates\lebonplantexas\services.html:31
 msgid "Formule Chauffeur Privé"
