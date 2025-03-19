@@ -36,7 +36,7 @@ categoryCards.forEach(card => {
 const navbarSelector = 'nav.navbar';
 const navbar = document.querySelector(navbarSelector);
 
-if (window.location.pathname !== '/register/' && window.location.pathname !== '/privacy_policy/') {
+if (!window.location.pathname.includes('/register/') && !window.location.pathname.includes('/privacy_policy/')) {
     
     function addStyles(selector) {
         const style = `
@@ -145,7 +145,7 @@ function toggleMenu() {
 // TEXAS CULTURE WORDS BANNER
 document.addEventListener('DOMContentLoaded', () => {
     
-    if (window.location.pathname === '/' || window.location.pathname.startsWith('/thanku/')) {
+    if (window.location.pathname === '/fr/' || window.location.pathname === '/en/' || window.location.pathname.includes('/thanku/')) {
 
         const words = document.querySelectorAll('.word');
         const banner = document.querySelector('.texas-banner');
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 // WHO_ARE_WE PAGE SCRIPT
-    if (window.location.pathname == '/contact/') {
+    if (window.location.pathname.includes("/contact/")) {
         function updateClocks() {
 
             const userLang = navigator.language || navigator.userLanguage;

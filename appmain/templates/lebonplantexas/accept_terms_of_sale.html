@@ -24,7 +24,7 @@
             {% if not invoice.terms_of_sale_accepted %}
             <label class="cgv-checkbox">
                 <input type="checkbox" name="accept_terms" required> 
-                {% translate 'J\'ai lu et j\'accepte les ' %}<a href="{% url 'terms_of_sale_pdf' %}"  target="_blank">{% translate 'conditions générales de vente.' %}</a> 
+                {% translate "J'ai lu et j'accepte les " %}<a href="{% url 'terms_of_sale_pdf' %}"  target="_blank">{% translate 'conditions générales de vente.' %}</a> 
             </label>
             {% else %}
             <p class="cgv-checkbox">{% translate 'Vous avez déjà accepté les conditions générales de vente.' %}</p>

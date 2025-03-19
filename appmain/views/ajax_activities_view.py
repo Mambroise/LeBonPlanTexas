@@ -11,6 +11,7 @@ import json
 
 from ..models import FileForImage, Attraction
 
+
 @csrf_exempt
 def get_activities(request):
     if request.method == 'POST':

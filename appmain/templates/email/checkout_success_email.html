@@ -20,8 +20,8 @@
             {% if not trip_invoice.customer.country == 'US' %}<small style="float: right;"><i>*Voyez grand ou restez chez vous !</i></small>{% endif %}
             <br>
             <p>{% translate 'Howdy' %} {{ trip_invoice.customer.first_name|capfirst }}!!</p>
-            <p>{% translate 'Merci d\'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage.' %}</p>
-            <p>{% translate 'Vos identidiants et mots de passe vous serons envoyez par email d\'ici peu.' %}</p>
+            <p>{% translate "Merci d'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage." %}</p>
+            <p>{% translate "Vos identidiants et mots de passe vous serons envoyez par email d'ici peu." %}</p>
             <br>
             <h3>{% translate 'FACTURE N°' %} {{ trip_invoice.invoice_number }}</h3>
             <p class="my-0">{% translate 'Date de paiement :' %} {{ trip_invoice.is_paid_date }}</p>
