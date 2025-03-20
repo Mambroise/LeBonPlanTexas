@@ -9,6 +9,7 @@
 from django.db import models
 
 class Price(models.Model):
+    code = models.IntegerField(null=True,blank=True)
     service_name = models.CharField(max_length=50,null=False,blank=False)
     price_excl_tax = models.FloatField()
     price_excl_tax2 = models.FloatField(null=True,blank=True)

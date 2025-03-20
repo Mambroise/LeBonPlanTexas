@@ -14,7 +14,7 @@ from django.utils.translation import gettext_lazy as _
 from ..forms.customer_form import CustomerForm
 from ..forms.trip_form import TripForm
 from ..models import Category,Price
-from ..services import TripService,DiscountService
+from ..services import TripService,DiscountService,PriceService
 from ..services import CustomerService, TexasTripService,InvoiceService,InterestService
 from ..forms.texas_trip_form import TexasTripForm
 from ..forms.discount_form import DiscountForm
@@ -23,7 +23,7 @@ from ..services.send_email import success_registration_email,send_payment_link
 
 def multi_step_form(request):
     step = request.session.get('step', 1) 
-    title = request.session.get('title', 'Choisir une formule') 
+    title = request.session.get('title', str(_('Choisir une formule'))) 
     package = request.session.get('texas_trip',{}).get('package')
     pckg_auto = None
     pckg_driver = None
@@ -32,22 +32,13 @@ def multi_step_form(request):
     if step == 1:
         form = TexasTripForm(request.POST or None)
         # preparing package availability context for html cards
-        prices = Price.objects.filter(is_active=True)
-        if prices:
-
-            for price in prices:
-                if price.service_name == 'autonome':
-                    pckg_auto = True
-                elif price.service_name == 'chauffeur privé':
-                    pckg_driver = True
-                elif price.service_name == 'platinum':
-                    pckg_plat = True
+        pckg_auto, pckg_driver, pckg_plat = PriceService.get_active_prices()
 
         if form.is_valid():
             try:
                 request.session['texas_trip'] = form.cleaned_data
                 request.session['step'] = 2
-                request.session['title'] = 'Entrez vos coordonnées'
+                request.session['title'] = str(_('Entrez vos coordonnées'))
                 return redirect('multi_step_form')
                 
             except Exception as e:
@@ -64,7 +55,7 @@ def multi_step_form(request):
         if form.is_valid():
             request.session['customer_data'] = form.cleaned_data
             request.session['step'] = 3
-            request.session['title'] = 'Détails du voyage'
+            request.session['title'] = str(_('Détails du voyage'))
             package = request.session.get('texas_trip')
             # messages.info(request,_('Divisez votre voyages en plusieurs étapes en fonction des villes où vous resterez!'))
             return redirect('multi_step_form')
@@ -94,7 +85,7 @@ def multi_step_form(request):
                 return redirect('multi_step_form') 
             elif "finish_trips" in request.POST:
                 request.session['step'] = 4
-                request.session['title'] = 'Vos intérêts'
+                request.session['title'] = str(_('Vos intérêts'))
                 return redirect('multi_step_form')
         else:
             for field, errors in form.errors.items():

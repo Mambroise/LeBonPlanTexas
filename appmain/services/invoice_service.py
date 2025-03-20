@@ -65,7 +65,7 @@ class InvoiceService:
                 total += nbr_days
             if total == 0:
                 total = 1
-            price = Price.objects.get(service_name='autonome')
+            price = Price.objects.get(code=100)
             invoice = Invoice(customer=customer,
                               texas_trip=texas_trip,
                               mobile_service=True,

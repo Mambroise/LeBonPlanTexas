@@ -28,7 +28,7 @@ def set_invoice_totals_and_number(sender, instance, created, **kwargs):
         platinum_total = (instance.nbr_days_platinum or 0) * (instance.platinum_price_excl_tax or 0) if instance.platinum_service else 0
 
         # Calcul des totaux
-        price = Price.objects.get(service_name='autonome')
+        price = Price.objects.get(code=100)
         total_excl_tax = mobile_total + driver_total + platinum_total
         tax_rate = float(price.main_tax_info.strip('%')) / 100  # Convertir le taux TVA en décimal
         instance.total_excl_tax = total_excl_tax

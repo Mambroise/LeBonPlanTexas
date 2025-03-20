@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-17 15:56+0100\n"
+"POT-Creation-Date: 2025-03-20 00:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: .\appmain\forms\trip_form.py:39
 msgid ""
 "Information utile: dates de demande de chauffeur, adresse complète de "
 "l'hotel..."
-msgstr ""
-"Useful information: requested driver dates, full hotel address..."
+msgstr "Useful information: requested driver dates, full hotel address..."
 
 #: .\appmain\forms\trip_form.py:55
 msgid "La date de début ne peut pas être antérieure à aujourd'hui."
@@ -174,6 +174,11 @@ msgstr "SIGN UP"
 msgid "SERVICES"
 msgstr "SERVICES"
 
+#: .\appmain\templates\base.html:54
+#: .\appmain\templates\base_fixed.html:51
+msgid "Contactez-nous"
+msgstr "Contact us"
+
 #: .\appmain\templates\base_checkout.html:16
 #: .\appmain\templates\base_email.html:16 .\appmain\templates\error.html:17
 msgid "Validation des CGV"
@@ -197,8 +202,10 @@ msgid "Merci d'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage."
 msgstr "Thank you for choosing LeBonPlanTEXAS to accompany your journey."
 
 #: .\appmain\templates\email\checkout_success_email.html:24
-msgid "Vos identifiants et mots de passe vous seront envoyés par email d'ici peu."
-msgstr "Your login credentials and passwords will be sent to you by email shortly."
+msgid ""
+"Vos identifiant et mot de passe vous seront envoyés par email d'ici peu."
+msgstr ""
+"Your login credentials and passwords will be sent to you by email shortly."
 
 #: .\appmain\templates\email\checkout_success_email.html:26
 msgid "FACTURE N°"
@@ -323,8 +330,11 @@ msgid "Bonjour"
 msgstr "Howdy"
 
 #: .\appmain\templates\email\estimate_validation_email.html:19
-msgid "Un devis vient d'être créer et nécessite vérification et envoi vers le client."
-msgstr "A quote has just been created and requires verification before being sent to the client."
+msgid ""
+"Un devis vient d'être créer et nécessite vérification et envoi vers le client"
+msgstr ""
+"A quote has just been created and requires verification before being sent to "
+"the client."
 
 #: .\appmain\templates\email\estimate_validation_email.html:23
 msgid "Ses coordonnées :"
@@ -432,12 +442,15 @@ msgstr "Date:"
 msgid ""
 "Pour valider votre voyage, merci de cliquer sur le lien suivant et régler le "
 "montant du devis."
-msgstr "To confirm your trip, please click on the following link and pay the quoted amount."
+msgstr ""
+"To confirm your trip, please click on the following link and pay the quoted "
+"amount."
 
 #: .\appmain\templates\email\payment_link_email.html:92
 msgid ""
 "Ce lien de paiement restera actif 48h. Contactez-nous pour le renouveler."
-msgstr "This payment link will remain active for 48 hours. Contact us to renew it."
+msgstr ""
+"This payment link will remain active for 48 hours. Contact us to renew it."
 
 #: .\appmain\templates\email\payment_link_email.html:96
 msgid "Nous espérons vous voir bientôt!"
@@ -447,31 +460,46 @@ msgstr "We hope to see you soon!"
 msgid ""
 "Nous avons bien reçu votre demande de renseignements et devis pour votre "
 "prochain voyage au Texas. Merci de votre intérêt pour"
-msgstr "We have received your request for information and a quote for your upcoming trip to Texas. Thank you for your interest in"
+msgstr ""
+"We have received your request for information and a quote for your upcoming "
+"trip to Texas. Thank you for your interest in"
 
 #: .\appmain\templates\email\success_registration_email.html:25
-msgid "Vous avez choisi la formule Autonome. Un devis vous sera envoyé d'ici peu, après vérification de nos équipes."
-msgstr "You have chosen the Self-Guided package. A quote will be sent to you shortly after verification by our team."
+msgid ""
+"Vous avez choisi la formule Autonome. Un devis vous sera envoyé d'ici peu, "
+"après vérification de nos équipes."
+msgstr ""
+"You have chosen the Self-Guided package. A quote will be sent to you shortly "
+"after verification by our team."
 
 #: .\appmain\templates\email\success_registration_email.html:29
 msgid ""
 "Vous avez choisi la formule Chauffeur privé. La formule autonome vous est "
 "offerte. Un devis vous sera envoyé par email après vérification de la "
-"disponibilité du chauffeur."
-msgstr "You have chosen the Private Driver package. The Autonomous package is included for free. A quote will be sent to you by email after verifying the availability of the driver."
+"disponibilité du chauffeur"
+msgstr ""
+"You have chosen the Private Driver package. The Autonomous package is "
+"included for free. A quote will be sent to you by email after verifying the "
+"availability of the driver."
 
 #: .\appmain\templates\email\success_registration_email.html:33
 msgid ""
-"Vous avez choisi la formule Platinum. La formule autonome vous est offerte. "
-"Un conseiller vous contactera très bientôt pour s'entretenir avec vous sur les détails de votre voyage"
-msgstr "You have chosen the Platinum package. The self-guided package is offered to you for free. A consultant will contact you soon to discuss the details of your trip."
+"Vous avez choisi la formule Platinium. La formule autonome vous est offerte. "
+"Un conseiller vous contactera très bientôt pour s'entretenir avec vous sur "
+"les détails de votre voyage."
+msgstr ""
+"You have chosen the Platinum package. The self-guided package is offered to "
+"you for free. A consultant will contact you soon to discuss the details of "
+"your trip."
 
 #: .\appmain\templates\email\success_registration_email.html:37
 msgid ""
 "Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos "
 "attentes. Voici un récapitulatif des informations que vous nous avez "
 "fournies :"
-msgstr "We are doing everything we can to organize a trip that meets your expectations. Here is a summary of the information you provided:"
+msgstr ""
+"We are doing everything we can to organize a trip that meets your "
+"expectations. Here is a summary of the information you provided:"
 
 #: .\appmain\templates\email\success_registration_email.html:40
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:26
@@ -484,7 +512,7 @@ msgid "Votre voyage :"
 msgstr "Your trip:"
 
 #: .\appmain\templates\email\success_registration_email.html:70
-msgid "Vos centres d'intérêt :"
+msgid "Vos centres d\\"
 msgstr "Interests:"
 
 #: .\appmain\templates\email\success_registration_email.html:78
@@ -492,8 +520,12 @@ msgid ""
 "Nous vous enverrons sous peu vos identifiants et/ou vous contacterons pour "
 "présenter nos services et répondre à toutes vos questions. Si vous avez des "
 "précisions à apporter ou si vous souhaitez nous faire part de nouvelles "
-"idées, n'hésitez pas à répondre à cet email."
-msgstr "We will soon send you your credentials and/or contact you to introduce our services and answer all your questions. If you have any additional information to provide or new ideas to share, do not hesitate to answer this email."
+"idées, n'hésitez pas à répondre à cet e-mail."
+msgstr ""
+"We will soon send you your credentials and/or contact you to introduce our "
+"services and answer all your questions. If you have any additional "
+"information to provide or new ideas to share, do not hesitate to answer this "
+"email."
 
 #: .\appmain\templates\email\success_registration_email.html:82
 msgid "Contactez-nous directement"
@@ -504,7 +536,7 @@ msgid "Merci encore pour votre confiance et à très bientôt"
 msgstr "Thank you again for your trust and see you soon"
 
 #: .\appmain\templates\email\success_registration_email.html:87
-msgid "L'équipe de '"
+msgid "L'équipe de"
 msgstr "Team"
 
 #: .\appmain\templates\error.html:27
@@ -569,7 +601,7 @@ msgid "Conditions Générales de vente"
 msgstr "Terms and conditions of sale"
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
-msgid "J'ai lu et j'accepte les '"
+msgid "J'ai lu et j'accepte les "
 msgstr "I have read and I accept the "
 
 #: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
@@ -596,7 +628,8 @@ msgstr "Your access to our services is no longer available."
 msgid ""
 "Nous sommes navré de cette situation et serions heureux de vous revoir "
 "bientôt."
-msgstr "We are sorry for this situation and would be happy to see you again soon."
+msgstr ""
+"We are sorry for this situation and would be happy to see you again soon."
 
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:20
 msgid "Numéro de facture annulée:"
@@ -632,7 +665,9 @@ msgstr "DOWNLOAD"
 msgid ""
 "Vos vacances intelligentes : planifiez, explorez et vivez des expériences "
 "inoubliables via un assitant mobile."
-msgstr "Your smart vacation: plan, explore, and enjoy unforgettable experiences with a mobile assistant."
+msgstr ""
+"Your smart vacation: plan, explore, and enjoy unforgettable experiences with "
+"a mobile assistant."
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
@@ -651,8 +686,11 @@ msgid "+ 500 activités"
 msgstr "+ 500 activities"
 
 #: .\appmain\templates\lebonplantexas\index.html:30
-msgid "Votre guide ultime : découvrez une mine d'idees touristiques incontournables autour de vous."
-msgstr "Your ultimate guide: discover a wealth of must-see tourist ideas around you."
+msgid ""
+"Votre guide ultime : découvrez une mine d'idees touristiques incontournables "
+"autour de vous."
+msgstr ""
+"Your ultimate guide: discover a wealth of must-see tourist ideas around you."
 
 #: .\appmain\templates\lebonplantexas\index.html:37
 msgid "Parcours intelligent"
@@ -672,14 +710,18 @@ msgstr "Offline Co-Pilot"
 msgid ""
 "Votre copilote touristique : trajets, horaires et conseils, notre assitant "
 "vous guide en temps réel."
-msgstr "Your travel co-pilot: routes, schedules, and tips, our assistant guides you in real time."
+msgstr ""
+"Your travel co-pilot: routes, schedules, and tips, our assistant guides you "
+"in real time."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
 msgid "Planification autonome sur application mobile"
 msgstr "Self-planning with a mobile app"
 
 #: .\appmain\templates\lebonplantexas\index.html:61
-msgid "Composez vous-même votre voyage, à partir d'une grande base de données incluant"
+msgid ""
+"Composez vous-même votre voyage, à partir d'une grande base de données "
+"incluant"
 msgstr "Create your own trip from a vast database including"
 
 #: .\appmain\templates\lebonplantexas\index.html:62
@@ -695,11 +737,14 @@ msgid "Guide touriste bilingue et véhiculé à la journée"
 msgstr "Bilingual tourist guide with vehicle for the day (french clients)"
 
 #: .\appmain\templates\lebonplantexas\index.html:73
-msgid "Laissez moi être votre chauffeur personnel le temps d'une journée ou plus."
+msgid ""
+"Laissez moi être votre chauffeur personnel le temps d'une journée ou plus."
 msgstr "Let me be your personal driver for a day or more."
 
 #: .\appmain\templates\lebonplantexas\index.html:74
-msgid "Conseiller, compteur d'histoire, traducteur, ambianceur ou tout bonnement invisible"
+msgid ""
+"Conseiller, compteur d'histoire, traducteur, ambianceur ou tout bonnement "
+"invisible"
 msgstr "Advisor, storyteller, translator, entertainer, or simply invisible."
 
 #: .\appmain\templates\lebonplantexas\index.html:82
@@ -715,7 +760,9 @@ msgstr "Plan your stay with a Texas expert."
 msgid ""
 "Je vous suggérerai les meilleurs activités adaptées à vos besoins et ferai "
 "toutes recherches supplémentaires pour un voyage parfait."
-msgstr "I will suggest the best activities tailored to your needs and conduct any additional research for a perfect trip."
+msgstr ""
+"I will suggest the best activities tailored to your needs and conduct any "
+"additional research for a perfect trip."
 
 #: .\appmain\templates\lebonplantexas\index.html:92
 msgid "Go big or go home!"
@@ -821,7 +868,9 @@ msgstr "1. Information We Collect"
 msgid ""
 "Nous pouvons collecter les informations suivantes lorsque vous utilisez "
 "notre site ou nos services :"
-msgstr "We may collect the following information when you use our website or services:"
+msgstr ""
+"We may collect the following information when you use our website or "
+"services:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:23
 msgid "Informations personnelles fournies directement par vous :"
@@ -856,7 +905,9 @@ msgstr "Data from third parties:"
 msgid ""
 "Si vous connectez vos comptes tiers (ex. : réseaux sociaux), nous pouvons "
 "recevoir certaines informations selon les permissions que vous accordez."
-msgstr "If you connect your third-party accounts (e.g.: social networks), we may receive certain information depending on the permissions you grant."
+msgstr ""
+"If you connect your third-party accounts (e.g.: social networks), we may "
+"receive certain information depending on the permissions you grant."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:40
 msgid "2. Utilisation des données collectées"
@@ -917,7 +968,9 @@ msgstr "4. Your rights"
 msgid ""
 "Conformément au RGPD et aux lois applicables, vous disposez des droits "
 "suivants :"
-msgstr "In accordance with the GDPR and applicable laws, you have the following rights:"
+msgstr ""
+"In accordance with the GDPR and applicable laws, you have the following "
+"rights:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:65
 msgid "Accès à vos données personnelles."
@@ -953,7 +1006,9 @@ msgid ""
 "Nous mettons en œuvre des mesures de sécurité techniques et "
 "organisationnelles pour protéger vos données contre tout accès non autorisé, "
 "perte ou divulgation."
-msgstr "We implement technical and organizational security measures to protect your data from unauthorized access, loss, or disclosure."
+msgstr ""
+"We implement technical and organizational security measures to protect your "
+"data from unauthorized access, loss, or disclosure."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:80
 msgid "6. Cookies et technologies similaires"
@@ -990,7 +1045,9 @@ msgid ""
 "Nous nous réservons le droit de mettre à jour cette Politique de "
 "Confidentialité. Toute modification sera affichée sur cette page avec la "
 "date de mise à jour."
-msgstr "We reserve the right to update this Privacy Policy. Any changes will be posted on this page with the update date."
+msgstr ""
+"We reserve the right to update this Privacy Policy. Any changes will be "
+"posted on this page with the update date."
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:96
 msgid "8. Nous contacter"
@@ -1029,19 +1086,25 @@ msgstr "Coming soon"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:63
 msgid "Accés à l\\"
-msgstr "Access to the planning app, the best activities in Texas, and the travel assistant."
+msgstr ""
+"Access to the planning app, the best activities in Texas, and the travel "
+"assistant."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:65
 msgid ""
 "Chauffeur et guide touristique pour une journée ou plus. Accès gratuit à la "
 "formule autonome."
-msgstr "Driver and tour guide for one or more days. Free access to the Autonomous Package."
+msgstr ""
+"Driver and tour guide for one or more days. Free access to the Autonomous "
+"Package."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:67
 msgid ""
 "Nous organisons votre voyage en fonction de vos besoins. Accès gratuit à la "
 "formule autonome."
-msgstr "We organize your trip according to your needs. Free access to the Autonomous Package."
+msgstr ""
+"We organize your trip according to your needs. Free access to the Autonomous "
+"Package."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:75
 msgid "Commencer"
@@ -1090,7 +1153,9 @@ msgstr "Have fun!"
 
 #: .\appmain\templates\lebonplantexas\services.html:18
 msgid "Plus économique et flexible qu\\"
-msgstr "More affordable and flexible than a travel agency, you'll never travel without us again!"
+msgstr ""
+"More affordable and flexible than a travel agency, you'll never travel "
+"without us again!"
 
 #: .\appmain\templates\lebonplantexas\services.html:20
 msgid "Tarification des services LeBonPlanTEXAS"
@@ -1118,7 +1183,9 @@ msgstr "Linguistic assistance to facilitate activities.(french client)"
 
 #: .\appmain\templates\lebonplantexas\services.html:41
 msgid "Le chauffeur n\\"
-msgstr "The driver does not accompany travelers except at their request and with their approval."
+msgstr ""
+"The driver does not accompany travelers except at their request and with "
+"their approval."
 
 #: .\appmain\templates\lebonplantexas\services.html:42
 #: .\appmain\templates\lebonplantexas\services.html:106
@@ -1228,9 +1295,9 @@ msgid ""
 "incomparable, liberté (la vraie) : voici tout le bonheur que j'ai ressenti "
 "en visitant cet État incroyable."
 msgstr ""
-"Safety, human warmth, great diversity, joy of living, an incomparable quality "
-"of life, and true freedom—this is all the happiness I felt when visiting this "
-"incredible state."
+"Safety, human warmth, great diversity, joy of living, an incomparable "
+"quality of life, and true freedom—this is all the happiness I felt when "
+"visiting this incredible state."
 
 #: .\appmain\templates\lebonplantexas\who_are_we.html:56
 msgid ""
@@ -1240,10 +1307,11 @@ msgid ""
 "réfréner mon besoin de faire découvrir à mes compatriotes un style de vie "
 "inoubliable, empreint d'une liberté que nous avons perdue."
 msgstr ""
-"Here, big cities have the warmth and hospitality of small villages, and nature "
-"is rich with wildlife. After retraining in IT and making several trips to the "
-"Lone Star State, I couldn't resist the urge to share with my fellow countrymen "
-"an unforgettable way of life, filled with a freedom we have lost."
+"Here, big cities have the warmth and hospitality of small villages, and "
+"nature is rich with wildlife. After retraining in IT and making several "
+"trips to the Lone Star State, I couldn't resist the urge to share with my "
+"fellow countrymen an unforgettable way of life, filled with a freedom we "
+"have lost."
 
 #: .\appmain\views\checkout_suc_can.py:25
 msgid "Session ID manquant."
@@ -1263,35 +1331,51 @@ msgstr "The 'invoice_id' attribute is missing from the request."
 msgid "Erreur : %s"
 msgstr "Error: %s"
 
-#: .\appmain\views\register_view.py:55
+#: .\appmain\views\register_view.py:26
+msgid "Choisir une formule"
+msgstr "Choose a package"
+
+#: .\appmain\views\register_view.py:41
+msgid "Entrez vos coordonnées"
+msgstr "Contact details:"
+
+#: .\appmain\views\register_view.py:46
 msgid "A problem occured. Please try again or contact us"
 msgstr "A problem occurred. Please try again or contact us."
 
-#: .\appmain\views\register_view.py:93
+#: .\appmain\views\register_view.py:58
+msgid "Détails du voyage"
+msgstr "Trip Details"
+
+#: .\appmain\views\register_view.py:84
 msgid "L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."
 msgstr "The travel step has been added. You can add another one."
 
-#: .\appmain\views\register_view.py:119
+#: .\appmain\views\register_view.py:88
+msgid "Vos intérêts"
+msgstr "Interests:"
+
+#: .\appmain\views\register_view.py:110
 msgid "Une erreur s'est produite lors de l'enregistrement des coordonnées."
 msgstr "An error occurred while saving the contact details."
 
-#: .\appmain\views\register_view.py:127
+#: .\appmain\views\register_view.py:118
 msgid "Une erreur s'est produite lors de l'enregistrement de la formule."
 msgstr "An error occurred while saving the package."
 
-#: .\appmain\views\register_view.py:136
+#: .\appmain\views\register_view.py:127
 msgid "Une erreur s'est produite lors de l'enregistrement du voyage."
 msgstr "An error occurred while saving the trip."
 
-#: .\appmain\views\register_view.py:148
+#: .\appmain\views\register_view.py:139
 msgid "Les catégories sélectionnées sont invalides."
 msgstr "The selected categories are invalid."
 
-#: .\appmain\views\register_view.py:153
+#: .\appmain\views\register_view.py:144
 msgid "Une erreur s'est produite lors de l'enregistrement des catégories."
 msgstr "An error occurred while saving the categories."
 
-#: .\appmain\views\register_view.py:206
+#: .\appmain\views\register_view.py:197
 msgid "L'enregistrement a été abandonné"
 msgstr "The registration has been abandoned."
 
