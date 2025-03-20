@@ -48,14 +48,14 @@
             <div class="contact-box-fixed">
                 <div class="contact-container-fixed">
                     <div class="contact-link-fixed">
-                        <a href="{% url 'contact' %}"><i class="fas fa-phone-alt"></i> Contactez-nous
+                        <a href="{% url 'contact' %}"><i class="fas fa-phone-alt"></i> {% translate 'Contactez-nous' %}
                         </a>
                     </div>
                     <div class="flag-box-fixed">
-                        <a href="#">
+                        <a href="/fr/{{ request.path|slice:'4:' }}">
                             <img src="{% static 'images/icons/french_flag.png' %}" alt="french flag" class="flag-img-fixed">
                         </a>
-                        <a href="#">
+                        <a href="/en/{{ request.path|slice:'4:' }}">
                             <img src="{% static 'images/icons/us_flag.png' %}" alt="us flag" class="flag-img-us-fixed">
                         </a>
                     </div>
