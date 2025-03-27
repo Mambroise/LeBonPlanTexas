@@ -150,6 +150,7 @@ USE_TZ = True
 LANGUAGES = (
     ('fr', 'French'),
     ('en', 'English'),
+    ('es-mx', 'Spanish (Mexican)'),
 )
 
 LOCALE_PATHS = [
@@ -160,7 +161,7 @@ LOCALE_PATHS = [
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
 
 # Langues disponibles pour la traduction
-MODELTRANSLATION_LANGUAGES = ('fr', 'en')
+MODELTRANSLATION_LANGUAGES = ('fr', 'en', 'es-mx')
 
 
 # Static files (CSS, JavaScript, Images)
