@@ -1,0 +1,1346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-27 23:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\appmain\forms\trip_form.py:39
+msgid ""
+"Information utile: dates de demande de chauffeur, adresse complète de "
+"l'hotel..."
+msgstr ""
+
+#: .\appmain\forms\trip_form.py:55
+msgid "La date de début ne peut pas être antérieure à aujourd'hui."
+msgstr ""
+
+#: .\appmain\forms\trip_form.py:59 .\appmain\models\trip.py:43
+msgid "La date de fin doit être postérieure à la date de début."
+msgstr ""
+
+#: .\appmain\models\category.py:13
+msgid "Catégories"
+msgstr ""
+
+#: .\appmain\models\customer.py:18
+msgid "Prénom"
+msgstr ""
+
+#: .\appmain\models\customer.py:19
+msgid "Nom"
+msgstr ""
+
+#: .\appmain\models\customer.py:20
+msgid "Email"
+msgstr ""
+
+#: .\appmain\models\customer.py:21
+msgid "Portable"
+msgstr ""
+
+#: .\appmain\models\customer.py:22
+msgid "Adresse"
+msgstr ""
+
+#: .\appmain\models\customer.py:23
+msgid "Pays"
+msgstr ""
+
+#: .\appmain\models\customer.py:32
+msgid "Catégories sélectionnées"
+msgstr ""
+
+#: .\appmain\models\customer.py:49
+msgid "Le numéro de téléphone doit comporter entre 8 et 12 chiffres."
+msgstr ""
+
+#: .\appmain\models\customer.py:53
+msgid ""
+"Le numéro de téléphone doit comporter uniquement des chiffres après "
+"nettoyage."
+msgstr ""
+
+#: .\appmain\models\customer.py:59
+msgid "Veuillez sélectionner un pays."
+msgstr ""
+
+#: .\appmain\models\service_package.py:13
+msgid "autonome"
+msgstr ""
+
+#: .\appmain\models\service_package.py:14
+msgid "chauffeur privé"
+msgstr ""
+
+#: .\appmain\models\service_package.py:15
+msgid "platinum"
+msgstr ""
+
+#: .\appmain\models\trip.py:28
+msgid "Début:"
+msgstr ""
+
+#: .\appmain\models\trip.py:29
+msgid "Fin:"
+msgstr ""
+
+#: .\appmain\models\trip.py:30
+msgid "Villes"
+msgstr ""
+
+#: .\appmain\models\trip.py:31
+msgid "Commentaire:"
+msgstr ""
+
+#: .\appmain\models\trip.py:32
+msgid "Nombre de jour de service"
+msgstr ""
+
+#: .\appmain\services\discount_service.py:20
+msgid "Le code promo n'existe pas"
+msgstr ""
+
+#: .\appmain\services\discount_service.py:22
+msgid "La promotion a expiré"
+msgstr ""
+
+#: .\appmain\services\discount_service.py:24
+msgid "ok"
+msgstr ""
+
+#: .\appmain\services\invoice_service.py:36
+msgid "Le token est introuvable."
+msgstr ""
+
+#: .\appmain\services\invoice_service.py:47
+msgid "La facture est introuvable"
+msgstr ""
+
+#: .\appmain\services\invoice_service.py:52
+msgid "Validité du token expirée."
+msgstr ""
+
+#: .\appmain\services\invoice_service.py:57
+#, python-format
+msgid "Une erreur s'est produite lors de la vérification du token: %s."
+msgstr ""
+
+#: .\appmain\services\send_email.py:22
+msgid "LeBonPlanTexas : DEVIS pour votre voyage!"
+msgstr ""
+
+#: .\appmain\services\send_email.py:62
+msgid "LeBonPlanTEXAS : On se parle bientôt!!"
+msgstr ""
+
+#: .\appmain\services\send_email.py:99
+msgid "LeBonPlanTexas : Votre paiement est confirmé!"
+msgstr ""
+
+#: .\appmain\services\send_email.py:113
+msgid "Your email client does not support HTML content"
+msgstr ""
+
+#: .\appmain\services\send_email.py:152
+msgid "LeBonPlanTEXAS : validation de devis"
+msgstr ""
+
+#: .\appmain\templates\base.html:37 .\appmain\templates\base_fixed.html:34
+msgid "LeBonPlan"
+msgstr ""
+
+#: .\appmain\templates\base.html:38 .\appmain\templates\base_fixed.html:35
+msgid "TEXAS"
+msgstr ""
+
+#: .\appmain\templates\base.html:44 .\appmain\templates\base_fixed.html:41
+msgid "INSCRIPTION"
+msgstr ""
+
+#: .\appmain\templates\base.html:47 .\appmain\templates\base_fixed.html:44
+msgid "SERVICES"
+msgstr ""
+
+#: .\appmain\templates\base.html:54 .\appmain\templates\base_fixed.html:51
+msgid "Contactez-nous"
+msgstr ""
+
+#: .\appmain\templates\base_checkout.html:16 .\appmain\templates\error.html:17
+msgid "Validation des CGV"
+msgstr ""
+
+#: .\appmain\templates\base_email.html:16
+msgid "LeBonPlanTEXAS Email"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:15
+msgid "Votre transaction a été acceptée !"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:19
+msgid "GO BIG OR GO HOME!"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:22
+#: .\appmain\templates\email\payment_link_email.html:19
+msgid "Howdy"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:23
+msgid "Merci d'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage."
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:24
+msgid ""
+"Vos identidiant et mot de passe vous seront envoyés par email d'ici peu."
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:26
+msgid "FACTURE N°"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:27
+#: .\appmain\templates\lebonplantexas\checkout_success.html:22
+#: .\appmain\templates\pdf\invoice_pdf.html:75
+msgid "Date de paiement :"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:29
+#: .\appmain\templates\email\payment_link_email.html:25
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:23
+#: .\appmain\templates\lebonplantexas\checkout_success.html:24
+#: .\appmain\templates\pdf\invoice_pdf.html:77
+msgid "SIREN :"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:32
+#: .\appmain\templates\email\payment_link_email.html:28
+#: .\appmain\templates\lebonplantexas\checkout_success.html:27
+msgid "👤 Vos coordonnées :"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:43
+#: .\appmain\templates\email\estimate_validation_email.html:68
+#: .\appmain\templates\email\payment_link_email.html:39
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:37
+#: .\appmain\templates\lebonplantexas\checkout_success.html:38
+#: .\appmain\templates\pdf\invoice_pdf.html:92
+msgid "Service"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:44
+#: .\appmain\templates\email\estimate_validation_email.html:69
+#: .\appmain\templates\email\payment_link_email.html:40
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:38
+#: .\appmain\templates\lebonplantexas\checkout_success.html:39
+#: .\appmain\templates\pdf\invoice_pdf.html:93
+msgid "Choix"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:45
+#: .\appmain\templates\email\estimate_validation_email.html:70
+#: .\appmain\templates\email\payment_link_email.html:41
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:39
+#: .\appmain\templates\lebonplantexas\checkout_success.html:40
+#: .\appmain\templates\pdf\invoice_pdf.html:94
+msgid "Nombre de jours"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:46
+#: .\appmain\templates\email\estimate_validation_email.html:71
+#: .\appmain\templates\email\payment_link_email.html:42
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:40
+#: .\appmain\templates\lebonplantexas\checkout_success.html:41
+#: .\appmain\templates\pdf\invoice_pdf.html:95
+msgid "Prix/jour hors taxe(€)"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:51
+#: .\appmain\templates\email\estimate_validation_email.html:76
+#: .\appmain\templates\email\payment_link_email.html:47
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:45
+#: .\appmain\templates\lebonplantexas\checkout_success.html:46
+#: .\appmain\templates\pdf\invoice_pdf.html:100
+msgid "Autonome"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:57
+#: .\appmain\templates\email\estimate_validation_email.html:82
+#: .\appmain\templates\email\payment_link_email.html:53
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:51
+#: .\appmain\templates\lebonplantexas\checkout_success.html:52
+#: .\appmain\templates\pdf\invoice_pdf.html:106
+msgid "Chauffeur privé"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:63
+#: .\appmain\templates\email\estimate_validation_email.html:88
+#: .\appmain\templates\email\payment_link_email.html:59
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:57
+#: .\appmain\templates\lebonplantexas\checkout_success.html:58
+#: .\appmain\templates\pdf\invoice_pdf.html:112
+msgid "Platinum"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:69
+#: .\appmain\templates\email\estimate_validation_email.html:94
+#: .\appmain\templates\email\payment_link_email.html:65
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:63
+#: .\appmain\templates\lebonplantexas\checkout_success.html:64
+#: .\appmain\templates\pdf\invoice_pdf.html:118
+msgid "Total TTC"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:70
+#: .\appmain\templates\email\estimate_validation_email.html:95
+#: .\appmain\templates\email\payment_link_email.html:66
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:64
+#: .\appmain\templates\lebonplantexas\checkout_success.html:65
+#: .\appmain\templates\pdf\invoice_pdf.html:119
+msgid "dont taxe :"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:74
+msgid "Type de paiement :"
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:76
+msgid "Ici pour voir votre facture en pdf téléchargeable."
+msgstr ""
+
+#: .\appmain\templates\email\checkout_success_email.html:78
+msgid "Nous reviendrons au plus vite vers vous!"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:16
+#: .\appmain\templates\email\success_registration_email.html:16
+msgid "Bonjour"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:19
+msgid ""
+"Un devis vient d'être créer et nécessite vérification et envoi vers le client"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:23
+msgid "Ses coordonnées :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:25
+#: .\appmain\templates\email\success_registration_email.html:42
+msgid "Prénom :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:26
+#: .\appmain\templates\email\success_registration_email.html:43
+msgid "Nom :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:30
+#: .\appmain\templates\email\success_registration_email.html:47
+msgid "Email :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:32
+#: .\appmain\templates\email\success_registration_email.html:49
+msgid "Téléphone :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:36
+msgid "Son voyage :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:39
+#: .\appmain\templates\email\success_registration_email.html:56
+msgid "Dates :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:39
+#: .\appmain\templates\email\success_registration_email.html:56
+msgid "du"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:39
+#: .\appmain\templates\email\success_registration_email.html:56
+msgid "au"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:41
+#: .\appmain\templates\email\success_registration_email.html:58
+msgid "Villes prévues :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:43
+#: .\appmain\templates\email\success_registration_email.html:60
+msgid "Vous êtes véhiculés :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:47
+#: .\appmain\templates\email\success_registration_email.html:64
+msgid "Commentaires :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:53
+msgid "Ses centres d'intérêt :"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:61
+msgid "Ci dessous le devis à valider."
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:102
+#: .\appmain\templates\email\payment_link_email.html:73
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:71
+#: .\appmain\templates\lebonplantexas\checkout_success.html:72
+#: .\appmain\templates\pdf\invoice_pdf.html:126
+msgid "Réduction appliquée"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:110
+#: .\appmain\templates\email\payment_link_email.html:81
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:79
+#: .\appmain\templates\lebonplantexas\checkout_success.html:80
+#: .\appmain\templates\pdf\invoice_pdf.html:134
+msgid "Total HTC après réduction en €"
+msgstr ""
+
+#: .\appmain\templates\email\estimate_validation_email.html:121
+msgid "Merci de vous connecter sur le site administratif pour finaliser "
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:15
+msgid "Voici votre devis !"
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:20
+msgid "Comme convenu, veuillez trouver ci-dessous votre devis gratuit."
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:22
+msgid "DEVIS N°"
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:23
+msgid "Date :"
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:91
+msgid ""
+"Pour valider votre voyage, merci de cliquer sur le lien suivant et régler le "
+"montant du devis."
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:92
+msgid ""
+"Ce lien de paiement restera actif 48h. Contactez-nous pour le renouveler."
+msgstr ""
+
+#: .\appmain\templates\email\payment_link_email.html:96
+msgid "Nous espérons vous voir bientôt!"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:19
+msgid ""
+"Nous avons bien reçu votre demande de renseignements et devis pour votre "
+"prochain voyage au Texas. Merci de votre intérêt pour"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:25
+msgid ""
+"Vous avez choisi la formule Autonome. Un devis vous sera envoyé d'ici peu, "
+"après vérification de nos équipes."
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:29
+msgid ""
+"Vous avez choisi la formule Chauffeur privé. La formule autonome vous est "
+"offerte. Un devis vous sera envoyé par email après vérification de la "
+"disponibilité du chauffeur"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:33
+msgid ""
+"Vous avez choisi la formule Platinium. La formule autonome vous est offerte. "
+"Un conseiller vous contactera très bientôt pour s'entretenir avec vous sur "
+"les détails de votre voyage."
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:37
+msgid ""
+"Nous mettons tout en œuvre pour organiser un séjour qui correspond à vos "
+"attentes. Voici un récapitulatif des informations que vous nous avez "
+"fournies :"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:40
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:26
+#: .\appmain\templates\pdf\invoice_pdf.html:80
+msgid "Vos coordonnées :"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:53
+msgid "Votre voyage :"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:70
+msgid "Vos centres d\\"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:78
+msgid ""
+"Nous vous enverrons sous peu vos identifiants et/ou vous contacterons pour "
+"présenter nos services et répondre à toutes vos questions. Si vous avez des "
+"précisions à apporter ou si vous souhaitez nous faire part de nouvelles "
+"idées, n'hésitez pas à répondre à cet e-mail."
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:82
+msgid "Contactez-nous directement"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:86
+msgid "Merci encore pour votre confiance et à très bientôt"
+msgstr ""
+
+#: .\appmain\templates\email\success_registration_email.html:87
+msgid "L'équipe de"
+msgstr ""
+
+#: .\appmain\templates\error.html:27
+msgid "Une erreur s'est produite"
+msgstr ""
+
+#: .\appmain\templates\error.html:34
+msgid "Alors, ca mort??"
+msgstr ""
+
+#: .\appmain\templates\error.html:40
+msgid "LeBonPlanTEXAS"
+msgstr ""
+
+#: .\appmain\templates\footer.html:67
+#: .\appmain\templates\lebonplantexas\index.html:54
+msgid "Nos services"
+msgstr ""
+
+#: .\appmain\templates\footer.html:69
+msgid "Autonome: application mobile"
+msgstr ""
+
+#: .\appmain\templates\footer.html:70
+msgid "Chauffeur privé: Acompagnateur"
+msgstr ""
+
+#: .\appmain\templates\footer.html:71
+msgid "Platinum: planification sur mesure"
+msgstr ""
+
+#: .\appmain\templates\footer.html:75
+msgid "Outils de Développement"
+msgstr ""
+
+#: .\appmain\templates\footer.html:84
+msgid "Crédits"
+msgstr ""
+
+#: .\appmain\templates\footer.html:93
+msgid "LeBonPlanTexas"
+msgstr ""
+
+#: .\appmain\templates\footer.html:93
+msgid "Tous droits réservés"
+msgstr ""
+
+#: .\appmain\templates\footer.html:94
+msgid "Conditions d'utilisation"
+msgstr ""
+
+#: .\appmain\templates\footer.html:95
+msgid "Conditions de vente"
+msgstr ""
+
+#: .\appmain\templates\footer.html:96
+msgid "Politique de confidentialité"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:15
+msgid "Conditions Générales de vente"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
+msgid "J'ai lu et j'accepte les "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:27
+msgid "conditions générales de vente."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:30
+msgid "Vous avez déjà accepté les conditions générales de vente."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\accept_terms_of_sale.html:33
+msgid "VALIDER"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:15
+msgid "Votre transaction a été annulée"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:18
+msgid "Vos accès à nos services ne sont plus disponibles."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:19
+msgid ""
+"Nous sommes navré de cette situation et serions heureux de vous revoir "
+"bientôt."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_cancelled.html:20
+msgid "Numéro de facture annulée:"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:15
+msgid "Votre transaction a été accepté"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:18
+msgid "Merci de faire confiance à LeBonPlanTEXAS"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:19
+msgid "Votre réservation est confirmée. Nous vous contacterons sous peu."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:20
+#: .\appmain\templates\pdf\invoice_pdf.html:72
+msgid "Facture"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:21
+#: .\appmain\templates\pdf\invoice_pdf.html:74
+msgid "Numéro de Facture :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\checkout_success.html:91
+msgid "TELECHARGER"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:18
+msgid ""
+"Vos vacances intelligentes : planifiez, explorez et vivez des expériences "
+"inoubliables via un assitant mobile."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:22
+msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:23
+msgid "Pour seulement "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:23
+msgid " euros par jour"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:29
+msgid "+ 500 activités"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:30
+msgid ""
+"Votre guide ultime : découvrez une mine d'idees touristiques incontournables "
+"autour de vous."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:37
+msgid "Parcours intelligent"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:38
+msgid ""
+"Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation "
+"des activités."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:45
+msgid "Copilote Offline"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:46
+msgid ""
+"Votre copilote touristique : trajets, horaires et conseils, notre assitant "
+"vous guide en temps réel."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:60
+msgid "Planification autonome sur application mobile"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:61
+msgid ""
+"Composez vous-même votre voyage, à partir d'une grande base de données "
+"incluant"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:62
+msgid "histoire, culture, sorties, évènements annuels et bien d'autres..."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:63
+msgid "Puis laissez notre application mobile vous guider"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:72
+msgid "Guide touriste bilingue et véhiculé à la journée"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:73
+msgid ""
+"Laissez moi être votre chauffeur personnel le temps d'une journée ou plus."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:74
+msgid ""
+"Conseiller, compteur d'histoire, traducteur, ambianceur ou tout bonnement "
+"invisible"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:82
+#: .\appmain\templates\lebonplantexas\services.html:96
+msgid "Formule Platinum"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:83
+msgid "Planifiez votre séjour avec un grand connaisseur du Texas."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:84
+msgid ""
+"Je vous suggérerai les meilleurs activités adaptées à vos besoins et ferai "
+"toutes recherches supplémentaires pour un voyage parfait."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:92
+msgid "Go big or go home!"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:97
+msgid "Les classiques du texas"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:119
+#: .\appmain\templates\lebonplantexas\register_success.html:28
+msgid "Alligators"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:120
+#: .\appmain\templates\lebonplantexas\register_success.html:30
+msgid "Coyotes"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:122
+#: .\appmain\templates\lebonplantexas\register_success.html:32
+msgid "Désert"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:123
+#: .\appmain\templates\lebonplantexas\register_success.html:33
+msgid "Forêt"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:124
+#: .\appmain\templates\lebonplantexas\register_success.html:34
+msgid "Golfe du Mexique"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:125
+#: .\appmain\templates\lebonplantexas\register_success.html:35
+msgid "Viticulture"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:126
+#: .\appmain\templates\lebonplantexas\register_success.html:37
+msgid "Longhorns"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:127
+#: .\appmain\templates\lebonplantexas\register_success.html:38
+msgid "Honky Tonk"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:129
+#: .\appmain\templates\lebonplantexas\register_success.html:40
+msgid "Liberté"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:130
+#: .\appmain\templates\lebonplantexas\register_success.html:41
+msgid "Barbecue"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:131
+#: .\appmain\templates\lebonplantexas\register_success.html:42
+msgid "Cowboys"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:132
+#: .\appmain\templates\lebonplantexas\register_success.html:43
+msgid "Rodéo"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:133
+#: .\appmain\templates\lebonplantexas\register_success.html:44
+msgid "Bisons"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:134
+#: .\appmain\templates\lebonplantexas\register_success.html:45
+msgid "Prairie"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:136
+#: .\appmain\templates\lebonplantexas\register_success.html:47
+msgid "Pétrole"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\index.html:138
+#: .\appmain\templates\lebonplantexas\register_success.html:49
+msgid "Chili"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:16
+msgid "Politique de Confidentialité"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:17
+msgid "Dernière mise à jour : "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:20
+msgid "1. Informations que nous collectons"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:21
+msgid ""
+"Nous pouvons collecter les informations suivantes lorsque vous utilisez "
+"notre site ou nos services :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:23
+msgid "Informations personnelles fournies directement par vous :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:25
+msgid "Nom, prénom, adresse e-mail, numéro de téléphone."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:26
+msgid ""
+"Données fournies via des formulaires (ex. : devis gratuit, inscription)."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:29
+msgid "Données collectées automatiquement :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:31
+msgid "Adresse IP, type de navigateur, système d'exploitation."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:32
+msgid "Données de navigation (pages visitées, temps passé sur le site, clics)."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:35
+msgid "Données issues de tiers :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:36
+msgid ""
+"Si vous connectez vos comptes tiers (ex. : réseaux sociaux), nous pouvons "
+"recevoir certaines informations selon les permissions que vous accordez."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:40
+msgid "2. Utilisation des données collectées"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:41
+msgid "Vos données sont utilisées aux fins suivantes :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:43
+msgid "Fournir et personnaliser nos services."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:44
+msgid "Répondre à vos demandes (ex. : devis ou support client)."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:45
+msgid "Améliorer l'expérience utilisateur et notre contenu."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:46
+msgid ""
+"Envoyer des offres promotionnelles ou des newsletters (avec votre "
+"consentement)."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:47
+msgid "Assurer la sécurité de notre site et prévenir les fraudes."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:52
+msgid "3. Partage des données"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:53
+msgid "Nous ne partageons vos données qu'avec les parties suivantes :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:55
+msgid ""
+"Prestataires tiers : pour l'hébergement, les paiements ou l'analyse web."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:56
+msgid "Autorités légales : en cas de demande ou pour respecter la loi."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:57
+msgid "Partenaires marketing : uniquement avec votre consentement explicite."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:62
+msgid "4. Vos droits"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:63
+msgid ""
+"Conformément au RGPD et aux lois applicables, vous disposez des droits "
+"suivants :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:65
+msgid "Accès à vos données personnelles."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:66
+msgid "Rectification ou suppression de vos données."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:67
+msgid "Retrait de votre consentement à tout moment."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:68
+msgid "Portabilité des données dans un format structuré."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:69
+msgid ""
+"Opposition à l'utilisation de vos données pour des finalités spécifiques."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:71
+msgid "Pour exercer vos droits, contactez-nous à"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:75
+msgid "5. Sécurité des données"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:76
+msgid ""
+"Nous mettons en œuvre des mesures de sécurité techniques et "
+"organisationnelles pour protéger vos données contre tout accès non autorisé, "
+"perte ou divulgation."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:80
+msgid "6. Cookies et technologies similaires"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:81
+msgid "Notre site utilise des cookies pour :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:83
+msgid "Assurer son bon fonctionnement."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:84
+msgid "Analyser les comportements des utilisateurs et améliorer nos services."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:85
+msgid "Offrir des contenus adaptés à vos préférences."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:87
+msgid ""
+"Vous pouvez gérer vos préférences de cookies via les paramètres de votre "
+"navigateur."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:91
+msgid "7. Modifications de cette politique"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:92
+msgid ""
+"Nous nous réservons le droit de mettre à jour cette Politique de "
+"Confidentialité. Toute modification sera affichée sur cette page avec la "
+"date de mise à jour."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:96
+msgid "8. Nous contacter"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:97
+msgid ""
+"Pour toute question concernant cette Politique de Confidentialité, veuillez "
+"nous contacter :"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:98
+msgid "Email : "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\privacy_policy.html:99
+msgid "Adresse : "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:22
+msgid "Étape"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:36
+msgid "Annuler"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:44
+#: .\appmain\templates\lebonplantexas\register_form.html:46
+#: .\appmain\templates\lebonplantexas\register_form.html:48
+#: .\appmain\templates\lebonplantexas\services.html:33
+#: .\appmain\templates\lebonplantexas\services.html:76
+#: .\appmain\templates\lebonplantexas\services.html:98
+msgid "Bientôt disponible"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:63
+msgid "Accés à l\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:65
+msgid ""
+"Chauffeur et guide touristique pour une journée ou plus. Accès gratuit à la "
+"formule autonome."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:67
+msgid ""
+"Nous organisons votre voyage en fonction de vos besoins. Accès gratuit à la "
+"formule autonome."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:75
+msgid "Commencer"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:104
+#: .\appmain\templates\lebonplantexas\register_form.html:146
+msgid "SUIVANT"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:126
+msgid "Formule chauffeur privé:"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:145
+msgid "AJOUTER UNE ETAPE"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:164
+msgid "Vous avez un code promo ?"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_form.html:169
+msgid "FINALISER"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_success.html:23
+msgid "Félicitation"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_success.html:24
+msgid "Le Texas vous ouvre ses portes. Un email a été envoyé à cette adresse:"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_success.html:29
+msgid "Bon voyage"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_success.html:36
+msgid "A très vite"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\register_success.html:51
+msgid "Amusez-vous bien!"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:18
+msgid "Plus économique et flexible qu\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:20
+msgid "Tarification des services LeBonPlanTEXAS"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:22
+msgid "Everthing\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:31
+msgid "Formule Chauffeur Privé"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:36
+msgid "Transport jusqu\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:37
+msgid "Disponibilité du chauffeur et véhicule de 7h à 22h."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:38
+msgid "Aide linguistique pour pour facilité les activités."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:41
+msgid "Le chauffeur n\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:42
+#: .\appmain\templates\lebonplantexas\services.html:106
+msgid "Formule Autonome incluse gratuitement."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:47
+msgid "1 jour"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:48
+msgid "1-4 jours"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:49
+msgid "5 jours"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:53
+msgid "90 mins*"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:54
+#: .\appmain\templates\lebonplantexas\services.html:55
+#: .\appmain\templates\lebonplantexas\services.html:56
+#: .\appmain\templates\lebonplantexas\services.html:60
+#: .\appmain\templates\lebonplantexas\services.html:61
+#: .\appmain\templates\lebonplantexas\services.html:62
+msgid "€/j"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:59
+msgid "180 mins*"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:66
+msgid "* temps de trajet du chauffeur pour se rendre auprès des voyageurs"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:74
+msgid "Formule Autonome"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:79
+msgid "Une appli mobile facile d\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:80
+msgid "Ne payez que pour les jours où vous désirez nos services."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:81
+msgid "2 demi-journées (arrivée/départ) offertes (1jour minimum). "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:84
+msgid "Composez votre planning à partir d\\"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:85
+msgid ""
+"Enchainez les activités en fonction de leur géolocalisations et gagnez du "
+"temps."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:86
+msgid "Notre assistant vous guide tout au long de votre voyage. "
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:88
+#: .\appmain\templates\lebonplantexas\services.html:109
+msgid "€/jour"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:101
+msgid "Révélez vos attentes à un expert du tourisme et de la culture Texan."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:102
+msgid "Validez chaque journée et activité au fil de la personalisation."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:103
+msgid "Enregistrement par nos soins aux activités et hotels."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\services.html:107
+#, python-format
+msgid "Mixez égalment la formule Chauffeur Privé avec 20%% de réduction."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\who_are_we.html:27
+msgid "whatsapp uniquement"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\who_are_we.html:35
+msgid "Coordonnées non disponibles"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\who_are_we.html:51
+msgid "Découvrez ci-dessous qui nous sommes"
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\who_are_we.html:55
+msgid ""
+"Sécurité, chaleur humaine, grande variété, joie de vivre, qualité de vie "
+"incomparable, liberté (la vraie) : voici tout le bonheur que j'ai ressenti "
+"en visitant cet État incroyable."
+msgstr ""
+
+#: .\appmain\templates\lebonplantexas\who_are_we.html:56
+msgid ""
+"Ici, les grandes villes ont la chaleur et l'accueil des villages, et la "
+"nature est riche en animaux sauvages. Après des formations de reconversion "
+"en informatique et quelques voyages dans le Lone Star State, je n'ai pas pu "
+"réfréner mon besoin de faire découvrir à mes compatriotes un style de vie "
+"inoubliable, empreint d'une liberté que nous avons perdue."
+msgstr ""
+
+#: .\appmain\views\checkout_suc_can.py:25
+msgid "Session ID manquant."
+msgstr ""
+
+#: .\appmain\views\checkout_suc_can.py:62
+#, python-format
+msgid "Error : %s"
+msgstr ""
+
+#: .\appmain\views\checkout_suc_can.py:69
+msgid "L'attribut invoice_id absent de la requête"
+msgstr ""
+
+#: .\appmain\views\checkout_suc_can.py:75
+#, python-format
+msgid "Erreur : %s"
+msgstr ""
+
+#: .\appmain\views\register_view.py:26
+msgid "Choisir une formule"
+msgstr ""
+
+#: .\appmain\views\register_view.py:41
+msgid "Entrez vos coordonnées"
+msgstr ""
+
+#: .\appmain\views\register_view.py:46
+msgid "A problem occured. Please try again or contact us"
+msgstr ""
+
+#: .\appmain\views\register_view.py:58
+msgid "Détails du voyage"
+msgstr ""
+
+#: .\appmain\views\register_view.py:84
+msgid "L'étape de voyage a été ajoutée. Vous pouvez en ajouter une autre."
+msgstr ""
+
+#: .\appmain\views\register_view.py:88
+msgid "Vos intérêts"
+msgstr ""
+
+#: .\appmain\views\register_view.py:110
+msgid "Une erreur s'est produite lors de l'enregistrement des coordonnées."
+msgstr ""
+
+#: .\appmain\views\register_view.py:118
+msgid "Une erreur s'est produite lors de l'enregistrement de la formule."
+msgstr ""
+
+#: .\appmain\views\register_view.py:127
+msgid "Une erreur s'est produite lors de l'enregistrement du voyage."
+msgstr ""
+
+#: .\appmain\views\register_view.py:139
+msgid "Les catégories sélectionnées sont invalides."
+msgstr ""
+
+#: .\appmain\views\register_view.py:144
+msgid "Une erreur s'est produite lors de l'enregistrement des catégories."
+msgstr ""
+
+#: .\appmain\views\register_view.py:197
+msgid "L'enregistrement a été abandonné"
+msgstr ""
+
+#: .\appmain\views\stripe_checkout_view.py:24
+msgid "Vous devez accepter les CGV avant de payer."
+msgstr ""
+
+#: .\appmain\views\stripe_checkout_view.py:37
+#, python-format
+msgid "Reglement du devis %s"
+msgstr ""
+
+#: .\appmain\views\stripe_checkout_view.py:38
+#, python-format
+msgid "Client : %s"
+msgstr ""
+
+#: .\appmain\views\stripe_checkout_view.py:52
+#, python-format
+msgid "Erreur lors de la création de la session Stripe: %s"
+msgstr ""
+
+#: .\appmain\views\validate_terms_view.py:22
+msgid "Vous devez accepter les CGV."
+msgstr ""
