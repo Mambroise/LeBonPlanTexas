@@ -9,8 +9,8 @@
 from django.db import models
 class CompanyInfo(models.Model):
     name = models.CharField(max_length=50,null=False,blank=False)
-    EIN = models.CharField(max_length=20,null=True,blank=True)
-    SIREN = models.CharField(max_length=20,null=True,blank=True)
+    ein = models.CharField(max_length=20,null=True,blank=True)
+    siren = models.CharField(max_length=20,null=True,blank=True)
     legal_structure = models.CharField(max_length=30,null=True, blank=True)
     address = models.CharField(max_length=155)
     tax_info= models.CharField(max_length=6)

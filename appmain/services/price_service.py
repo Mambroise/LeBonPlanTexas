@@ -23,7 +23,5 @@ class PriceService:
                     driver = price
                 elif (price.service_name == 'platinium' or price.service_name == 'platinum') and price.is_active == True:
                     plat = price
-        print(auto)
-        print(driver)
-        print(plat)
+
         return auto, driver, plat

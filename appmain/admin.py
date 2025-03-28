@@ -18,7 +18,7 @@ from .services.company_service import CompanyService
 # COMPANY PART
 @admin.register(CompanyInfo)
 class CompanyInfoAdmin(admin.ModelAdmin):
-    list_display = ('name','EIN','SIREN','legal_structure','address','tax_info','tax_math','email','phone','instagram','is_in_texas',)
+    list_display = ('name','ein','siren','legal_structure','address','tax_info','tax_math','email','phone','instagram','is_in_texas',)
 
 # CUSTOMER PART
 # Inline pour les Intérêts liés à un Customer

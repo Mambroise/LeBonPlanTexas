@@ -140,15 +140,15 @@ msgstr "An error occurred while verifying the token: %s."
 
 #: .\appmain\services\send_email.py:22
 msgid "LeBonPlanTexas : DEVIS pour votre voyage!"
-msgstr "LeBonPlanTexas: QUOTE for your trip!"
+msgstr "TEXAS Buddy: QUOTE for your trip!"
 
 #: .\appmain\services\send_email.py:62
 msgid "LeBonPlanTEXAS : On se parle bientôt!!"
-msgstr "LeBonPlanTEXAS: Talk to you soon!!"
+msgstr "TEXAS Buddy: Talk to you soon!!"
 
 #: .\appmain\services\send_email.py:99
 msgid "LeBonPlanTexas : Votre paiement est confirmé!"
-msgstr "LeBonPlanTexas: Your payment has been confirmed!"
+msgstr "TEXAS Buddy: Your payment has been confirmed!"
 
 #: .\appmain\services\send_email.py:113
 msgid "Your email client does not support HTML content"
@@ -156,7 +156,7 @@ msgstr "Your email client does not support HTML content"
 
 #: .\appmain\services\send_email.py:152
 msgid "LeBonPlanTEXAS : validation de devis"
-msgstr "LeBonPlanTEXAS: Quote validation"
+msgstr "TEXAS Buddy: Quote validation"
 
 #: .\appmain\templates\base.html:37 .\appmain\templates\base_fixed.html:34
 msgid "LeBonPlan"
@@ -199,7 +199,7 @@ msgstr "Howdy"
 
 #: .\appmain\templates\email\checkout_success_email.html:23
 msgid "Merci d'avoir choisi LeBonPlanTEXAS pour accompaner votre voyage."
-msgstr "Thank you for choosing LeBonPlanTEXAS to accompany your journey."
+msgstr "Thank you for choosing TEXAS Buddy to accompany your journey."
 
 #: .\appmain\templates\email\checkout_success_email.html:24
 msgid ""
@@ -512,7 +512,7 @@ msgid "Votre voyage :"
 msgstr "Your trip:"
 
 #: .\appmain\templates\email\success_registration_email.html:70
-msgid "Vos centres d\\"
+msgid "Vos centres d'intérêt :"
 msgstr "Interests:"
 
 #: .\appmain\templates\email\success_registration_email.html:78
@@ -541,7 +541,7 @@ msgstr "Team"
 
 #: .\appmain\templates\error.html:27
 msgid "Une erreur s'est produite"
-msgstr "An error occurred\\"
+msgstr "An error occurred"
 
 #: .\appmain\templates\error.html:34
 msgid "Alors, ca mort??"
@@ -549,7 +549,7 @@ msgstr "So, any bites??"
 
 #: .\appmain\templates\error.html:40
 msgid "LeBonPlanTEXAS"
-msgstr "LeBonPlanTEXAS"
+msgstr "TEXAS Buddy"
 
 #: .\appmain\templates\footer.html:67
 #: .\appmain\templates\lebonplantexas\index.html:54
@@ -578,7 +578,7 @@ msgstr "Credits"
 
 #: .\appmain\templates\footer.html:93
 msgid "LeBonPlanTexas"
-msgstr "LeBonPlanTexas"
+msgstr "TEXAS Buddy"
 
 #: .\appmain\templates\footer.html:93
 msgid "Tous droits réservés"
@@ -641,7 +641,7 @@ msgstr "Your transaction has been accepted"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:18
 msgid "Merci de faire confiance à LeBonPlanTEXAS"
-msgstr "Thank you for trusting LeBonPlanTEXAS"
+msgstr "Thank you for trusting TEXAS Buddy"
 
 #: .\appmain\templates\lebonplantexas\checkout_success.html:19
 msgid "Votre réservation est confirmée. Nous vous contacterons sous peu."
@@ -671,7 +671,7 @@ msgstr ""
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
-msgstr "Why travel with LeBonPlanTEXAS?"
+msgstr "Why travel with TEXAS Buddy?"
 
 #: .\appmain\templates\lebonplantexas\index.html:23
 msgid "Pour seulement "
@@ -1085,7 +1085,7 @@ msgid "Bientôt disponible"
 msgstr "Coming soon"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:63
-msgid "Accés à l\\"
+msgid "Accès à l'application de planification, aux meilleures activités du Texas et à l'assistant de voyage."
 msgstr ""
 "Access to the planning app, the best activities in Texas, and the travel "
 "assistant."
@@ -1152,17 +1152,17 @@ msgid "Amusez-vous bien!"
 msgstr "Have fun!"
 
 #: .\appmain\templates\lebonplantexas\services.html:18
-msgid "Plus économique et flexible qu\\"
+msgid "Plus économique et flexible qu'une agence de voyage, vous ne partirez plus sans nous !"
 msgstr ""
 "More affordable and flexible than a travel agency, you'll never travel "
 "without us again!"
 
 #: .\appmain\templates\lebonplantexas\services.html:20
 msgid "Tarification des services LeBonPlanTEXAS"
-msgstr "LeBonPlanTEXAS Service Pricing"
+msgstr "TEXAS Buddy Service Pricing"
 
 #: .\appmain\templates\lebonplantexas\services.html:22
-msgid "Everthing\\"
+msgid "Everthing's bigger in TEXAS!"
 msgstr "Everthing's bigger in Texas"
 
 #: .\appmain\templates\lebonplantexas\services.html:31
@@ -1170,7 +1170,7 @@ msgid "Formule Chauffeur Privé"
 msgstr "Personal Driver Package"
 
 #: .\appmain\templates\lebonplantexas\services.html:36
-msgid "Transport jusqu\\"
+msgid "Transport jusqu'à 4 personnes vers toutes les activités programmées."
 msgstr "Transport for up to 4 people to all scheduled activities."
 
 #: .\appmain\templates\lebonplantexas\services.html:37
@@ -1182,7 +1182,7 @@ msgid "Aide linguistique pour pour facilité les activités."
 msgstr "Linguistic assistance to facilitate activities.(french client)"
 
 #: .\appmain\templates\lebonplantexas\services.html:41
-msgid "Le chauffeur n\\"
+msgid "Le chauffeur n'accompagne pas les voyageurs sauf sur demande de ces derniers et acceptation du premier."
 msgstr ""
 "The driver does not accompany travelers except at their request and with "
 "their approval."
@@ -1230,7 +1230,7 @@ msgid "Formule Autonome"
 msgstr "Autonomous Package"
 
 #: .\appmain\templates\lebonplantexas\services.html:79
-msgid "Une appli mobile facile d\\"
+msgid "Une appli mobile facile d'accès pour planifier vos journées."
 msgstr "An easy-to-use mobile app to plan your days."
 
 #: .\appmain\templates\lebonplantexas\services.html:80
@@ -1242,7 +1242,7 @@ msgid "2 demi-journées (arrivée/départ) offertes (1jour minimum). "
 msgstr "2 half-days (arrival/departure) included for free (1-day minimum)."
 
 #: .\appmain\templates\lebonplantexas\services.html:84
-msgid "Composez votre planning à partir d\\"
+msgid "Composez votre planning à partir d'une immense base de donnée."
 msgstr "Build your schedule from a huge database."
 
 #: .\appmain\templates\lebonplantexas\services.html:85

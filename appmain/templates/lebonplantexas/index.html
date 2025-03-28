@@ -89,8 +89,8 @@
             </div>
         </div>
     </section>
-    <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not trip_invoice.customer.country == 'US' %}*</h2>{% else %}</h2>{% endif %}
-    {% if not trip_invoice.customer.country == 'US' %}<p class="text-center"><small class="c-black"><i>*Voyez grand ou restez chez vous !</i></small></p>{% endif %}
+    <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not request.path|slice:'1:3' == 'en' %}*</h2>{% else %}</h2>{% endif %}
+    {% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>*Voyez grand ou restez chez vous !</i></small></p>{% endif %}
     <br>
     <section class="third-banner">
         <div class="third-banner-form-box">

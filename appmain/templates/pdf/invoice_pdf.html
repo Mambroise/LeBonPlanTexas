@@ -74,7 +74,7 @@ and is trigger first in view checkout_suc_can.py in function print_invoice -->
     <p>{% translate "Numéro de Facture :" %} {{ trip_invoice.invoice_number }}</p>
     <p>{% translate "Date de paiement :" %} {{ trip_invoice.is_paid_date }}</p>
     <p class="my-0">{{ company_info.legal_structure }} {{ company_info.name }}</p>
-    <p class="my-0">{% translate 'SIREN :' %} {{ company_info.SIREN }}</p>
+    <p class="my-0">{% translate 'SIREN :' %} {{ company_info.siren }}</p>
     <p class="my-0">{{ company_info.address }}</p>
     <br>
     <p>{% translate 'Vos coordonnées :' %}</p>
