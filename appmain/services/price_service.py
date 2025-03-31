@@ -17,11 +17,11 @@ class PriceService:
             plat = None
 
             for price in prices:
-                if (price.service_name == 'autonome' or price.service_name == 'autonomous') and price.is_active == True:
+                if (price.service_name == 'autonome' or price.service_name == 'autonomous' or price.service_name == 'autonomo') and price.is_active == True:
                     auto = price    
-                elif (price.service_name == 'chauffeur privé' or price.service_name == 'personal driver') and price.is_active == True:
+                elif (price.service_name == 'chauffeur privé' or price.service_name == 'personal driver' or price.service_name == 'chofer privado') and price.is_active == True:
                     driver = price
-                elif (price.service_name == 'platinium' or price.service_name == 'platinum') and price.is_active == True:
+                elif (price.service_name == 'platinium' or price.service_name == 'platinum' or price.service_name == 'platino') and price.is_active == True:
                     plat = price
 
         return auto, driver, plat

@@ -20,7 +20,7 @@
     <h2 class="text-center">{% translate 'Tarification des services LeBonPlanTEXAS' %}</h2>
 </div>
 <h2 class="mt-6 text-center">{% translate "Everthing's bigger in TEXAS!" %}{% if not request.path|slice:'1:3' == 'en' %}*</h2>{% else %}</h2>{% endif %}
-{% if not request.path|slice:'1:3' == 'en' %}<p class="text-center c-black">{{ request.path|slice:'1:3' }}<small class="c-black"><i>*Tout est plus grand au TEXAS !</i></small></p>{% endif %}
+{% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Tout est plus grand au TEXAS !' %}</i></small></p>{% endif %}
 <br>
 <div class="service-container-frame">
     <div class="service-container">
