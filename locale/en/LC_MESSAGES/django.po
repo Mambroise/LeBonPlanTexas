@@ -452,6 +452,10 @@ msgid ""
 msgstr ""
 "This payment link will remain active for 48 hours. Contact us to renew it."
 
+#: .\appmain\templates\email\payment_link_email.html:94
+msgid "Ici pour valider et régler votre devis. Merci pour votre confiance."
+msgstr "Here to validate and pay your quote. Thank you for your trust."
+
 #: .\appmain\templates\email\payment_link_email.html:96
 msgid "Nous espérons vous voir bientôt!"
 msgstr "We hope to see you soon!"
@@ -547,6 +551,7 @@ msgstr "An error occurred"
 msgid "Alors, ca mort??"
 msgstr "So, any bites??"
 
+#: .\appmain\templates\base_email.html:148
 #: .\appmain\templates\error.html:40
 msgid "LeBonPlanTEXAS"
 msgstr "TEXAS Buddy"

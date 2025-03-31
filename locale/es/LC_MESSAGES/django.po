@@ -137,11 +137,11 @@ msgstr "Se ha producido un error al verificar el token: %s."
 
 #: .\appmain\services\send_email.py:22
 msgid "LeBonPlanTexas : DEVIS pour votre voyage!"
-msgstr "LeBonPlanTexas: PRESUPUESTO para su viaje!"
+msgstr "TEXAS Buddy: PRESUPUESTO para su viaje!"
 
 #: .\appmain\services\send_email.py:62
 msgid "LeBonPlanTEXAS : On se parle bientôt!!"
-msgstr "LeBonPlanTEXAS: ¡Hablamos pronto!"
+msgstr "TEXAS Buddy: ¡Hablamos pronto!"
 
 #: .\appmain\services\send_email.py:99
 msgid "LeBonPlanTexas : Votre paiement est confirmé!"
@@ -153,7 +153,7 @@ msgstr "Su cliente de correo electrónico no admite contenido HTML"
 
 #: .\appmain\services\send_email.py:152
 msgid "LeBonPlanTEXAS : validation de devis"
-msgstr "LeBonPlanTEXAS: validación de presupuesto"
+msgstr "TEXAS Buddy: validación de presupuesto"
 
 #: .\appmain\templates\base.html:37 .\appmain\templates\base_fixed.html:34
 msgid "LeBonPlan"
@@ -405,6 +405,10 @@ msgstr "A continuación, el presupuesto a validar."
 msgid "Réduction appliquée"
 msgstr "Descuento aplicado"
 
+#: .\appmain\templates\email\payment_link_email.html:94
+msgid "Ici pour valider et régler votre devis. Merci pour votre confiance."
+msgstr "Aquí para validar y pagar su cotización. Gracias por su confianza."
+
 #: .\appmain\templates\email\estimate_validation_email.html:110
 #: .\appmain\templates\email\payment_link_email.html:81
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:79
@@ -540,6 +544,7 @@ msgstr "Ocurrió un error"
 msgid "Alors, ca mort??"
 msgstr "¿Entonces, funciona??"  # Traduction adaptée en contexte
 
+#: .\appmain\templates\base_email.html:148
 #: .\appmain\templates\error.html:40
 msgid "LeBonPlanTEXAS"
 msgstr "TEXAS Buddy"
@@ -767,6 +772,10 @@ msgstr ""
 #: .\appmain\templates\lebonplantexas\index.html:92
 msgid "Go big or go home!"
 msgstr "Go big or go home!"
+
+#: .\appmain\templates\lebonplantexas\index.html:93
+msgid "*Voyez grand ou restez chez vous !"
+msgstr "*¡Piensa en grande o quédate en casa!"
 
 #: .\appmain\templates\lebonplantexas\index.html:97
 msgid "Les classiques du texas"
@@ -1135,7 +1144,11 @@ msgstr "Tarifas de los servicios de TEXAS Buddy"
 
 #: .\appmain\templates\lebonplantexas\services.html:22
 msgid "Everthing's bigger in TEXAS!"
-msgstr "¡Todo es más grande en TEXAS!"
+msgstr "Everthing's bigger in TEXAS!"
+
+#: .\appmain\templates\lebonplantexas\services.html:23
+msgid "*Tout est plus grand au TEXAS !"
+msgstr "*¡Todo es más grande en TEXAS!"
 
 #: .\appmain\templates\lebonplantexas\services.html:30
 msgid "Formule Chauffeur Privé"
