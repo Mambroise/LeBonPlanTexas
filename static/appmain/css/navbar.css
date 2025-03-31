@@ -131,6 +131,12 @@ a {
     width: 2.3rem;
 } 
 
+.flag-img-mex {
+    height: 1.9rem;
+    width: 2.5rem;
+    border-radius: 4px;
+}
+
 .contact-box {
     height: 100%;
     display: flex;

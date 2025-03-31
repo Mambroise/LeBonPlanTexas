@@ -7,7 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     
-    if (window.location.pathname === '/fr/' || window.location.pathname === '/en/') {
+    if (window.location.pathname === '/fr/' || window.location.pathname === '/en/' || window.location.pathname === '/es/') {
         
         const form = document.getElementById('city-selector-form');
         const container = document.getElementById('activities-container');
