@@ -415,7 +415,7 @@ msgstr "Discount applied"
 #: .\appmain\templates\lebonplantexas\checkout_cancelled.html:79
 #: .\appmain\templates\lebonplantexas\checkout_success.html:80
 #: .\appmain\templates\pdf\invoice_pdf.html:134
-msgid "Total HTC après réduction en €"
+msgid "Total HT après réduction en €"
 msgstr "Total excluding tax after discount in $"
 
 #: .\appmain\templates\email\estimate_validation_email.html:121
@@ -969,7 +969,7 @@ msgid ""
 "Conformément au RGPD et aux lois applicables, vous disposez des droits "
 "suivants :"
 msgstr ""
-"In accordance with the GDPR and applicable laws, you have the following "
+"In accordance with the GDPR(EU only) and applicable laws, you have the following "
 "rights:"
 
 #: .\appmain\templates\lebonplantexas\privacy_policy.html:65
