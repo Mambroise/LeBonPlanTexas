@@ -1174,6 +1174,10 @@ msgstr "Everthing's bigger in Texas"
 msgid "Formule Chauffeur Privé"
 msgstr "Personal Driver Package"
 
+#: .\appmain\templates\lebonplantexas\services.html:32
+msgid "En savoir plus"
+msgstr "See more"
+
 #: .\appmain\templates\lebonplantexas\services.html:36
 msgid "Transport jusqu'à 4 personnes vers toutes les activités programmées."
 msgstr "Transport for up to 4 people to all scheduled activities."

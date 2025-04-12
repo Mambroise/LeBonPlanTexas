@@ -78,7 +78,7 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
                 margin-bottom: 1rem;
             }
             .contact-link.small{
-                border: 3px solid var(--brick-color);
+                border: 2px solid var(--brick-color);
                 background: transparent;
                 padding: 0.8rem 0.8rem;
             }

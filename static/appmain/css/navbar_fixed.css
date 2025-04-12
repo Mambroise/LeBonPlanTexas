@@ -128,7 +128,7 @@
 }
 
 .contact-link-fixed {
-    border: 3px solid var(--navbar-and-dot);
+    border: 2px solid var(--brick-color);
     border-radius: 2rem;
     padding: 0.8rem 0.8rem;
 }
