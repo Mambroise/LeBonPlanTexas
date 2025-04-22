@@ -206,6 +206,23 @@
             loadingSpinner.classList.remove("hidden");  // Affiche la roue de chargement
         });
     }
+
+    // javascript to adapt date input format according to the language
+    let userLang = navigator.language || navigator.userLanguage; 
+    let dateFormat = "yyyy-mm-dd";  // Format par défaut ISO
+
+    if (userLang.startsWith("fr")) {
+        dateFormat = "dd/mm/yyyy";
+    } else if (userLang.startsWith("es")) {
+        dateFormat = "dd/mm/yyyy";
+    } else if (userLang.startsWith("en")) {
+        dateFormat = "mm/dd/yyyy";
+    }
+
+    document.querySelectorAll("input[type='date']").forEach(function(input) {
+        input.setAttribute("placeholder", dateFormat);
+    });
+
 });
 
 </script>

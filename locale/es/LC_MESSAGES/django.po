@@ -1150,6 +1150,10 @@ msgstr "Everthing's bigger in TEXAS!"
 msgid "*Tout est plus grand au TEXAS !"
 msgstr "*¡Todo es más grande en TEXAS!"
 
+#: .\appmain\templates\lebonplantexas\services.html:24
+msgid "Les formules"
+msgstr "Los paquetes"
+
 #: .\appmain\templates\lebonplantexas\services.html:30
 msgid "Formule Chauffeur Privé"
 msgstr "Plan Chofer Privado"

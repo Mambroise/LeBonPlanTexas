@@ -49,6 +49,7 @@
             </div>      
          </div>
         <h2 class=" text-center">{% translate 'Découvrez ci-dessous qui nous sommes' %}</h2>
+        <img class="texas-flag" src="{% static 'images/icons/texas_flag.png' %}" alt="Drapeau du Texas prenant la forme de l'état en question">
     </div>
     <div class="biography-banner">
         <p class="biography">
@@ -56,8 +57,15 @@
             {% trans "Ici, les grandes villes ont la chaleur et l'accueil des villages, et la nature est riche en animaux sauvages. Après des formations de reconversion en informatique et quelques voyages dans le Lone Star State, je n'ai pas pu réfréner mon besoin de faire découvrir à mes compatriotes un style de vie inoubliable, empreint d'une liberté que nous avons perdue." %}
         </p>
         
-        <img src="{% static 'images/me_at_the_office.jpg' %}" alt="CEO at the office" class="biography-picture">
+        <div class="biography-image-wrapper">
+            <img src="{% static 'images/morice.jpg' %}" alt="CEO at the office" class="biography-picture">
+            <div class="image-overlay"></div>
+        </div>
     </div>
+    <div class="text-mask-service">
+        Ya'll fixing to love Texas!
+    </div>
+    {% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Vous tous allez adorer le Texas !' %}</i></small></p>{% endif %}
 </div>
   
 {% endblock %}

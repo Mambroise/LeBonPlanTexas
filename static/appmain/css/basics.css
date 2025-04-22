@@ -10,7 +10,7 @@
 
     /* VERSION 2 COULEURS*/ 
     /* Variables globales pour les couleurs vertes */
-    --navbar-and-dot: rgba(226,114,91,0.9);
+    --navbar-and-dot: rgba(226,114,91);
     /* texte dans bulles et category card selected, button hover */
     --brick-color: rgb(152, 48, 63);
     --cat-card-selected: rgb(152, 48, 63);

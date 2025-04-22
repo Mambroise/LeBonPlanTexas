@@ -17,42 +17,43 @@
         <div class="round-banner">
             <p>{% translate 'Vos vacances intelligentes : planifiez, explorez et vivez des expériences inoubliables via un assitant mobile.' %}</p>
         </div>
+        <img class="texas-flag" src="{% static 'images/icons/texas_flag.png' %}" alt="Drapeau du Texas prenant la forme de l'état en question">
     </div>
     <!-- company concept quick explantion banner -->
     <h2 class="demo-banner-title">{% translate 'Pourquoi voyager avec LeBonPlanTEXAS ?' %}</h2>
-    <h3 class="c-coral pl-4">{% trans 'Pour seulement ' %}{{ auto.price_excl_tax }}{% trans ' euros par jour' %}</h3>
-    <section class="demo-banner">
-        <div class="item">
-            <div class="mobile-step1"></div>
-            <div class="mobile-step">
-                <p class="mobile-step-numbers">1</p>
-                <strong>{% trans '+ 500 activités' %}</strong>
-                <p class="mobile-step-p">{% trans "Votre guide ultime : découvrez une mine d'idees touristiques incontournables autour de vous." %}</p>
+    <div class="shadow-container">
+        <h3 class="c-coral pl-4 no-mt">{% trans 'Pour seulement ' %}{{ auto.price_excl_tax }}{% trans ' euros par jour' %}</h3>
+        <section class="demo-banner">
+            <div class="item">
+                <div class="mobile-step1"></div>
+                <div class="mobile-step">
+                    <p class="mobile-step-numbers">1</p>
+                    <strong>{% trans '+ 500 activités' %}</strong>
+                    <p class="mobile-step-p">{% trans "Votre guide ultime : découvrez une mine d'idees touristiques incontournables autour de vous." %}</p>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="mobile-step2"></div>
-            <div class="mobile-step">
-                <p class="mobile-step-numbers">2</p>
-                <strong>{% trans 'Parcours intelligent' %}</strong>
-                <p class="mobile-step-p">{% trans 'Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation des activités.' %}</p>
+            <div class="item">
+                <div class="mobile-step2"></div>
+                <div class="mobile-step">
+                    <p class="mobile-step-numbers">2</p>
+                    <strong>{% trans 'Parcours intelligent' %}</strong>
+                    <p class="mobile-step-p">{% trans 'Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation des activités.' %}</p>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="mobile-step3"></div>
-            <div class="mobile-step">
-                <p class="mobile-step-numbers">3</p>
-                <strong>{% trans 'Copilote Offline' %}</strong>
-                <p class="mobile-step-p">{% trans 'Votre copilote touristique : trajets, horaires et conseils, notre assitant vous guide en temps réel.' %}</p>
+            <div class="item">
+                <div class="mobile-step3"></div>
+                <div class="mobile-step">
+                    <p class="mobile-step-numbers">3</p>
+                    <strong>{% trans 'Copilote Offline' %}</strong>
+                    <p class="mobile-step-p">{% trans 'Votre copilote touristique : trajets, horaires et conseils, notre assitant vous guide en temps réel.' %}</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Introducing the different services provided -->
+    <h2 class="second-banner-title">{% translate 'Nos services' %}</h2>
     <section class="second-banner">
-        <div class="second-banner-title">
-            <h2>{% translate 'Nos services' %}</h2>
-        </div>
         <div class="service-box">
             <div class="service-app-column">
                 <div class="service-app-img">
@@ -89,31 +90,41 @@
             </div>
         </div>
     </section>
-    <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not request.path|slice:'1:3' == 'en' %}*</h2>{% else %}</h2>{% endif %}
+
+
+    <!-- Introducing activities and texas classics per cities -->
+    <h2 class="third-banner-title">{{ theme_displayed }}</h2>
+    <div class="shadow-container">
+        <section class="third-banner">
+            <div class="third-banner-form-box">
+                {% if  file_names %}
+                <form class="third-banner-form" id="city-selector-form">
+                    <select class="region-selector" id="city-select" name="city">
+                        {% for file in file_names %}
+                            {% if file.file_name == 'dallas' %}
+                            <option value='{{ file.id }}' selected>{{ file.file_name|capfirst }}</option>
+                            {% else %}
+                            <option value='{{ file.id }}'>{{ file.file_name|capfirst }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                {% else %}
+                <p>no access to BDD</p>
+                {% endif %}</form>         
+            </div>
+            <div id="activities-container" class="activities-container">
+                <!-- Activity cards injected here from ajax -->
+            </div>
+        </section>
+    </div>
+        <!-- Texas famous sentences -->
+    <div class="text-mask">
+        Go big or go home!
+    </div>
     {% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Voyez grand ou restez chez vous !' %}</i></small></p>{% endif %}
-    <br>
-    <section class="third-banner">
-        <div class="third-banner-form-box">
-            <h3 class="c-black">{% translate 'Les classiques du texas' %}</h3>
-            {% if  file_names %}
-            <form class="third-banner-form" id="city-selector-form">
-                <select class="region-selector" id="city-select" name="city">
-                    {% for file in file_names %}
-                        {% if file.file_name == 'dallas' %}
-                        <option value='{{ file.id }}' selected>{{ file.file_name|capfirst }}</option>
-                        {% else %}
-                        <option value='{{ file.id }}'>{{ file.file_name|capfirst }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-            {% else %}
-            <p>no access to BDD</p>
-            {% endif %}</form>         
-        </div>
-        <div id="activities-container" class="activities-container">
-            <!-- Activity cards injected here from ajax -->
-        </div>
-    </section>
+    
+    <!-- <h2 class="mt-6 text-center">{% translate 'Go big or go home!' %}{% if not request.path|slice:'1:3' == 'en' %}*</h2>{% else %}</h2>{% endif %}
+    {% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Voyez grand ou restez chez vous !' %}</i></small></p>{% endif %} -->
 
     <section class="texas-banner w-100 h-40vh">
         <span class="word">{% translate 'Alligators' %}</span>

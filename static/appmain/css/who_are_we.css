@@ -17,7 +17,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: 1px solid var(--black-color);
+    border-bottom: 2px solid var(--black-color);
 }
 .who-container {
     height: auto;
@@ -89,6 +89,24 @@
     font-style: normal;
 }
 
+.biography-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .biography-picture {
+    display: block;
     width: 100%;
+    height: auto;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 100;
 }

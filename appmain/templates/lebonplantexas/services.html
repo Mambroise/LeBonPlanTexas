@@ -18,11 +18,10 @@
         <p>{% translate "Plus économique et flexible qu'une agence de voyage, vous ne partirez plus sans nous !" %}</p>
     </div>
     <h2 class="text-center">{% translate 'Tarification des services LeBonPlanTEXAS' %}</h2>
+    <img class="texas-flag" src="{% static 'images/icons/texas_flag.png' %}" alt="Drapeau du Texas prenant la forme de l'état en question">
 </div>
-<h2 class="mt-6 text-center">{% translate "Everthing's bigger in TEXAS!" %}{% if not request.path|slice:'1:3' == 'en' %}*</h2>{% else %}</h2>{% endif %}
-{% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Tout est plus grand au TEXAS !' %}</i></small></p>{% endif %}
-<br>
-<div class="service-container-frame">
+    <!-- service-banner-title css in index.css -->
+    <h2 class="service-banner-title">{% translate 'Les formules' %}</h2>
     <div class="service-container">
         <!-- a refactoriser en bouclant sur model Price !!attention ajuster les views service_view et register_view line 38,40,42!! -->
         <div class="column" id="service1">
@@ -120,7 +119,11 @@
                 </div> 
             </div>
         </div>
+    </div>        <!-- Texas famous sentences -->
+    <div class="text-mask-service">
+        Everthing's bigger in TEXAS!
     </div>
-</div>
+    {% if not request.path|slice:'1:3' == 'en' %}<p class="text-center"><small class="c-black"><i>{% trans '*Tout est plus grand au TEXAS !' %}</i></small></p>{% endif %}
+<br>
 {% endblock %}
 
