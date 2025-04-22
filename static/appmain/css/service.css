@@ -9,11 +9,12 @@
 .service-banner {
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-image: url(../../images/bayou_large.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-bottom: 2px solid var(--black-color);
 }
 
 .service-banner::before {
@@ -70,6 +71,7 @@
     width: 100%;
     height: 95vh;
     background-color: var(--white-texas);
+    box-shadow: 0 0rem 3rem rgba(0, 0, 0, 0.175);
 }
 
 .column {
@@ -195,3 +197,18 @@
 .table-price td {
     font-size: 1.5rem;
 }
+
+.text-mask-service {
+    margin-top: 4rem;
+    font-size: 8rem; 
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    background: url(../../images/caddo_lake_cabin_narrow.jpg) center/cover no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Firefox */
+    background-clip: text;
+    color: transparent; 
+  }

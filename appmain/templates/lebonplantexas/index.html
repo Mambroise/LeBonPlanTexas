@@ -17,6 +17,7 @@
         <div class="round-banner">
             <p>{% translate 'Vos vacances intelligentes : planifiez, explorez et vivez des expériences inoubliables via un assitant mobile.' %}</p>
         </div>
+        <img class="texas-flag" src="{% static 'images/icons/texas_flag.png' %}" alt="Drapeau du Texas prenant la forme de l'état en question">
     </div>
     <!-- company concept quick explantion banner -->
     <h2 class="demo-banner-title">{% translate 'Pourquoi voyager avec LeBonPlanTEXAS ?' %}</h2>
@@ -92,7 +93,7 @@
 
 
     <!-- Introducing activities and texas classics per cities -->
-    <h2 class="third-banner-title">{% translate 'Les classiques du texas' %}</h2>
+    <h2 class="third-banner-title">{{ theme_displayed }}</h2>
     <div class="shadow-container">
         <section class="third-banner">
             <div class="third-banner-form-box">

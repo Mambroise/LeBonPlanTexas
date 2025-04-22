@@ -20,6 +20,14 @@
     border-bottom: 2px solid var(--black-color);
 }
 
+.texas-flag {
+    position: absolute;
+    left:3%;
+    top: 93%;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+}
+
 .round-banner {
     position: absolute;
     bottom: -10%;
@@ -47,8 +55,9 @@
 
 .demo-banner-title,
 .second-banner-title,
-.third-banner-title {
-    margin: 11rem auto 0rem auto;
+.third-banner-title,
+.service-banner-title {
+    margin: 10rem auto 0rem auto;
     padding: 0 1rem;
     text-align: center;
 }
@@ -174,7 +183,7 @@
     width: 100%;
     height: 100%;
     background: none;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
     position: relative;
 }
 
@@ -256,7 +265,7 @@
 .card {
     min-width: 300px;
     width: 20%;
-    border: 1px solid var(--black-color);
+    border: 2px solid var(--black-color);
     border-radius: 3px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;

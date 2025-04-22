@@ -1170,6 +1170,10 @@ msgstr "TEXAS Buddy Service Pricing"
 msgid "Everthing's bigger in TEXAS!"
 msgstr "Everthing's bigger in Texas"
 
+#: .\appmain\templates\lebonplantexas\services.html:24
+msgid "Les formules"
+msgstr "The packages"
+
 #: .\appmain\templates\lebonplantexas\services.html:31
 msgid "Formule Chauffeur Privé"
 msgstr "Personal Driver Package"

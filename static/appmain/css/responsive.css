@@ -86,7 +86,7 @@ html {
 
     /* NAVBAR RESPONSIVE */
     .landing-banner{
-        height: 50vh;
+        height: 70vh;
     }
 
     .burger-menu {
@@ -266,10 +266,18 @@ html {
         border: none;
         background: transparent;
         width: 95%;
+        bottom: -5%;
         left: 50%;
         transform: translateX(-50%);
         font-size: 2rem;
         font-weight: bold;
+        box-shadow: none;
+    }
+
+    .texas-flag {
+        top: 75%;
+        left: 50%;
+        width: 10rem;
     }
 
     .service-app-img .veil {
@@ -330,7 +338,7 @@ html {
 
     /* INDEX ROUND BANNER */
     .landing-banner{
-        height: 30vh;
+        height: 50vh;
     }
 
     .demo-banner {
@@ -490,7 +498,7 @@ html {
     }
 
     .round-service-banner {
-        bottom: 10%;
+        bottom: 5%;
         right: 50%;
         transform: translateX(50%);
         border-radius: 1rem;
@@ -499,6 +507,7 @@ html {
         font-weight: bold;
         border: none;
         background: transparent;
+        box-shadow: none;
     }
 
     .column:hover {

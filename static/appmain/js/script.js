@@ -46,8 +46,7 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
             ${selector}.small {
                 height: 5rem;
                 }
-            .navbar-container.small {
-                border-bottom: 1px solid var(--black-color);
+            .navbar-container.small {;
                 transition:  0.5s ease-in-out;
                 background: var(--navbar-black);
             }
@@ -65,6 +64,7 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
             }
             .title.small p {
                 line-height: 1.35rem;
+                transition:  0.3s ease-in-out
             }
             .title span.small {
                 font-size: 2.5rem;
