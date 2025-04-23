@@ -65,13 +65,14 @@
 
 .title p {
     margin: 0;
-    line-height: 2.5rem;
+    line-height: 2.6rem;
     transition:  0.3s ease-in-out
 }
 
 .title span {
     font-size: 5rem;
     margin: 0;
+
     color: var(--white-texas);
     text-shadow: 
     2px 2px 0px var(--red-texas),
@@ -79,6 +80,19 @@
     -2px 2px 0px var(--red-texas),
     2px -2px 0px var(--red-texas);
     transition:  0.3s ease-in-out;
+}
+
+.en-title {
+    margin: 0;
+    font-size: 5rem;
+    line-height: 0.5rem;
+    color: var(--white-texas);
+    text-shadow: 
+    2px 2px 0px var(--blue-texas),
+    -2px -2px 0px var(--blue-texas),
+    -2px 2px 0px var(--blue-texas),
+    2px -2px 0px var(--blue-texas);
+    transition:  0.3s ease-in-out
 }
 
 .nav-links {

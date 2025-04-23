@@ -45,7 +45,7 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
             }
             ${selector}.small {
                 height: 5rem;
-                }
+            }
             .navbar-container.small {;
                 transition:  0.5s ease-in-out;
                 background: var(--navbar-black);
@@ -66,9 +66,8 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
                 line-height: 1.35rem;
                 transition:  0.3s ease-in-out
             }
-            .title span.small {
+            .title span.small,.en-title.small {
                 font-size: 2.5rem;
-                transition:  0.3s ease-in-out;
             }
             .title-box.small {
                 width: 30%;
@@ -94,43 +93,31 @@ if (!window.location.pathname.includes('/register/') && !window.location.pathnam
     
     addStyles(navbarSelector);
     
-    const navBox = document.querySelector('.nav-box')
-    const navContain = document.querySelector('.navbar-container')
-    const star = document.querySelector('#texas-star-base');
-    const service = document.querySelector('#service');
-    const register = document.querySelector('#register');
-    const title = document.querySelector('.title')
-    const titleSpan = document.querySelector('.title span')
-    const titleBox = document.querySelector('.title-box')
-    const contactBox = document.querySelector('.contact-box')
-    const contactLink = document.querySelector('.contact-link');
-    
+    const elementsToToggle = [
+        navbar,
+        document.querySelector('.navbar-container'),
+        document.querySelector('#texas-star-base'),
+        document.querySelector('#service'),
+        document.querySelector('#register'),
+        document.querySelector('.title'),
+        document.querySelector('.title span'),
+        document.querySelector('.title-box'),
+        document.querySelector('.contact-box'),
+        document.querySelector('.contact-link'),
+        document.querySelector('.en-title')
+    ];
+
+    function toggleClasses(isSmall) {
+        elementsToToggle.forEach(el => {
+            if (el) {
+                el.classList.toggle('small', isSmall);
+            }
+        });
+    }
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 10) {
-            navbar.classList.add('small');
-            navContain.classList.add('small');
-            star.classList.add('small');
-            service.classList.add('small');
-            register.classList.add('small');
-            title.classList.add('small');
-            titleSpan.classList.add('small');
-            titleBox.classList.add('small');
-            contactBox.classList.add('small');
-            contactLink.classList.add('small');
-    
-        } else {
-            navbar.classList.remove('small');
-            navContain.classList.remove('small');
-            star.classList.remove('small');
-            service.classList.remove('small');
-            register.classList.remove('small');
-            title.classList.remove('small');
-            titleSpan.classList.remove('small');
-            titleBox.classList.remove('small');
-            contactBox.classList.remove('small');
-            contactLink.classList.remove('small')
-    
-        }
+        const isScrolled = window.scrollY > 10;
+        toggleClasses(isScrolled);
     });
 }
 
