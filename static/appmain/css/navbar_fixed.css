@@ -79,6 +79,19 @@
     2px -2px 0px var(--red-texas);
 }
 
+.en-title-fixed {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 0.5rem;
+    color: var(--white-texas);
+    text-shadow: 
+    2px 2px 0px var(--blue-texas),
+    -2px -2px 0px var(--blue-texas),
+    -2px 2px 0px var(--blue-texas),
+    2px -2px 0px var(--blue-texas);
+    transition:  0.3s ease-in-out
+}
+
 .title-box-fixed {
     display: flex;
     width: 50%;
