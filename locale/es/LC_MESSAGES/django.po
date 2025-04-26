@@ -661,23 +661,21 @@ msgstr "DESCARGAR"
 
 #: .\appmain\templates\lebonplantexas\index.html:18
 msgid ""
-"Vos vacances intelligentes : planifiez, explorez et vivez des expériences "
-"inoubliables via un assitant mobile."
+"Vos vacances intelligentes : explorez, planifiez, partagez des expériences inoubliables avec les Cowboys."
 msgstr ""
-"Sus vacaciones inteligentes: planifique, explore y viva experiencias "
-"inolvidables con un asistente móvil."
+"Tus vacaciones inteligentes: explora, planea y comparte experiencias inolvidables con los Cowboys."
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
 msgstr "¿Por qué viajar con TEXAS Buddy?"
 
 #: .\appmain\templates\lebonplantexas\index.html:23
-msgid "Pour seulement "
-msgstr "Por solo "
+msgid "Le meilleur du Texas pour seulement "
+msgstr "Lo mejor de Texas por solo "
 
 #: .\appmain\templates\lebonplantexas\index.html:23
-msgid " euros par jour"
-msgstr " dollars por día"
+msgid " euros"
+msgstr " dollars"
 
 #: .\appmain\templates\lebonplantexas\index.html:29
 msgid "+ 500 activités"
@@ -685,11 +683,9 @@ msgstr "+ 500 actividades"
 
 #: .\appmain\templates\lebonplantexas\index.html:30
 msgid ""
-"Votre guide ultime : découvrez une mine d'idees touristiques incontournables "
-"autour de vous."
+"Culture, sortie, aventure, nature, sports, évènements... Absolument tout, Tout autour de vous."
 msgstr ""
-"Su guía definitiva: descubra un sinfín de ideas turísticas imperdibles "
-"a su alrededor."
+"Los bares, salidas, aventuras, restaurantes y eventos más nuevos... Todo lo que necesitas, a tu alrededor."
 
 #: .\appmain\templates\lebonplantexas\index.html:37
 msgid "Parcours intelligent"
@@ -697,23 +693,19 @@ msgstr "Recorrido inteligente"
 
 #: .\appmain\templates\lebonplantexas\index.html:38
 msgid ""
-"Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation "
-"des activités."
+"Organisez votre voyage parfait : les meilleures activités, au bon endroit, au bon moment."
 msgstr ""
-"Planifique con inteligencia: cree el mejor itinerario gracias a la "
-"geolocalización de actividades."
+"¡Planifica de forma inteligente: crea el viaje ideal con las mejores actividades a lo largo de tu ruta!"
 
 #: .\appmain\templates\lebonplantexas\index.html:45
-msgid "Copilote Offline"
-msgstr "Copiloto Offline"
+msgid "Connectez-vous avec les Texans"
+msgstr "Conéctate con otros viajeros"
 
 #: .\appmain\templates\lebonplantexas\index.html:46
 msgid ""
-"Votre copilote touristique : trajets, horaires et conseils, notre assitant "
-"vous guide en temps réel."
+"Échangez, trouvez de l'aide et profitez de bons plans grâce à la communauté texane."
 msgstr ""
-"Su copiloto turístico: rutas, horarios y consejos, nuestro asistente "
-"lo guía en tiempo real."
+"Intercambien, brinden ayuda y compartan buenos planes con los viajeros que descubren Texas."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
 msgid "Planification autonome sur application mobile"
