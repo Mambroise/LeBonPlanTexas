@@ -668,23 +668,21 @@ msgstr "DOWNLOAD"
 
 #: .\appmain\templates\lebonplantexas\index.html:18
 msgid ""
-"Vos vacances intelligentes : planifiez, explorez et vivez des expériences "
-"inoubliables via un assitant mobile."
+"Vos vacances intelligentes : explorez, planifiez, partagez des expériences inoubliables avec les Cowboys."
 msgstr ""
-"Your smart vacation: plan, explore, and enjoy unforgettable experiences with "
-"a mobile assistant."
+"Great moments made easy: explore, plan, and create unforgettable experiences with Cowboys or tourists!"
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
 msgstr "Why travel with TEXAS Buddy?"
 
 #: .\appmain\templates\lebonplantexas\index.html:23
-msgid "Pour seulement "
-msgstr "For only "
+msgid "Le meilleur du Texas pour seulement "
+msgstr "The best of Texas for only "
 
 #: .\appmain\templates\lebonplantexas\index.html:23
-msgid " euros par jour"
-msgstr " dollars per day"
+msgid " euros"
+msgstr " dollars"
 
 #: .\appmain\templates\lebonplantexas\index.html:29
 msgid "+ 500 activités"
@@ -692,10 +690,9 @@ msgstr "+ 500 activities"
 
 #: .\appmain\templates\lebonplantexas\index.html:30
 msgid ""
-"Votre guide ultime : découvrez une mine d'idees touristiques incontournables "
-"autour de vous."
+"Culture, sortie, aventure, nature, sports, évènements... Absolument tout, Tout autour de vous."
 msgstr ""
-"Your ultimate guide: discover a wealth of must-see tourist ideas around you."
+"Newest bars, outings, adventures, restaurants, events... Everything you need, right around you."
 
 #: .\appmain\templates\lebonplantexas\index.html:37
 msgid "Parcours intelligent"
@@ -703,21 +700,18 @@ msgstr "Smart itinerary"
 
 #: .\appmain\templates\lebonplantexas\index.html:38
 msgid ""
-"Planifiez malin : Composez le meilleur itinéraire grâce à la géolocalisation "
-"des activités."
-msgstr "Plan smart: Create the best itinerary with activity geolocation."
+"Organisez votre voyage parfait : les meilleures activités, au bon endroit, au bon moment."
+msgstr "Plan your perfect trip: the best activities, in the right place, at the right time."
 
 #: .\appmain\templates\lebonplantexas\index.html:45
-msgid "Copilote Offline"
-msgstr "Offline Co-Pilot"
+msgid "Connectez-vous avec les Texans"
+msgstr "Connect with travellers"
 
 #: .\appmain\templates\lebonplantexas\index.html:46
 msgid ""
-"Votre copilote touristique : trajets, horaires et conseils, notre assitant "
-"vous guide en temps réel."
+"Échangez, trouvez de l'aide et profitez de bons plans grâce à la communauté texane."
 msgstr ""
-"Your travel co-pilot: routes, schedules, and tips, our assistant guides you "
-"in real time."
+"Connect, offer help, and share great tips with travelers exploring Texas."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
 msgid "Planification autonome sur application mobile"
