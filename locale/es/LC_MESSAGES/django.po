@@ -708,23 +708,21 @@ msgstr ""
 "Intercambien, brinden ayuda y compartan buenos planes con los viajeros que descubren Texas."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
-msgid "Planification autonome sur application mobile"
-msgstr "Planificación autónoma en aplicación móvil"
+msgid "Application mobile pour une expérience inégalable"
+msgstr "Aplicación móvil para una experiencia inigualable"
 
 #: .\appmain\templates\lebonplantexas\index.html:61
 msgid ""
-"Composez vous-même votre voyage, à partir d'une grande base de données "
-"incluant"
-msgstr ""
-"Organice su propio viaje a partir de una amplia base de datos que incluye"
+"Découvrez toutes les activités autour de vous, planifiez votre séjour avec des itinéraires optimisés,"
+msgstr "Descubre todas las actividades a tu alrededor,"
 
 #: .\appmain\templates\lebonplantexas\index.html:62
-msgid "histoire, culture, sorties, évènements annuels et bien d'autres..."
-msgstr "historia, cultura, salidas, eventos anuales y mucho más..."
+msgid " et échangez avec la communauté de voyageurs et de locaux pour partager conseils et bons plans."
+msgstr " planifica tus viajes con itinerarios optimizados y conecta con la comunidad de viajeros y locales para compartir consejos y ofertas."
 
 #: .\appmain\templates\lebonplantexas\index.html:63
-msgid "Puis laissez notre application mobile vous guider"
-msgstr "Luego, deje que nuestra aplicación móvil lo guíe"
+msgid " Votre compagnon idéal pour explorer le Texas autrement."
+msgstr " Tu compañero ideal para vivir Texas de una manera diferente."
 
 #: .\appmain\templates\lebonplantexas\index.html:72
 msgid "Guide touriste bilingue et véhiculé à la journée"

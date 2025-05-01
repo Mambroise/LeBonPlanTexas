@@ -674,7 +674,7 @@ msgstr ""
 
 #: .\appmain\templates\lebonplantexas\index.html:22
 msgid "Pourquoi voyager avec LeBonPlanTEXAS ?"
-msgstr "Why travel with TEXAS Buddy?"
+msgstr "Why download TEXAS Buddy?"
 
 #: .\appmain\templates\lebonplantexas\index.html:23
 msgid "Le meilleur du Texas pour seulement "
@@ -714,22 +714,21 @@ msgstr ""
 "Connect, offer help, and share great tips with travelers exploring Texas."
 
 #: .\appmain\templates\lebonplantexas\index.html:60
-msgid "Planification autonome sur application mobile"
-msgstr "Self-planning with a mobile app"
+msgid "Application mobile pour une expérience inégalable"
+msgstr "Mobile app for an unmatched experience of Texas"
 
 #: .\appmain\templates\lebonplantexas\index.html:61
 msgid ""
-"Composez vous-même votre voyage, à partir d'une grande base de données "
-"incluant"
-msgstr "Create your own trip from a vast database including"
+"Découvrez toutes les activités autour de vous, planifiez votre séjour avec des itinéraires optimisés,"
+msgstr "Discover all the activities around you, plan trips with optimized itineraries,"
 
 #: .\appmain\templates\lebonplantexas\index.html:62
-msgid "histoire, culture, sorties, évènements annuels et bien d'autres..."
-msgstr "history, culture, outings, annual events, and much more..."
+msgid " et échangez avec la communauté de voyageurs et de locaux pour partager conseils et bons plans."
+msgstr " and connect with the community of travelers and locals to share tips and great deals."
 
 #: .\appmain\templates\lebonplantexas\index.html:63
-msgid "Puis laissez notre application mobile vous guider"
-msgstr "Then let our mobile app guide you"
+msgid " Votre compagnon idéal pour explorer le Texas autrement."
+msgstr " Your perfect companion to experience Texas like never before."
 
 #: .\appmain\templates\lebonplantexas\index.html:72
 msgid "Guide touriste bilingue et véhiculé à la journée"
