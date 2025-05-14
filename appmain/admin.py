@@ -102,7 +102,7 @@ class DiscountAdmin(admin.ModelAdmin):
 class AttractionAdmin(admin.ModelAdmin):
     list_display = ('title','description','image_url')
 
-# Inline pour les Trips liés à un Customer
+# Inline pour les Attraction lié à un FileForImage
 class AttrictionInline(admin.TabularInline):  
     model = Attraction
     extra = 1  
