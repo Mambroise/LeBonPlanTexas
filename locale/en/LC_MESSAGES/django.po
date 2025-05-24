@@ -19,9 +19,8 @@ msgstr ""
 
 #: .\appmain\forms\trip_form.py:39
 msgid ""
-"Information utile: dates de demande de chauffeur, adresse complète de "
-"l'hotel..."
-msgstr "Useful information: requested driver dates, full hotel address..."
+"Information utile: nombre de voyageurs, adresse complète de l'hotel..."
+msgstr "Useful information: number of travelers, full hotel address..."
 
 #: .\appmain\forms\trip_form.py:55
 msgid "La date de début ne peut pas être antérieure à aujourd'hui."
@@ -1083,10 +1082,9 @@ msgid "Bientôt disponible"
 msgstr "Coming soon"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:63
-msgid "Accès à l'application de planification, aux meilleures activités du Texas et à l'assistant de voyage."
+msgid "Accès à l'application et aux meilleures activités du Texas, à l'assistant de voyage et à la communauté."
 msgstr ""
-"Access to the planning app, the best activities in Texas, and the travel "
-"assistant."
+"Access to the app, the best activities in Texas, the travel assistant, and the community."
 
 #: .\appmain\templates\lebonplantexas\register_form.html:65
 msgid ""
@@ -1114,8 +1112,8 @@ msgid "SUIVANT"
 msgstr "NEXT"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:126
-msgid "Formule chauffeur privé:"
-msgstr "Personal Driver Package:"
+msgid "Pour éviter toute confusion :"
+msgstr "To avoid any confusion:"
 
 #: .\appmain\templates\lebonplantexas\register_form.html:145
 msgid "AJOUTER UNE ETAPE"
@@ -1236,20 +1234,20 @@ msgid "Formule Autonome"
 msgstr "Autonomous Package"
 
 #: .\appmain\templates\lebonplantexas\services.html:79
-msgid "Une appli mobile facile d'accès pour planifier vos journées."
-msgstr "An easy-to-use mobile app to plan your days."
+msgid "Remplissez vos journées des meilleurs activités et évènements alentours."
+msgstr "Fill your days with the best nearby activities and events."
 
 #: .\appmain\templates\lebonplantexas\services.html:80
-msgid "Ne payez que pour les jours où vous désirez nos services."
-msgstr "Pay only for the days you need our services."
+msgid "Planifiez vos week-ends ou vos vacances avec notre organizer intelligent."
+msgstr "Plan your weekends and vacations with our smart itinerary organizer."
 
 #: .\appmain\templates\lebonplantexas\services.html:81
-msgid "2 demi-journées (arrivée/départ) offertes (1jour minimum). "
-msgstr "2 half-days (arrival/departure) included for free (1-day minimum)."
+msgid "Des réductions et offres spéciales rien que pour les Texas Buddies !"
+msgstr "Exclusive deals and discounts just for Texas Buddies!"
 
 #: .\appmain\templates\lebonplantexas\services.html:84
-msgid "Composez votre planning à partir d'une immense base de donnée."
-msgstr "Build your schedule from a huge database."
+msgid "Echangez des conseils et d'aide entre locaux et touristes."
+msgstr "Share tips and help between locals and tourists."
 
 #: .\appmain\templates\lebonplantexas\services.html:85
 msgid ""

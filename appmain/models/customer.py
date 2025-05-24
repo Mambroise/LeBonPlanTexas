@@ -21,6 +21,7 @@ class Customer(models.Model):
     phone = models.CharField(_('Portable'),max_length=12, blank=True, null=True)
     address = models.CharField(_('Adresse'),max_length=200,null=True,blank=True)
     country = CountryField(blank_label=_('Pays'), null=False, blank=False)
+    sign_up_number = models.CharField(max_length=100, unique=True,null=True,blank=True)
     timestamp = models.DateTimeField(auto_now=True)
     is_called = models.BooleanField(default=False)
     is_mailed = models.BooleanField(default=False)

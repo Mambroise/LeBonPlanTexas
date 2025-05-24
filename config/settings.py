@@ -60,6 +60,9 @@ EMAIL_HOST_PASSWORD = 'nsjf zkiu zlkn stql'
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 DOMAIN = "http://127.0.0.1:8000"
 
+#Api url
+EXTERNAL_CUSTOMER_API_URL = config('EXTERNAL_CUSTOMER_API_URL')
+
 # Application definition
 
 INSTALLED_APPS = [

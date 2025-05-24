@@ -60,7 +60,7 @@
                         <h3 class="package-card-title">{{ choice_label|upper }}</h3>
                         <p>
                             {% if choice_value == 1 %}
-                                {% translate "Accès à l'application de planification, aux meilleures activités du Texas et à l'assistant de voyage." %}
+                                {% translate "Accès à l'application et aux meilleures activités du Texas, à l'assistant de voyage et à la communauté." %}
                             {% elif choice_value == 2 %}
                                 {% translate 'Chauffeur et guide touristique pour une journée ou plus. Accès gratuit à la formule autonome.' %}
                             {% elif choice_value == 3 %}
@@ -118,12 +118,12 @@
                             {{ form.end_date }}
                         </div>
                     </div>
-                    {% if package == '2' %}
+                    {% if package == '2' or package == '3' %}
                     <div class="inputBox mt-2">
                         <input type="text" name="cities" id="id_cities" class="form-control" required>
                         <strong class="label-text" for="id_cities">{{ form.cities.label }}</strong>
                     </div>
-                    <strong>{% translate 'Formule chauffeur privé:' %}</strong>
+                    <strong>{% translate 'Pour éviter toute confusion :' %}</strong>
                     <div class="flex-between mt-1">
                         <strong class="label-text">{{ form.nbr_days_driver.label }}</strong>
                         {{ form.nbr_days_driver }}

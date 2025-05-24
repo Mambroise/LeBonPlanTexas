@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from ..models import Invoice
-from ..services.generate_pdf_service import PdfHandler
+from ..services.send_customer_endpoint import send_customer_to_external_api
 from ..services.send_email import send_checkout_success_email
 from ..services.company_service import CompanyService
 
@@ -39,9 +39,14 @@ def checkout_success(request):
         invoice.stripe_session_id = session_id
         invoice.save()
 
+        #send customer to texas buddy api endpoint
+        result = send_customer_to_external_api(invoice)
+        if not result["success"]:
+            print(f"⚠️ Erreur email envoi customer à l'api")
+
         #  mailing the invoice to the customer
         if not send_checkout_success_email(invoice):
-            return render(request, "error.html", {"message": "Erreur email envoi facture"})
+            return render(request, "error.html", {"message": "⚠️ Erreur email envoi facture"})
 
         # Optionnel : récupérer plus de détails si nécessaire
         payment = stripe.PaymentIntent.retrieve(payment_intent)
