@@ -75,7 +75,7 @@ def send_email_action(modeladmin, request, queryset):
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
     readonly_fields = ('invoice_number',)
-    list_display = ('customer','texas_trip','invoice_number','mobile_service','nbr_days_mobile',
+    list_display = ('customer','texas_trip','invoice_number','mobile_service',
         'mobile_price_excl_tax','driver_service', 'nbr_days_driver', 'driver_price_excl_tax', 
         'platinum_service', 'nbr_days_platinum', 'platinum_price_excl_tax',
         'tax_amount','total_excl_tax','discount','total_incl_discount','total','terms_of_sale_accepted', 'is_paid')

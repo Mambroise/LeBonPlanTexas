@@ -36,7 +36,7 @@ class TripForm(forms.ModelForm):
                           "margin : auto;"
                           "height : 100%;"   
                           ),
-                "placeholder": _("Information utile: dates de demande de chauffeur, adresse complète de l'hotel..."),
+                "placeholder": _("Information utile: nombre de voyageurs, adresse complète de l'hotel..."),
             }),
         }
 

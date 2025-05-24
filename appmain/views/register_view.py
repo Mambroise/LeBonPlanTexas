@@ -54,9 +54,14 @@ def multi_step_form(request):
         form = CustomerForm(request.POST or None)
         if form.is_valid():
             request.session['customer_data'] = form.cleaned_data
-            request.session['step'] = 3
-            request.session['title'] = str(_('Détails du voyage'))
-            package = request.session.get('texas_trip')
+            texas_trip = request.session.get('texas_trip')
+            if texas_trip['package'] == '1':
+                request.session['step'] = 4
+                request.session['title'] = str(_('Vos intérêts'))
+            else:
+                request.session['step'] = 3
+                request.session['title'] = str(_('Détails du voyage'))
+                package = request.session.get('texas_trip')
             # messages.info(request,_('Divisez votre voyages en plusieurs étapes en fonction des villes où vous resterez!'))
             return redirect('multi_step_form')
         else:
@@ -76,6 +81,12 @@ def multi_step_form(request):
 
             # Ajouter les données de cette étape de voyage à la liste
             trip_data = request.session.get('trip_data', [])
+            
+            nbr_days_driver = None
+            if trip_data:
+                last_trip = trip_data[-1]
+                nbr_days_driver = last_trip.get('nbr_days_driver')
+
             trip_data.append(cleaned_data)
             request.session['trip_data'] = trip_data
 
@@ -120,13 +131,14 @@ def multi_step_form(request):
                     return redirect('multi_step_form')
 
                 # Step 4.3 : Trip creation
-                trip_data = request.session.get('trip_data', [])
-                for trip in trip_data:
-                    success = TripService.create_trip(trip, customer.id,texas_trip.id)
-                    if not success:
-                        messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du voyage."))
-                        request.session.flush()
-                        return redirect('multi_step_form')
+                if texas_trip_data['package'] != '1':
+                    trip_data = request.session.get('trip_data', [])
+                    for trip in trip_data:
+                        success = TripService.create_trip(trip, customer.id,texas_trip.id)
+                        if not success:
+                            messages.error(request, _("Une erreur s'est produite lors de l'enregistrement du voyage."))
+                            request.session.flush()
+                            return redirect('multi_step_form')
 
                 # Step 4.4 : Interests creation
                 raw_categories = request.POST.getlist('categories')
@@ -152,9 +164,9 @@ def multi_step_form(request):
                     # send email to customer with trip summary
                 success_registration_email(customer,texas_trip,trips,selected_categories)
                     # creation of invoice, only in autonomous service case
-                success, invoice = InvoiceService.create_invoice(customer,trips,texas_trip,discount)
+                success, invoice = InvoiceService.create_invoice(customer,texas_trip,discount)
                     # send email to the client
-                if success:
+                if success and texas_trip.package == '1':
                     send_payment_link(customer=customer,invoice=invoice)
                     # estimate_validation(customer,texas_trip,trips,selected_categories,invoice)
                 request.session.flush()

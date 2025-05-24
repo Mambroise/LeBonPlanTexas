@@ -21,7 +21,6 @@ class Invoice(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     # classic service part
     mobile_service = models.BooleanField(default=False)
-    nbr_days_mobile = models.IntegerField(null=True,blank=True)
     mobile_price_excl_tax = models.FloatField(null=True,blank=True)
     # driver service part
     driver_service = models.BooleanField(default=False)
@@ -40,7 +39,7 @@ class Invoice(models.Model):
     tax_rate = models.FloatField(null=True,blank=True)
     tax_amount = models.FloatField(null=True,blank=True)
     total_excl_tax = models.FloatField(null=True,blank=True)
-    discount = models.ForeignKey(Discount,on_delete=models.DO_NOTHING, related_name='all_invoices_with_discounts',null=True,blank=True)
+    discount = models.ForeignKey(Discount, on_delete=models.DO_NOTHING, related_name='all_invoices_with_discounts',null=True,blank=True)
     total = models.FloatField(null=True,blank=True)
     total_incl_discount = models.FloatField(null=True,blank=True)
     payment_type = models.CharField(max_length=20,default="Credit card")

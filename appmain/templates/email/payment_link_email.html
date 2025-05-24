@@ -47,7 +47,7 @@
                     <td>{% translate 'Autonome' %}</td>
                     <td>{{ trip_invoice.mobile_service|yesno:"V,X" }}</td>
                     <td>{{ trip_invoice.nbr_days_mobile|default:"-" }}</td>
-                    <td>{{ trip_invoice.mobile_price_excl_tax|default:"-" }}</td>
+                    <td>{{ trip_invoice.mobile_price_excl_tax}}</td>
                 </tr>
                 <tr>
                     <td>{% translate 'Chauffeur privé' %}</td>

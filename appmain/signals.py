@@ -23,7 +23,7 @@ def set_invoice_totals_and_number(sender, instance, created, **kwargs):
         instance.platinum_service
     ]):
         # Récupération des données nécessaires depuis l'instance
-        mobile_total = (instance.nbr_days_mobile or 0) * (instance.mobile_price_excl_tax or 0) if instance.mobile_service else 0
+        mobile_total = (instance.mobile_price_excl_tax or 0) if instance.mobile_service else 0
         driver_total = (instance.nbr_days_driver or 0) * (instance.driver_price_excl_tax or 0) if instance.driver_service else 0
         platinum_total = (instance.nbr_days_platinum or 0) * (instance.platinum_price_excl_tax or 0) if instance.platinum_service else 0
 
