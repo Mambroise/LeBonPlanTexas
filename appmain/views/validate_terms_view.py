@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 
 
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404,render
 from django.http import HttpResponseBadRequest
 from django.utils.translation import gettext as _
 from ..models import Invoice
@@ -24,3 +24,4 @@ def validate_terms(request):
         invoice.save()
 
         return redirect(f"/create-checkout-session/?invoice_id={invoice.id}")
+    return render(request,'error.html',{'message': 'A problem occured.Please try again'})
