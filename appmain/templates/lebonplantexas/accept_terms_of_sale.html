@@ -18,7 +18,7 @@
             <!-- Ajoutez le contenu complet des CGU ici -->
             {% include 'pdf/terms_of_sale_fr.html' %}     
         </div>
-        <form method="POST" action="/validate_terms/">
+        <form method="POST" action="{% url 'validate_terms' %}">
             {% csrf_token %}
             <input type="hidden" name="invoice_id" value="{{ invoice.id }}">
             {% if not invoice.terms_of_sale_accepted %}

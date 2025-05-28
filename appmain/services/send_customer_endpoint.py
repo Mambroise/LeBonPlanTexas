@@ -5,7 +5,6 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
-# appmain/services/send_customer_to_external_api.py
 
 import requests
 from django.conf import settings
