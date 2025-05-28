@@ -12,5 +12,5 @@ from appmain.models import Customer
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'country']
+        fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'country','sign_up_number']
 

@@ -24,4 +24,4 @@ def validate_terms(request):
         invoice.save()
 
         return redirect(f"/create-checkout-session/?invoice_id={invoice.id}")
-    return render(request,'error.html',{'message': 'A problem occured.Please try again'})
+    return render(request,'error.html',{'message': 'A problem occured.Please try again from the email link'})

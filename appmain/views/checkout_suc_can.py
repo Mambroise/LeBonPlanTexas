@@ -39,6 +39,10 @@ def checkout_success(request):
         invoice.stripe_session_id = session_id
         invoice.save()
 
+        #create sign_up_number
+        customer = invoice.customer
+        customer.generate_sign_up_number()
+
         #send customer to texas buddy api endpoint
         result = send_customer_to_external_api(invoice)
         if not result["success"]:

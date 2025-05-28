@@ -6,6 +6,7 @@
 # ---------------------------------------------------------------------------
 
 import re
+import secrets
 from django_countries.fields import CountryField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -31,6 +32,12 @@ class Customer(models.Model):
         return ", ".join(interest.category.name for interest in self.interests.select_related('category'))
 
     selected_categories.short_description = _('Catégories sélectionnées')
+    
+    def generate_sign_up_number(self):
+        """generate an 10 hexadecimal character identifier """
+        if not self.sign_up_number:
+            self.sign_up_number = secrets.token_hex(5)
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
